@@ -1,0 +1,3957 @@
+[
+    {
+        "vendor": "Microsoft",
+        "exam_name": "Designing and Implementing a Microsoft Azure AI Solution",
+        "exam_code": "AI-102"
+    },
+    {
+        "vendor": "Microsoft",
+        "exam_name": "Microsoft Azure AI Fundamentals",
+        "exam_code": "AI-900"
+    },
+    {
+        "vendor": "Microsoft",
+        "exam_name": "Microsoft Azure Administrator",
+        "exam_code": "AZ-104"
+    },
+    {
+        "vendor": "Microsoft",
+        "exam_name": "Planning and Administering Microsoft Azure for SAP Workloads",
+        "exam_code": "AZ-120"
+    },
+    {
+        "vendor": "Microsoft",
+        "exam_name": "Configuring and Operating Windows Virtual Desktop on Microsoft Azure",
+        "exam_code": "AZ-140"
+    },
+    {
+        "vendor": "Microsoft",
+        "exam_name": "Developing Solutions for Microsoft Azure",
+        "exam_code": "AZ-204"
+    },
+    {
+        "vendor": "Microsoft",
+        "exam_name": "Designing Microsoft Azure Infrastructure Solutions",
+        "exam_code": "AZ-305"
+    },
+    {
+        "vendor": "Microsoft",
+        "exam_name": "Microsoft Azure DevOps Solutions",
+        "exam_code": "AZ-400"
+    },
+    {
+        "vendor": "Microsoft",
+        "exam_name": "Microsoft Azure Security Technologies",
+        "exam_code": "AZ-500"
+    },
+    {
+        "vendor": "Microsoft",
+        "exam_name": "Configuring and Operating a Hybrid Cloud with Microsoft Azure Stack Hub",
+        "exam_code": "AZ-600"
+    },
+    {
+        "vendor": "Microsoft",
+        "exam_name": "Designing and Implementing Microsoft Azure Networking Solutions",
+        "exam_code": "AZ-700"
+    },
+    {
+        "vendor": "Microsoft",
+        "exam_name": "Administering Windows Server Hybrid Core Infrastructure",
+        "exam_code": "AZ-800"
+    },
+    {
+        "vendor": "Microsoft",
+        "exam_name": "Configuring Windows Server Hybrid Advanced Services",
+        "exam_code": "AZ-801"
+    },
+    {
+        "vendor": "Microsoft",
+        "exam_name": "Microsoft Azure Fundamentals",
+        "exam_code": "AZ-900"
+    },
+    {
+        "vendor": "Microsoft",
+        "exam_name": "Designing and Implementing a Data Science Solution on Azure",
+        "exam_code": "DP-100"
+    },
+    {
+        "vendor": "Microsoft",
+        "exam_name": "Data Engineering on Microsoft Azure",
+        "exam_code": "DP-203"
+    },
+    {
+        "vendor": "Microsoft",
+        "exam_name": "Administering Relational Databases on Microsoft Azure",
+        "exam_code": "DP-300"
+    },
+    {
+        "vendor": "Microsoft",
+        "exam_name": "Designing and Implementing Enterprise-Scale Analytics Solutions Using Microsoft Azure and Microsoft Power BI",
+        "exam_code": "DP-500"
+    },
+    {
+        "vendor": "Microsoft",
+        "exam_name": "Implementing Analytics Solutions Using Microsoft Fabric",
+        "exam_code": "DP-600"
+    },
+    {
+        "vendor": "Microsoft",
+        "exam_name": "Microsoft Azure Data Fundamentals",
+        "exam_code": "DP-900"
+    },
+    {
+        "vendor": "Microsoft",
+        "exam_name": "Microsoft Dynamics 365 for Sales",
+        "exam_code": "MB-210"
+    },
+    {
+        "vendor": "Microsoft",
+        "exam_name": "Microsoft Dynamics 365 Customer Service Functional Consultant",
+        "exam_code": "MB-230"
+    },
+    {
+        "vendor": "Microsoft",
+        "exam_name": "Microsoft Dynamics 365: Core Finance and Operations",
+        "exam_code": "MB-300"
+    },
+    {
+        "vendor": "Microsoft",
+        "exam_name": "Microsoft Dynamics 365 Finance Functional Consultant",
+        "exam_code": "MB-310"
+    },
+    {
+        "vendor": "Microsoft",
+        "exam_name": "Microsoft Dynamics 365 Supply Chain Management",
+        "exam_code": "MB-330"
+    },
+    {
+        "vendor": "Microsoft",
+        "exam_name": "Microsoft Dynamics 365 Supply Chain Management Functional Consultant Expert",
+        "exam_code": "MB-335"
+    },
+    {
+        "vendor": "Microsoft",
+        "exam_name": "Microsoft Dynamics 365: Finance and Operations Apps Developer",
+        "exam_code": "MB-500"
+    },
+    {
+        "vendor": "Microsoft",
+        "exam_name": "Microsoft Dynamics 365: Finance and Operations Apps Solution Architect",
+        "exam_code": "MB-700"
+    },
+    {
+        "vendor": "Microsoft",
+        "exam_name": "Microsoft Dynamics 365 Business Central Functional Consultant",
+        "exam_code": "MB-800"
+    },
+    {
+        "vendor": "Microsoft",
+        "exam_name": "Microsoft Dynamics 365 Fundamentals Customer Engagement Apps (CRM)",
+        "exam_code": "MB-910"
+    },
+    {
+        "vendor": "Microsoft",
+        "exam_name": "Microsoft Certified: Dynamics 365 Fundamentals (ERP)",
+        "exam_code": "MB-920"
+    },
+    {
+        "vendor": "Microsoft",
+        "exam_name": "Endpoint Administrator",
+        "exam_code": "MD-102"
+    },
+    {
+        "vendor": "Microsoft",
+        "exam_name": "Microsoft 365 Administrator",
+        "exam_code": "MS-102"
+    },
+    {
+        "vendor": "Microsoft",
+        "exam_name": "Microsoft 365 Messaging",
+        "exam_code": "MS-203"
+    },
+    {
+        "vendor": "Microsoft",
+        "exam_name": "Microsoft 365 Security Administration",
+        "exam_code": "MS-500"
+    },
+    {
+        "vendor": "Microsoft",
+        "exam_name": "Managing Microsoft Teams",
+        "exam_code": "MS-700"
+    },
+    {
+        "vendor": "Microsoft",
+        "exam_name": "Microsoft 365 Fundamentals",
+        "exam_code": "MS-900"
+    },
+    {
+        "vendor": "Microsoft",
+        "exam_name": "Microsoft Power Platform App Maker",
+        "exam_code": "PL-100"
+    },
+    {
+        "vendor": "Microsoft",
+        "exam_name": "Microsoft Power Platform Functional Consultant",
+        "exam_code": "PL-200"
+    },
+    {
+        "vendor": "Microsoft",
+        "exam_name": "Microsoft Power BI Data Analyst",
+        "exam_code": "PL-300"
+    },
+    {
+        "vendor": "Microsoft",
+        "exam_name": "Microsoft Power Platform Developer",
+        "exam_code": "PL-400"
+    },
+    {
+        "vendor": "Microsoft",
+        "exam_name": "Microsoft Power Automate RPA Developer",
+        "exam_code": "PL-500"
+    },
+    {
+        "vendor": "Microsoft",
+        "exam_name": "Microsoft Power Platform Solution Architect",
+        "exam_code": "PL-600"
+    },
+    {
+        "vendor": "Microsoft",
+        "exam_name": "Microsoft Power Platform Fundamentals",
+        "exam_code": "PL-900"
+    },
+    {
+        "vendor": "Microsoft",
+        "exam_name": "Microsoft Cybersecurity Architect",
+        "exam_code": "SC-100"
+    },
+    {
+        "vendor": "Microsoft",
+        "exam_name": "Microsoft Security Operations Analyst",
+        "exam_code": "SC-200"
+    },
+    {
+        "vendor": "Microsoft",
+        "exam_name": "Microsoft Identity and Access Administrator",
+        "exam_code": "SC-300"
+    },
+    {
+        "vendor": "Microsoft",
+        "exam_name": "Microsoft Information Protection Administrator",
+        "exam_code": "SC-400"
+    },
+    {
+        "vendor": "Microsoft",
+        "exam_name": "Microsoft Security, Compliance, and Identity Fundamentals",
+        "exam_code": "SC-900"
+    },
+    {
+        "vendor": "Amazon",
+        "exam_name": "AWS Certified Cloud Practitioner(CLF-C02)",
+        "exam_code": "CLF-C02"
+    },
+    {
+        "vendor": "Amazon",
+        "exam_name": "AWS Certified AI Practitioner(AIF-C01)",
+        "exam_code": "AIF-C01"
+    },
+    {
+        "vendor": "Amazon",
+        "exam_name": "AWS Certified Machine Learning Engineer - Associate(ME1-C01)",
+        "exam_code": "ME1-C01"
+    },
+    {
+        "vendor": "Amazon",
+        "exam_name": "AWS Certified Data Engineer - Associate(DEA-C01)",
+        "exam_code": "DEA-C01"
+    },
+    {
+        "vendor": "Amazon",
+        "exam_name": "AWS Certified Developer - Associate(DVA-C02)",
+        "exam_code": "DVA-C02"
+    },
+    {
+        "vendor": "Amazon",
+        "exam_name": "AWS Certified Solutions Architect - Associate(SAA-C03)",
+        "exam_code": "SAA-C03"
+    },
+    {
+        "vendor": "Amazon",
+        "exam_name": "AWS Certified SysOps Administrator - Associate(SOA-C02)",
+        "exam_code": "SOA-C02"
+    },
+    {
+        "vendor": "Amazon",
+        "exam_name": "AWS Certified DevOps Engineer - Professional(DOP-C02)",
+        "exam_code": "DOP-C02"
+    },
+    {
+        "vendor": "Amazon",
+        "exam_name": "AWS Certified Solutions Architect - Professional(SAP-C02)",
+        "exam_code": "SAP-C02"
+    },
+    {
+        "vendor": "Amazon",
+        "exam_name": "AWS Certified Advanced Networking - Specialty(ANS-C01)",
+        "exam_code": "ANS-C01"
+    },
+    {
+        "vendor": "Amazon",
+        "exam_name": "AWS Certified Machine Learning - Specialty(MLS-C01)",
+        "exam_code": "MLS-C01"
+    },
+    {
+        "vendor": "Amazon",
+        "exam_name": "AWS Certified Security - Specialty(SCS-C02)",
+        "exam_code": "SCS-C02"
+    },
+    {
+        "vendor": "CompTIA",
+        "exam_name": "CompTIA IT Fundamentals (ITF+)",
+        "exam_code": "FC0-U61"
+    },
+    {
+        "vendor": "CompTIA",
+        "exam_name": "CompTIA Tech+",
+        "exam_code": "FC0-U71"
+    },
+    {
+        "vendor": "CompTIA",
+        "exam_name": "CompTIA A+",
+        "exam_code": "220-1101 (Core 1)"
+    },
+    {
+        "vendor": "CompTIA",
+        "exam_name": "CompTIA A+",
+        "exam_code": "220-1102 (Core 2)"
+    },
+    {
+        "vendor": "CompTIA",
+        "exam_name": "CompTIA Network+",
+        "exam_code": "N10-009"
+    },
+    {
+        "vendor": "CompTIA",
+        "exam_name": "CompTIA Security+",
+        "exam_code": "SY0-701"
+    },
+    {
+        "vendor": "CompTIA",
+        "exam_name": "CompTIA Cloud+",
+        "exam_code": "CV0-004"
+    },
+    {
+        "vendor": "CompTIA",
+        "exam_name": "CompTIA Linux+",
+        "exam_code": "XK0-005"
+    },
+    {
+        "vendor": "CompTIA",
+        "exam_name": "CompTIA Server+",
+        "exam_code": "SK0-005"
+    },
+    {
+        "vendor": "CompTIA",
+        "exam_name": "CompTIA Cybersecurity Analyst (CySA+)",
+        "exam_code": "CS0-003"
+    },
+    {
+        "vendor": "CompTIA",
+        "exam_name": "CompTIA Advanced Security Practitioner (CASP+)",
+        "exam_code": "CAS-004"
+    },
+    {
+        "vendor": "CompTIA",
+        "exam_name": "CompTIA PenTest+",
+        "exam_code": "PT0-003"
+    },
+    {
+        "vendor": "CompTIA",
+        "exam_name": "CompTIA Data+",
+        "exam_code": "DA0-001"
+    },
+    {
+        "vendor": "CompTIA",
+        "exam_name": "CompTIA DataSys+",
+        "exam_code": "DS0-001"
+    },
+    {
+        "vendor": "CompTIA",
+        "exam_name": "CompTIA DataX",
+        "exam_code": "DY0-001"
+    },
+    {
+        "vendor": "CompTIA",
+        "exam_name": "CompTIA Project+",
+        "exam_code": "PK0-005"
+    },
+    {
+        "vendor": "CompTIA",
+        "exam_name": "CompTIA Cloud Essentials+",
+        "exam_code": "CLO-002"
+    },
+    {
+        "vendor": "Google",
+        "exam_name": "Google Cloud Certified - Cloud Digital Leader",
+         "exam_code": ""
+    },
+    {
+        "vendor": "Google",
+        "exam_name": "Google Cloud Certified - Associate Cloud Engineer",
+         "exam_code": ""
+    },
+    {
+        "vendor": "Google",
+        "exam_name": "Google Cloud Certified - Professional Cloud Architect",
+         "exam_code": ""
+    },
+    {
+        "vendor": "Google",
+        "exam_name": "Google Cloud Certified - Professional Cloud Database Engineer",
+         "exam_code": ""
+    },
+    {
+        "vendor": "Google",
+        "exam_name": "Google Cloud Certified - Professional Cloud Developer",
+         "exam_code": ""
+    },
+    {
+        "vendor": "Google",
+        "exam_name": "Google Cloud Certified - Professional Cloud DevOps Engineer",
+         "exam_code": ""
+    },
+    {
+        "vendor": "Google",
+        "exam_name": "Google Cloud Certified - Professional Cloud Network Engineer",
+         "exam_code": ""
+    },
+    {
+        "vendor": "Google",
+        "exam_name": "Google Cloud Certified - Professional Cloud Security Engineer",
+         "exam_code": ""
+    },
+    {
+        "vendor": "Google",
+        "exam_name": "Google Cloud Certified - Professional Data Engineer",
+         "exam_code": ""
+    },
+    {
+        "vendor": "Google",
+        "exam_name": "Google Cloud Certified - Professional Google Workspace Administrator",
+         "exam_code": ""
+    },
+    {
+        "vendor": "Google",
+        "exam_name": "Google Cloud Certified - Professional Machine Learning Engineer",
+         "exam_code": ""
+    },
+    {
+        "vendor": "Salesforce",
+        "exam_name": "Salesforce Certified Associate",
+         "exam_code": ""
+    },
+    {
+        "vendor": "Salesforce",
+        "exam_name": "Salesforce Certified AI Associate",
+         "exam_code": ""
+    },
+    {
+        "vendor": "Salesforce",
+        "exam_name": "Salesforce Certified Marketing Associate",
+         "exam_code": ""
+    },
+    {
+        "vendor": "Salesforce",
+        "exam_name": "Salesforce Certified MuleSoft Associate",
+         "exam_code": ""
+    },
+    {
+        "vendor": "Salesforce",
+        "exam_name": "Salesforce Certified Administrator",
+         "exam_code": ""
+    },
+    {
+        "vendor": "Salesforce",
+        "exam_name": "Salesforce Certified Advanced Administrator",
+         "exam_code": ""
+    },
+    {
+        "vendor": "Salesforce",
+        "exam_name": "Salesforce Certified Business Analyst",
+         "exam_code": ""
+    },
+    {
+        "vendor": "Salesforce",
+        "exam_name": "Salesforce Certified AI Specialist",
+         "exam_code": ""
+    },
+    {
+        "vendor": "Salesforce",
+        "exam_name": "Salesforce Certified Slack Administrator",
+         "exam_code": ""
+    },
+    {
+        "vendor": "Salesforce",
+        "exam_name": "Salesforce Certified Platform App Builder",
+         "exam_code": ""
+    },
+    {
+        "vendor": "Salesforce",
+        "exam_name": "Salesforce Certified Data Architect",
+         "exam_code": ""
+    },
+    {
+        "vendor": "Salesforce",
+        "exam_name": "Salesforce Certified Development Lifecycle and Deployment Architect",
+         "exam_code": ""
+    },
+    {
+        "vendor": "Salesforce",
+        "exam_name": "Salesforce Certified Integration Architect",
+         "exam_code": ""
+    },
+    {
+        "vendor": "Salesforce",
+        "exam_name": "Salesforce Certified Catalyst Specialist",
+         "exam_code": ""
+    },
+    {
+        "vendor": "Salesforce",
+        "exam_name": "Salesforce Certified Education Cloud Consultant",
+         "exam_code": ""
+    },
+    {
+        "vendor": "Salesforce",
+        "exam_name": "Salesforce Certified Experience Cloud Consultant",
+         "exam_code": ""
+    },
+    {
+        "vendor": "Salesforce",
+        "exam_name": "Salesforce Certified Field Service Consultant",
+         "exam_code": ""
+    },
+    {
+        "vendor": "Salesforce",
+        "exam_name": "Salesforce Certified Nonprofit Cloud Consultant",
+         "exam_code": ""
+    },
+    {
+        "vendor": "Salesforce",
+        "exam_name": "Salesforce Certified OmniStudio Consultant",
+         "exam_code": ""
+    },
+    {
+        "vendor": "Salesforce",
+        "exam_name": "Salesforce Certified Sales Cloud Consultant",
+         "exam_code": ""
+    },
+    {
+        "vendor": "Salesforce",
+        "exam_name": "Salesforce Certified Service Cloud Consultant",
+         "exam_code": ""
+    },
+    {
+        "vendor": "Salesforce",
+        "exam_name": "Salesforce Certified CRM Analytics and Einstein Discovery Consultant",
+         "exam_code": ""
+    },
+    {
+        "vendor": "Salesforce",
+        "exam_name": "Salesforce Certified Data Cloud Consultant",
+         "exam_code": ""
+    },
+    {
+        "vendor": "Salesforce",
+        "exam_name": "Salesforce Certified Slack Consultant",
+         "exam_code": ""
+    },
+    {
+        "vendor": "Salesforce",
+        "exam_name": "Salesforce Certified CPQ Specialist",
+         "exam_code": ""
+    },
+    {
+        "vendor": "Salesforce",
+        "exam_name": "Salesforce Certified User Experience Designer",
+         "exam_code": ""
+    },
+    {
+        "vendor": "Salesforce",
+        "exam_name": "Salesforce Certified Strategy Designer",
+         "exam_code": ""
+    },
+    {
+        "vendor": "Salesforce",
+        "exam_name": "Salesforce Certified B2C Commerce Developer",
+         "exam_code": ""
+    },
+    {
+        "vendor": "Salesforce",
+        "exam_name": "Certified B2C Commerce Developers have experience as full-stack developers for Salesforce Commerce Cloud Digital.",
+         "exam_code": ""
+    },
+    {
+        "vendor": "Salesforce",
+        "exam_name": "Salesforce Certified Industries CPQ Developer",
+         "exam_code": ""
+    },
+    {
+        "vendor": "Salesforce",
+        "exam_name": "Salesforce Certified JavaScript Developer I",
+         "exam_code": ""
+    },
+    {
+        "vendor": "Salesforce",
+        "exam_name": "Salesforce Certified OmniStudio Developer",
+         "exam_code": ""
+    },
+    {
+        "vendor": "Salesforce",
+        "exam_name": "Salesforce Certified Platform Developer I",
+         "exam_code": ""
+    },
+    {
+        "vendor": "Salesforce",
+        "exam_name": "Salesforce Certified Platform Developer II",
+         "exam_code": ""
+    },
+    {
+        "vendor": "Salesforce",
+        "exam_name": "Salesforce Certified MuleSoft Developer I",
+         "exam_code": ""
+    },
+    {
+        "vendor": "Salesforce",
+        "exam_name": "Salesforce Certified MuleSoft Developer II",
+         "exam_code": ""
+    },
+    {
+        "vendor": "Salesforce",
+        "exam_name": "Salesforce Certified Hyperautomation Specialist",
+         "exam_code": ""
+    },
+    {
+        "vendor": "Salesforce",
+        "exam_name": "Salesforce Certified Slack Developer",
+         "exam_code": ""
+    },
+    {
+        "vendor": "Salesforce",
+        "exam_name": "Salesforce Certified Marketing Cloud Administrator",
+         "exam_code": ""
+    },
+    {
+        "vendor": "Salesforce",
+        "exam_name": "Salesforce Certified Marketing Cloud Consultant",
+         "exam_code": ""
+    },
+    {
+        "vendor": "Salesforce",
+        "exam_name": "Salesforce Certified Marketing Cloud Developer",
+         "exam_code": ""
+    },
+    {
+        "vendor": "Salesforce",
+        "exam_name": "Salesforce Certified Marketing Cloud Email Specialist",
+         "exam_code": ""
+    },
+    {
+        "vendor": "Salesforce",
+        "exam_name": "Salesforce Certified Marketing Cloud Account Engagement Consultant",
+         "exam_code": ""
+    },
+    {
+        "vendor": "Salesforce",
+        "exam_name": "Salesforce Certified Marketing Cloud Account Engagement Specialist",
+         "exam_code": ""
+    },
+    {
+        "vendor": "PMI",
+        "exam_name": "Certified Associate in Project Management (PMI-100)",
+        "exam_code": "CAPM"
+    },
+    {
+        "vendor": "PMI",
+        "exam_name": "Portfolio Management Professional",
+        "exam_code": "PFMP"
+    },
+    {
+        "vendor": "PMI",
+        "exam_name": "Program Management Professional",
+        "exam_code": "PGMP"
+    },
+    {
+        "vendor": "PMI",
+        "exam_name": "PMI Agile Certified Practitioner",
+        "exam_code": "PMI-ACP"
+    },
+    {
+        "vendor": "PMI",
+        "exam_name": "PMI Professional in Business Analysis",
+        "exam_code": "PMI-PBA"
+    },
+    {
+        "vendor": "PMI",
+        "exam_name": "PMI Risk Management Professional",
+        "exam_code": "PMI-RMP"
+    },
+    {
+        "vendor": "PMI",
+        "exam_name": "PMI Scheduling Professional Practice Test",
+        "exam_code": "PMI-SP"
+    },
+    {
+        "vendor": "PMI",
+        "exam_name": "Project Management Professional",
+        "exam_code": "PMP"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Exadata X3 and X4 Administration",
+        "exam_code": "1Z0-027"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Upgrade Oracle9i10g OCA to Oracle Database 11g OCP",
+        "exam_code": "1Z0-034"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Database 11g SQL Fundamentals I",
+        "exam_code": "1Z0-051"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Database 11g Administration I",
+        "exam_code": "1Z0-052"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Database 11g Administration II",
+        "exam_code": "1Z0-053"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Database 11g Performance Tuning",
+        "exam_code": "1Z0-054"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Upgrade to Oracle Database 12c",
+        "exam_code": "1Z0-060"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Database 12c SQL Fundamentals",
+        "exam_code": "1Z0-061"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Database 12c Installation and Administration",
+        "exam_code": "1Z0-062"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Database 12c Advanced Administration",
+        "exam_code": "1Z0-063"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Database 12c Performance Management and Tuning",
+        "exam_code": "1Z0-064"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Database 12c Data Guard Administration",
+        "exam_code": "1Z0-066"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Upgrade Oracle9i10g11g OCA OR OCP to Oracle Database 12c OCP",
+        "exam_code": "1Z0-067"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Database 12c RAC and Grid Infrastructure Administration",
+        "exam_code": "1Z0-068"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Exadata X5 Administration",
+        "exam_code": "1Z0-070"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Datbase 12c SQL Popular",
+        "exam_code": "1Z0-071"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Database 19c: RAC, ASM, and Grid Infrastructure Administration",
+        "exam_code": "1Z0-078"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Database Administration I Popular",
+        "exam_code": "1z0-082"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Database Administration II Popular",
+        "exam_code": "1z0-083"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Database 19c: Performance Management and Tuning",
+        "exam_code": "1z0-084"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Linux 5 and 6 System Administration",
+        "exam_code": "1z0-100"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Financials Cloud: Payables 2018 Implementation Essentials",
+        "exam_code": "1z0-1005"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Cloud Platform Application Integration 2020 Specialist",
+        "exam_code": "1z0-1042-20"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Cloud Infrastructure 2023 Application Integration Professional",
+        "exam_code": "1z0-1042-23"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Global Human Resources Cloud 2021 Implementation Essentials",
+        "exam_code": "1z0-1046-21"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Linux 6 Advanced System Administration",
+        "exam_code": "1z0-105"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Financials Cloud: General Ledger 2021 Implementation Essentials",
+        "exam_code": "1z0-1054-21"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Financials Cloud: General Ledger 2022 Implementation Professional",
+        "exam_code": "1z0-1054-22"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Financials Cloud: General Ledger 2023 Implementation Professional",
+        "exam_code": "1z0-1054-23"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Financials Cloud: Payables 2021 Implementation Essentials",
+        "exam_code": "1z0-1055-21"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Financials Cloud: Receivables 2021 Implementation Essentials",
+        "exam_code": "1z0-1056-21"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Financials Cloud: Receivables 2023 Implementation Professional",
+        "exam_code": "1z0-1056-23"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Project Management Cloud 2022 Certified Implementation Professional",
+        "exam_code": "1z0-1057-22"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Fusion Cloud Procurement 2023 Implementation Professional",
+        "exam_code": "1z0-1065-23"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Planning and Collaboration Cloud 2022 Implementation Professional",
+        "exam_code": "1z0-1066-22"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Cloud Infrastructure 2021 Cloud Operations Associate",
+        "exam_code": "1z0-1067-21"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Cloud Infrastructure 2020 Architect Associate",
+        "exam_code": "1z0-1072-20"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Cloud Infrastructure 2021 Architect Associate",
+        "exam_code": "1z0-1072-21"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Cloud Infrastructure 2022 Architect Associate",
+        "exam_code": "1z0-1072-22"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Cloud Infrastructure 2023 Architect Associate",
+        "exam_code": "1z0-1072-23"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Inventory Cloud 2020 Implementation Essentials",
+        "exam_code": "1z0-1073-20"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle SCM Transportation and Global Trade Management Cloud 2020 Implementation Essentials",
+        "exam_code": "1z0-1079-20"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Planning 2020 Implementation Essentials",
+        "exam_code": "1z0-1080-20"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Financial Consolidation and Close 2020 Implementation Essentials",
+        "exam_code": "1z0-1081-20"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Financial Consolidation and Close 2023 Implementation Professional",
+        "exam_code": "1z0-1081-23"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Cloud Infrastructure Developer 2020 Associate",
+        "exam_code": "1z0-1084-20"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Cloud Infrastructure Developer 2021 Associate",
+        "exam_code": "1z0-1084-21"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Cloud Infrastructure Foundations 2020 Associate",
+        "exam_code": "1z0-1085-20"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Enterprise Data Management Cloud 2022 Implementation Professional",
+        "exam_code": "1z0-1086-22"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Account Reconciliation 2020 Implementation Essentials",
+        "exam_code": "1z0-1087-20"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": ": Oracle Utilities Meter Solution Cloud Service 2022 Implementation Professional",
+        "exam_code": "1z0-1091-22"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Base Database Services 2023 Professional",
+        "exam_code": "1z0-1093-23"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Cloud Database 2023 Migration and Integration Professional",
+        "exam_code": "1z0-1094-23"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Cloud Data Management 2022 Foundations Associate",
+        "exam_code": "1z0-1105-22"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle HCM Business Process Foundations Associate Rel 1",
+        "exam_code": "1z0-1106-1"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Redwood Application Developer Associate",
+        "exam_code": "1z0-1114-23"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle WebLogic Server 12c: Administration I",
+        "exam_code": "1z0-133"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle WebLogic Server 12c Advanced Administrator II",
+        "exam_code": "1z0-134"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Database 11g Program with PLSQL",
+        "exam_code": "1z0-144"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Database 11g Advanced PLSQL",
+        "exam_code": "1z0-146"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Database 12c Advanced PLSQL",
+        "exam_code": "1z0-148"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Database Program with PL/SQL",
+        "exam_code": "1z0-149"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Fusion Middleware 11g Build Applications with Oracle Forms",
+        "exam_code": "1z0-151"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Database Cloud Service",
+        "exam_code": "1z0-160"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Java Cloud Service",
+        "exam_code": "1z0-161"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle EBS R12 Install Patch and Maintain Applications",
+        "exam_code": "1z0-238"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Taleo Recruiting Cloud Service 2016 Implementation Essentials",
+        "exam_code": "1z0-324"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-325: Oracle RightNow Cloud Service 2016 Implementation Essentials",
+        "exam_code": "1z0-325"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-327: Oracle Fusion Procurement Cloud Service 2016 Implementation Essentials",
+        "exam_code": "1z0-327"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-329: Oracle Fusion HCM Base Cloud Service 2016 Implementation Essentials",
+        "exam_code": "1z0-329"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-330: Oracle Fusion Workforce Compensation Cloud Service 2016 Implementation Essentials",
+        "exam_code": "1z0-330"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-331: Oracle Fusion Talent Management Base Cloud Service 2016 Implementation Essentials",
+        "exam_code": "1z0-331"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-337: Oracle Infrastructure as a Service Cloud 2017 Implementation Essentials",
+        "exam_code": "1z0-337"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-338: Oracle Exadata Database Machine and Cloud Service 2017 Implementation Essentials",
+        "exam_code": "1z0-338"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-342: JD Edwards EnterpriseOne Financial Management 9.2 Implementation Essentials",
+        "exam_code": "1z0-342"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-343: JD Edwards (JDE) EnterpriseOne 9 Projects Essentials",
+        "exam_code": "1z0-343"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-344: JD Edwards EnterpriseOne Configurable Network Computing 9.2 Implementation Essentials",
+        "exam_code": "1z0-344"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-347: Oracle Order Management Cloud 2017 Implementation Essentials",
+        "exam_code": "1z0-347"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-348: Oracle Manufacturing Cloud 2017 Implementation Essentials",
+        "exam_code": "1z0-348"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-349: Oracle Eloqua Marketing Cloud Service 2017 Implementation Essentials",
+        "exam_code": "1z0-349"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-404: Oracle Communications Session Border Controller 7 Basic Implementation Essentials",
+        "exam_code": "1z0-404"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-416: PeopleSoft 9.2 Human Resources Essentials",
+        "exam_code": "1z0-416"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-417: Oracle Database Performance and Tuning Essentials 2015",
+        "exam_code": "1z0-417"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-419: Oracle Application Development Framework 12c Essentials",
+        "exam_code": "1z0-419"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-429: Oracle FS1 Series Systems Implementation Essentials",
+        "exam_code": "1z0-429"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-432: Oracle Real Application Clusters 12c Essentials",
+        "exam_code": "1z0-432"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-434: Oracle SOA Suite 12c Essentials",
+        "exam_code": "1z0-434"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-435: Oracle Business Process Management Suite 12c Essentials",
+        "exam_code": "1z0-435"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-436: Oracle BigMachines CPQ Cloud Service 2016 Implementation Essentials",
+        "exam_code": "1z0-436"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-439: Primavera Unifier Cloud Service 2016 Implementation Essentials",
+        "exam_code": "1z0-439"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-443: Oracle Taleo Learn Cloud Service 2016 Implementation Essentials",
+        "exam_code": "1z0-443"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-447: Oracle GoldenGate 12c Implementation Essentials",
+        "exam_code": "1z0-447"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-448: Oracle Data Integrator 12c Essentials",
+        "exam_code": "1z0-448"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-449: Oracle Big Data 2016 Implementation Essentials",
+        "exam_code": "1z0-449"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-457: Oracle Enterprise Manager 12c Essentials",
+        "exam_code": "1z0-457"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-477: Oracle Responsys Marketing Platform Cloud Service 2017 Implementation Essentials",
+        "exam_code": "1z0-477"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-479: Oracle Access Management Suite Plus 11g Essentials",
+        "exam_code": "1z0-479"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-481: Oracle GoldenGate 11g Certified Implementation Essentials",
+        "exam_code": "1z0-481"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-485: Oracle Exadata Database Machine 2014 Implementation Essentials",
+        "exam_code": "1z0-485"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-493: Oracle Communications Order and Service Management Server 7 Implementation Essentials",
+        "exam_code": "1z0-493"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-497: Oracle Database 12c Essentials",
+        "exam_code": "1z0-497"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-499: Oracle ZFS Storage Appliance 2017 Implementation Essentials",
+        "exam_code": "1z0-499"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-500: Oracle Management Cloud 2017 Implementation Essentials",
+        "exam_code": "1z0-500"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-517: Oracle EBS R12.1 Payables Essentials",
+        "exam_code": "1z0-517"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-518: Oracle EBS R12.1 Receivables Essentials",
+        "exam_code": "1z0-518"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-519: Oracle EBS R12.1 Inventory Essentials",
+        "exam_code": "1z0-519"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-520: Oracle EBS R12.1 Purchasing Essentials",
+        "exam_code": "1z0-520"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-522: JD Edwards EnterpriseOne 9 Financial Management Essentials",
+        "exam_code": "1z0-522"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-531: Oracle Essbase 11 Essentials",
+        "exam_code": "1z0-531"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-532: Oracle Hyperion Financial Management 11 Essentials",
+        "exam_code": "1z0-532"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-533: Oracle Hyperion Planning 11 Essentials",
+        "exam_code": "1z0-533"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-542: Oracle WebCenter Content 11g Essentials",
+        "exam_code": "1z0-542"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-548: Oracle E-Business Suite R12 Human Capital Management Essentials",
+        "exam_code": "1z0-548"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-574: Oracle IT Architecture Release 3 Essentials",
+        "exam_code": "1z0-574"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-580: Oracle Solaris 11 Installation and Configuration Essentials",
+        "exam_code": "1z0-580"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-588: Oracle Hyperion Data Relationship Management Essentials",
+        "exam_code": "1z0-588"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-590: Oracle VM 3.0 for x86 Essentials",
+        "exam_code": "1z0-590"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-591: Oracle Business Intelligence Foundation Suite 11g Essentials",
+        "exam_code": "1z0-591"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-595: Oracle Spatial 11g Essentials",
+        "exam_code": "1z0-595"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-599: Oracle WebLogic Server 12c Essentials",
+        "exam_code": "1z0-599"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-632: PeopleSoft PeopleTools 8.5x Implementation Essentials",
+        "exam_code": "1z0-632"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-750: Oracle Application Express 18: Developing Web Applications",
+        "exam_code": "1z0-750"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-803: Java SE 7 Programmer I",
+        "exam_code": "1z0-803"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-804: Java SE 7 Programmer II",
+        "exam_code": "1z0-804"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-807: Java EE 6 Enterprise Architect Certified Master",
+        "exam_code": "1z0-807"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-808: Java SE 8 Programmer Popular",
+        "exam_code": "1z0-808"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-809: Java SE 8 Programmer II",
+        "exam_code": "1z0-809"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-811: Java Foundations",
+        "exam_code": "1z0-811"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-816: Java SE 11 Programmer II",
+        "exam_code": "1z0-816"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-819: Java SE 11 Developer",
+        "exam_code": "1z0-819"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-820: Upgrade to Oracle Solaris 11 System Administrator",
+        "exam_code": "1z0-820"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-821: Oracle Solaris 11 System Administration",
+        "exam_code": "1z0-821"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-829: Java SE 17 Developer Popular",
+        "exam_code": "1z0-829"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-851: Java SE 6 Programmer Certified Professional",
+        "exam_code": "1z0-851"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-882: MySQL 5.6 Developer",
+        "exam_code": "1z0-882"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-883: MySQL 5.6 Database Administrator",
+        "exam_code": "1z0-883"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-888: MySQL 5.7 Database Administrator",
+        "exam_code": "1z0-888"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-895: Java EE 6 Enterprise JavaBeans Developer Certified Expert",
+        "exam_code": "1z0-895"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-897: Java EE 6 Web Services Developer Certified Expert",
+        "exam_code": "1z0-897"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-898: Java EE 6 Java Persistence API Developer Certified Expert",
+        "exam_code": "1z0-898"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-899: Java EE 6 Web Component Developer Certified Expert",
+        "exam_code": "1z0-899"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-900: Java EE 7 Application Developer",
+        "exam_code": "1z0-900"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-902: Oracle Exadata Database Machine X9M Implementation Essentials",
+        "exam_code": "1z0-902"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-908: MySQL 8.0 Database Administrator",
+        "exam_code": "1z0-908"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-915-1: MySQL HeatWave Implementation Associate Rel 1",
+        "exam_code": "1z0-915"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-931: Oracle Autonomous Database Cloud 2019 Specialist",
+        "exam_code": "1z0-931"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-931-20: Oracle Autonomous Database Cloud 2020 Specialist",
+        "exam_code": "1z0-931-20"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-931-23: Oracle Autonomous Database Cloud 2023 Professional",
+        "exam_code": "1z0-931-23"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-932: Oracle Cloud Infrastructure 2018 Architect Associate",
+        "exam_code": "1z0-932"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-961: Oracle Financials Cloud Payables 2017 Implementation Essentials",
+        "exam_code": "1z0-961"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "1z0-962: Oracle Financials Cloud Receivables 2017 Implementation Essentials",
+        "exam_code": "1z0-962"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Procurement Cloud 2017 Implementation Essentials",
+        "exam_code": "1z0-963"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Project Portfolio Management Cloud 2017 Implementation Essentials",
+        "exam_code": "1z0-964"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Global Human Resources Cloud 2017 Implementation Essentials",
+        "exam_code": "1z0-965"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": ": Oracle Talent Management Cloud 2017 Implementation Essentials",
+        "exam_code": "1z0-966"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Payroll Cloud 2017 Implementation Essentials",
+        "exam_code": "1z0-969"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Sales Cloud 2017 Implementation Essentials",
+        "exam_code": "1z0-970"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Enterprise Planning and Budgeting Cloud Service 2017 Implementation Essentials",
+        "exam_code": "1z0-982"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Engagement Cloud 2018 Implementation Essentials",
+        "exam_code": "1z0-993"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Cloud Infrastructure 2020 Architect Professional",
+        "exam_code": "1z0-997-20"
+    },
+    {
+        "vendor": "Oracle",
+        "exam_name": "Oracle Cloud Infrastructure 2022 Architect Professional",
+        "exam_code": "1z0-997-22"
+    },
+    {
+        "vendor": "PALO ALTO",
+        "exam_name": "Prisma Certified Cloud Security Engineer",
+        "exam_code": "PCCSE"
+    },
+    {
+        "vendor": "PALO ALTO",
+        "exam_name": "Palo Alto Networks Certified Cybersecurity Entry-level Technician",
+        "exam_code": "PCCET"
+    },
+    {
+        "vendor": "PALO ALTO",
+        "exam_name": "Palo Alto Networks Certified Network Security Administrator",
+        "exam_code": "PCNSA"
+    },
+    {
+        "vendor": "PALO ALTO",
+        "exam_name": "Palo Alto Networks Certified Network Security Engineer",
+        "exam_code": "PCNSE"
+    },
+    {
+        "vendor": "PALO ALTO",
+        "exam_name": "Palo Alto Networks Certified Software Firewall Engineer",
+        "exam_code": "PCSFE"
+    },
+    {
+        "vendor": "PALO ALTO",
+        "exam_name": "Palo Alto Networks Certified Security Automation Engineer",
+        "exam_code": "PCSAE"
+    },
+    {
+        "vendor": "PALO ALTO",
+        "exam_name": "Palo Alto Networks Certified Detection and Remediation Analyst",
+        "exam_code": "PCDRA"
+    },
+    {
+        "vendor": "SCRUM",
+        "exam_name": "PSM I: Professional Scrum Master I",
+        "exam_code": "PSM-1"
+    },
+    {
+        "vendor": "SCRUM",
+        "exam_name": "PSM II: Professional Scrum Master II",
+        "exam_code": "PSM-II"
+    },
+    {
+        "vendor": "SCRUM",
+        "exam_name": "PSPO I: Professional Scrum Product Owner",
+        "exam_code": "PSPO-I"
+    },
+    {
+        "vendor": "SCRUM",
+        "exam_name": "PSPO II: Professional Scrum Product Owner",
+        "exam_code": "PSPO-II"
+    },
+    {
+        "vendor": "Scrum Alliances",
+        "exam_name": "Certified Scrum Master",
+        "exam_code": "CSM"
+    },
+    {
+        "vendor": "SAP",
+        "exam_name": "SAPCertifiedAssociate-SAPActivateProjectManager",
+        "exam_code": "TIVATE13"
+    },
+    {
+        "vendor": "SAP",
+        "exam_name": "SAPCertifiedAssociate-SAPActivateProjectManager",
+        "exam_code": "C_ACTIVATE22"
+    },
+    {
+        "vendor": "SAP",
+        "exam_name": "SAPCertifiedApplicationAssociate-SAPAribaSourcing",
+        "exam_code": "C_ARSOR_2202"
+    },
+    {
+        "vendor": "SAP",
+        "exam_name": "SAPCertifiedDevelopmentAssociate-SAPIntegrationSuite",
+        "exam_code": "C_CPI_14"
+    },
+    {
+        "vendor": "SAP",
+        "exam_name": "SAPCertifiedAssociate-SAPFioriSystemAdministration",
+        "exam_code": "C_FIOAD_202"
+    },
+    {
+        "vendor": "SAP",
+        "exam_name": "SAPCertifiedTechnologyAssociate-SAPHANA2.0SPS05",
+        "exam_code": "C_HANATEC_17"
+    },
+    {
+        "vendor": "SAP",
+        "exam_name": "SAPCertifiedTechnologyAssociate-SAPHANA2.0SPS06",
+        "exam_code": "C_HANATEC_18"
+    },
+    {
+        "vendor": "SAP",
+        "exam_name": "SAPCertifiedAssociate-SAPHCMPayrollforSAPS/4HANA",
+        "exam_code": "C_HCMP_2311"
+    },
+    {
+        "vendor": "SAP",
+        "exam_name": "SAPCertifiedApplicationAssociate-SAPS/4HANACloud(public)-FinanceImplementation",
+        "exam_code": "C_S4CFI_2202"
+    },
+    {
+        "vendor": "SAP",
+        "exam_name": "SAPCertifiedAssociate-ExtendedWarehouseManagementwithSAPS/4HANA",
+        "exam_code": "C_S4EWM_2020"
+    },
+    {
+        "vendor": "SAP",
+        "exam_name": "SAPCertifiedAssociate-TransportationManagementinSAPS/4HANA",
+        "exam_code": "C_S4TM_2020"
+    },
+    {
+        "vendor": "SAP",
+        "exam_name": "SAPCertifiedApplicationAssociate-SAPAnalyticsCloud",
+        "exam_code": "C_SAC_2221"
+    },
+    {
+        "vendor": "SAP",
+        "exam_name": "SAPCertifiedTechnologyAssociate-SAPSystemSecurityandAuthorizations",
+        "exam_code": "C_SECAUTH_20"
+    },
+    {
+        "vendor": "SAP",
+        "exam_name": "SAPCertifiedTechnologyConsultant-SAPS/4HANASystemAdministration",
+        "exam_code": "C_TADM_23"
+    },
+    {
+        "vendor": "SAP",
+        "exam_name": "SAPCertifiedDevelopmentAssociate-ABAPwithSAPNetWeaver7.50",
+        "exam_code": "C_TAW12_750"
+    },
+    {
+        "vendor": "SAP",
+        "exam_name": "SAPCertifiedApplicationAssociate-FinancialAccountingwithSAPERP6.0EHP4",
+        "exam_code": "C_TFIN52_64"
+    },
+    {
+        "vendor": "SAP",
+        "exam_name": "SAPCertifiedApplicationAssociate-FinancialAccountingwithSAPERP6.0EhP7",
+        "exam_code": "C_TFIN52_67"
+    },
+    {
+        "vendor": "SAP",
+        "exam_name": "SAPCertifiedApplicationAssociate-SAPHCMwithERP6.0EHP7",
+        "exam_code": "C_THR12_67"
+    },
+    {
+        "vendor": "SAP",
+        "exam_name": "SAPCertifiedApplicationAssociate-SAPSuccessFactorsEmployeeCentralCore1H/2022",
+        "exam_code": "C_THR81_2205"
+    },
+    {
+        "vendor": "SAP",
+        "exam_name": "SAPCertifiedApplicationAssociate-SAPMaintenance&RepairwithERP6.0EHP7",
+        "exam_code": "C_TPLM30_67"
+    },
+    {
+        "vendor": "SAP",
+        "exam_name": "SAPCertifiedApplicationAssociate\u2013SAPS/4HANAAssetManagement",
+        "exam_code": "C_TS413_1909"
+    },
+    {
+        "vendor": "SAP",
+        "exam_name": "SAPCertifiedApplicationAssociate-SAPS/4HANAAssetManagement",
+        "exam_code": "C_TS413_2021"
+    },
+    {
+        "vendor": "SAP",
+        "exam_name": "SAPCertifiedApplicationAssociate-SAPS/4HANASourcingandProcurement-UpskillingforERPExperts",
+        "exam_code": "C_TS450_2020"
+    },
+    {
+        "vendor": "SAP",
+        "exam_name": "SAPCertifiedApplicationAssociate-SAPS/4HANASourcingandProcurement",
+        "exam_code": "C_TS452_2021"
+    },
+    {
+        "vendor": "SAP",
+        "exam_name": "SAPCertifiedAssociate-SAPS/4HANASourcingandProcurement",
+        "exam_code": "C_TS452_2022"
+    },
+    {
+        "vendor": "SAP",
+        "exam_name": "SAPCertifiedApplicationAssociate\u2013SAPS/4HANASales2020",
+        "exam_code": "C_TS462_2020"
+    },
+    {
+        "vendor": "SAP",
+        "exam_name": "SAPCertifiedApplicationAssociate\u2013SAPS/4HANASales2021",
+        "exam_code": "C_TS462_2021"
+    },
+    {
+        "vendor": "SAP",
+        "exam_name": "SAPCertifiedApplicationAssociate-SAPS/4HANASales2022",
+        "exam_code": "C_TS462_2022"
+    },
+    {
+        "vendor": "SAP",
+        "exam_name": "SAPCertifiedApplicationAssociate-SAPS/4HANAforFinancialAccountingAssociates(SAPS/4HANA2020)",
+        "exam_code": "C_TS4FI_2020"
+    },
+    {
+        "vendor": "SAP",
+        "exam_name": "SAPCertifiedApplicationAssociate-ProcurementwithSAPERP6.0EhP7",
+        "exam_code": "C_TSCM52_67"
+    },
+    {
+        "vendor": "SAP",
+        "exam_name": "SAPCertifiedApplicationAssociate\u2013SalesandDistribution,ERP6.0EhP7",
+        "exam_code": "C_TSCM62_67"
+    },
+    {
+        "vendor": "SAP",
+        "exam_name": "SAPCertifiedSpecialist-SAPActivateforCloudSolutionsProjectManager",
+        "exam_code": "E_ACTCLD_21"
+    },
+    {
+        "vendor": "SAP",
+        "exam_name": "SAPCertifiedDevelopmentSpecialist-ABAPforSAPHANA2.0",
+        "exam_code": "E_HANAAW_17"
+    },
+    {
+        "vendor": "SAP",
+        "exam_name": "SAPCertifiedSpecialist-SAPS/4HANACloud,privateeditionimplementationwithSAPActivate",
+        "exam_code": "E_S4CPE_2023"
+    },
+    {
+        "vendor": "SAP",
+        "exam_name": "SAPCertifiedSpecialist-SAPS/4HANAConversionandSAPSystemUpgrade",
+        "exam_code": "E_S4HCON2023"
+    },
+    {
+        "vendor": "SAP",
+        "exam_name": "SAPCertifiedApplicationProfessional-FinancialsinSAPS/4HANAforSAPERPFinanceExperts(SAPS/4HANA2021)",
+        "exam_code": "P_S4FIN_2021"
+    },
+    {
+        "vendor": "ServicesNow",
+        "exam_name": "CADServiceNowCertifiedApplicationDeveloperPopular",
+        "exam_code": "CAD"
+    },
+    {
+        "vendor": "ServicesNow",
+        "exam_name": "CertifiedApplicationSpecialist\u2013PerformanceAnalytics",
+        "exam_code": "CAS-PA"
+    },
+    {
+        "vendor": "ServicesNow",
+        "exam_name": "CertifiedImplementationSpecialist-ApplicationPortfolioManagement",
+        "exam_code": "CIS-APM"
+    },
+    {
+        "vendor": "ServicesNow",
+        "exam_name": "CertifiedImplementationSpecialist-CloudProvisioningandGovernance",
+        "exam_code": "CIS-CPG"
+    },
+    {
+        "vendor": "ServicesNow",
+        "exam_name": "CertifiedImplementationSpecialist-CustomerServiceManagementPopular",
+        "exam_code": "CIS-CSM"
+    },
+    {
+        "vendor": "ServicesNow",
+        "exam_name": "DiscoveryCertifiedImplementationSpecialist-Discovery",
+        "exam_code": "CIS"
+    },
+    {
+        "vendor": "ServicesNow",
+        "exam_name": "CertifiedImplementationSpecialist-EventMangement",
+        "exam_code": "CIS-EM"
+    },
+    {
+        "vendor": "ServicesNow",
+        "exam_name": "CertifiedImplementationSpecialist-FieldServiceMangement",
+        "exam_code": "CIS-FSM"
+    },
+    {
+        "vendor": "ServicesNow",
+        "exam_name": "CertifiedImplementationSpecialist\u2013HardwareAssetManagement",
+        "exam_code": "CIS-HAM"
+    },
+    {
+        "vendor": "ServicesNow",
+        "exam_name": "CertifiedImplementationSpecialist-HumanResourcesPopular",
+        "exam_code": "CIS-HR"
+    },
+    {
+        "vendor": "ServicesNow",
+        "exam_name": "CertifiedImplementationSpecialist-ITServiceManagementPopular",
+        "exam_code": "CIS-ITSM"
+    },
+    {
+        "vendor": "ServicesNow",
+        "exam_name": "CertifiedImplementationSpecialist-ProjectPortfolioManagement",
+        "exam_code": "CIS-PPM"
+    },
+    {
+        "vendor": "ServicesNow",
+        "exam_name": "CertifiedImplementationSpecialist-RiskandCompliancePopular",
+        "exam_code": "CIS-RC"
+    },
+    {
+        "vendor": "ServicesNow",
+        "exam_name": "CertifiedImplementationSpecialist-SoftwareAssetManagement",
+        "exam_code": "CIS-SAM"
+    },
+    {
+        "vendor": "ServicesNow",
+        "exam_name": "CertifiedImplementationSpecialist-SecurityIncidentResponse",
+        "exam_code": "CIS-SIR"
+    },
+    {
+        "vendor": "ServicesNow",
+        "exam_name": "CertifiedImplementationSpecialist-ServiceMapping",
+        "exam_code": "CIS-SM"
+    },
+    {
+        "vendor": "ServicesNow",
+        "exam_name": "CertifiedImplementationSpecialist-VulnerabilityResponse",
+        "exam_code": "CIS-VR"
+    },
+    {
+        "vendor": "ServicesNow",
+        "exam_name": "CertifiedImplementationSpecialist-VendorRiskManagement",
+        "exam_code": "CIS-VRM"
+    },
+    {
+        "vendor": "ServicesNow",
+        "exam_name": "ServiceNowCertifiedSystemAdministrator",
+        "exam_code": "CSA"
+    },
+    {
+        "vendor": "Splunk",
+        "exam_name": "SplunkCoreCertifiedUserPopular",
+        "exam_code": "SPLK-1001"
+    },
+    {
+        "vendor": "Splunk",
+        "exam_name": "SplunkCoreCertifiedPowerUserPopular",
+        "exam_code": "SPLK-1002"
+    },
+    {
+        "vendor": "Splunk",
+        "exam_name": "SplunkEnterpriseCertifiedAdminPopular",
+        "exam_code": "SPLK-1003"
+    },
+    {
+        "vendor": "Splunk",
+        "exam_name": "SplunkCoreCertifiedAdvancedPowerUser",
+        "exam_code": "SPLK-1004"
+    },
+    {
+        "vendor": "Splunk",
+        "exam_name": "SplunkCloudCertifiedAdmin",
+        "exam_code": "SPLK-1005"
+    },
+    {
+        "vendor": "Splunk",
+        "exam_name": "SplunkCertifiedDeveloper",
+        "exam_code": "SPLK-2001"
+    },
+    {
+        "vendor": "Splunk",
+        "exam_name": "SplunkEnterpriseCertifiedArchitect",
+        "exam_code": "SPLK-2002"
+    },
+    {
+        "vendor": "Splunk",
+        "exam_name": "SplunkSOARCertifiedAutomationDeveloper",
+        "exam_code": "SPLK-2003"
+    },
+    {
+        "vendor": "Splunk",
+        "exam_name": "SplunkEnterpriseSecurityCertifiedAdmin",
+        "exam_code": "SPLK-3001"
+    },
+    {
+        "vendor": "Splunk",
+        "exam_name": "SplunkITServiceIntelligenceCertifiedAdmin",
+        "exam_code": "SPLK-3002"
+    },
+    {
+        "vendor": "Splunk",
+        "exam_name": "SplunkCoreCertifiedConsultant",
+        "exam_code": "SPLK-3003"
+    },
+    {
+        "vendor": "Splunk",
+        "exam_name": "SplunkO11yCloudCertifiedMetricsUser",
+        "exam_code": "SPLK-4001"
+    },
+    {
+        "vendor": "Splunk",
+        "exam_name": "SplunkCertifiedCybersecurityDefenseA",
+        "exam_code": "SPLK-5001"
+    },
+    {
+        "vendor": "Prince 2",
+        "exam_name": "PRINCE2 Agile Foundation: PRINCE2 Agile Foundation",
+         "exam_code": ""
+    },
+    {
+        "vendor": "Prince 2",
+        "exam_name": "PRINCE2-Foundation: PRINCE2 Foundation Popular",
+         "exam_code": ""
+    },
+    {
+        "vendor": "Prince 2",
+        "exam_name": "PRINCE2-Practitioner: PRINCE2 Practitioner Edition 7",
+         "exam_code": ""
+    },
+    {
+        "vendor": "Prince 2",
+        "exam_name": "PRINCE2-Practitioner Edition 6: PRINCE2 Practitioner Edition 6",
+         "exam_code": ""
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "AssociateVMwareDataCenterVirtualization",
+        "exam_code": "1V0-21.20"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "AssociateVMwareCloudManagementAutomation",
+        "exam_code": "1V0-31.21"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "AssociateVMwareNetworkVirtualization",
+        "exam_code": "1V0-41.20"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "VMwareCertifiedAssociate6-DataCenterVirtualizationFundamentals",
+        "exam_code": "1V0-601"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "CertificationVMwareCertifiedAssociate6-CloudManagementandAutomationFundamentals",
+        "exam_code": "1V0-603"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "VMwareCertifiedAssociate6-DesktopandMobilityFundamentals",
+        "exam_code": "1V0-605"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "VMwareCertifiedAssociate6-NetworkVisualizationFundamentalsExam",
+        "exam_code": "1V0-642"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "VMwareCertifiedAssociate-DigitalBusinessTransformation(VCA-DBT)",
+        "exam_code": "1V0-701"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "AssociateVMwareApplicationModernization",
+        "exam_code": "1V0-71.21"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "AssociateVMwareSecurity",
+        "exam_code": "1V0-81.20"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "VMwarevSphere6.7FoundationsExam2019",
+        "exam_code": "2V0-01.19"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "ProfessionalvSphere6.7Exam2019",
+        "exam_code": "2V0-21.19"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "ProfessionalvSphere6.7DeltaExam2019",
+        "exam_code": "2V0-21.19D"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "PSEProfessionalvSphere6.7Exam2019",
+        "exam_code": "2V0-21.19"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "ProfessionalVMwarevSphere7.x",
+        "exam_code": "2V0-21.20"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "VMwarevSphere8.xProfessionalPopular",
+        "exam_code": "2V0-21.23"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "ProfessionalVMwarevRealizeAutomation7.6",
+        "exam_code": "2V0-31.19"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "ProfessionalVMwarevRealizeAutomation8.1",
+        "exam_code": "2V0-31.20"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "ProfessionalVMwarevRealizeAutomation8.3",
+        "exam_code": "2V0-31.21"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "VMwareAriaAutomation8.10Professional",
+        "exam_code": "2V0-31.23"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "VMwareCloudProfessional",
+        "exam_code": "2V0-33.22"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "VMwareProfessionalNSX-TDataCenter2.4",
+        "exam_code": "2V0-41.19"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "ProfessionalVMwareNSX-TDataCenter",
+        "exam_code": "2V0-41.20"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "VMwareNSX4.xProfessional",
+        "exam_code": "2V0-41.23"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "VMwareProfessionalHorizon7.7Exam2019",
+        "exam_code": "2V0-51.19"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "ProfessionalVMwareHorizon8.x",
+        "exam_code": "2V0-51.21"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "VMwareHorizon8.xProfessional",
+        "exam_code": "2V0-51.23"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "vSphere6.5Foundations",
+        "exam_code": "2V0-602"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "VMwareProfessionalWorkspaceONEExam2019",
+        "exam_code": "2V0-61.19"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "VMwareProfessionalWorkspaceONEExam",
+        "exam_code": "2V0-61.20"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "vSphere6Foundations",
+        "exam_code": "2V0-620"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "VMwareCertifiedProfessional6-DataCenterVirtualization",
+        "exam_code": "2V0-621"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "VMwareCertifiedProfessional6-DataCenterVirtualizationDelta",
+        "exam_code": "2V0-621D"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "VMwareCertifiedProfessional6.5-DataCenterVirtualization",
+        "exam_code": "2V0-622"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "ProfessionalVMwareWorkspaceONE21.X",
+        "exam_code": "2V0-62.21"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "VMwareWorkspaceONE22.XProfessional",
+        "exam_code": "2V0-62.23"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "VMwareCertifiedProfessional6.5-DataCenterVirtualizationDelta",
+        "exam_code": "2V0-622D"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "VMwareCertifiedProfessional6-CloudManagementandAutomationBeta",
+        "exam_code": "2V0-631"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "VMwareCertifiedProfessional6-NetworkVirtualization(NSXv6.2)",
+        "exam_code": "2V0-642"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "VMwareCertifiedProfessional6-DesktopandMobilityBeta",
+        "exam_code": "2V0-651"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "ProfessionalVMwareApplicationModernization",
+        "exam_code": "2V0-71.21"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "VMwareTanzuforKubernetesOperationsProfessional",
+        "exam_code": "2V0-71.23"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "ProfessionalDevelopVMwareSpring",
+        "exam_code": "2V0-72.22"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "VMwareCertifiedProfessional7-CloudManagementandAutomation",
+        "exam_code": "2V0-731"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "VMwareCertifiedProfessional7-DesktopandMobilityExam",
+        "exam_code": "2V0-751"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "ProfessionalVMwareSecurity",
+        "exam_code": "2V0-81.20"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "VMwareSpecialistvSAN6.xExam",
+        "exam_code": "2VB-601"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "VMwareSpecialistvRealizeOperations6.xExam",
+        "exam_code": "2VB-602"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "AdvancedDesignVMwarevSphere7.x",
+        "exam_code": "3V0-21.21"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "AdvancedDesignVMwareCloudManagementandAutomation",
+        "exam_code": "3V0-32.21"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "AdvancedDesignVMwareNSX-TDataCenter",
+        "exam_code": "3V0-42.20"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "VMwareCertifiedAdvancedProfessional6-DataCenterVirtualizationDesign",
+        "exam_code": "3V0-622"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "VMwareCertifiedAdvancedProfessional6.5-DataCenterVirtualizationDesign",
+        "exam_code": "3V0-624"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "VMwareCertifiedAdvancedProfessional7-CloudManagementandAutomationDesignExam",
+        "exam_code": "3V0-732"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "VMwareCertifiedAdvancedProfessional7-DesktopandMobilityDesign",
+        "exam_code": "3V0-752"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "VMwareCloudonAWSMasterSpecialist",
+        "exam_code": "5V0-11.21"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "VMwarevSAN6.7SpecialistExam2019",
+        "exam_code": "5V0-21.19"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "VMwareHCIMasterSpecialist",
+        "exam_code": "5V0-21.20"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "VMwareHCIMasterSpecialist",
+        "exam_code": "5V0-21.21"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "VMwarevSAN6.7Specialist",
+        "exam_code": "5V0-22.21"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "VMwarevSANSpecialistv2",
+        "exam_code": "5V0-22.23"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "VMwarevSpherewithTanzuSpecialist",
+        "exam_code": "5V0-23.20"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "VMwareCloudonAWSManagementExam2019",
+        "exam_code": "5V0-31.19"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "VMwareCloudFoundationSpecialist",
+        "exam_code": "5V0-31.20"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "VMwareCloudFoundationSpecialist(v2)",
+        "exam_code": "5V0-31.22"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "VMwareCloudProviderSpecialistExam2019",
+        "exam_code": "5V0-32.19"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "VMwareCloudProviderSpecialist",
+        "exam_code": "5V0-32.21"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "VMwareCloudonAWS-MasterServicesCompetencySpecialistExam2019",
+        "exam_code": "5V0-33.19"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "VMwarevRealizeOperations7.5",
+        "exam_code": "5V0-34.19"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "VMwarevRealizeOperationsSpecialist",
+        "exam_code": "5V0-35.21"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "VMwareSD-WANDesignandDeploySkills",
+        "exam_code": "5V0-42.21"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "WorkspaceONEUnifiedEndpointManagementSpecialist",
+        "exam_code": "5V0-61.19"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "VMwareWorkspaceONE21.XAdvancedIntegrationSpecialist",
+        "exam_code": "5V0-61.22"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "VMwareWorkspaceONEDesignandAdvancedIntegrationSpecialist",
+        "exam_code": "5V0-62.19"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "VMwareWorkspaceONE21.XUEMTroubleshootingSpecialist",
+        "exam_code": "5V0-62.22"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "VMwareCarbonBlackPortfolioSkills",
+        "exam_code": "5V0-91.20"
+    },
+    {
+        "vendor": "VMware",
+        "exam_name": "VMwareCarbonBlackCloudEndpointStandardSkills",
+        "exam_code": "5V0-93.22"
+    },
+    {
+        "vendor": "Tableau",
+        "exam_name": "Tableau Server Certified Associate",
+        "exam_code": "SCA-C01"
+    },
+    {
+        "vendor": "Tableau",
+        "exam_name": "Tableau Certified Data Analyst",
+        "exam_code": "TDA-C01"
+    },
+    {
+        "vendor": "Tableau",
+        "exam_name": "Tableau Desktop Specialist",
+        "exam_code": "TDS-C01"
+    },
+    {
+        "vendor": "Juniper",
+        "exam_name": "JuniperNetworksCertifiedAssociateJunos(JNCIA-Junos)",
+        "exam_code": "JN0-102"
+    },
+    {
+        "vendor": "Juniper",
+        "exam_name": "Junos,Associate(JNCIA-Junos)",
+        "exam_code": "JN0-103"
+    },
+    {
+        "vendor": "Juniper",
+        "exam_name": "Junos,Associate(JNCIA-Junos)",
+        "exam_code": "JN0-104"
+    },
+    {
+        "vendor": "Juniper",
+        "exam_name": "Junos,Associate(JNCIA-Junos)Popular",
+        "exam_code": "JN0-105"
+    },
+    {
+        "vendor": "Juniper",
+        "exam_name": "JuniperNetworksCertifiedDesignAssociate(JNCDA)",
+        "exam_code": "JN0-1100"
+    },
+    {
+        "vendor": "Juniper",
+        "exam_name": "JuniperNetworksCertifiedDesignAssociate(JNCDA)",
+        "exam_code": "JN0-1101"
+    },
+    {
+        "vendor": "Juniper",
+        "exam_name": "JuniperNetworksCertifiedDesignSpecialistDataCenter(JNCDS-DC)",
+        "exam_code": "JN0-1300"
+    },
+    {
+        "vendor": "Juniper",
+        "exam_name": "DataCenterDesign,Specialist(JNCDS-DC)",
+        "exam_code": "JN0-1301"
+    },
+    {
+        "vendor": "Juniper",
+        "exam_name": "DataCenterDesign,Specialist(JNCDS-DC)",
+        "exam_code": "JN0-1302"
+    },
+    {
+        "vendor": "Juniper",
+        "exam_name": "SecurityDesignSpecialist(JNCDS-SEC)",
+        "exam_code": "JN0-1330"
+    },
+    {
+        "vendor": "Juniper",
+        "exam_name": "SecurityDesign,Specialist(JNCDS-SEC)",
+        "exam_code": "JN0-1331"
+    },
+    {
+        "vendor": "Juniper",
+        "exam_name": "Cloud Associate",
+        "exam_code": "JN0-210"
+    },
+    {
+        "vendor": "Juniper",
+        "exam_name": "Cloud, Associate",
+        "exam_code": "JN0-211"
+    },
+    {
+        "vendor": "Juniper",
+        "exam_name": "Cloud, Associate (JNCIA-Cloud)",
+        "exam_code": "JN0-213"
+    },
+    {
+        "vendor": "Juniper",
+        "exam_name": "Automation and DevOps, Associate (JNCIA-DevOps)",
+        "exam_code": "JN0-220"
+    },
+    {
+        "vendor": "Juniper",
+        "exam_name": "Automation and DevOps, Associate",
+        "exam_code": "JN0-221"
+    },
+    {
+        "vendor": "Juniper",
+        "exam_name": "Automation and DevOps, Associate (JNCIA-DevOps)",
+        "exam_code": "JN0-223"
+    },
+    {
+        "vendor": "Juniper",
+        "exam_name": "Security, Associate (JNCIA-SEC)",
+        "exam_code": "JN0-230"
+    },
+    {
+        "vendor": "Juniper",
+        "exam_name": "Security, Associate (JNCIA-SEC)",
+        "exam_code": "JN0-231"
+    },
+    {
+        "vendor": "Juniper",
+        "exam_name": "Mist AI, Associate (JNCIA-MistAI)",
+        "exam_code": "JN0-250"
+    },
+    {
+        "vendor": "Juniper",
+        "exam_name": "Mist AI, Associate (JNCIA-MistAI)",
+        "exam_code": "JN0-251"
+    },
+    {
+        "vendor": "Juniper",
+        "exam_name": "Mist AI, Associate (JNCIA-MistAI)",
+        "exam_code": "JN0-252"
+    },
+    {
+        "vendor": "Juniper",
+        "exam_name": "SecuritySpecialist(JNCIS-SEC)",
+        "exam_code": "JN0-333"
+    },
+    {
+        "vendor": "Juniper",
+        "exam_name": "Security,Specialist",
+        "exam_code": "JN0-334"
+    },
+    {
+        "vendor": "Juniper",
+        "exam_name": "Security,Specialist(JNCIS-SEC)",
+        "exam_code": "JN0-335"
+    },
+    {
+        "vendor": "Juniper",
+        "exam_name": "EnterpriseRoutingandSwitching,Specialist(JNCIS-ENT)",
+        "exam_code": "JN0-347"
+    },
+    {
+        "vendor": "Juniper",
+        "exam_name": "EnterpriseRoutingandSwitching,Specialist",
+        "exam_code": "JN0-348"
+    },
+    {
+        "vendor": "Juniper",
+        "exam_name": "EnterpriseRoutingandSwitching,Specialist(JNCIS-ENT)",
+        "exam_code": "JN0-349"
+    },
+    {
+        "vendor": "Juniper",
+        "exam_name": "EnterpriseRoutingandSwitching,Specialist(JNCIS-ENT)Popular",
+        "exam_code": "JN0-351"
+    },
+    {
+        "vendor": "Juniper",
+        "exam_name": "JuniperNetworksCertifiedInternetSpecialistSP(JNCIS-SP)",
+        "exam_code": "JN0-360"
+    },
+    {
+        "vendor": "Juniper",
+        "exam_name": "ServiceProviderRoutingandSwitchingSpecialist(JNCIS-SP)",
+        "exam_code": "JN0-361"
+    },
+    {
+        "vendor": "Juniper",
+        "exam_name": "ServiceProviderRoutingandSwitching,Specialist",
+        "exam_code": "JN0-362"
+    },
+    {
+        "vendor": "Juniper",
+        "exam_name": "ServiceProviderRoutingandSwitching,Specialist(JNCIS-SP)Popular",
+        "exam_code": "JN0-363"
+    },
+    {
+        "vendor": "Juniper",
+        "exam_name": "JuniperNetworks-SDNandAutomationSpecialist",
+        "exam_code": "JN0-410"
+    },
+    {
+        "vendor": "Juniper",
+        "exam_name": "EnterpriseCloudSpecialist",
+        "exam_code": "JN0-411"
+    },
+    {
+        "vendor": "Juniper",
+        "exam_name": "Cloud,Specialist(JNCIS-Cloud)",
+        "exam_code": "JN0-412"
+    },
+    {
+        "vendor": "Juniper",
+        "exam_name": "AutomationandDevOpsSpecialist",
+        "exam_code": "JN0-420"
+    },
+    {
+        "vendor": "Juniper",
+        "exam_name": "MistAI,Specialist(JNCIS-MistAI)",
+        "exam_code": "JN0-451"
+    },
+    {
+        "vendor": "Juniper",
+        "exam_name": "JuniperNetworksCertifiedSpecialistFWV(JNCIS-FWV)",
+        "exam_code": "JN0-533"
+    },
+    {
+        "vendor": "Juniper",
+        "exam_name": "JuniperNetworksCertifiedProfessionalSecurity(JNCIP-SEC)",
+        "exam_code": "JN0-633"
+    },
+    {
+        "vendor": "Juniper",
+        "exam_name": "SecurityProfessional(JNCIP-SEC)",
+        "exam_code": "JN0-634"
+    },
+    {
+        "vendor": "Juniper",
+        "exam_name": "Security,Professional",
+        "exam_code": "JN0-635"
+    },
+    {
+        "vendor": "Juniper",
+        "exam_name": "JuniperNetworksCertifiedProfessionalEnterpriseRoutingandSwitching(JNCIP-ENT)",
+        "exam_code": "JN0-643"
+    },
+    {
+        "vendor": "Juniper",
+        "exam_name": "EnterpriseRoutingandSwitchingProfessional(JNCIP-ENT)",
+        "exam_code": "JN0-647"
+    },
+    {
+        "vendor": "Juniper",
+        "exam_name": "EnterpriseRoutingandSwitching,Professional(JNCIP-ENT)",
+        "exam_code": "JN0-648"
+    },
+    {
+        "vendor": "Juniper",
+        "exam_name": "EnterpriseRoutingandSwitching,Professional(JNCIP-ENT)",
+        "exam_code": "JN0-649"
+    },
+    {
+        "vendor": "Juniper",
+        "exam_name": "JuniperNetworksCertifiedInternetProfessionalSP(JNCIP-SP)",
+        "exam_code": "JN0-660"
+    },
+    {
+        "vendor": "Juniper",
+        "exam_name": "ServiceProviderRoutingandSwitching",
+        "exam_code": "JN0-661"
+    },
+    {
+        "vendor": "Juniper",
+        "exam_name": "ServiceProviderRoutingandSwitching,Professional",
+        "exam_code": "JN0-662"
+    },
+    {
+        "vendor": "Juniper",
+        "exam_name": "ServiceProviderRoutingandSwitching,Professional(JNCIP-SP)",
+        "exam_code": "JN0-663"
+    },
+    {
+        "vendor": "Juniper",
+        "exam_name": "ServiceProviderRoutingandSwitching,Professional(JNCIP-SP)Popular",
+        "exam_code": "JN0-664"
+    },
+    {
+        "vendor": "Juniper",
+        "exam_name": "DataCenterProfessional",
+        "exam_code": "JN0-680"
+    },
+    {
+        "vendor": "Juniper",
+        "exam_name": "NewDataCenter,Professional",
+        "exam_code": "JN0-681"
+    },
+    {
+        "vendor": "Juniper",
+        "exam_name": "DataCenter,Professional(JNCIP-DC)",
+        "exam_code": "JN0-682"
+    },
+    {
+        "vendor": "Juniper",
+        "exam_name": "JuniperNetworksCertifiedSupportProfessionalSecurity(JNCSP-SEC",
+        "exam_code": "JN0-696"
+    },
+    {
+        "vendor": "Check Point",
+        "exam_name": "CheckPointCertifiedSecurityPrinciplesAssociate(CCSPA)",
+        "exam_code": "156-110"
+    },
+    {
+        "vendor": "Check Point",
+        "exam_name": "CheckPointCertifiedSecurityMaster",
+        "exam_code": "156-115.77"
+    },
+    {
+        "vendor": "Check Point",
+        "exam_name": "CheckPointCertifiedSecurityAdministrator",
+        "exam_code": "156-215.77"
+    },
+    {
+        "vendor": "Check Point",
+        "exam_name": "CheckPointCertifiedSecurityAdministrator(CCSAR80)",
+        "exam_code": "156-215.80"
+    },
+    {
+        "vendor": "Check Point",
+        "exam_name": "CheckPointCertifiedSecurityAdministratorR81",
+        "exam_code": "156-215.81"
+    },
+    {
+        "vendor": "Check Point",
+        "exam_name": "CheckPointCertifiedSecurityAdministrator\u2013R81.20(CCSA)Popular",
+        "exam_code": "156-215.81.20"
+    },
+    {
+        "vendor": "Check Point",
+        "exam_name": "CheckPointCertifiedSecurityExpert",
+        "exam_code": "156-315.77"
+    },
+    {
+        "vendor": "Check Point",
+        "exam_name": "CheckPointCertifiedSecurityExpert-R80",
+        "exam_code": "156-315.80"
+    },
+    {
+        "vendor": "Check Point",
+        "exam_name": "CheckPointCertifiedSecurityExpertR81",
+        "exam_code": "156-315.81"
+    },
+    {
+        "vendor": "Check Point",
+        "exam_name": "CheckPointCertifiedSecurityExpert-R81.20Popular",
+        "exam_code": "156-315.81.20"
+    },
+    {
+        "vendor": "Check Point",
+        "exam_name": "CheckPointCertifiedCloudSpecialist(CCCS)",
+        "exam_code": "156-560"
+    },
+    {
+        "vendor": "Check Point",
+        "exam_name": "CheckPointCertifiedTroubleshootingExpert",
+        "exam_code": "156-585"
+    },
+    {
+        "vendor": "Check Point",
+        "exam_name": "CheckPointCertifiedTroubleshootingExpert",
+        "exam_code": "156-586"
+    },
+    {
+        "vendor": "Check Point",
+        "exam_name": "CheckPointCertifiedMaestroExpert",
+        "exam_code": "156-835"
+    },
+    {
+        "vendor": "Check Point",
+        "exam_name": "CheckPointCertifiedSecurityExpertUpdate",
+        "exam_code": "156-915.77"
+    },
+    {
+        "vendor": "Check Point",
+        "exam_name": "CCSEUpdateR80",
+        "exam_code": "156-915.80"
+    },
+    {
+        "vendor": "ISACA",
+        "exam_name": "CertificateofCloudAuditingKnowledge",
+        "exam_code": "CCAK"
+    },
+    {
+        "vendor": "ISACA",
+        "exam_name": "CertifiedDataPrivacySolutionsEngineer",
+        "exam_code": "CDPSE"
+    },
+    {
+        "vendor": "ISACA",
+        "exam_name": "CertifiedintheGovernanceofEnterpriseIT",
+        "exam_code": "CGEIT"
+    },
+    {
+        "vendor": "ISACA",
+        "exam_name": "CertifiedInformationSystemsAuditorPopular",
+        "exam_code": "CISA"
+    },
+    {
+        "vendor": "ISACA",
+        "exam_name": "CertifiedInformationSecurityManagerPopular",
+        "exam_code": "CISM"
+    },
+    {
+        "vendor": "ISACA",
+        "exam_name": "COBIT2019Foundation",
+        "exam_code": "COBIT 2019"
+    },
+    {
+        "vendor": "ISACA",
+        "exam_name": "ABusinessFrameworkfortheGovernanceandManagementofEnterpriseIT",
+        "exam_code": "COBIT 5"
+    },
+    {
+        "vendor": "ISACA",
+        "exam_name": "CertifiedinRiskandInformationSystemsControlPopular",
+        "exam_code": "CRISC"
+    },
+    {
+        "vendor": "ISTQB",
+        "exam_name": "AdvancedTestAnalyst",
+        "exam_code": "ATA"
+    },
+    {
+        "vendor": "ISTQB",
+        "exam_name": "AdvancedTestManager",
+        "exam_code": "ATM"
+    },
+    {
+        "vendor": "ISTQB",
+        "exam_name": "AdvancedTechnicalTestAnalyst",
+        "exam_code": "ATTA"
+    },
+    {
+        "vendor": "ISTQB",
+        "exam_name": "CertifiedTesterAdvancedLevel-TestAnalystV3.1",
+        "exam_code": "CTAL-TA"
+    },
+    {
+        "vendor": "ISTQB",
+        "exam_name": "ISTQB-CertifiedTesterAdvancedLevel,TestManager",
+        "exam_code": "CTAL-TM"
+    },
+    {
+        "vendor": "ISTQB",
+        "exam_name": "CertifiedTesterAdvancedLevelTechnicalTestAnalyst",
+        "exam_code": "CTAL-TTA"
+    },
+    {
+        "vendor": "ISTQB",
+        "exam_name": "ISTQBCertifiedTesterFoundationLevel2018",
+        "exam_code": "CTFL-2018"
+    },
+    {
+        "vendor": "ISTQB",
+        "exam_name": "CertifiedTesterFoundationLevelAgileTester",
+        "exam_code": "CTFL-AT"
+    },
+    {
+        "vendor": "ISTQB",
+        "exam_name": "CertifiedTesterFoundationLevel(CTFL)v4.0",
+        "exam_code": "CTFL v4.0"
+    },
+    {
+        "vendor": "ISTQB",
+        "exam_name": "CertifiedTesterTestAutomationEngineer",
+        "exam_code": "CT-TAE"
+    },
+    {
+        "vendor": "ISTQB",
+        "exam_name": "ISTQB-AgilePublic",
+        "exam_code": "ISTQB - Agile Public"
+    },
+    {
+        "vendor": "ISQI",
+        "exam_name": "ISTQBCertifiedTesterAdvancedLevel-TestManager[Syllabus2012]",
+        "exam_code": "CTAL-TM_Syll2012"
+    },
+    {
+        "vendor": "ISQI",
+        "exam_name": "CertifiedTesterFoundationLevel(CTFL_001)",
+        "exam_code": "CTFL: 001_ISTQB"
+    },
+    {
+        "vendor": "ISQI",
+        "exam_name": "CertifiedProfessionalforRequirementsEngineering-FoundationLevelExamination",
+        "exam_code": "IREB-IT-CQ03"
+    },
+    {
+        "vendor": "ITIL",
+        "exam_name": "ITILV4 FOUNDATION",
+        "exam_code": "ITILV4"
+    },
+    {
+        "vendor": "Linux Foundation",
+        "exam_name": "Hyperledger Fabric Certified Practitioner",
+        "exam_code": "HFCP"
+    },
+    {
+        "vendor": "Linux Foundation",
+        "exam_name": "Kubernetes and Cloud Native Associate Popular",
+        "exam_code": "KCNA"
+    },
+    {
+        "vendor": "Linux Foundation",
+        "exam_name": "Linux Foundation Certified IT Associate",
+        "exam_code": "LFCA"
+    },
+    {
+        "vendor": "Linux Foundation",
+        "exam_name": "Linux Foundation Certified System Administrator",
+        "exam_code": "LFCS"
+    },
+    {
+        "vendor": "Citrix",
+        "exam_name": "CitrixXenAppandXenDesktop7.15Administration",
+        "exam_code": "1Y0-203"
+    },
+    {
+        "vendor": "Citrix",
+        "exam_name": "CitrixVirtualAppsandDesktops7Administration",
+        "exam_code": "1Y0-204"
+    },
+    {
+        "vendor": "Citrix",
+        "exam_name": "CitrixNetScaler12EssentialsandUnifiedGateway",
+        "exam_code": "1Y0-230"
+    },
+    {
+        "vendor": "Citrix",
+        "exam_name": "DeployandManageCitrixADC13withCitrixGateway",
+        "exam_code": "1Y0-231"
+    },
+    {
+        "vendor": "Citrix",
+        "exam_name": "CitrixNetScaler12EssentialsandTrafficManagement",
+        "exam_code": "1Y0-240"
+    },
+    {
+        "vendor": "Citrix",
+        "exam_name": "DeployandManageCitrixADC13withTrafficManagement",
+        "exam_code": "1Y0-241"
+    },
+    {
+        "vendor": "Citrix",
+        "exam_name": "CitrixXenAppandXenDesktop7.15AdvancedAdministrationExam",
+        "exam_code": "1Y0-311"
+    },
+    {
+        "vendor": "Citrix",
+        "exam_name": "CitrixVirtualAppsandDesktops7AdvancedAdministration",
+        "exam_code": "1Y0-312"
+    },
+    {
+        "vendor": "Citrix",
+        "exam_name": "NetScaler",
+        "exam_code": "1Y0-340"
+    },
+    {
+        "vendor": "Citrix",
+        "exam_name": "CitrixADCAdvancedTopics-Security,Management,andOptimization",
+        "exam_code": "1Y0-341"
+    },
+    {
+        "vendor": "Citrix",
+        "exam_name": "DesigningDeployingandManagingCitrixXenMobile10EnterpriseSolutions",
+        "exam_code": "1Y0-371"
+    },
+    {
+        "vendor": "Citrix",
+        "exam_name": "DesigningCitrixXenDesktop7.6Solutions",
+        "exam_code": "1Y0-401"
+    },
+    {
+        "vendor": "Citrix",
+        "exam_name": "CitrixXenAppandXenDesktop7.15Assessment,Design,andAdvancedConfigurations",
+        "exam_code": "1Y0-402"
+    },
+    {
+        "vendor": "Citrix",
+        "exam_name": "CitrixVirtualAppsandDesktops7Assessment,DesignandAdvancedConfigurations",
+        "exam_code": "1Y0-403"
+    },
+    {
+        "vendor": "Citrix",
+        "exam_name": "ArchitectingaCitrixNetworkingSolution",
+        "exam_code": "1Y0-440"
+    },
+    {
+        "vendor": "Citrix",
+        "exam_name": "CitrixXenApp6.5Administration",
+        "exam_code": "1Y0-A20"
+    },
+    {
+        "vendor": "Blue prism",
+        "exam_name": "Blue Prism Developer",
+        "exam_code": "AD01"
+    },
+    {
+        "vendor": "Blue prism",
+        "exam_name": "Blue Prism Professional Developer",
+        "exam_code": "APD01"
+    },
+    {
+        "vendor": "Blue prism",
+        "exam_name": "Blue Prism ROM Architect",
+        "exam_code": "ARA01"
+    },
+    {
+        "vendor": "Blue prism",
+        "exam_name": "BluePrismCertifiedROMArchitectExam(Version2)",
+        "exam_code": "ARA02"
+    },
+    {
+        "vendor": "Blue prism",
+        "exam_name": "DesigningBluePrismProcessSolutions",
+        "exam_code": "ASD01"
+    },
+    {
+        "vendor": "Blue prism",
+        "exam_name": "DesigningaBluePrism(Version6.0)Environment",
+        "exam_code": "ATA02"
+    },
+    {
+        "vendor": "Appian",
+        "exam_name": "AppianCertifiedAssociateDeveloper",
+        "exam_code": "ACD100"
+    },
+    {
+        "vendor": "Appian",
+        "exam_name": "AppianAssociateDeveloper",
+        "exam_code": "ACD101"
+    },
+    {
+        "vendor": "Appian",
+        "exam_name": "AppianCertifiedSeniorDeveloper",
+        "exam_code": "ACD200"
+    },
+    {
+        "vendor": "Adobe",
+        "exam_name": "AdobeAnalyticsBusinessPractitioner",
+        "exam_code": "9A0-381"
+    },
+    {
+        "vendor": "Adobe",
+        "exam_name": "AdobeExperienceManager6Developer",
+        "exam_code": "9A0-384"
+    },
+    {
+        "vendor": "Adobe",
+        "exam_name": "AdobeExperienceManager6.0Architect",
+        "exam_code": "9A0-385"
+    },
+    {
+        "vendor": "Adobe",
+        "exam_name": "AdobeCampaignDeveloper",
+        "exam_code": "9A0-389"
+    },
+    {
+        "vendor": "Adobe",
+        "exam_name": "AdobeExperienceManagerDevOpsEngineer",
+        "exam_code": "9A0-397"
+    },
+    {
+        "vendor": "Adobe",
+        "exam_name": "Adobe Experience Manager Forms Developer ACE Exam",
+        "exam_code": "9A0-410"
+    },
+    {
+        "vendor": "Adobe",
+        "exam_name": "Adobe Experience Manager Assets Developer",
+        "exam_code": "AD0-E100"
+    },
+    {
+        "vendor": "Adobe",
+        "exam_name": "Adobe Experience Manager Developer",
+        "exam_code": "AD0-E103"
+    },
+    {
+        "vendor": "Adobe",
+        "exam_name": "Adobe Experience Manager Architect",
+        "exam_code": "AD0-E104"
+    },
+    {
+        "vendor": "Adobe",
+        "exam_name": "Adobe Experience Manager Forms Backend Developer Professional",
+        "exam_code": "AD0-E127"
+    },
+    {
+        "vendor": "Adobe",
+        "exam_name": "Adobe Experience Manager Sites Developer Expert",
+        "exam_code": "AD0-E134"
+    },
+    {
+        "vendor": "Adobe",
+        "exam_name": "Adobe Analytics Business Practitioner Expert",
+        "exam_code": "AD0-E208"
+    },
+    {
+        "vendor": "Adobe",
+        "exam_name": "Campaign Standard Developer",
+        "exam_code": "AD0-E301"
+    },
+    {
+        "vendor": "Adobe",
+        "exam_name": "Adobe Marketo Engage Architect Master",
+        "exam_code": "AD0-E556"
+    },
+    {
+        "vendor": "Adobe",
+        "exam_name": "Adobe Real-Time CDP Business Practitioner Professional",
+        "exam_code": "AD0-E602"
+    },
+    {
+        "vendor": "Adobe",
+        "exam_name": "Adobe Journey Optimizer Developer Expert",
+        "exam_code": "AD0-E603"
+    },
+    {
+        "vendor": "Adobe",
+        "exam_name": "Adobe Commerce Business Practitioner Professional",
+        "exam_code": "AD0-E712"
+    },
+    {
+        "vendor": "Adobe",
+        "exam_name": "Adobe Commerce Developer Expert",
+        "exam_code": "AD0-E716"
+    },
+    {
+        "vendor": "Adobe",
+        "exam_name": "Adobe Commerce Developer Professional",
+        "exam_code": "AD0-E717"
+    },
+    {
+        "vendor": "Adobe",
+        "exam_name": "Adobe Commerce Architect Master",
+        "exam_code": "AD0-E718"
+    },
+    {
+        "vendor": "Adobe",
+        "exam_name": "Adobe Commerce Front-End Developer Expert",
+        "exam_code": "AD0-E720"
+    },
+    {
+        "vendor": "Adobe",
+        "exam_name": "Adobe Commerce Architect Master",
+        "exam_code": "AD0-E722"
+    },
+    {
+        "vendor": "Adobe",
+        "exam_name": "Adobe Real-Time CDP Technical Practitioner",
+        "exam_code": "AD7-E601"
+    },
+    {
+        "vendor": "Aruba",
+        "exam_name": "Aruba Certified Clearpass Professional v6.2",
+        "exam_code": "ACCP-v6.2"
+    },
+    {
+        "vendor": "Aruba",
+        "exam_name": "Aruba Certified Mobility Professional 6.4",
+        "exam_code": "ACMP_6.4"
+    },
+    {
+        "vendor": "Six Sigma",
+        "exam_name": "IASSC Certified Lean Six Sigma Black Belt",
+        "exam_code": "ICBB"
+    },
+    {
+        "vendor": "Six Sigma",
+        "exam_name": "IASSC Certified Lean Six Sigma Green Belt",
+        "exam_code": "ICGB"
+    },
+    {
+        "vendor": "Six Sigma",
+        "exam_name": "IASSC Certified Lean Six Sigma Yellow Belt",
+        "exam_code": "ICYB"
+    },
+    {
+        "vendor": "Six Sigma",
+        "exam_name": "Lean Six Sigma Black Belt",
+        "exam_code": "LSSBB"
+    },
+    {
+        "vendor": "Six Sigma",
+        "exam_name": "Lean Six Sigma Green Belt",
+        "exam_code": "LSSGB"
+    },
+    {
+        "vendor": "Six Sigma",
+        "exam_name": "Lean Six Sigma Master Black Belt",
+        "exam_code": "LSSMBB"
+    },
+    {
+        "vendor": "Six Sigma",
+        "exam_name": "Lean Six Sigma White Belt",
+        "exam_code": "LSSWB"
+    },
+    {
+        "vendor": "Six Sigma",
+        "exam_name": "Lean Six Sigma Yellow Belt",
+        "exam_code": "LSSYB"
+    },
+    {
+        "vendor": "The Open Group",
+        "exam_name": "TOGAF\u00ae Enterprise Architecture Part 1 Exam",
+        "exam_code": "OGEA-101"
+    },
+    {
+        "vendor": "The Open Group",
+        "exam_name": "TOGAF\u00ae Enterprise Architecture Part 2 Exam",
+        "exam_code": "OGEA-102"
+    },
+    {
+        "vendor": "The Open Group",
+        "exam_name": "TOGAF\u00ae Enterprise Architecture Combined Part 1 and Part 2 Exam",
+        "exam_code": "OGEA-103"
+    },
+    {
+        "vendor": "The Open Group",
+        "exam_name": "TOGAF\u00ae 9 Part 1 Exam",
+        "exam_code": "OG0-091"
+    },
+    {
+        "vendor": "The Open Group",
+        "exam_name": "TOGAF\u00ae 9 Part 2 Exam",
+        "exam_code": "OG0-092"
+    },
+    {
+        "vendor": "The Open Group",
+        "exam_name": "TOGAF\u00ae 9 Combined Part 1 and Part 2 Exam",
+        "exam_code": "OG0-093"
+    },
+    {
+        "vendor": "Snowflake",
+        "exam_name": "Practice Exam: Core",
+        "exam_code": "COF-P02"
+    },
+    {
+        "vendor": "Snowflake",
+        "exam_name": "Practice Exam: Administrator",
+        "exam_code": "ADA-P01"
+    },
+    {
+        "vendor": "Snowflake",
+        "exam_name": "Practice Exam: Architect",
+        "exam_code": "ARA-P01"
+    },
+    {
+        "vendor": "Snowflake",
+        "exam_name": "Practice Exam: Data Analyst",
+        "exam_code": "DAA-P01"
+    },
+    {
+        "vendor": "Snowflake",
+        "exam_name": "Practice Exam: Data Engineer",
+        "exam_code": "DEA-P01"
+    },
+    {
+        "vendor": "Snowflake",
+        "exam_name": "Practice Exam: Data Scientist",
+        "exam_code": "DSA-P02"
+    },
+    {
+        "vendor": "Snowflake",
+        "exam_name": "SnowPro Core Certification Exam",
+        "exam_code": "COF-C02"
+    },
+    {
+        "vendor": "Snowflake",
+        "exam_name": "SnowPro Core Recertification Exam",
+        "exam_code": "COF-R02"
+    },
+    {
+        "vendor": "Snowflake",
+        "exam_name": "SnowPro Advanced: Administrator Certification Exam",
+        "exam_code": "ADA-C01"
+    },
+    {
+        "vendor": "Snowflake",
+        "exam_name": "SnowPro Advanced: Administrator Recertification Exam",
+        "exam_code": "ADA-R01"
+    },
+    {
+        "vendor": "Snowflake",
+        "exam_name": "SnowPro Advanced: Architect Certification Exam",
+        "exam_code": "ARA-C01"
+    },
+    {
+        "vendor": "Snowflake",
+        "exam_name": "SnowPro Advanced: Architect Recertification Exam",
+        "exam_code": "ARA-R01"
+    },
+    {
+        "vendor": "Snowflake",
+        "exam_name": "SnowPro Advanced: Data Analyst Certification Exam",
+        "exam_code": "DAA-C01"
+    },
+    {
+        "vendor": "Snowflake",
+        "exam_name": "SnowPro Advanced: Data Analyst Recertification Exam",
+        "exam_code": "DAA-R01"
+    },
+    {
+        "vendor": "Snowflake",
+        "exam_name": "SnowPro Advanced: Data Engineer Certification Exam",
+        "exam_code": "DEA-C01"
+    },
+    {
+        "vendor": "Snowflake",
+        "exam_name": "SnowPro Advanced: Data Engineer Recertification Exam",
+        "exam_code": "DEA-R01"
+    },
+    {
+        "vendor": "Snowflake",
+        "exam_name": "SnowPro Advanced: Data Scientist Certification Exam",
+        "exam_code": "DSA-C02"
+    },
+    {
+        "vendor": "Snowflake",
+        "exam_name": "SnowPro Advanced: Data Scientist Recertification Exam",
+        "exam_code": "DSA-R02"
+    },
+    {
+        "vendor": "Pegasystems",
+        "exam_name": "Certified Pega Business Architect '23",
+        "exam_code": "PEGACPBA23V1"
+    },
+    {
+        "vendor": "Pegasystems",
+        "exam_name": "Certified Pega Business Architect 8.8",
+        "exam_code": "PEGACPBA88V1"
+    },
+    {
+        "vendor": "Pegasystems",
+        "exam_name": "Certified Pega Customer Service Developer '23",
+        "exam_code": "PEGACPCSD23V1"
+    },
+    {
+        "vendor": "Pegasystems",
+        "exam_name": "Certified Pega Decisioning Consultant 23",
+        "exam_code": "PEGACPDC23V1"
+    },
+    {
+        "vendor": "Pegasystems",
+        "exam_name": "Certified Pega Decisioning Consultant 8.8",
+        "exam_code": "PEGACPDC88V1"
+    },
+    {
+        "vendor": "Pegasystems",
+        "exam_name": "Certified Pega Data Scientist 23",
+        "exam_code": "PEGACPDS23V1"
+    },
+    {
+        "vendor": "Pegasystems",
+        "exam_name": "Certified Pega Data Scientist 8.8",
+        "exam_code": "PEGACPDS88V1"
+    },
+    {
+        "vendor": "Pegasystems",
+        "exam_name": "Certified Pega Lead System Architecture (LSA) Exam 23",
+        "exam_code": "PEGACPLSA23V1"
+    },
+    {
+        "vendor": "Pegasystems",
+        "exam_name": "Certified Pega Lead System Architecture Exam 8.8",
+        "exam_code": "PEGACPLSA88V1"
+    },
+    {
+        "vendor": "Pegasystems",
+        "exam_name": "Certified Pega Robotics System Architect 22",
+        "exam_code": "PEGACPRSA22V1"
+    },
+    {
+        "vendor": "Pegasystems",
+        "exam_name": "Certified Pega System Architect '23",
+        "exam_code": "PEGACPSA23V1"
+    },
+    {
+        "vendor": "Pegasystems",
+        "exam_name": "Certified Pega System Architect 8.8",
+        "exam_code": "PEGACPSA88V1"
+    },
+    {
+        "vendor": "Pegasystems",
+        "exam_name": "Certified Pega Senior System Architect '23",
+        "exam_code": "PEGACPSSA23V1"
+    },
+    {
+        "vendor": "Pegasystems",
+        "exam_name": "Certified Pega Senior System Architect 8.8",
+        "exam_code": "PEGACPSSA88V1"
+    },
+    {
+        "vendor": "Pegasystems",
+        "exam_name": "Certified Pega Senior System Architect (CSSA) 72V1 \u2013 French, Japanese, and Portuguese Brazilian Only",
+        "exam_code": "PEGACSSA72V1"
+    },
+    {
+        "vendor": "Pegasystems",
+        "exam_name": "Certified Pega Business Architect (PCBA) 87V1",
+        "exam_code": "PEGAPCBA87V1"
+    },
+    {
+        "vendor": "Pegasystems",
+        "exam_name": "Certified Pega Decisioning Consultant (PCDC) 87V1",
+        "exam_code": "PEGAPCDC87V1"
+    },
+    {
+        "vendor": "Pegasystems",
+        "exam_name": "Certified Pega Data Scientist (PCDS) 87V1",
+        "exam_code": "PEGAPCDS87V1"
+    },
+    {
+        "vendor": "Pegasystems",
+        "exam_name": "Lead System Architect (LSA) Pega Architecture Exam 86V2",
+        "exam_code": "PEGAPCLSA86V2"
+    },
+    {
+        "vendor": "Pegasystems",
+        "exam_name": "Certified Pega Robotics System Architect (PCRSA) 80V1 2019",
+        "exam_code": "PEGAPCRSA80V1_2019"
+    },
+    {
+        "vendor": "Pegasystems",
+        "exam_name": "Certified Pega System Architect (PCSA) 87V1",
+        "exam_code": "PEGAPCSA87V1"
+    },
+    {
+        "vendor": "Pegasystems",
+        "exam_name": "Certified Pega Senior System Architect (PCSSA) 87V1",
+        "exam_code": "PEGAPCSSA87V1"
+    },
+    {
+        "vendor": "Cisco",
+        "exam_name": "Cisco Certified Network Associate (CCNA)",
+        "exam_code": "200-301"
+    },
+    {
+        "vendor": "Cisco",
+        "exam_name": "Cisco Certified CyberOps Associate",
+        "exam_code": "200-201"
+    },
+    {
+        "vendor": "Cisco",
+        "exam_name": "Cisco Certified DevNet Associate",
+        "exam_code": "200-901"
+    },
+    {
+        "vendor": "Cisco",
+        "exam_name": "ENARSI: Implementing Cisco Enterprise Advanced Routing and Services",
+        "exam_code": "300-410"
+    },
+    {
+        "vendor": "Cisco",
+        "exam_name": "ENSDWI: Implementing Cisco SD-WAN Solutions",
+        "exam_code": "300-415"
+    },
+    {
+        "vendor": "Cisco",
+        "exam_name": "ENSLD: Designing Cisco Enterprise Networks",
+        "exam_code": "300-420"
+    },
+    {
+        "vendor": "Cisco",
+        "exam_name": "ENWLSD: Designing Cisco Enterprise Wireless Networks",
+        "exam_code": "300-425"
+    },
+    {
+        "vendor": "Cisco",
+        "exam_name": "ENWLSI: Implementing Cisco Enterprise Wireless Networks",
+        "exam_code": "300-430"
+    },
+    {
+        "vendor": "Cisco",
+        "exam_name": "ENAUTO: Automating Cisco Enterprise Solutions",
+        "exam_code": "300-435"
+    },
+    {
+        "vendor": "Cisco",
+        "exam_name": "SNCF: Securing Networks with Cisco Firepower",
+        "exam_code": "300-710"
+    },
+    {
+        "vendor": "Cisco",
+        "exam_name": "SISE: Implementing and Configuring Cisco Identity Services Engine",
+        "exam_code": "300-715"
+    },
+    {
+        "vendor": "Cisco",
+        "exam_name": "SESA: Securing Email with Cisco Email Security Appliance",
+        "exam_code": "300-720"
+    },
+    {
+        "vendor": "Cisco",
+        "exam_name": "SWSA: Securing the Web with Cisco Web Security Appliance",
+        "exam_code": "300-725"
+    },
+    {
+        "vendor": "Cisco",
+        "exam_name": "SVPN: Implementing Secure Solutions with Virtual Private Networks",
+        "exam_code": "300-730"
+    },
+    {
+        "vendor": "Cisco",
+        "exam_name": "SAUTO: Automating Cisco Security Solutions",
+        "exam_code": "300-735"
+    },
+    {
+        "vendor": "Cisco",
+        "exam_name": "DCID: Designing Cisco Data Center Infrastructure",
+        "exam_code": "300-610"
+    },
+    {
+        "vendor": "Cisco",
+        "exam_name": "DCIT: Troubleshooting Cisco Data Center Infrastructure",
+        "exam_code": "300-615"
+    },
+    {
+        "vendor": "Cisco",
+        "exam_name": "DCACI: Implementing Cisco Application Centric Infrastructure",
+        "exam_code": "300-620"
+    },
+    {
+        "vendor": "Cisco",
+        "exam_name": "DCSAN: Implementing Cisco Storage Area Networking",
+        "exam_code": "300-625"
+    },
+    {
+        "vendor": "Cisco",
+        "exam_name": "DCAUTO: Automating Cisco Data Center Solutions",
+        "exam_code": "300-635"
+    },
+    {
+        "vendor": "Cisco",
+        "exam_name": "CLICA: Implementing Cisco Collaboration Applications",
+        "exam_code": "300-810"
+    },
+    {
+        "vendor": "Cisco",
+        "exam_name": "CLACCM: Implementing Cisco Advanced Call Control and Mobility Services",
+        "exam_code": "300-815"
+    },
+    {
+        "vendor": "Cisco",
+        "exam_name": "CLCEI: Implementing Cisco Collaboration Cloud and Edge Solutions",
+        "exam_code": "300-820"
+    },
+    {
+        "vendor": "Cisco",
+        "exam_name": "CLAUTO: Automating Cisco Collaboration Solutions",
+        "exam_code": "300-835"
+    },
+    {
+        "vendor": "Cisco",
+        "exam_name": "SPRI: Implementing Cisco Service Provider Advanced Routing Solutions",
+        "exam_code": "300-510"
+    },
+    {
+        "vendor": "Cisco",
+        "exam_name": "SPVI: Implementing Cisco Service Provider VPN Services",
+        "exam_code": "300-515"
+    },
+    {
+        "vendor": "Cisco",
+        "exam_name": "SPAUTO: Automating Cisco Service Provider Solutions",
+        "exam_code": "300-535"
+    },
+    {
+        "vendor": "Cisco",
+        "exam_name": "DEVOPS: Implementing DevOps Solutions and Practices Using Cisco Platforms",
+        "exam_code": "300-910"
+    },
+    {
+        "vendor": "Cisco",
+        "exam_name": "DEVIOT: Implementing Cisco IoT Solutions",
+        "exam_code": "300-915"
+    },
+    {
+        "vendor": "Cisco",
+        "exam_name": "DEVWBX: Developing Applications for Cisco Webex and Webex Devices",
+        "exam_code": "300-920"
+    },
+    {
+        "vendor": "Cisco",
+        "exam_name": "DEVSP: Implementing Service Provider Automation Solutions",
+        "exam_code": "300-925"
+    },
+    {
+        "vendor": "Cisco",
+        "exam_name": "DEVASC: Automating and Programming Cisco Enterprise Solutions",
+        "exam_code": "300-935"
+    },
+    {
+        "vendor": "Cisco",
+        "exam_name": "Implementing and Operating Cisco Enterprise Network Core Technologies",
+        "exam_code": "350-401"
+    },
+    {
+        "vendor": "Cisco",
+        "exam_name": "Implementing and Operating Cisco Security Core Technologies",
+        "exam_code": "350-701"
+    },
+    {
+        "vendor": "Cisco",
+        "exam_name": "Implementing and Operating Cisco Data Center Core Technologies",
+        "exam_code": "350-601"
+    },
+    {
+        "vendor": "Cisco",
+        "exam_name": "Implementing and Operating Cisco Service Provider Network Core Technologies",
+        "exam_code": "350-501"
+    },
+    {
+        "vendor": "Cisco",
+        "exam_name": "Cisco Certified Design Expert",
+        "exam_code": "400-007"
+    },
+    {
+        "vendor": "EC-COUNCLE",
+        "exam_name": "Certified Ethical Hacker (C|EH)",
+        "exam_code": "(C|EH)"
+    },
+    {
+        "vendor": "EC-COUNCLE",
+        "exam_name": "Certified Chief Information Security Officer (C|CISO)",
+        "exam_code": "(C|CISO)"
+    },
+    {
+        "vendor": "EC-COUNCLE",
+        "exam_name": "Computer Hacking Forensic Investigator (C|HFI)",
+        "exam_code": "(C|HFI)"
+    },
+    {
+        "vendor": "EC-COUNCLE",
+        "exam_name": "Certified Network Defender (C|ND)",
+        "exam_code": "(C|ND)"
+    },
+    {
+        "vendor": "EC-COUNCLE",
+        "exam_name": "Certified Incident Handler (E|CIH)",
+        "exam_code": "(E|CIH)"
+    },
+    {
+        "vendor": "EC-COUNCLE",
+        "exam_name": "Certified Penetration Testing Professional (C|PENT)",
+        "exam_code": "(C|PENT)"
+    },
+    {
+        "vendor": "EC-COUNCLE",
+        "exam_name": "Certified SOC Analyst (C|SA)",
+        "exam_code": "(C|SA)"
+    },
+    {
+        "vendor": "EC-COUNCLE",
+        "exam_name": "Certified Cybersecurity Technician (C|CT)",
+        "exam_code": "(C|CT)"
+    },
+    {
+        "vendor": "EC-COUNCLE",
+        "exam_name": "Certified Encryption Specialist (E|CES)",
+        "exam_code": "(E|CES)"
+    },
+    {
+        "vendor": "EC-COUNCLE",
+        "exam_name": "Certified Secure Computer User (C|SCU)",
+        "exam_code": "(C|SCU)"
+    },
+    {
+        "vendor": "EC-COUNCLE",
+        "exam_name": "Digital Forensics Essentials (D|FE)",
+        "exam_code": "(D|FE)"
+    },
+    {
+        "vendor": "EC-COUNCLE",
+        "exam_name": "Disaster Recovery Professional (E|DRP)",
+        "exam_code": "(E|DRP)"
+    },
+    {
+        "vendor": "EC-COUNCLE",
+        "exam_name": "EC-Council Certified Security Specialist (E|CSS)",
+        "exam_code": "(E|CSS)"
+    },
+    {
+        "vendor": "EC-COUNCLE",
+        "exam_name": "Ethical Hacking Essentials (E|HE)",
+        "exam_code": "(E|HE)"
+    },
+    {
+        "vendor": "EC-COUNCLE",
+        "exam_name": "Certified Threat Intelligence Analyst (C|TIA)",
+        "exam_code": "(C|TIA)"
+    },
+    {
+        "vendor": "EC-COUNCLE",
+        "exam_name": "Certified Cloud Security Engineer (C|CSE)",
+        "exam_code": "(C|CSE)"
+    },
+    {
+        "vendor": "EC-COUNCLE",
+        "exam_name": "EC-Council Certified Security Analyst (E|CSA)",
+        "exam_code": "(E|CSA)"
+    },
+    {
+        "vendor": "EC-COUNCLE",
+        "exam_name": "License Penetration Tester (L|PT)",
+        "exam_code": "(L|PT)"
+    },
+    {
+        "vendor": "EC-COUNCLE",
+        "exam_name": "Certified EC-Council Instructor (C|EI)",
+        "exam_code": "(C|EI)"
+    },
+    {
+        "vendor": "QLICK",
+        "exam_name": "Qlik Compose Certification Exam",
+        "exam_code": "QCOM"
+    },
+    {
+        "vendor": "QLICK",
+        "exam_name": "Qlik Replicate Certification Exam",
+        "exam_code": "QREP"
+    },
+    {
+        "vendor": "QLICK",
+        "exam_name": "Qlik Sense Business Analyst Certification Exam - 2022",
+        "exam_code": "QSBA2022"
+    },
+    {
+        "vendor": "QLICK",
+        "exam_name": "Qlik Sense Business Analyst Certification Exam - 2024",
+        "exam_code": "QSBA2024"
+    },
+    {
+        "vendor": "QLICK",
+        "exam_name": "Qlik Sense Data Architect Certification Exam - 2024",
+        "exam_code": "QSDA2024"
+    },
+    {
+        "vendor": "QLICK",
+        "exam_name": "Qlik Sense System Administrator Certification Exam - 2024",
+        "exam_code": "QSSA2024"
+    },
+    {
+        "vendor": "QLICK",
+        "exam_name": "QlikView 12 Business Analyst Certification Exam",
+        "exam_code": "QV12BA"
+    },
+    {
+        "vendor": "QLICK",
+        "exam_name": "QlikView 12 Data Architect Certification Exam",
+        "exam_code": "QV12DA"
+    },
+    {
+        "vendor": "QLICK",
+        "exam_name": "QlikView 12 System Administrator Certification Exam",
+        "exam_code": "QV12SA"
+    },
+    {
+        "vendor": "Fortinet",
+        "exam_name": "FortinetNSE6-FortiNAC7.2",
+        "exam_code": "NSE6_FNC-7.2"
+    },
+    {
+        "vendor": "Fortinet",
+        "exam_name": "FortinetNSE6-FortiSwitch7.2",
+        "exam_code": "NSE6_FSW-7.2"
+    },
+    {
+        "vendor": "Fortinet",
+        "exam_name": "FortinetNSE6-SecureWirelessLAN6.4",
+        "exam_code": "NSE6_FWF-6.4"
+    },
+    {
+        "vendor": "Fortinet",
+        "exam_name": "FCP\u2014FortiClientEMS7.2Administrator",
+        "exam_code": "FCP_FCT_AD-7.2"
+    },
+    {
+        "vendor": "Fortinet",
+        "exam_name": "FCP\u2014FortiAuthenticator6.5Administrator",
+        "exam_code": "FCP_FAC_AD-6.5"
+    },
+    {
+        "vendor": "Fortinet",
+        "exam_name": "FCP-FortiGate7.4Administrator",
+        "exam_code": "FCP_FGT_AD-7.4"
+    },
+    {
+        "vendor": "Fortinet",
+        "exam_name": "FCP-FortiManager7.4Administrator",
+        "exam_code": "FCP_FMG_AD-7.4"
+    },
+    {
+        "vendor": "Fortinet",
+        "exam_name": "FCP-FortiAnalyzer7.4Administrator",
+        "exam_code": "FCP_FAZ_AD-7.4"
+    },
+    {
+        "vendor": "Fortinet",
+        "exam_name": "FCP-SecureWirelessLAN7.4Administrator",
+        "exam_code": "FCP_FWF_AD-7.4"
+    },
+    {
+        "vendor": "Fortinet",
+        "exam_name": "Fortinet NSE 5 - FortiEDR 5.0",
+        "exam_code": "NSE5_EDR-5.0"
+    },
+    {
+        "vendor": "Fortinet",
+        "exam_name": "FortinetNSE5-FortiSIEM6.3",
+        "exam_code": "NSE5_FSM-6.3"
+    },
+    {
+        "vendor": "Fortinet",
+        "exam_name": "FortinetNSE6-FortiSOAR7.3Administrator",
+        "exam_code": "NSE6_FSR-7.3"
+    },
+    {
+        "vendor": "Fortinet",
+        "exam_name": "FCP - FortiAnalyzer 7.4 Analyst",
+        "exam_code": "FCP_FAZ_AN-7.4"
+    },
+    {
+        "vendor": "Fortinet",
+        "exam_name": "FortinetNSE6-CloudSecurity7.0forAWS",
+        "exam_code": "NSE6_WCS-7.0"
+    },
+    {
+        "vendor": "Fortinet",
+        "exam_name": "FortinetNSE6-CloudSecurity7.0forAzure",
+        "exam_code": "NSE6_ZCS-7.0"
+    },
+    {
+        "vendor": "Fortinet",
+        "exam_name": "FortinetNSE6-FortiMail7.2",
+        "exam_code": "NSE6_FML-7.2"
+    },
+    {
+        "vendor": "Fortinet",
+        "exam_name": "FCP-AWSCloudSecurity7.4Administrator",
+        "exam_code": "FCP_WCS_AD-7.4"
+    },
+    {
+        "vendor": "Fortinet",
+        "exam_name": "FCP-FortiWeb7.4Administrator",
+        "exam_code": "FCP_FWB_AD-7.4"
+    },
+    {
+        "vendor": "Fortinet",
+        "exam_name": "FCP-AzureCloudSecurity7.4Administrator",
+        "exam_code": "FCP_ZCS_AD-7.4"
+    },
+    {
+        "vendor": "Fortinet",
+        "exam_name": "FCP-FortiMail7.4Administrator",
+        "exam_code": "FCP_FML_AD-7.4"
+    },
+    {
+        "vendor": "UiPath",
+        "exam_name": "UiPath Automation Business Analyst Associate Exam",
+        "exam_code": "UiPath-ABAAv1"
+    },
+    {
+        "vendor": "UiPath",
+        "exam_name": "UiPath Automation Business Analyst Professional Exam",
+        "exam_code": "UiPath-ABAv1"
+    },
+    {
+        "vendor": "UiPath",
+        "exam_name": "UiPath Automation Developer Associate Exam",
+        "exam_code": "UiPath-ADAv1"
+    },
+    {
+        "vendor": "UiPath",
+        "exam_name": "UiPath Automation Developer Professional Exam",
+        "exam_code": "UiPath-ADPv1"
+    },
+    {
+        "vendor": "UiPath",
+        "exam_name": "UiPath Automation Solution Architect Professional Exam",
+        "exam_code": "UiPath-ASAPv1"
+    },
+    {
+        "vendor": "UiPath",
+        "exam_name": "UiPath Infrastructure Engineer Professional \u2013 Automation Suite Exam",
+        "exam_code": "UiPath-IEPASv1"
+    },
+    {
+        "vendor": "UiPath",
+        "exam_name": "UiPath Infrastructure Engineer Professional - Standalone Part 1",
+        "exam_code": "UiPath-IEPSv1-I"
+    },
+    {
+        "vendor": "UiPath",
+        "exam_name": "UiPath Infrastructure Engineer Professional - Standalone Part 2",
+        "exam_code": "UiPath-IEPSv1-II"
+    },
+    {
+        "vendor": "UiPath",
+        "exam_name": "UiPath Specialized AI Associate Exam",
+        "exam_code": "UiPath-SAIAv1"
+    },
+    {
+        "vendor": "UiPath",
+        "exam_name": "UiPath Specialized AI Professional Exam",
+        "exam_code": "UiPath-SAIv1"
+    },
+    {
+        "vendor": "UiPath",
+        "exam_name": "UiPath Test Automation Engineer Professional v1.0 Exam",
+        "exam_code": "UiPath-TAEPv1"
+    },
+    {
+        "vendor": "CyberArk",
+        "exam_name": "CyberArk Defender Access",
+        "exam_code": "ACCESS-DEF"
+    },
+    {
+        "vendor": "CyberArk",
+        "exam_name": "CyberArk CDE-CPC Recertification",
+        "exam_code": "CPC-CDE-RECERT"
+    },
+    {
+        "vendor": "CyberArk",
+        "exam_name": "CyberArk Sentry - Privilege Cloud",
+        "exam_code": "CPC-SEN"
+    },
+    {
+        "vendor": "CyberArk",
+        "exam_name": "CyberArk CDE-EPM Recertification",
+        "exam_code": "EPM-CDE-RECERT"
+    },
+    {
+        "vendor": "CyberArk",
+        "exam_name": "CyberArk Defender - EPM",
+        "exam_code": "EPM-DEF"
+    },
+    {
+        "vendor": "CyberArk",
+        "exam_name": "CyberArk Guardian Exam",
+        "exam_code": "GUARD"
+    },
+    {
+        "vendor": "CyberArk",
+        "exam_name": "CyberArk CDE-PAM Recertification",
+        "exam_code": "PAM-CDE-RECERT"
+    },
+    {
+        "vendor": "CyberArk",
+        "exam_name": "CyberArk Defender \u2013 PAM",
+        "exam_code": "PAM-DEF"
+    },
+    {
+        "vendor": "CyberArk",
+        "exam_name": "CyberArk Sentry \u2013 PAM",
+        "exam_code": "PAM-SEN"
+    },
+    {
+        "vendor": "CyberArk",
+        "exam_name": "CyberArk CDE-SECRET Recertification",
+        "exam_code": "SECRET-CDE-RECERT"
+    },
+    {
+        "vendor": "CyberArk",
+        "exam_name": "CyberArk Sentry - Secrets Manager",
+        "exam_code": "SECRET-SEN"
+    },
+    {
+        "vendor": "CyberArk",
+        "exam_name": "CyberArk CDE-ACCESS Recertification",
+        "exam_code": "ACCESS-CDE-RECERT"
+    },
+    {
+        "vendor": "IBM",
+        "exam_name": "IBMCloudProfessionalSalesEngineerv1",
+        "exam_code": "C1000-101"
+    },
+    {
+        "vendor": "IBM",
+        "exam_name": "IBMCloudProfessionalSREv2",
+        "exam_code": "C1000-119"
+    },
+    {
+        "vendor": "IBM",
+        "exam_name": "IBMCloudAdvocatev2",
+        "exam_code": "C1000-142"
+    },
+    {
+        "vendor": "IBM",
+        "exam_name": "IBMCloudProfessionalDeveloperv6",
+        "exam_code": "C1000-166"
+    },
+    {
+        "vendor": "IBM",
+        "exam_name": "IBMCloudAssociateSREV2",
+        "exam_code": "C1000-169"
+    },
+    {
+        "vendor": "IBM",
+        "exam_name": "IBMCloudTechnicalAdvocatev5",
+        "exam_code": "C1000-170"
+    },
+    {
+        "vendor": "IBM",
+        "exam_name": "IBMCloudProfessionalArchitectv6",
+        "exam_code": "C1000-172"
+    },
+    {
+        "vendor": "IBM",
+        "exam_name": "IBMCloudAdvancedArchitectv2",
+        "exam_code": "C1000-176"
+    },
+    {
+        "vendor": "IBM",
+        "exam_name": "IBMCloudTechnicalSellerv2-Professional",
+        "exam_code": "C1000-186"
+    },
+    {
+        "vendor": "IBM",
+        "exam_name": "IBMCloudSatelliteSpecialtyv1",
+        "exam_code": "S2000-013"
+    },
+    {
+        "vendor": "IBM",
+        "exam_name": "IBMCloudforVMwarev1Specialty",
+        "exam_code": "S2000-018"
+    },
+    {
+        "vendor": "IBM",
+        "exam_name": "IBMCloudforSAPSpecialtyv1",
+        "exam_code": "S2000-019"
+    },
+    {
+        "vendor": "IBM",
+        "exam_name": "IBMPowerVirtualServerv1Specialty",
+        "exam_code": "S2000-020"
+    },
+    {
+        "vendor": "IBM",
+        "exam_name": "IBMCloudDevSecOpsv2Specialty",
+        "exam_code": "S2000-022"
+    },
+    {
+        "vendor": "IBM",
+        "exam_name": "IBM Cloud for Financial Services v2 Specialty",
+        "exam_code": "S2000-023"
+    }
+]

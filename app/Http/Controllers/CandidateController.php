@@ -1,0 +1,307 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Exam;
+use App\Models\Client;
+use App\Models\Company;
+use App\Models\Candidate;
+use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
+
+class CandidateController extends Controller
+{
+    public function index(Request $request)
+    {
+
+        $totalCandidate = Candidate::count();
+        $passedCandidate = Candidate::where('status', 'passed')->count();
+        $failedCandidate = Candidate::where('status', 'failed')->count();
+        $onHoldCandidate = Candidate::where('status', 'on-hold')->count();
+        $rescheduledCandidate = Candidate::where('status', 'rescheduled')->count();
+
+        $query = Candidate::query() ->with(['company', 'exam', 'vendor', 'user']);
+
+
+        if (Gate::allows('isAdmin')) {
+
+            $totalCandidate = Candidate::count();
+            $passedCandidate = Candidate::where('status', 'passed')->count();
+            $failedCandidate = Candidate::where('status', 'failed')->count();
+            $onHoldCandidate = Candidate::where('status', 'on-hold')->count();
+            $rescheduledCandidate = Candidate::where('status', 'rescheduled')->count();
+
+            $candidates = $query->latest();
+        } else {
+
+            $sevenDaysAgo = Carbon::now()->subDays(7);
+
+            $totalCandidate = Candidate::where('conducted_date', '>=', $sevenDaysAgo)
+                ->count();
+
+            $passedCandidate = Candidate::where('conducted_date', '>=', $sevenDaysAgo)
+                ->where('status', 'passed')
+                ->count();
+
+            $failedCandidate = Candidate::where('conducted_date', '>=', $sevenDaysAgo)
+                ->where('status', 'failed')
+                ->count();
+
+            $onHoldCandidate = Candidate::where('conducted_date', '>=', $sevenDaysAgo)
+                ->where('status', 'on-hold')
+                ->count();
+
+            $rescheduledCandidate = Candidate::where('conducted_date', '>=', $sevenDaysAgo)
+                ->where('status', 'rescheduled')
+                ->count();
+
+
+            $query->where('conducted_date', '>=', $sevenDaysAgo);
+        }
+
+
+        if ($request->filled('from_date')) {
+            $query->whereDate('conducted_date', '>=', $request->from_date);
+        }
+
+        if ($request->filled('to_date')) {
+            $query->whereDate('conducted_date', '<=', $request->to_date);
+        }
+
+
+        if ($request->filled('exam_code')) {
+            $examId = Exam::where('exam_code', $request->exam_code)->value('id'); // Get the exam ID
+            if ($examId) {
+                $query->where('exam_id', $examId);
+            }
+        }
+        
+        if ($request->filled('vendor_id')) {
+            $examIds = Exam::where('vendor_id', $request->vendor_id)->pluck('id'); // Get all exam IDs for the vendor
+            if ($examIds->isNotEmpty()) {
+                $query->whereIn('exam_id', $examIds); // Use whereIn for multiple matches
+            }
+        }
+        
+
+        if ($request->filled('exam_id')) {
+            $query->where('exam_id', $request->exam_id);
+        }
+
+        if ($request->filled('status')) {
+            $query->where('status', $request->status);
+        }
+
+        if ($request->filled('conducted_by')) {
+            $query->where('conducted_by', $request->conducted_by);
+        }
+
+        if ($request->filled('client_id')) {
+            $query->where('client_id', $request->client_id);
+        }
+
+
+        if ($request->filled('search')) {
+            $searchTerm = $request->search;
+            $query->where(function ($q) use ($searchTerm) {
+                $q->where('first_name', 'LIKE', "%{$searchTerm}%")
+                    ->orWhere('last_name', 'LIKE', "%{$searchTerm}%")
+                    ->orWhere('email_id', 'LIKE', "%{$searchTerm}%");
+
+            });
+        }
+
+
+        $candidates = $query->latest()->get();
+
+        return view('candidate.index', compact(['candidates', 'totalCandidate', 'passedCandidate', 'failedCandidate', 'onHoldCandidate', 'rescheduledCandidate']));
+    }
+
+
+
+    public function create()
+    {
+        //
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request)
+    {
+        // Validate the incoming request
+        $validatedData = $request->validate([
+            'first_name' => 'required|string|max:255',
+            'last_name' => 'required|string|max:255',
+            'country_code' => 'nullable|string|max:15',
+            'phone' => 'nullable|string|max:15',
+            'email_id' => 'nullable|email|max:255',
+            'company_id' => 'nullable|string|max:255',
+            'exam_id' => 'nullable|string|max:255',
+            'vendor_id' => 'nullable|string|max:255',
+            'conducted_date' => 'required|date',
+            'conducted_by' => 'required|max:255',
+            'client_id' => 'required|string',
+            'status' => 'required|string',
+            'remark' => 'nullable|string|max:500',
+        ]);
+
+
+        try {
+            Candidate::create($validatedData); // Pass $validatedData directly
+            return response()->json(['success' => true, 'msg' => "Candidate created successfully"]);
+        } catch (\Exception $e) {
+            // Log the error for debugging
+
+            return response()->json(['success' => false, 'msg' => 'An error occurred while creating the candidate.']);
+        }
+    }
+
+
+    /**
+     * Display the specified resource.
+     */
+    public function show(string $id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(string $id)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, string $id)
+    {
+        // Validate the incoming request
+        $validatedData = $request->validate([
+            'first_name' => 'required|string|max:255',
+            'last_name' => 'required|string|max:255',
+            'country_code' => 'nullable|string|max:15',
+            'mobile_no' => 'nullable|string|max:15',
+            'email_id' => 'nullable|email|max:255',
+            'company_name' => 'nullable|string|max:255',
+            'exam_code' => 'nullable|string|max:255',
+            'exam_name' => 'nullable|string|max:255',
+            'vendor' => 'nullable|string|max:255',
+            'conducted_date' => 'required|date',
+            'conducted_by' => 'required|max:255',
+            'client' => 'required|string',
+            'status' => 'required|string',
+            'remark' => 'nullable|string|max:500',
+        ]);
+        try {
+            $examExists = Exam::where('vendor', $validatedData['vendor'])
+                ->where('exam_name', $validatedData['exam_name'])
+                ->exists();
+            if (!$examExists) {
+                return response()->json(['success' => false, 'msg' => 'Exam with the specified vendor and name does not exist. Please select from the dropdown.']);
+            }
+            Candidate::where('id', $request->candidate_id)->update([
+
+                'first_name' => $validatedData['first_name'], // Concatenate first and last name
+                'last_name' => $validatedData['last_name'],
+                'country_code' => $validatedData['country_code'],
+                'mobile_no' => $validatedData['mobile_no'],
+                'email_id' => $validatedData['email_id'],
+                'company_name' => $validatedData['company_name'],
+                'exam_code' => $validatedData['exam_code'],
+                'exam_name' => $validatedData['exam_name'],
+                'vendor' => $validatedData['vendor'],
+                'conducted_date' => $validatedData['conducted_date'],
+                'conducted_by' => $validatedData['conducted_by'],
+                'client' => $validatedData['client'],
+                'status' => $validatedData['status'],
+                'remark' => $validatedData['remark'],
+            ]);
+
+
+            return response()->json(['success' => true, 'msg' => 'Candidate updated successfully!']);
+        } catch (\Exception $e) {
+            return response()->json(['success' => false, 'msg' => $e->getMessage()]);
+        }
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(string $id)
+    {
+        try {
+
+            Candidate::where('id', $id)->delete();
+
+            return response()->json(['success' => true, 'msg' => 'Candidate deleted successfully!']);
+        } catch (\Exception $e) {
+            return response()->json(['success' => false, 'msg' => $e->getMessage()]);
+        }
+    }
+
+    public function getCandidate($cId)
+    {
+        try {
+            $candidate = Candidate::where('id', $cId)->get();
+            return response()->json(['success' => true, 'data' => $candidate]);
+        } catch (\Exception $e) {
+            return response()->json(['success' => false, 'msg' => $e->getMessage()]);
+        }
+    }
+
+
+
+    public function getCandidatesAPI(Request $request)
+    {
+        $year = $request->input('year');
+        $period = $request->input('period');
+        $fromDate = $request->input('from_date');
+        $toDate = $request->input('to_date');
+
+        $candidates = Candidate::when($period && $period !== 'all_time', function ($query) use ($period, $fromDate, $toDate) {
+
+
+            if ($period === 'last_week') {
+                // Start of last week (Monday of the previous week)
+                $startOfLastWeek = now()->subWeek()->startOfWeek();
+                // End of last week (Sunday of the previous week)
+                $endOfLastWeek = now()->subWeek()->endOfWeek();
+                $query->whereBetween('conducted_date', [$startOfLastWeek, $endOfLastWeek]);
+            } elseif ($period === 'last_month') {
+                // Start and end of last month
+                $startOfLastMonth = now()->subMonthNoOverflow()->startOfMonth();
+                $endOfLastMonth = now()->subMonthNoOverflow()->endOfMonth();
+                $query->whereBetween('conducted_date', [$startOfLastMonth, $endOfLastMonth]);
+            } elseif ($period === 'last_year') {
+                // Start and end of last year
+                $startOfLastYear = now()->subYear()->startOfYear();
+                $endOfLastYear = now()->subYear()->endOfYear();
+                $query->whereBetween('conducted_date', [$startOfLastYear, $endOfLastYear]);
+            }
+        })
+            ->when($fromDate && !$toDate, function ($query) use ($fromDate) {
+                // Only `from_date` is provided, show records from this date onwards
+                $query->where('conducted_date', '>=', $fromDate);
+            })
+            ->when($toDate && !$fromDate, function ($query) use ($toDate) {
+                // Only `to_date` is provided, show records up to this date
+                $query->where('conducted_date', '<=', $toDate);
+            })
+            ->when($fromDate && $toDate, function ($query) use ($fromDate, $toDate) {
+                // Both `from_date` and `to_date` are provided, show records within this range
+                $query->whereBetween('conducted_date', [$fromDate, $toDate]);
+            })
+            ->when($year, function ($query) use ($year) {
+                $query->whereYear('conducted_date', $year);
+            })->with(['company', 'client', 'exam', 'vendor', 'user']) 
+            ->get();
+
+        return response()->json($candidates);
+    }
+}
