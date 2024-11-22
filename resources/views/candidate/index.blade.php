@@ -408,7 +408,7 @@
                                     <div class="relative w-full mb-3">
                                         <label class="block uppercase text-gray-600 text-xs font-semibold mb-2"
                                             for="first_name">
-                                            First Name <span class="text-red-500 text-lg">*</span>
+                                            First Name<span class="text-red-500 text-lg">*</span>
                                         </label>
                                         <input type="text" name="first_name" id="first_name"
                                             class="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
@@ -419,7 +419,7 @@
                                     <div class="relative w-full mb-3">
                                         <label class="block uppercase text-gray-600 text-xs font-semibold mb-2"
                                             for="last_name">
-                                            Last Name
+                                            Last Name<span class="text-red-500 text-lg">*</span>
                                         </label>
                                         <input type="text" name="last_name" id="last_name"
                                             class="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
@@ -490,7 +490,7 @@
                                     <div class="relative group mb-4 dropdownBlock">
                                         <label class="block uppercase text-gray-600 text-xs font-semibold mb-2"
                                             for="company_name">
-                                            Company Name
+                                            Company Name<span class="text-red-500 text-lg">*</span>
                                         </label>
                                         <input type="hidden" name="company_id" data-dropdown-input>
                                         <input type="button" value="Select Company" data-dropdown-button
@@ -559,7 +559,7 @@
                                     <div class="relative group mb-4 dropdownBlock">
                                         <label class="block uppercase text-gray-600 text-xs font-semibold mb-2"
                                             for="vendor_name">
-                                            Vendor
+                                            Vendor<span class="text-red-500 text-lg">*</span>
                                         </label>
                                         <input type="hidden" id="vendorId" name="vendor_id" data-dropdown-input
                                             required>
@@ -583,7 +583,7 @@
                                     <div class="relative group mb-4 dropdownBlock">
                                         <label class="block uppercase text-gray-600 text-xs font-semibold mb-2"
                                             for="exam_name">
-                                            Exam Name
+                                            Exam Name<span class="text-red-500 text-lg">*</span>
                                         </label>
                                         <input type="hidden" name="exam_id" data-dropdown-input required>
                                         <input type="button" value="Select Exam" name="exam_name"
@@ -618,7 +618,7 @@
                                     <div class="relative w-full mb-3">
                                         <label
                                             class="block uppercase text-gray-600 text-xs font-semibold mb-2">Conducted
-                                            Date</label>
+                                            Date<span class="text-red-500 text-lg">*</span></label>
                                         <input id="conducted_date" type="date" name="conducted_date"
                                             class="disable-future-date border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                                             required>
@@ -627,7 +627,7 @@
                                 <div class="w-full lg:w-6/12 px-4">
                                     <div class="relative w-full mb-3">
                                         <label class="block uppercase text-gray-600 text-xs font-semibold mb-2">Exam
-                                            Status</label>
+                                            Status<span class="text-red-500 text-lg">*</span></label>
                                         <select name="status" id="exam-status"
                                             class="border-0 px-3 py-3 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
                                             <option value="passed">Passed</option>
@@ -643,7 +643,7 @@
                                     <div class="relative group mb-4 dropdownBlock">
                                         <label class="block uppercase text-gray-600 text-xs font-semibold mb-2"
                                             for="conducted_by">
-                                            Conducted By
+                                            Conducted By<span class="text-red-500 text-lg">*</span>
                                         </label>
 
                                         <input type="hidden" name="conducted_by" data-dropdown-input required>
@@ -668,7 +668,7 @@
                                     <div class="relative group mb-4">
                                         <label class="block uppercase text-gray-600 text-xs font-semibold mb-2"
                                             for="client_name">
-                                            Client
+                                            Client<span class="text-red-500 text-lg">*</span>
                                         </label>
                                         <input type="hidden" name="client_id" data-dropdown-input required>
                                         <input type="button" value="Select Client" data-dropdown-button
