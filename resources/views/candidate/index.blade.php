@@ -413,7 +413,9 @@
                                         <input type="text" name="first_name" id="first_name"
                                             class="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                                             required>
+                                        <span id="error-first_name" class="error-text text-red-500 text-xs"></span>
                                     </div>
+
                                 </div>
                                 <div class="w-full lg:w-6/12 px-4">
                                     <div class="relative w-full mb-3">
@@ -424,6 +426,7 @@
                                         <input type="text" name="last_name" id="last_name"
                                             class="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                                             required>
+                                        <span id="error-last_name" class="error-text text-red-500 text-xs"></span>
                                     </div>
                                 </div>
 
@@ -434,9 +437,8 @@
                                         </label>
                                         <div
                                             class="phone-input-container flex flex-col border-0 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150 cursor-pointer">
-                                            <!-- Input Section -->
+
                                             <div class="flex items-center">
-                                                <!-- Country Code Dropdown Button -->
                                                 <div data-dropdown-toggle="dropdown-phone"
                                                     class="country-code-button flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-900">
                                                     <input type="hidden" value="+91"
@@ -458,6 +460,7 @@
                                                         pattern="[0-9]{10}" placeholder="123-456-7890" />
                                                 </div>
                                             </div>
+
                                             <!-- Dropdown Menu -->
                                             <div
                                                 class="country-dropdown hidden absolute top-full left-0 mt-2 bg-white divide-y divide-gray-100 rounded-lg shadow w-full dark:bg-gray-700 max-h-48 overflow-y-auto z-10">
@@ -471,6 +474,7 @@
                                                 </ul>
                                             </div>
                                         </div>
+                                        <span id="error-phone" class="error-text text-red-500 text-xs"></span>
                                     </div>
                                 </div>
 
@@ -482,6 +486,7 @@
                                         </label>
                                         <input type="email" name="email_id" id="email_id"
                                             class="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
+                                        <span id="error-email_id" class="error-text text-red-500 text-xs"></span>
                                     </div>
                                 </div>
 
@@ -495,6 +500,7 @@
                                         <input type="hidden" name="company_id" data-dropdown-input>
                                         <input type="button" value="Select Company" data-dropdown-button
                                             class="companyDropdownBtn border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150 text-left">
+                                        <span id="error-company_id" class="error-text text-red-500 text-xs"></span>
                                         <div data-dropdown-menu
                                             class="hidden w-full absolute right-0 mt-2 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 p-1 space-y-1 z-50">
                                             <!-- Search input -->
@@ -506,9 +512,8 @@
 
                                             </ul>
                                         </div>
-                                        <span class="text-xs text-gray-500">Please select "Unknown" if the company is
-                                            not
-                                            listed in the dropdown</span>
+                                        <p class="text-xs text-gray-500 w-full">Please select "Unknown" if the company
+                                            is not listed in the dropdown</p>
                                     </div>
                                 </div>
 
@@ -561,11 +566,11 @@
                                             for="vendor_name">
                                             Vendor<span class="text-red-500 text-lg">*</span>
                                         </label>
-                                        <input type="hidden" id="vendorId" name="vendor_id" data-dropdown-input
-                                            required>
+                                        <input type="hidden" id="vendorId" name="vendor_id" data-dropdown-input>
                                         <input type="button" value="Select Vendor" name="vendor_name"
                                             data-dropdown-button
                                             class="vendorDropdownBtn border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150 text-left">
+                                        <span id="error-vendor_id" class="error-text text-red-500 text-xs"></span>
                                         <div data-dropdown-menu
                                             class="hidden w-full absolute right-0 mt-2 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 p-1 space-y-1 z-50">
                                             <!-- Search input -->
@@ -585,10 +590,11 @@
                                             for="exam_name">
                                             Exam Name<span class="text-red-500 text-lg">*</span>
                                         </label>
-                                        <input type="hidden" name="exam_id" data-dropdown-input required>
+                                        <input type="hidden" name="exam_id" data-dropdown-input>
                                         <input type="button" value="Select Exam" name="exam_name"
                                             data-dropdown-button
                                             class="examDropdownBtn border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150 text-left">
+                                        <span id="error-exam_id" class="error-text text-red-500 text-xs"></span>
                                         <div data-dropdown-menu
                                             class="hidden w-full absolute right-0 mt-2 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 p-1 space-y-1 z-50">
                                             <!-- Search input -->
@@ -622,6 +628,7 @@
                                         <input id="conducted_date" type="date" name="conducted_date"
                                             class="disable-future-date border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                                             required>
+                                        <span id="error-conducted_date" class="error-text text-red-500 text-xs"></span>
                                     </div>
                                 </div>
                                 <div class="w-full lg:w-6/12 px-4">
@@ -630,7 +637,7 @@
                                             Status<span class="text-red-500 text-lg">*</span></label>
                                         <select name="status" id="exam-status"
                                             class="border-0 px-3 py-3 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
-                                            <option value="passed">Passed</option>
+                                            <option value="passed" selected>Passed</option>
                                             <option value="failed">Failed</option>
                                             <option value="on-hold">On-Hold</option>
                                             <option value="rescheduled">Rescheduled
@@ -646,9 +653,10 @@
                                             Conducted By<span class="text-red-500 text-lg">*</span>
                                         </label>
 
-                                        <input type="hidden" name="conducted_by" data-dropdown-input required>
+                                        <input type="hidden" name="conducted_by" data-dropdown-input>
                                         <input type="button" value="Select User" data-dropdown-button
                                             class="conductedByDropdownBtn border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150 text-left">
+                                        <span id="error-conducted_by" class="error-text text-red-500 text-xs"></span>
 
                                         <div data-dropdown-menu
                                             class="hidden w-full absolute right-0 mt-2 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 p-1 space-y-1 z-50">
@@ -670,9 +678,10 @@
                                             for="client_name">
                                             Client<span class="text-red-500 text-lg">*</span>
                                         </label>
-                                        <input type="hidden" name="client_id" data-dropdown-input required>
+                                        <input type="hidden" name="client_id" data-dropdown-input>
                                         <input type="button" value="Select Client" data-dropdown-button
                                             class="clientDropdownBtn border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150 text-left">
+                                        <span id="error-client_id" class="error-text text-red-500 text-xs"></span>
                                         <div data-dropdown-menu
                                             class="hidden w-full absolute right-0 mt-2 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 p-1 space-y-1 z-50">
                                             <!-- Search input -->
@@ -1389,19 +1398,28 @@
             $(document).ready(function() {
                 $("#add_candidate_form").submit(function(e) {
                     e.preventDefault();
+                    $('.error-text').text('');
                     var formData = $(this).serialize();
 
                     $.ajax({
                         url: "{{ route('candidates.store') }}",
                         type: "POST",
                         data: formData,
-                        success: function(data) {
-                            if (data.success == true) {
-                                alert(data.msg);
-                                location.reload();
-                            } else {
-                                alert(data.msg);
-                            }
+                        success: function(data) {   
+                            alert(data.msg);
+                            location.reload();
+                        },
+                        error: function(error)
+                        {  
+                            if(error.responseJSON && error.responseJSON.errors)
+                            {
+                                $.each(error.responseJSON.errors, function(key, value) {
+                                    $(`#error-${key}`).text(value[0]);
+                                });
+                            }  
+                            else{
+                                alert('An error occurred while creating the candidate.');
+                            }                 
                         }
                     });
 

@@ -7,9 +7,12 @@ use App\Models\Client;
 use App\Models\Company;
 use App\Models\Candidate;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\ValidationException;
 
 class CandidateController extends Controller
 {
@@ -22,7 +25,7 @@ class CandidateController extends Controller
         $onHoldCandidate = Candidate::where('status', 'on-hold')->count();
         $rescheduledCandidate = Candidate::where('status', 'rescheduled')->count();
 
-        $query = Candidate::query() ->with(['company', 'exam', 'vendor', 'user']);
+        $query = Candidate::query()->with(['company', 'exam', 'vendor', 'user']);
 
 
         if (Gate::allows('isAdmin')) {
@@ -77,14 +80,14 @@ class CandidateController extends Controller
                 $query->where('exam_id', $examId);
             }
         }
-        
+
         if ($request->filled('vendor_id')) {
             $examIds = Exam::where('vendor_id', $request->vendor_id)->pluck('id'); // Get all exam IDs for the vendor
             if ($examIds->isNotEmpty()) {
                 $query->whereIn('exam_id', $examIds); // Use whereIn for multiple matches
             }
         }
-        
+
 
         if ($request->filled('exam_id')) {
             $query->where('exam_id', $request->exam_id);
@@ -109,7 +112,6 @@ class CandidateController extends Controller
                 $q->where('first_name', 'LIKE', "%{$searchTerm}%")
                     ->orWhere('last_name', 'LIKE', "%{$searchTerm}%")
                     ->orWhere('email_id', 'LIKE', "%{$searchTerm}%");
-
             });
         }
 
@@ -131,30 +133,48 @@ class CandidateController extends Controller
      */
     public function store(Request $request)
     {
-        // Validate the incoming request
-        $validatedData = $request->validate([
-            'first_name' => 'required|string|max:255',
-            'last_name' => 'required|string|max:255',
-            'country_code' => 'nullable|string|max:15',
-            'phone' => 'nullable|string|max:15',
-            'email_id' => 'nullable|email|max:255',
-            'company_id' => 'nullable|string|max:255',
-            'exam_id' => 'required|string|max:255',
-            'vendor_id' => 'required|string|max:255',
-            'conducted_date' => 'required|date',
-            'conducted_by' => 'required|max:255',
-            'client_id' => 'required|string',
-            'status' => 'required|string',
-            'remark' => 'nullable|string|max:500',
-        ]);
-
-
         try {
-            Candidate::create($validatedData); // Pass $validatedData directly
-            return response()->json(['success' => true, 'msg' => "Candidate created successfully"]);
-        } catch (\Exception $e) {
-            // Log the error for debugging
+            $validator = Validator::make($request->all(), [
+                'first_name' => 'required|string|max:255',
+                'last_name' => 'required|string|max:255',
+                'country_code' => 'nullable|string|max:15',
+                'phone' => 'nullable|string|max:15',
+                'email_id' => 'nullable|email|max:255',
+                'company_id' => 'required|string|max:255',
+                'exam_id' => 'required|string|max:255',
+                'vendor_id' => 'required|string|max:255',
+                'conducted_date' => 'required|date',
+                'conducted_by' => 'required|max:255',
+                'client_id' => 'required|string',
+                'status' => 'required|string',
+                'remark' => 'nullable|string|max:500',
+            ]);
 
+            if ($validator->fails()) {
+                return response()->json(array(
+                    'success' => false,
+                    'errors' => $validator->getMessageBag()->toArray()
+                ), 400);
+            }
+
+            Candidate::create([
+                'first_name' => $request->first_name,
+                'last_name' => $request->last_name,
+                'country_code' => $request->country_code,
+                'phone' => $request->phone,
+                'email_id' => $request->email_id,
+                'company_id' => $request->company_id,
+                'exam_id' => $request->exam_id,
+                'vendor_id' => $request->vendor_id,
+                'conducted_date' => $request->conducted_date,
+                'conducted_by' => $request->conducted_by,
+                'client_id' => $request->client_id,
+                'status' => $request->status,
+                'remark' => $request->remark,
+            ]);
+            return response()->json(['success' => true, 'msg' => "Candidate created successfully"]);
+        }         
+        catch (\Exception $e) {            
             return response()->json(['success' => false, 'msg' => 'An error occurred while creating the candidate.']);
         }
     }
@@ -299,7 +319,7 @@ class CandidateController extends Controller
             })
             ->when($year, function ($query) use ($year) {
                 $query->whereYear('conducted_date', $year);
-            })->with(['company', 'client', 'exam', 'vendor', 'user']) 
+            })->with(['company', 'client', 'exam', 'vendor', 'user'])
             ->get();
 
         return response()->json($candidates);
