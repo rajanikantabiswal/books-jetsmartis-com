@@ -40,7 +40,7 @@ class Candidate extends Model
   {
     return $this->belongsTo(Vendor::class);
   }
-  public function user()
+  public function conducted_user()
   {
       return $this->belongsTo(User::class, 'conducted_by');
   }

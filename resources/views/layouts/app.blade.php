@@ -161,7 +161,7 @@
 
                     // Reset the exam field if the vendor is changed
                     $('input[name="exam_id"]').val(''); // Clear the exam ID
-                    $('.examDropdownBtn').val('Select Exam'); // Reset the exam button value
+                    $('input[name="exam_name"]').val('Select Exam'); // Reset the exam button value
 
                 }
             });

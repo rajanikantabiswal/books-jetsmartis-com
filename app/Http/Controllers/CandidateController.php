@@ -25,7 +25,7 @@ class CandidateController extends Controller
         $onHoldCandidate = Candidate::where('status', 'on-hold')->count();
         $rescheduledCandidate = Candidate::where('status', 'rescheduled')->count();
 
-        $query = Candidate::query()->with(['company', 'exam', 'vendor', 'user']);
+        $query = Candidate::query()->with(['company', 'exam', 'vendor', 'conducted_user']);
 
 
         if (Gate::allows('isAdmin')) {
@@ -199,55 +199,61 @@ class CandidateController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request)
     {
-        // Validate the incoming request
-        $validatedData = $request->validate([
-            'first_name' => 'required|string|max:255',
-            'last_name' => 'required|string|max:255',
-            'country_code' => 'nullable|string|max:15',
-            'mobile_no' => 'nullable|string|max:15',
-            'email_id' => 'nullable|email|max:255',
-            'company_name' => 'nullable|string|max:255',
-            'exam_code' => 'nullable|string|max:255',
-            'exam_name' => 'nullable|string|max:255',
-            'vendor' => 'nullable|string|max:255',
-            'conducted_date' => 'required|date',
-            'conducted_by' => 'required|max:255',
-            'client' => 'required|string',
-            'status' => 'required|string',
-            'remark' => 'nullable|string|max:500',
-        ]);
-        try {
-            $examExists = Exam::where('vendor', $validatedData['vendor'])
-                ->where('exam_name', $validatedData['exam_name'])
-                ->exists();
-            if (!$examExists) {
-                return response()->json(['success' => false, 'msg' => 'Exam with the specified vendor and name does not exist. Please select from the dropdown.']);
+        $candidateId = $request->candidate_id;
+        if($candidateId){
+            try {
+                $validator = Validator::make($request->all(), [
+                    'first_name' => 'required|string|max:255',
+                    'last_name' => 'required|string|max:255',
+                    'country_code' => 'nullable|string|max:15',
+                    'phone' => 'nullable|string|max:15',
+                    'email_id' => 'nullable|email|max:255',
+                    'company_id' => 'required|string|max:255',
+                    'exam_id' => 'required|string|max:255',
+                    'vendor_id' => 'required|string|max:255',
+                    'conducted_date' => 'required|date',
+                    'conducted_by' => 'required|max:255',
+                    'client_id' => 'required|string',
+                    'status' => 'required|string',
+                    'remark' => 'nullable|string|max:500',
+                ]);
+    
+                if ($validator->fails()) {
+                    return response()->json(array(
+                        'success' => false,
+                        'errors' => $validator->getMessageBag()->toArray()
+                    ), 400);
+                }
+
+                $candidate = Candidate::find($candidateId);
+                if($candidate){
+                    $candidate->update([
+                        'first_name' => $request->first_name,
+                        'last_name' => $request->last_name,
+                        'country_code' => $request->country_code,
+                        'phone' => $request->phone,
+                        'email_id' => $request->email_id,
+                        'company_id' => $request->company_id,
+                        'exam_id' => $request->exam_id,
+                        'vendor_id' => $request->vendor_id,
+                        'conducted_date' => $request->conducted_date,
+                        'conducted_by' => $request->conducted_by,
+                        'client_id' => $request->client_id,
+                        'status' => $request->status,
+                        'remark' => $request->remark,
+                    ]);
+
+                    return response()->json(['success' => true, 'msg' => "Candidate updated successfully"]);
+                }
+    
+            }         
+            catch (\Exception $e) {            
+                return response()->json(['success' => false, 'msg' => 'An error occurred while creating the candidate.']);
             }
-            Candidate::where('id', $request->candidate_id)->update([
-
-                'first_name' => $validatedData['first_name'], // Concatenate first and last name
-                'last_name' => $validatedData['last_name'],
-                'country_code' => $validatedData['country_code'],
-                'mobile_no' => $validatedData['mobile_no'],
-                'email_id' => $validatedData['email_id'],
-                'company_name' => $validatedData['company_name'],
-                'exam_code' => $validatedData['exam_code'],
-                'exam_name' => $validatedData['exam_name'],
-                'vendor' => $validatedData['vendor'],
-                'conducted_date' => $validatedData['conducted_date'],
-                'conducted_by' => $validatedData['conducted_by'],
-                'client' => $validatedData['client'],
-                'status' => $validatedData['status'],
-                'remark' => $validatedData['remark'],
-            ]);
-
-
-            return response()->json(['success' => true, 'msg' => 'Candidate updated successfully!']);
-        } catch (\Exception $e) {
-            return response()->json(['success' => false, 'msg' => $e->getMessage()]);
         }
+       
     }
 
     /**
@@ -268,7 +274,7 @@ class CandidateController extends Controller
     public function getCandidate($cId)
     {
         try {
-            $candidate = Candidate::where('id', $cId)->get();
+            $candidate = Candidate::with(['company', 'conducted_user', 'client', 'vendor', 'exam'])->where('id', $cId)->get();
             return response()->json(['success' => true, 'data' => $candidate]);
         } catch (\Exception $e) {
             return response()->json(['success' => false, 'msg' => $e->getMessage()]);

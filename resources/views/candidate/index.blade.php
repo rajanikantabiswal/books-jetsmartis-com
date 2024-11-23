@@ -257,7 +257,7 @@
 
                     <button
                         class="bg-green-900 text-white active:bg-green-500 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                        type="button" onclick="showDiv('addCandidateModal')">Add New</button>
+                        type="button" onclick="showDiv('AddCandidateModal')">Add New</button>
 
                 </div>
             </div>
@@ -346,7 +346,7 @@
                                             {{ $candidate->status }}
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap">
-                                            {{ $candidate->user->name }}
+                                            {{ $candidate->conducted_user->name }}
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap">
                                             {{ $candidate->client->client_name }}
@@ -354,8 +354,8 @@
 
                                         <td class="flex items-center px-6 py-4">
                                             <span data-id="{{ $candidate->id }}"
-                                                class="edit_btn font-medium text-blue-600 dark:text-blue-500 cursor-pointer hover:underline"
-                                                onclick="showDiv('editCandidateModal')">Edit</span>
+                                                class="edit-button font-medium text-blue-600 dark:text-blue-500 cursor-pointer hover:underline"
+                                                onclick="showDiv('EditCandidateModal')">Edit</span>
                                             <span data-id="{{ $candidate->id }}"
                                                 class="delete_btn font-medium text-red-600 dark:text-red-500 cursor-pointer hover:underline ms-3">Remove</span>
                                         </td>
@@ -374,13 +374,14 @@
 
     </div>
 
-    <div id="addCandidateModal"
+    <div id="AddCandidateModal"
         class="absolute top-0 left-0 w-full h-[100vh] bg-[#30373cb5] p-4 z-100 flex justify-center items-center hidden">
         <div>
             <!-- Modal Dialog -->
-            <form id="add_candidate_form">
+            <form id="AddCandidateForm">
                 @csrf
-                <div class="flex z-50  flex-col gap-4 overflow-hidden rounded-md border border-neutral-300 bg-white text-neutral-600 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-300 max-h-[70vh] max-w-3xl">
+                <div
+                    class="flex z-50  flex-col gap-4 overflow-hidden rounded-md border border-neutral-300 bg-white text-neutral-600 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-300 max-h-[70vh] max-w-3xl">
 
                     <!-- Dialog Header -->
                     <div
@@ -388,7 +389,7 @@
                         <h3 id="defaultModalTitle"
                             class="font-semibold tracking-wide text-neutral-900 dark:text-white">New Entry</h3>
 
-                        <button type="button" onclick="hideDiv('addCandidateModal')">
+                        <button type="button" onclick="hideDiv('AddCandidateModal')">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"
                                 stroke="currentColor" fill="none" stroke-width="1.4" class="w-5 h-5">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -412,7 +413,7 @@
                                         <input type="text" name="first_name" id="first_name"
                                             class="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                                             required>
-                                        <span id="error-first_name" class="error-text text-red-500 text-xs"></span>
+                                        <span id="error_first_name" class="error-text text-red-500 text-xs"></span>
                                     </div>
 
                                 </div>
@@ -425,7 +426,7 @@
                                         <input type="text" name="last_name" id="last_name"
                                             class="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                                             required>
-                                        <span id="error-last_name" class="error-text text-red-500 text-xs"></span>
+                                        <span id="error_last_name" class="error-text text-red-500 text-xs"></span>
                                     </div>
                                 </div>
 
@@ -473,7 +474,7 @@
                                                 </ul>
                                             </div>
                                         </div>
-                                        <span id="error-phone" class="error-text text-red-500 text-xs"></span>
+                                        <span id="error_phone" class="error-text text-red-500 text-xs"></span>
                                     </div>
                                 </div>
 
@@ -485,7 +486,7 @@
                                         </label>
                                         <input type="email" name="email_id" id="email_id"
                                             class="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
-                                        <span id="error-email_id" class="error-text text-red-500 text-xs"></span>
+                                        <span id="error_email_id" class="error-text text-red-500 text-xs"></span>
                                     </div>
                                 </div>
 
@@ -499,7 +500,7 @@
                                         <input type="hidden" name="company_id" data-dropdown-input>
                                         <input type="button" value="Select Company" data-dropdown-button
                                             class="companyDropdownBtn border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150 text-left">
-                                        <span id="error-company_id" class="error-text text-red-500 text-xs"></span>
+                                        <span id="error_company_id" class="error-text text-red-500 text-xs"></span>
                                         <div data-dropdown-menu
                                             class="hidden w-full absolute right-0 mt-2 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 p-1 space-y-1 z-50">
                                             <!-- Search input -->
@@ -558,18 +559,18 @@
                                     </div>
                                 </div>
 
-                                <div class="w-full lg:w-6/12 px-4 vendor">
+                                <div class="w-full lg:w-6/12 px-4 ">
                                     <!-- Vendor Field -->
-                                    <div class="relative group mb-4 dropdownBlock">
+                                    <div class="relative group mb-4 dropdownBlock vendor">
                                         <label class="block uppercase text-gray-600 text-xs font-semibold mb-2"
                                             for="vendor_name">
                                             Vendor<span class="text-red-500 text-lg">*</span>
                                         </label>
-                                        <input type="hidden" id="vendorId" name="vendor_id" data-dropdown-input>
+                                        <input type="hidden" id="vendor_id" name="vendor_id" data-dropdown-input>
                                         <input type="button" value="Select Vendor" name="vendor_name"
                                             data-dropdown-button
                                             class="vendorDropdownBtn border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150 text-left">
-                                        <span id="error-vendor_id" class="error-text text-red-500 text-xs"></span>
+                                        <span id="error_vendor_id" class="error-text text-red-500 text-xs"></span>
                                         <div data-dropdown-menu
                                             class="hidden w-full absolute right-0 mt-2 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 p-1 space-y-1 z-50">
                                             <!-- Search input -->
@@ -593,7 +594,7 @@
                                         <input type="button" value="Select Exam" name="exam_name"
                                             data-dropdown-button
                                             class="examDropdownBtn border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150 text-left">
-                                        <span id="error-exam_id" class="error-text text-red-500 text-xs"></span>
+                                        <span id="error_exam_id" class="error-text text-red-500 text-xs"></span>
                                         <div data-dropdown-menu
                                             class="hidden w-full absolute right-0 mt-2 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 p-1 space-y-1 z-50">
                                             <!-- Search input -->
@@ -627,14 +628,15 @@
                                         <input id="conducted_date" type="date" name="conducted_date"
                                             class="disable-future-date border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                                             required>
-                                        <span id="error-conducted_date" class="error-text text-red-500 text-xs"></span>
+                                        <span id="error_conducted_date"
+                                            class="error-text text-red-500 text-xs"></span>
                                     </div>
                                 </div>
                                 <div class="w-full lg:w-6/12 px-4">
                                     <div class="relative w-full mb-3">
                                         <label class="block uppercase text-gray-600 text-xs font-semibold mb-2">Exam
                                             Status<span class="text-red-500 text-lg">*</span></label>
-                                        <select name="status" id="exam-status"
+                                        <select name="status" id="exam_status"
                                             class="border-0 px-3 py-3 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
                                             <option value="passed" selected>Passed</option>
                                             <option value="failed">Failed</option>
@@ -655,7 +657,7 @@
                                         <input type="hidden" name="conducted_by" data-dropdown-input>
                                         <input type="button" value="Select User" data-dropdown-button
                                             class="conductedByDropdownBtn border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150 text-left">
-                                        <span id="error-conducted_by" class="error-text text-red-500 text-xs"></span>
+                                        <span id="error_conducted_by" class="error-text text-red-500 text-xs"></span>
 
                                         <div data-dropdown-menu
                                             class="hidden w-full absolute right-0 mt-2 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 p-1 space-y-1 z-50">
@@ -680,7 +682,7 @@
                                         <input type="hidden" name="client_id" data-dropdown-input>
                                         <input type="button" value="Select Client" data-dropdown-button
                                             class="clientDropdownBtn border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150 text-left">
-                                        <span id="error-client_id" class="error-text text-red-500 text-xs"></span>
+                                        <span id="error_client_id" class="error-text text-red-500 text-xs"></span>
                                         <div data-dropdown-menu
                                             class="hidden w-full absolute right-0 mt-2 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 p-1 space-y-1 z-50">
                                             <!-- Search input -->
@@ -718,7 +720,7 @@
                     <!-- Dialog Footer -->
                     <div
                         class="flex flex-col-reverse justify-between gap-2 border-t border-neutral-300 bg-neutral-50/60 p-4 dark:border-neutral-700 dark:bg-neutral-950/20 sm:flex-row sm:items-center md:justify-end">
-                        <button type="button" onclick="hideDiv('addCandidateModal')"
+                        <button type="button" onclick="hideDiv('AddCandidateModal')"
                             class="cursor-pointer whitespace-nowrap rounded-md px-4 py-2 text-center text-sm font-medium tracking-wide text-neutral-600 transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:opacity-100 active:outline-offset-0 dark:text-neutral-300 dark:focus-visible:outline-white">Close</button>
                         <button type="submit"
                             class="submitButton cursor-pointer whitespace-nowrap rounded-md bg-green-900 text-white px-4 py-2 text-center text-sm font-medium tracking-wide text-neutral-100 transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:opacity-100 active:outline-offset-0 dark:bg-white dark:text-black dark:focus-visible:outline-white">Save</button>
@@ -729,14 +731,15 @@
         </div>
     </div>
 
-    <div id="editCandidateModal"
+    <div id="EditCandidateModal"
         class="absolute top-0 left-0 w-full h-[100vh] bg-[#30373cb5] p-4 z-100 flex justify-center items-center hidden">
         <div>
             <!-- Modal Dialog -->
-            <form id="edit_candidate_form">
+            <form id="EditCandidateForm">
                 @csrf
                 <input type="hidden" id="edit_candidate_id" name="candidate_id">
-                <div class="flex z-50  flex-col gap-4 overflow-hidden rounded-md border border-neutral-300 bg-white text-neutral-600 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-300 max-h-[70vh] max-w-3xl">
+                <div
+                    class="flex z-50  flex-col gap-4 overflow-hidden rounded-md border border-neutral-300 bg-white text-neutral-600 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-300 max-h-[70vh] max-w-3xl">
 
                     <!-- Dialog Header -->
                     <div
@@ -744,7 +747,7 @@
                         <h3 id="defaultModalTitle"
                             class="font-semibold tracking-wide text-neutral-900 dark:text-white">Edit Entry</h3>
 
-                        <button type="button" onclick="hideDiv('editCandidateModal')">
+                        <button type="button" onclick="hideDiv('EditCandidateModal')">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"
                                 stroke="currentColor" fill="none" stroke-width="1.4" class="w-5 h-5">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -759,6 +762,7 @@
                                 Candidate Information
                             </h6>
                             <div class="flex flex-wrap">
+
                                 <div class="w-full lg:w-6/12 px-4">
                                     <div class="relative w-full mb-3">
                                         <label class="block uppercase text-gray-600 text-xs font-semibold mb-2"
@@ -768,20 +772,22 @@
                                         <input type="text" name="first_name" id="edit_first_name"
                                             class="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                                             required>
-                                        <span id="error-first_name" class="error-text text-red-500 text-xs"></span>
+                                        <span id="error_edit_first_name"
+                                            class="error-text text-red-500 text-xs"></span>
                                     </div>
 
                                 </div>
                                 <div class="w-full lg:w-6/12 px-4">
                                     <div class="relative w-full mb-3">
                                         <label class="block uppercase text-gray-600 text-xs font-semibold mb-2"
-                                            for="last_name">
+                                            for="edit_last_name">
                                             Last Name<span class="text-red-500 text-lg">*</span>
                                         </label>
-                                        <input type="text" name="last_name" id="last_name"
+                                        <input type="text" name="last_name" id="edit_last_name"
                                             class="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                                             required>
-                                        <span id="error-last_name" class="error-text text-red-500 text-xs"></span>
+                                        <span id="error_edit_last_name"
+                                            class="error-text text-red-500 text-xs"></span>
                                     </div>
                                 </div>
 
@@ -797,9 +803,11 @@
                                                 <div data-dropdown-toggle="dropdown-phone"
                                                     class="country-code-button flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-900">
                                                     <input type="hidden" value="+91"
-                                                        class="country-code-input-field" name="country_code">
+                                                        class="country-code-input-field" name="country_code"
+                                                        id="edit_country_code">
                                                     <input type="button" value="+91"
-                                                        class="country-code-input cursor-pointer">
+                                                        class="country-code-input cursor-pointer"
+                                                        id="edit_country_code_btn">
                                                     <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true"
                                                         xmlns="http://www.w3.org/2000/svg" fill="none"
                                                         viewBox="0 0 10 6">
@@ -810,7 +818,7 @@
                                                 </div>
                                                 <!-- Phone Input Field -->
                                                 <div class="relative w-full">
-                                                    <input name="phone" type="text"
+                                                    <input name="phone" id="edit_phone" type="text"
                                                         class="phone-input border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                                                         pattern="[0-9]{10}" placeholder="123-456-7890" />
                                                 </div>
@@ -829,19 +837,19 @@
                                                 </ul>
                                             </div>
                                         </div>
-                                        <span id="error-phone" class="error-text text-red-500 text-xs"></span>
+                                        <span id="error_edit_phone" class="error-text text-red-500 text-xs"></span>
                                     </div>
                                 </div>
 
                                 <div class="w-full lg:w-6/12 px-4">
                                     <div class="relative w-full mb-3">
                                         <label class="block uppercase text-gray-600 text-xs font-semibold mb-2"
-                                            for="email_id">
+                                            for="edit_email_id">
                                             Email address
                                         </label>
-                                        <input type="email" name="email_id" id="email_id"
+                                        <input type="email" name="email_id" id="edit_email_id"
                                             class="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
-                                        <span id="error-email_id" class="error-text text-red-500 text-xs"></span>
+                                        <span id="error_edit_email_id" class="error-text text-red-500 text-xs"></span>
                                     </div>
                                 </div>
 
@@ -849,13 +857,17 @@
                                     <!-- Company Field -->
                                     <div class="relative group mb-4 dropdownBlock">
                                         <label class="block uppercase text-gray-600 text-xs font-semibold mb-2"
-                                            for="company_name">
+                                            for="edit_company_name">
                                             Company Name<span class="text-red-500 text-lg">*</span>
                                         </label>
-                                        <input type="hidden" name="company_id" data-dropdown-input>
-                                        <input type="button" value="Select Company" data-dropdown-button
-                                            class="companyDropdownBtn border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150 text-left">
-                                        <span id="error-company_id" class="error-text text-red-500 text-xs"></span>
+                                        <input type="hidden" id="edit_company_id" name="company_id"
+                                            data-dropdown-input>
+                                        <input type="button" id="edit_company_id_btn" value="Select Company"
+                                            data-dropdown-button
+                                            class="companyDropdownBtn border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150 text-left">
+                                        <span id="error_edit_company_id"
+                                            class="error-text text-red-500 text-xs"></span>
+
                                         <div data-dropdown-menu
                                             class="hidden w-full absolute right-0 mt-2 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 p-1 space-y-1 z-50">
                                             <!-- Search input -->
@@ -914,18 +926,20 @@
                                     </div>
                                 </div>
 
-                                <div class="w-full lg:w-6/12 px-4 vendor">
+                                <div class="w-full lg:w-6/12 px-4">
                                     <!-- Vendor Field -->
-                                    <div class="relative group mb-4 dropdownBlock">
+                                    <div class="relative group mb-4 dropdownBlock vendor">
                                         <label class="block uppercase text-gray-600 text-xs font-semibold mb-2"
                                             for="vendor_name">
                                             Vendor<span class="text-red-500 text-lg">*</span>
                                         </label>
-                                        <input type="hidden" id="vendorId" name="vendor_id" data-dropdown-input>
-                                        <input type="button" value="Select Vendor" name="vendor_name"
-                                            data-dropdown-button
+                                        <input type="hidden" id="edit_vendor_id" name="vendor_id"
+                                            data-dropdown-input>
+                                        <input type="button" id="edit_vendor_id_btn" value="Select Vendor"
+                                            name="vendor_name" data-dropdown-button
                                             class="vendorDropdownBtn border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150 text-left">
-                                        <span id="error-vendor_id" class="error-text text-red-500 text-xs"></span>
+                                        <span id="error_edit_vendor_id"
+                                            class="error-text text-red-500 text-xs"></span>
                                         <div data-dropdown-menu
                                             class="hidden w-full absolute right-0 mt-2 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 p-1 space-y-1 z-50">
                                             <!-- Search input -->
@@ -939,17 +953,19 @@
                                         </div>
                                     </div>
                                 </div>
+                                
                                 <div class="w-full lg:w-6/12 px-4">
                                     <div class="relative group mb-4 dropdownBlock">
                                         <label class="block uppercase text-gray-600 text-xs font-semibold mb-2"
                                             for="exam_name">
                                             Exam Name<span class="text-red-500 text-lg">*</span>
                                         </label>
-                                        <input type="hidden" name="exam_id" data-dropdown-input>
+                                        <input type="hidden" name="exam_id" data-dropdown-input id="edit_exam_id">
                                         <input type="button" value="Select Exam" name="exam_name"
-                                            data-dropdown-button
-                                            class="examDropdownBtn border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150 text-left">
-                                        <span id="error-exam_id" class="error-text text-red-500 text-xs"></span>
+                                            id="edit_exam_id_btn" data-dropdown-button
+                                            class="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150 text-left">
+                                        <span id="error_edit_exam_id" class="error-text text-red-500 text-xs"></span>
+
                                         <div data-dropdown-menu
                                             class="hidden w-full absolute right-0 mt-2 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 p-1 space-y-1 z-50">
                                             <!-- Search input -->
@@ -980,17 +996,18 @@
                                         <label
                                             class="block uppercase text-gray-600 text-xs font-semibold mb-2">Conducted
                                             Date<span class="text-red-500 text-lg">*</span></label>
-                                        <input id="conducted_date" type="date" name="conducted_date"
+                                        <input id="edit_conducted_date" type="date" name="conducted_date"
                                             class="disable-future-date border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                                             required>
-                                        <span id="error-conducted_date" class="error-text text-red-500 text-xs"></span>
+                                        <span id="error_edit_conducted_date"
+                                            class="error-text text-red-500 text-xs"></span>
                                     </div>
                                 </div>
                                 <div class="w-full lg:w-6/12 px-4">
                                     <div class="relative w-full mb-3">
                                         <label class="block uppercase text-gray-600 text-xs font-semibold mb-2">Exam
                                             Status<span class="text-red-500 text-lg">*</span></label>
-                                        <select name="status" id="exam-status"
+                                        <select name="status" id="edit_exam_status"
                                             class="border-0 px-3 py-3 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
                                             <option value="passed" selected>Passed</option>
                                             <option value="failed">Failed</option>
@@ -1008,10 +1025,13 @@
                                             Conducted By<span class="text-red-500 text-lg">*</span>
                                         </label>
 
-                                        <input type="hidden" name="conducted_by" data-dropdown-input>
+                                        <input type="hidden" name="conducted_by" data-dropdown-input
+                                            id="edit_conducted_by">
                                         <input type="button" value="Select User" data-dropdown-button
+                                            id="edit_conducted_by_btn"
                                             class="conductedByDropdownBtn border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150 text-left">
-                                        <span id="error-conducted_by" class="error-text text-red-500 text-xs"></span>
+                                        <span id="error_edit_conducted_by"
+                                            class="error-text text-red-500 text-xs"></span>
 
                                         <div data-dropdown-menu
                                             class="hidden w-full absolute right-0 mt-2 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 p-1 space-y-1 z-50">
@@ -1033,10 +1053,13 @@
                                             for="client_name">
                                             Client<span class="text-red-500 text-lg">*</span>
                                         </label>
-                                        <input type="hidden" name="client_id" data-dropdown-input>
+                                        <input type="hidden" name="client_id" data-dropdown-input
+                                            id="edit_client_id">
                                         <input type="button" value="Select Client" data-dropdown-button
+                                            id="edit_client_id_btn"
                                             class="clientDropdownBtn border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150 text-left">
-                                        <span id="error-client_id" class="error-text text-red-500 text-xs"></span>
+                                        <span id="error_edit_client_id"
+                                            class="error-text text-red-500 text-xs"></span>
                                         <div data-dropdown-menu
                                             class="hidden w-full absolute right-0 mt-2 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 p-1 space-y-1 z-50">
                                             <!-- Search input -->
@@ -1060,7 +1083,7 @@
                                     <div class="relative w-full my-3">
                                         <label
                                             class="block uppercase text-gray-600 text-xs font-semibold mb-2">Remark</label>
-                                        <textarea name="remark" placeholder="(Optional)"
+                                        <textarea name="remark" placeholder="(Optional)" id="edit_remark"
                                             class="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                                             rows="4">
                                         </textarea>
@@ -1074,10 +1097,10 @@
                     <!-- Dialog Footer -->
                     <div
                         class="flex flex-col-reverse justify-between gap-2 border-t border-neutral-300 bg-neutral-50/60 p-4 dark:border-neutral-700 dark:bg-neutral-950/20 sm:flex-row sm:items-center md:justify-end">
-                        <button type="button" onclick="hideDiv('addCandidateModal')"
+                        <button type="button" onclick="hideDiv('EditCandidateModal')"
                             class="cursor-pointer whitespace-nowrap rounded-md px-4 py-2 text-center text-sm font-medium tracking-wide text-neutral-600 transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:opacity-100 active:outline-offset-0 dark:text-neutral-300 dark:focus-visible:outline-white">Close</button>
                         <button type="submit"
-                            class="cursor-pointer whitespace-nowrap rounded-md bg-green-900 text-white px-4 py-2 text-center text-sm font-medium tracking-wide text-neutral-100 transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:opacity-100 active:outline-offset-0 dark:bg-white dark:text-black dark:focus-visible:outline-white">Save</button>
+                            class="submitButton cursor-pointer whitespace-nowrap rounded-md bg-green-900 text-white px-4 py-2 text-center text-sm font-medium tracking-wide text-neutral-100 transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:opacity-100 active:outline-offset-0 dark:bg-white dark:text-black dark:focus-visible:outline-white">Save</button>
                     </div>
                 </div>
             </form>
@@ -1300,6 +1323,7 @@
                     const $dropdownMenu = $(this).siblings('[data-dropdown-menu]');
                     $dropdownMenu.toggleClass('hidden'); // Toggle visibility
                 });
+
                 $('.vendorDropdownBtn').on('click', function() {
 
                     $.ajax({
@@ -1323,9 +1347,7 @@
                 });
 
                 $('.examDropdownBtn').on('click', function() {
-
-                    let $vendorId = $('#vendorId').val();
-
+                    let $vendorId =$('#vendor_id').val();
                     console.log($vendorId);
                     let url = $vendorId ? `{{ route('api.getExams', ':vendorId') }}`.replace(':vendorId',
                             $vendorId) :
@@ -1336,17 +1358,56 @@
                         url: url,
                         type: 'GET',
                         success: function(response) {
-                            console.log(response);
-                            const $dropdownItemList = $('.dropdown-items-list');
-                            $dropdownItemList.empty();
-                            response.forEach(function(exam) {
+                            if (response.success === false) {
+                                alert(response.msg);
+                            } else {
+                                const $dropdownItemList = $('.dropdown-items-list');
+                                $dropdownItemList.empty();
+                                response.forEach(function(exam) {
 
-                                const listItem =
-                                    `<li data-id="${exam.id}" class="dropdown-item block px-4 py-2 text-gray-700 hover:bg-gray-100 active:bg-blue-100 cursor-pointer rounded-md">${exam.exam_name}</li>`;
-                                $dropdownItemList.append(listItem);
+                                    const listItem =
+                                        `<li data-id="${exam.id}" class="dropdown-item block px-4 py-2 text-gray-700 hover:bg-gray-100 active:bg-blue-100 cursor-pointer rounded-md">${exam.exam_name}</li>`;
+                                    $dropdownItemList.append(listItem);
 
 
-                            });
+                                });
+                            }
+
+                        },
+                        error: function(xhr, status, error) {
+                            console.error('Error:', error);
+                            alert('An error occurred while submitting the form.');
+                        }
+                    });
+                });
+
+                $('#edit_exam_id_btn').on('click', function() {
+                    let $vendorId =$('#edit_vendor_id').val();
+                    console.log($vendorId);
+                    let url = $vendorId ? `{{ route('api.getExams', ':vendorId') }}`.replace(':vendorId',
+                            $vendorId) :
+                        `{{ route('api.getExams') }}`;
+
+                    console.log(url);
+                    $.ajax({
+                        url: url,
+                        type: 'GET',
+                        success: function(response) {
+                            if (response.success === false) {
+                                alert(response.msg);
+                            } else {
+                                const $dropdownItemList = $('.dropdown-items-list');
+                                $dropdownItemList.empty();
+                                response.forEach(function(exam) {
+
+                                    const listItem =
+                                        `<li data-id="${exam.id}" class="dropdown-item block px-4 py-2 text-gray-700 hover:bg-gray-100 active:bg-blue-100 cursor-pointer rounded-md">${exam.exam_name}</li>`;
+                                    $dropdownItemList.append(listItem);
+
+
+                                });
+                            }
+
                         },
                         error: function(xhr, status, error) {
                             console.error('Error:', error);
@@ -1387,6 +1448,7 @@
                         }
                     });
                 });
+
                 $('.examCodeDropdownBtn').on('click', function() {
 
                     $.ajax({
@@ -1408,7 +1470,6 @@
                         }
                     });
                 });
-
 
                 $('.companyDropdownBtn').on('click', function() {
 
@@ -1484,7 +1545,6 @@
                     });
                 });
 
-
             });
         </script>
 
@@ -1503,7 +1563,7 @@
             }
 
             $(document).ready(function() {
-                $("#add_candidate_form").submit(function(e) {
+                $("#AddCandidateForm").submit(function(e) {
                     e.preventDefault();
                     const submitButton = $(this).find(".submitButton");
                     toggleSubmitButton(submitButton, true);
@@ -1514,24 +1574,21 @@
                         url: "{{ route('candidates.store') }}",
                         type: "POST",
                         data: formData,
-                        success: function(data) {   
+                        success: function(data) {
                             toggleSubmitButton(submitButton, false);
                             alert(data.msg);
-                            $('#addCandidateModal').addClass('hidden');
+                            $('#AddCandidateModal').addClass('hidden');
                             location.reload();
                         },
-                        error: function(error)
-                        {  
+                        error: function(error) {
                             toggleSubmitButton(submitButton, false);
-                            if(error.responseJSON && error.responseJSON.errors)
-                            {
+                            if (error.responseJSON && error.responseJSON.errors) {
                                 $.each(error.responseJSON.errors, function(key, value) {
-                                    $(`#error-${key}`).text(value[0]);
+                                    $(`#error_${key}`).text(value[0]);
                                 });
-                            }  
-                            else{
+                            } else {
                                 alert('An error occurred while creating the candidate.');
-                            }                 
+                            }
                         }
                     });
 
@@ -1539,12 +1596,12 @@
                 });
 
 
-                $(".edit_btn").click(function() {
+                $(".edit-button").click(function() {
                     var candidateId = $(this).attr('data-id');
                     $("#edit_candidate_id").val(candidateId);
 
-                    var url = '{{ route('getCandidate', 'cId') }}';
-                    url = url.replace('cId', candidateId);
+                    var url = '{{ route('getCandidate', ':cId') }}';
+                    url = url.replace(':cId', candidateId);
 
 
                     $.ajax({
@@ -1555,17 +1612,23 @@
                                 var candidate = data.data;
                                 $("#edit_first_name").val(candidate[0].first_name);
                                 $("#edit_last_name").val(candidate[0].last_name);
-                                $("#edit_country_code").val(candidate[0].country_code).change();
-                                $("#edit_mobile_no").val(candidate[0].mobile_no);
+                                $("#edit_country_code").val(candidate[0].country_code);
+                                $("#edit_country_code_btn").val(candidate[0].country_code);
+                                $("#edit_phone").val(candidate[0].phone);
                                 $("#edit_email_id").val(candidate[0].email_id);
-                                $("#edit_companyName").val(candidate[0].company_name);
+                                $("#edit_company_id").val(candidate[0].company_id);
+                                $("#edit_company_id_btn").val(candidate[0].company['company_name']);
                                 $("#edit_examCode").val(candidate[0].exam_code);
-                                $("#edit_vendor").val(candidate[0].vendor);
-                                $("#edit_examName").val(candidate[0].exam_name);
+                                $("#edit_vendor_id").val(candidate[0].vendor_id);
+                                $("#edit_vendor_id_btn").val(candidate[0].vendor['vendor_name']);
+                                $("#edit_exam_id").val(candidate[0].exam_id);
+                                $("#edit_exam_id_btn").val(candidate[0].exam['exam_name']);
                                 $("#edit_conducted_date").val(candidate[0].conducted_date);
-                                $("#edit_conducted_by").val(candidate[0].conducted_by).change();
-                                $("#edit_client").val(candidate[0].client).change();
-                                $("#edit_examStatus").val(candidate[0].status).change();
+                                $("#edit_conducted_by").val(candidate[0].conducted_by);
+                                $("#edit_conducted_by_btn").val(candidate[0].conducted_user['name']);
+                                $("#edit_client_id").val(candidate[0].client_id);
+                                $("#edit_client_id_btn").val(candidate[0].client['client_name']);
+                                $("#edit_exam_status").val(candidate[0].status).change();
                                 $("#edit_remark").val(candidate[0].remark);
                             } else {
                                 alert(data.msg);
@@ -1574,23 +1637,31 @@
                     })
                 });
 
-                $("#edit_candidate_form").submit(function(e) {
+                $("#EditCandidateForm").submit(function(e) {
                     e.preventDefault();
-                    var candidateId = $('#edit_candidate_id');
+                    const submitButton = $(this).find(".submitButton");
+                    toggleSubmitButton(submitButton, true);
+                    $('.error-text').text('');
                     var formData = $(this).serialize();
-
                     $.ajax({
                         url: "{{ url('candidates/update') }}",
                         type: "PUT",
                         data: formData,
                         success: function(data) {
-                            if (data.success == true) {
-                                alert(data.msg);
-                                location.reload();
+                            toggleSubmitButton(submitButton, false);
+                            alert(data.msg);
+                            $('#EditCandidateModal').addClass('hidden');
+                            location.reload();
+                        },
+                        error: function(error) {
+                            toggleSubmitButton(submitButton, false);
+                            if (error.responseJSON && error.responseJSON.errors) {
+                                $.each(error.responseJSON.errors, function(key, value) {
+                                    $(`#error_edit_${key}`).text(value[0]);
+                                });
                             } else {
-                                alert(data.msg);
+                                alert('An error occurred while updating the candidate.');
                             }
-
                         }
                     });
                 });

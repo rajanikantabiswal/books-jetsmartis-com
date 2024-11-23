@@ -90,13 +90,12 @@ class ExamController extends Controller
     }
 
 
-    public function getExams($vendorId = null)
+    public function getExams($vendorId)
     {
-        if ($vendorId) {
-            // Fetch exams based on vendorId
+        if ($vendorId) {   
             $exams = Exam::with('vendor')->where('vendor_id', $vendorId)->get();
         } else {
-            $exams = Exam::with('vendor')->get();
+            return response()->json(['success' => false, 'msg' => 'Please select vendor first']);
         }
 
         return response()->json($exams);

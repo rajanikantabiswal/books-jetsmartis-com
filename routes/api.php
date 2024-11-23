@@ -19,7 +19,6 @@ Route::get('/user', function (Request $request) {
 
 Route::get('/candidates', [CandidateController::class, 'getCandidatesAPI'])->name('api.getCandidates');
 Route::get('/companies', [CompanyController::class, 'getCompanyData'])->name('api.getCompanies');
-
 Route::get('/active-vendors', [VendorController::class, 'getActiveVendors'])->name('api.getActiveVendors');
 Route::get('/search-examcodes', [ExamController::class, 'searchExamCodes'])->name('api.searchExamCodes');
 Route::get('/get-examcodes', [ExamController::class, 'getExamCodes'])->name('api.getExamCodes');
