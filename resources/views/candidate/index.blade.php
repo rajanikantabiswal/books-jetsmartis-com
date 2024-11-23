@@ -380,8 +380,7 @@
             <!-- Modal Dialog -->
             <form id="add_candidate_form">
                 @csrf
-                <div
-                    class="flex z-50  flex-col gap-4 overflow-hidden rounded-md border border-neutral-300 bg-white text-neutral-600 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-300 max-h-[70vh] max-w-3xl">
+                <div class="flex z-50  flex-col gap-4 overflow-hidden rounded-md border border-neutral-300 bg-white text-neutral-600 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-300 max-h-[70vh] max-w-3xl">
 
                     <!-- Dialog Header -->
                     <div
@@ -722,7 +721,8 @@
                         <button type="button" onclick="hideDiv('addCandidateModal')"
                             class="cursor-pointer whitespace-nowrap rounded-md px-4 py-2 text-center text-sm font-medium tracking-wide text-neutral-600 transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:opacity-100 active:outline-offset-0 dark:text-neutral-300 dark:focus-visible:outline-white">Close</button>
                         <button type="submit"
-                            class="cursor-pointer whitespace-nowrap rounded-md bg-green-900 text-white px-4 py-2 text-center text-sm font-medium tracking-wide text-neutral-100 transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:opacity-100 active:outline-offset-0 dark:bg-white dark:text-black dark:focus-visible:outline-white">Save</button>
+                            class="submitButton cursor-pointer whitespace-nowrap rounded-md bg-green-900 text-white px-4 py-2 text-center text-sm font-medium tracking-wide text-neutral-100 transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:opacity-100 active:outline-offset-0 dark:bg-white dark:text-black dark:focus-visible:outline-white">Save</button>
+
                     </div>
                 </div>
             </form>
@@ -735,16 +735,15 @@
             <!-- Modal Dialog -->
             <form id="edit_candidate_form">
                 @csrf
-
                 <input type="hidden" id="edit_candidate_id" name="candidate_id">
-                <div
-                    class="flex z-50  flex-col gap-4 overflow-hidden rounded-md border border-neutral-300 bg-white text-neutral-600 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-300 max-h-[70vh] max-w-3xl">
+                <div class="flex z-50  flex-col gap-4 overflow-hidden rounded-md border border-neutral-300 bg-white text-neutral-600 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-300 max-h-[70vh] max-w-3xl">
+
                     <!-- Dialog Header -->
                     <div
                         class="flex items-center justify-between border-b border-neutral-300 bg-neutral-50/60 p-4 dark:border-neutral-700 dark:bg-neutral-950/20">
                         <h3 id="defaultModalTitle"
-                            class="font-semibold tracking-wide text-neutral-900 dark:text-white">
-                            Edit Entry</h3>
+                            class="font-semibold tracking-wide text-neutral-900 dark:text-white">Edit Entry</h3>
+
                         <button type="button" onclick="hideDiv('editCandidateModal')">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"
                                 stroke="currentColor" fill="none" stroke-width="1.4" class="w-5 h-5">
@@ -752,10 +751,10 @@
                             </svg>
                         </button>
                     </div>
+
                     <!-- Dialog Body -->
                     <div class="px-4 overflow-y-auto ">
                         <div class="text-start px-4 lg:px-10 py-6 pt-0">
-
                             <h6 class="text-gray-700 text-sm mt-3 mb-6 font-bold uppercase">
                                 Candidate Information
                             </h6>
@@ -763,74 +762,116 @@
                                 <div class="w-full lg:w-6/12 px-4">
                                     <div class="relative w-full mb-3">
                                         <label class="block uppercase text-gray-600 text-xs font-semibold mb-2"
-                                            for="first_name">
-                                            First Name
+                                            for="edit_first_name">
+                                            First Name<span class="text-red-500 text-lg">*</span>
                                         </label>
                                         <input type="text" name="first_name" id="edit_first_name"
                                             class="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                                             required>
+                                        <span id="error-first_name" class="error-text text-red-500 text-xs"></span>
                                     </div>
+
                                 </div>
                                 <div class="w-full lg:w-6/12 px-4">
                                     <div class="relative w-full mb-3">
                                         <label class="block uppercase text-gray-600 text-xs font-semibold mb-2"
                                             for="last_name">
-                                            Last Name
+                                            Last Name<span class="text-red-500 text-lg">*</span>
                                         </label>
-                                        <input type="text" name="last_name" id="edit_last_name"
+                                        <input type="text" name="last_name" id="last_name"
                                             class="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                                             required>
+                                        <span id="error-last_name" class="error-text text-red-500 text-xs"></span>
                                     </div>
                                 </div>
-                                <div class="w-full lg:w-6/12 px-4">
-                                    <div class="relative w-full mb-3"> <!-- Adjust width as needed -->
-                                        <label class="block uppercase text-gray-600 text-xs font-semibold mb-2"
-                                            for="edit_country_code">
-                                            Country Code
-                                        </label>
-                                        <select id="edit_country_code"
-                                            class="country_code_dropdown border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                                            name="country_code">
-                                            <!-- Country codes will be dynamically populated here -->
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="w-full lg:w-6/12 px-4">
+
+                                <div class="w-full lg:w-6/12 px-4 relative">
                                     <div class="relative w-full mb-3">
-                                        <label class="block uppercase text-gray-600 text-xs font-semibold mb-2"
-                                            for="mobile_no">
-                                            Phone No.
+                                        <label class="block uppercase text-gray-600 text-xs font-semibold mb-2">
+                                            Phone No
                                         </label>
-                                        <input type="text" name="mobile_no" id="edit_mobile_no"
-                                            class="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
+                                        <div
+                                            class="phone-input-container flex flex-col border-0 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150 cursor-pointer">
+
+                                            <div class="flex items-center">
+                                                <div data-dropdown-toggle="dropdown-phone"
+                                                    class="country-code-button flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-900">
+                                                    <input type="hidden" value="+91"
+                                                        class="country-code-input-field" name="country_code">
+                                                    <input type="button" value="+91"
+                                                        class="country-code-input cursor-pointer">
+                                                    <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true"
+                                                        xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                        viewBox="0 0 10 6">
+                                                        <path stroke="currentColor" stroke-linecap="round"
+                                                            stroke-linejoin="round" stroke-width="2"
+                                                            d="m1 1 4 4 4-4" />
+                                                    </svg>
+                                                </div>
+                                                <!-- Phone Input Field -->
+                                                <div class="relative w-full">
+                                                    <input name="phone" type="text"
+                                                        class="phone-input border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                                                        pattern="[0-9]{10}" placeholder="123-456-7890" />
+                                                </div>
+                                            </div>
+
+                                            <!-- Dropdown Menu -->
+                                            <div
+                                                class="country-dropdown hidden absolute top-full left-0 mt-2 bg-white divide-y divide-gray-100 rounded-lg shadow w-full dark:bg-gray-700 max-h-48 overflow-y-auto z-10">
+                                                <!-- Search Input -->
+                                                <div class="p-2">
+                                                    <input type="text" placeholder="Search Country..."
+                                                        class="country-search w-full px-2 py-1 text-sm text-gray-900 border border-gray-300 rounded dark:bg-gray-600 dark:text-white" />
+                                                </div>
+                                                <!-- Country List -->
+                                                <ul class="country-list py-2 text-sm text-gray-700 dark:text-gray-200">
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <span id="error-phone" class="error-text text-red-500 text-xs"></span>
                                     </div>
                                 </div>
+
                                 <div class="w-full lg:w-6/12 px-4">
                                     <div class="relative w-full mb-3">
                                         <label class="block uppercase text-gray-600 text-xs font-semibold mb-2"
                                             for="email_id">
                                             Email address
                                         </label>
-                                        <input type="email" name="email_id" id="edit_email_id"
-                                            class="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                                            required>
+                                        <input type="email" name="email_id" id="email_id"
+                                            class="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
+                                        <span id="error-email_id" class="error-text text-red-500 text-xs"></span>
                                     </div>
                                 </div>
-                                <div class="w-full lg:w-6/12 px-4">
-                                    <div class="relative">
-                                        <label for="edit_companyName"
-                                            class="block uppercase text-gray-600 text-xs font-semibold mb-2">Company
-                                            Name</label>
-                                        <input name="company_name" data-type="companyName"
-                                            onfocus="showDropdown(this, 'companyName')"
-                                            oninput="filterDropdown(this, 'companyName')" type="text"
-                                            id="edit_companyName" placeholder="Type company name..."
-                                            class="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" />
-                                        <ul data-type="dropdown"
-                                            class="absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-lg shadow-md hidden">
-                                        </ul>
+
+                                <div class="w-full px-4">
+                                    <!-- Company Field -->
+                                    <div class="relative group mb-4 dropdownBlock">
+                                        <label class="block uppercase text-gray-600 text-xs font-semibold mb-2"
+                                            for="company_name">
+                                            Company Name<span class="text-red-500 text-lg">*</span>
+                                        </label>
+                                        <input type="hidden" name="company_id" data-dropdown-input>
+                                        <input type="button" value="Select Company" data-dropdown-button
+                                            class="companyDropdownBtn border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150 text-left">
+                                        <span id="error-company_id" class="error-text text-red-500 text-xs"></span>
+                                        <div data-dropdown-menu
+                                            class="hidden w-full absolute right-0 mt-2 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 p-1 space-y-1 z-50">
+                                            <!-- Search input -->
+                                            <input data-search-input
+                                                class="block w-full px-4 py-2 text-gray-800 border rounded-md border-gray-300 focus:outline-none"
+                                                type="text" placeholder="Search items" autocomplete="off">
+                                            <!-- Dropdown content goes here -->
+                                            <ul class="dropdown-items-list companyName">
+
+                                            </ul>
+                                        </div>
+                                        <p class="text-xs text-gray-500 w-full">Please select "Unknown" if the company
+                                            is not listed in the dropdown</p>
                                     </div>
                                 </div>
+
                             </div>
 
                             <hr class="mt-6 border-b-1 border-blueGray-300">
@@ -838,95 +879,120 @@
                             <h6 class="text-gray-700 text-sm mt-3 mb-6 font-bold uppercase">
                                 Exam Information
                             </h6>
-                            <div class="flex flex-wrap">
-                                <div class="w-full lg:w-4/12 px-4">
-                                    <!-- Exam Code Field -->
-                                    <div class="relative">
-                                        <label for="edit_examCode"
-                                            class="block uppercase text-gray-600 text-xs font-semibold mb-2">Exam
-                                            Code</label>
-                                        <input name="exam_code" type="text" id="edit_examCode"
-                                            data-type="examCode" onkeyup="handleExamCodeInput()"
-                                            onfocus="showDropdown(this, 'examCode')"
-                                            oninput="filterDropdown(this, 'examCode')" placeholder="Type exam code..."
-                                            class="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" />
-                                        <ul data-type="dropdown" id="examCodeDropdown"
-                                            class="absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-lg shadow-md hidden">
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="w-full lg:w-4/12 px-4">
-                                    <!-- Vendor Field -->
-                                    <div class="relative">
-                                        <label for="edit_vendor"
-                                            class="block uppercase text-gray-600 text-xs font-semibold mb-2">Vendor</label>
-                                        <input name="vendor" type="text" id="edit_vendor" data-type="vendor"
-                                            onfocus="showDropdown(this, 'vendor')"
-                                            oninput="filterDropdown(this, 'vendor')" placeholder="Select vendor..."
-                                            class="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                                            required />
-                                        <ul data-type="dropdown" id="vendorDropdown"
-                                            class="absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-lg shadow-md hidden">
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="w-full lg:w-4/12 px-4">
-                                    <!-- Exam Name Field -->
-                                    <div class="relative">
-                                        <label for="edit_examName"
-                                            class="block uppercase text-gray-600 text-xs font-semibold mb-2">Exam
-                                            Name</label>
-                                        <input name="exam_name" type="text" id="edit_examName"
-                                            data-type="examName" onfocus="showDropdown(this, 'examName')"
-                                            oninput="filterDropdown(this, 'examName')"
-                                            placeholder="Select exam name..."
-                                            class="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                                            required />
-                                        <ul data-type="dropdown" id="examNameDropdown"
-                                            class="absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-lg shadow-md hidden">
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
 
+                            <div class="flex flex-wrap">
+                                <div class="w-full px-4">
+                                    <!-- Search input field -->
+                                    <div class="relative mb-4">
+                                        <div class="relative w-full">
+                                            <div
+                                                class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                                                <svg class="w-4 h-4 text-gray-500 dark:text-gray-400"
+                                                    aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                                    fill="none" viewBox="0 0 20 20">
+                                                    <path d="M14 14L16.5 16.5" stroke="currentColor"
+                                                        stroke-width="1.5" stroke-linejoin="round" />
+                                                    <path
+                                                        d="M16.4333 18.5252C15.8556 17.9475 15.8556 17.0109 16.4333 16.4333C17.0109 15.8556 17.9475 15.8556 18.5252 16.4333L21.5667 19.4748C22.1444 20.0525 22.1444 20.9891 21.5667 21.5667C20.9891 22.1444 20.0525 22.1444 19.4748 21.5667L16.4333 18.5252Z"
+                                                        stroke="currentColor" stroke-width="1.5"
+                                                        stroke-linecap="round" />
+                                                    <path
+                                                        d="M16 9C16 5.13401 12.866 2 9 2C5.13401 2 2 5.13401 2 9C2 12.866 5.13401 16 9 16C12.866 16 16 12.866 16 9Z"
+                                                        stroke="currentColor" stroke-width="1.5"
+                                                        stroke-linejoin="round" />
+                                                </svg>
+
+                                            </div>
+                                            <input type="text" id="examSearch"
+                                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                                placeholder="Search exam code..." />
+                                        </div>
+
+                                        <ul id="examDropdown"
+                                            class="absolute w-full mt-1 bg-white border rounded-lg shadow-lg max-h-60 overflow-auto hidden z-50">
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="w-full lg:w-6/12 px-4 vendor">
+                                    <!-- Vendor Field -->
+                                    <div class="relative group mb-4 dropdownBlock">
+                                        <label class="block uppercase text-gray-600 text-xs font-semibold mb-2"
+                                            for="vendor_name">
+                                            Vendor<span class="text-red-500 text-lg">*</span>
+                                        </label>
+                                        <input type="hidden" id="vendorId" name="vendor_id" data-dropdown-input>
+                                        <input type="button" value="Select Vendor" name="vendor_name"
+                                            data-dropdown-button
+                                            class="vendorDropdownBtn border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150 text-left">
+                                        <span id="error-vendor_id" class="error-text text-red-500 text-xs"></span>
+                                        <div data-dropdown-menu
+                                            class="hidden w-full absolute right-0 mt-2 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 p-1 space-y-1 z-50">
+                                            <!-- Search input -->
+                                            <input data-search-input
+                                                class="block w-full px-4 py-2 text-gray-800 border rounded-md border-gray-300 focus:outline-none"
+                                                type="text" placeholder="Search items" autocomplete="off">
+                                            <!-- Dropdown content goes here -->
+                                            <ul class="dropdown-items-list vendor">
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-full lg:w-6/12 px-4">
+                                    <div class="relative group mb-4 dropdownBlock">
+                                        <label class="block uppercase text-gray-600 text-xs font-semibold mb-2"
+                                            for="exam_name">
+                                            Exam Name<span class="text-red-500 text-lg">*</span>
+                                        </label>
+                                        <input type="hidden" name="exam_id" data-dropdown-input>
+                                        <input type="button" value="Select Exam" name="exam_name"
+                                            data-dropdown-button
+                                            class="examDropdownBtn border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150 text-left">
+                                        <span id="error-exam_id" class="error-text text-red-500 text-xs"></span>
+                                        <div data-dropdown-menu
+                                            class="hidden w-full absolute right-0 mt-2 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 p-1 space-y-1 z-50">
+                                            <!-- Search input -->
+                                            <input data-search-input
+                                                class="block w-full px-4 py-2 text-gray-800 border rounded-md border-gray-300 focus:outline-none"
+                                                type="text" placeholder="Search items" autocomplete="off">
+                                            <!-- Dropdown content goes here -->
+                                            <ul class="dropdown-items-list">
+
+                                            </ul>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
 
                             <hr class="mt-6 border-b-1 border-blueGray-300">
 
                             <h6 class="text-gray-700 text-sm mt-3 mb-6 font-bold uppercase">
                                 Additional Information
                             </h6>
+
                             <div class="flex flex-wrap">
-                                <div class="w-full lg:w-3/12 px-4">
+                                <div class="w-full lg:w-6/12 px-4">
                                     <div class="relative w-full mb-3">
                                         <label
                                             class="block uppercase text-gray-600 text-xs font-semibold mb-2">Conducted
-                                            Date</label>
-                                        <input id="edit_conducted_date" type="date" name="conducted_date"
+                                            Date<span class="text-red-500 text-lg">*</span></label>
+                                        <input id="conducted_date" type="date" name="conducted_date"
                                             class="disable-future-date border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                                             required>
+                                        <span id="error-conducted_date" class="error-text text-red-500 text-xs"></span>
                                     </div>
                                 </div>
-                                <div class="w-full lg:w-5/12  px-4">
-                                    <div class="relative w-full mb-3">
-                                        <label
-                                            class="block uppercase text-gray-600 text-xs font-semibold mb-2">Conducted
-                                            By</label>
-
-                                        <select name="conducted_by" id="edit_conducted_by"
-                                            class="border-0 px-3 py-3 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                                            required>
-                                            <option value="">Select User</option>
-
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="w-full lg:w-4/12 px-4">
+                                <div class="w-full lg:w-6/12 px-4">
                                     <div class="relative w-full mb-3">
                                         <label class="block uppercase text-gray-600 text-xs font-semibold mb-2">Exam
-                                            Status</label>
-                                        <select name="status" id="edit_examStatus"
+                                            Status<span class="text-red-500 text-lg">*</span></label>
+                                        <select name="status" id="exam-status"
                                             class="border-0 px-3 py-3 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
-                                            <option value="passed">Passed</option>
+                                            <option value="passed" selected>Passed</option>
                                             <option value="failed">Failed</option>
                                             <option value="on-hold">On-Hold</option>
                                             <option value="rescheduled">Rescheduled
@@ -934,17 +1000,57 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="w-full px-4">
-                                    <div class="relative w-full mb-3">
-                                        <label
-                                            class="block uppercase text-gray-600 text-xs font-semibold mb-2">Client</label>
-                                        <select name="client" id="edit_client"
-                                            class="border-0 px-3 py-3 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
-                                            <option value="">Select Client</option>
 
-                                        </select>
+                                <div class="w-full px-4 ">
+                                    <div class="relative group mb-4 dropdownBlock">
+                                        <label class="block uppercase text-gray-600 text-xs font-semibold mb-2"
+                                            for="conducted_by">
+                                            Conducted By<span class="text-red-500 text-lg">*</span>
+                                        </label>
+
+                                        <input type="hidden" name="conducted_by" data-dropdown-input>
+                                        <input type="button" value="Select User" data-dropdown-button
+                                            class="conductedByDropdownBtn border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150 text-left">
+                                        <span id="error-conducted_by" class="error-text text-red-500 text-xs"></span>
+
+                                        <div data-dropdown-menu
+                                            class="hidden w-full absolute right-0 mt-2 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 p-1 space-y-1 z-50">
+                                            <!-- Search input -->
+                                            <input data-search-input
+                                                class="block w-full px-4 py-2 text-gray-800 border rounded-md border-gray-300 focus:outline-none"
+                                                type="text" placeholder="Search items" autocomplete="off">
+                                            <!-- Dropdown content goes here -->
+                                            <ul class="dropdown-items-list">
+
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
+
+                                <div class="w-full px-4 dropdownBlock">
+                                    <div class="relative group mb-4">
+                                        <label class="block uppercase text-gray-600 text-xs font-semibold mb-2"
+                                            for="client_name">
+                                            Client<span class="text-red-500 text-lg">*</span>
+                                        </label>
+                                        <input type="hidden" name="client_id" data-dropdown-input>
+                                        <input type="button" value="Select Client" data-dropdown-button
+                                            class="clientDropdownBtn border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150 text-left">
+                                        <span id="error-client_id" class="error-text text-red-500 text-xs"></span>
+                                        <div data-dropdown-menu
+                                            class="hidden w-full absolute right-0 mt-2 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 p-1 space-y-1 z-50">
+                                            <!-- Search input -->
+                                            <input data-search-input
+                                                class="block w-full px-4 py-2 text-gray-800 border rounded-md border-gray-300 focus:outline-none"
+                                                type="text" placeholder="Search items" autocomplete="off">
+                                            <!-- Dropdown content goes here -->
+                                            <ul class="dropdown-items-list">
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
 
                             <hr class="mt-6 border-b-1 border-blueGray-300">
@@ -954,20 +1060,21 @@
                                     <div class="relative w-full my-3">
                                         <label
                                             class="block uppercase text-gray-600 text-xs font-semibold mb-2">Remark</label>
-                                        <textarea name="remark" id="edit_remark"
+                                        <textarea name="remark" placeholder="(Optional)"
                                             class="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                                            rows="4">(Optional)</textarea>
+                                            rows="4">
+                                        </textarea>
                                     </div>
                                 </div>
                             </div>
 
                         </div>
-
                     </div>
+
                     <!-- Dialog Footer -->
                     <div
                         class="flex flex-col-reverse justify-between gap-2 border-t border-neutral-300 bg-neutral-50/60 p-4 dark:border-neutral-700 dark:bg-neutral-950/20 sm:flex-row sm:items-center md:justify-end">
-                        <button type="button" onclick="hideDiv('editCandidateModal')"
+                        <button type="button" onclick="hideDiv('addCandidateModal')"
                             class="cursor-pointer whitespace-nowrap rounded-md px-4 py-2 text-center text-sm font-medium tracking-wide text-neutral-600 transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:opacity-100 active:outline-offset-0 dark:text-neutral-300 dark:focus-visible:outline-white">Close</button>
                         <button type="submit"
                             class="cursor-pointer whitespace-nowrap rounded-md bg-green-900 text-white px-4 py-2 text-center text-sm font-medium tracking-wide text-neutral-100 transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:opacity-100 active:outline-offset-0 dark:bg-white dark:text-black dark:focus-visible:outline-white">Save</button>
@@ -1398,6 +1505,8 @@
             $(document).ready(function() {
                 $("#add_candidate_form").submit(function(e) {
                     e.preventDefault();
+                    const submitButton = $(this).find(".submitButton");
+                    toggleSubmitButton(submitButton, true);
                     $('.error-text').text('');
                     var formData = $(this).serialize();
 
@@ -1406,11 +1515,14 @@
                         type: "POST",
                         data: formData,
                         success: function(data) {   
+                            toggleSubmitButton(submitButton, false);
                             alert(data.msg);
+                            $('#addCandidateModal').addClass('hidden');
                             location.reload();
                         },
                         error: function(error)
                         {  
+                            toggleSubmitButton(submitButton, false);
                             if(error.responseJSON && error.responseJSON.errors)
                             {
                                 $.each(error.responseJSON.errors, function(key, value) {
