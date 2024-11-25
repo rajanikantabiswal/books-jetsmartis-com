@@ -12,7 +12,7 @@ class CompanyController extends Controller
      */
     public function index()
     {
-        $companies = Company::orderBy('created_at', 'desc')->get(); 
+        $companies = Company::orderBy('created_at', 'desc')->get();
         return view('admin.partials.companies-table', compact('companies'));
     }
 
@@ -34,11 +34,11 @@ class CompanyController extends Controller
             'display_name' => 'nullable|string|max:255'
         ]);
 
-       
+
         try {
             Company::create([
                 'company_name' => $validatedData['company_name'],
-                'display_name'=> $validatedData['display_name']
+                'display_name' => $validatedData['display_name']
             ]);
             session()->put('activeTab', 'companies');
             return response()->json(['success' => true, 'msg' => 'Company created successfully!']);
@@ -81,33 +81,23 @@ class CompanyController extends Controller
     {
         // Find the company by ID and delete
         $company = Company::findOrFail($id);
-        $company->delete();
-        session()->put('activeTab', 'companies');
-        // Return a JSON response
-        return response()->json([
-            'success' => true,
-            'msg' => 'Company deleted successfully'
-        ]);
-    }
 
-
-    public function toggleIsClient(Request $request)
-    {
-        try {
-            $company = Company::find($request->company_id);
-            $company->is_client = $request->is_client;
-            $company->save();
-
-            if ($request->is_client) {
-                $msg = "This company is now a client.";
-            } else {
-                $msg = "This company is no longer a client.";
-            }
-            return response()->json(['success' => true, 'msg' => $msg]);
-        } catch (\Exception $e) {
-            return response()->json(['success' => false, 'msg' => $e->getMessage()]);
+        if ($company->candidates()->exists()) {
+            return response()->json([
+                'success' => false,
+                'msg' => 'This company is linked to one or more candidates and cannot be deleted.'
+            ]);
+        } else {
+            $company->delete();
+            session()->put('activeTab', 'companies');
+           
+            return response()->json([
+                'success' => true,
+                'msg' => 'Company deleted successfully'
+            ]);
         }
     }
+
 
     public function toggleIsActive(Request $request)
     {
@@ -129,9 +119,7 @@ class CompanyController extends Controller
 
     public function getCompanyDetails()
     {
-       $companies = Company::get();
+        $companies = Company::where('is_active', 1)->get();
         return response()->json($companies);
     }
-
-    
 }

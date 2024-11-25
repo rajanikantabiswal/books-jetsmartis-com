@@ -33,15 +33,16 @@ Route::resource('exams', ExamController::class)->middleware(['auth', 'verified']
 Route::resource('company', CompanyController::class)->middleware(['auth', 'verified']);
 Route::resource('clients', ClientController::class)->middleware(['auth', 'verified']);
 
-Route::post('/vendors/is-active', [VendorController::class, 'toggleIsActive'])->name('vendors.isActive');
+
 
 
 Route::get('/control-panel', function () {
     return view('admin.master');
 })->middleware(['auth', 'verified'])->name('admin.master');
 
-Route::post('/toggle-isClient', [CompanyController::class, 'toggleIsClient'])->name('company.toggleIsClient');
-Route::post('/toggle-isActive', [CompanyController::class, 'toggleIsActive'])->name('company.toggleIsActive');
+Route::post('/company/is-active-toggle', [CompanyController::class, 'toggleIsActive'])->name('company.isActiveToggle');
+Route::post('/vendor/is-active-toggle', [VendorController::class, 'toggleIsActive'])->name('vendor.isActiveToggle');
+Route::post('/client/is-active-toggle', [ClientController::class, 'toggleIsActive'])->name('client.isActiveToggle');
 
 Route::get('/get-candidate/{cId}', [CandidateController::class, 'getCandidate'])->name('getCandidate');
 

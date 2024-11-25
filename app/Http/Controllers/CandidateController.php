@@ -292,40 +292,32 @@ class CandidateController extends Controller
 
         $candidates = Candidate::when($period && $period !== 'all_time', function ($query) use ($period, $fromDate, $toDate) {
 
-
             if ($period === 'last_week') {
-                // Start of last week (Monday of the previous week)
                 $startOfLastWeek = now()->subWeek()->startOfWeek();
-                // End of last week (Sunday of the previous week)
                 $endOfLastWeek = now()->subWeek()->endOfWeek();
                 $query->whereBetween('conducted_date', [$startOfLastWeek, $endOfLastWeek]);
             } elseif ($period === 'last_month') {
-                // Start and end of last month
                 $startOfLastMonth = now()->subMonthNoOverflow()->startOfMonth();
                 $endOfLastMonth = now()->subMonthNoOverflow()->endOfMonth();
                 $query->whereBetween('conducted_date', [$startOfLastMonth, $endOfLastMonth]);
             } elseif ($period === 'last_year') {
-                // Start and end of last year
                 $startOfLastYear = now()->subYear()->startOfYear();
                 $endOfLastYear = now()->subYear()->endOfYear();
                 $query->whereBetween('conducted_date', [$startOfLastYear, $endOfLastYear]);
             }
         })
             ->when($fromDate && !$toDate, function ($query) use ($fromDate) {
-                // Only `from_date` is provided, show records from this date onwards
                 $query->where('conducted_date', '>=', $fromDate);
             })
             ->when($toDate && !$fromDate, function ($query) use ($toDate) {
-                // Only `to_date` is provided, show records up to this date
                 $query->where('conducted_date', '<=', $toDate);
             })
             ->when($fromDate && $toDate, function ($query) use ($fromDate, $toDate) {
-                // Both `from_date` and `to_date` are provided, show records within this range
                 $query->whereBetween('conducted_date', [$fromDate, $toDate]);
             })
             ->when($year, function ($query) use ($year) {
                 $query->whereYear('conducted_date', $year);
-            })->with(['company', 'client', 'exam', 'vendor', 'user'])
+            })->with(['company', 'client', 'exam', 'vendor', 'conducted_user'])
             ->get();
 
         return response()->json($candidates);

@@ -10,7 +10,10 @@ class Company extends Model
     protected $fillable = [
       'company_name',
       'display_name',
-      
       'is_active'
   ];
+
+  public function candidates(){
+    return $this->hasMany(Candidate::class);
+  }
 }

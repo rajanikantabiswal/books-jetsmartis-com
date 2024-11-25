@@ -78,13 +78,21 @@ class VendorController extends Controller
     {
          // Find the company by ID and delete
          $vendor = Vendor::findOrFail($id);
-         $vendor->delete();
-         session()->put('activeTab', 'vendors');
-         // Return a JSON response
-         return response()->json([
-             'success' => true,
-             'msg' => 'Vendor deleted successfully'
-         ]);
+
+        if ($vendor->exams()->exists()) {
+            return response()->json([
+                'success' => false,
+                'msg' => 'This vendor is linked to one or more exams and cannot be deleted.'
+            ]);
+        } else {
+            $vendor->delete();
+            session()->put('activeTab', 'vendors');
+           
+            return response()->json([
+                'success' => true,
+                'msg' => 'Vendor deleted successfully'
+            ]);
+        }
     }
 
     public function toggleIsActive(Request $request)

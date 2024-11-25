@@ -17,9 +17,9 @@ return new class extends Migration
             $table->boolean('is_individual')->default(false);
             $table->string('first_name');
             $table->string('last_name');
-            $table->string('phone');
+            $table->string('phone')->nullable();
             $table->string('whatsapp')->nullable();
-            $table->string('email');
+            $table->string('email')->nullable();
             $table->text('address')->nullable();
             $table->unsignedBigInteger('country_id')->nullable();
             $table->unsignedBigInteger('state_id')->nullable();

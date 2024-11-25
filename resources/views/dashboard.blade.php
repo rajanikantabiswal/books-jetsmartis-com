@@ -121,10 +121,8 @@
                         url: `/api/candidates?year=${year}`,
                         method: 'GET',
                         success: function(response) {
-                            console.log('API Response:', response);
-
                             const monthlyCounts = getMonthlyCounts(response);
-                            console.log('Monthly Counts:', monthlyCounts);
+                           
                             const labels = Object.keys(monthlyCounts);
                             const data = Object.values(monthlyCounts);
 
@@ -375,7 +373,7 @@
 
                             status
                         } = candidate;
-                        const conducted_by = candidate.user.name;
+                        const conducted_by = candidate.conducted_user.name;
 
                         // Generate a label for the examiner name
                         const examinerName = conducted_by; // Replace with actual name if available

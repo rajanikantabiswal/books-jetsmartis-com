@@ -80,7 +80,7 @@
                         <div class="mt-4 flex flex-wrap gap-2 items-center justify-end">
                             <button
                                 class="addClientBtn bg-green-900 text-white active:bg-green-500 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                                type="button" onclick="showDiv('addClientModal')">Add Client</button>
+                                type="button" onclick="showDiv('ClientModal')">Add Client</button>
                             {{-- <a href="{{ route('clients.create') }}"
                                 class="bg-green-900 text-white active:bg-green-500 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150">Add
                                 Client</a> --}}
@@ -110,8 +110,8 @@
                     <div class="rounded-t mb-0 px-4 border-0">
                         <div class="mt-4 flex flex-wrap gap-2 items-center justify-end">
                             <button
-                                class="addExamBtn bg-green-900 text-white active:bg-green-500 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                                type="button" onclick="showDiv('addExamModal')">Add Exam</button>
+                                class="ExamFormBtn bg-green-900 text-white active:bg-green-500 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                                type="button" onclick="showDiv('ExamModal')">Add Exam</button>
                         </div>
                     </div>
                     <!-- Exam table will be loaded here -->
@@ -241,11 +241,12 @@
         </div>
     </div>
 
-    <div id="addExamModal"
+    <!--Add Exam Modal-->
+    <div id="ExamModal"
         class="absolute top-0 left-0 w-full h-[100vh] bg-[#30373cb5] p-4 z-100 flex justify-center items-center hidden">
         <div>
             <!-- Modal Dialog -->
-            <form id="addExam" action="{{ route('exams.store') }}" method="POST">
+            <form id="ExamForm" action="{{ route('exams.store') }}" method="POST">
                 @csrf
                 <div
                     class="flex z-50  flex-col gap-4 overflow-hidden rounded-md border border-neutral-300 bg-white text-neutral-600 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-300 max-h-[70vh] max-w-xl w-[70vw]">
@@ -254,7 +255,7 @@
                         class="flex items-center justify-between border-b border-neutral-300 bg-neutral-50/60 p-4 dark:border-neutral-700 dark:bg-neutral-950/20">
                         <h3 class="font-semibold tracking-wide text-neutral-900 dark:text-white">
                             Create New Exam</h3>
-                        <button type="button" onclick="hideDiv('addExamModal')">
+                        <button type="button" onclick="hideDiv('ExamModal')">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"
                                 stroke="currentColor" fill="none" stroke-width="1.4" class="w-5 h-5">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -312,14 +313,15 @@
                             </div>
 
                         </div>
-                        <!-- Dialog Footer -->
-                        <div
-                            class="flex flex-col-reverse justify-between gap-2 border-t border-neutral-300 bg-neutral-50/60 p-4 dark:border-neutral-700 dark:bg-neutral-950/20 sm:flex-row sm:items-center md:justify-end">
-                            <button type="button" onclick="hideDiv('addExamModal')"
-                                class="cursor-pointer whitespace-nowrap rounded-md px-4 py-2 text-center text-sm font-medium tracking-wide text-neutral-600 transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:opacity-100 active:outline-offset-0 dark:text-neutral-300 dark:focus-visible:outline-white">Close</button>
-                            <button type="submit"
-                                class="cursor-pointer whitespace-nowrap rounded-md bg-green-900 text-white px-4 py-2 text-center text-sm font-medium tracking-wide text-neutral-100 transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:opacity-100 active:outline-offset-0 dark:bg-white dark:text-black dark:focus-visible:outline-white">Save</button>
-                        </div>
+
+                    </div>
+                    <!-- Dialog Footer -->
+                    <div
+                        class="flex flex-col-reverse justify-between gap-2 border-t border-neutral-300 bg-neutral-50/60 p-4 dark:border-neutral-700 dark:bg-neutral-950/20 sm:flex-row sm:items-center md:justify-end">
+                        <button type="button" onclick="hideDiv('ExamModal')"
+                            class="cursor-pointer whitespace-nowrap rounded-md px-4 py-2 text-center text-sm font-medium tracking-wide text-neutral-600 transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:opacity-100 active:outline-offset-0 dark:text-neutral-300 dark:focus-visible:outline-white">Close</button>
+                        <button type="submit"
+                            class="cursor-pointer whitespace-nowrap rounded-md bg-green-900 text-white px-4 py-2 text-center text-sm font-medium tracking-wide text-neutral-100 transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:opacity-100 active:outline-offset-0 dark:bg-white dark:text-black dark:focus-visible:outline-white">Save</button>
                     </div>
                 </div>
             </form>
@@ -459,24 +461,14 @@
         </div>
     </div>
 
+    <!--Add Client Modal-->
+    <div id="ClientModal"
+        class="absolute top-0 left-0 w-full h-[100vh] bg-[#30373cb5] p-4 z-100 flex justify-center items-center hidden">
 
-
-
-
-
-
-
-
-
-    <!--Add Company Modal-->
-    <div id="addClientModal"
-        class="absolute top-0 left-0 w-full h-[100vh] bg-[#30373cb5] p-4 z-100 flex justify-center items-center hidden"
-        onclick="hideOnClickOutside(event, 'addClientModal')">
         <div>
             <!-- Modal Dialog -->
             <form id="addClient" action="{{ route('clients.store') }}" method="POST">
                 @csrf
-
                 <div
                     class="flex z-50  flex-col gap-4 overflow-hidden rounded-md border border-neutral-300 bg-white text-neutral-600 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-300 max-h-[70vh] max-w-xl w-[70vw]">
                     <!-- Dialog Header -->
@@ -484,13 +476,14 @@
                         class="flex items-center justify-between border-b border-neutral-300 bg-neutral-50/60 p-4 dark:border-neutral-700 dark:bg-neutral-950/20">
                         <h3 class="font-semibold tracking-wide text-neutral-900 dark:text-white">
                             Create New client</h3>
-                        <button type="button" onclick="hideDiv('addClientModal')">
+                        <button type="button" onclick="hideDiv('ClientModal')">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"
                                 stroke="currentColor" fill="none" stroke-width="1.4" class="w-5 h-5">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                             </svg>
                         </button>
                     </div>
+
                     <!-- Dialog Body -->
                     <div class="px-4 overflow-y-auto ">
                         <div class="text-start  py-6 pt-0">
@@ -513,29 +506,35 @@
                                 </div>
                             </div>
 
-                            <div class="py-6 pt-0" id="company" role="tabpanel" aria-labelledby="company-tab">
+                            <div class="py-6 pt-0">
                                 <div class="flex flex-wrap">
+
                                     <div class="w-full px-4 client-fields">
                                         <div class="relative w-full mb-4">
                                             <label class="block uppercase text-gray-600 text-xs font-semibold mb-2"
                                                 for="">
-                                                Organisation Name
+                                                Organisation Name<span class="text-red-500 text-lg">*</span>
                                             </label>
                                             <input type="text" name="client_name"
                                                 class="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                                                 id="client_name">
+                                            <span id="error_client_name"
+                                                class="error-text text-red-500 text-xs"></span>
                                         </div>
+
                                     </div>
 
                                     <div class="w-full lg:w-6/12 px-4 individual-fields">
                                         <div class="relative w-full mb-3 individual-fields">
                                             <label class="block uppercase text-gray-600 text-xs font-semibold mb-2"
                                                 for="">
-                                                First Name
+                                                First Name<span class="text-red-500 text-lg">*</span>
                                             </label>
                                             <input type="text" name="individual_first_name"
                                                 class="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                                                 id="individual_first_name">
+                                            <span id="error_individual_first_name"
+                                                class="error-text text-red-500 text-xs"></span>
                                         </div>
                                     </div>
 
@@ -543,11 +542,13 @@
                                         <div class="relative w-full mb-3 individual-fields">
                                             <label class="block uppercase text-gray-600 text-xs font-semibold mb-2"
                                                 for="">
-                                                Last Name
+                                                Last Name<span class="text-red-500 text-lg">*</span>
                                             </label>
                                             <input type="text" name="individual_last_name"
                                                 class="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                                                 id="individual_last_name">
+                                            <span id="error_individual_last_name"
+                                                class="error-text text-red-500 text-xs"></span>
                                         </div>
                                     </div>
 
@@ -597,7 +598,7 @@
                                                     </ul>
                                                 </div>
                                             </div>
-                                            <div class="error-box">error box</div>
+
                                         </div>
                                     </div>
 
@@ -609,7 +610,7 @@
                                             </label>
                                             <input type="email" name="email"
                                                 class="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
-                                            <div class="error-box">error box</div>
+
                                         </div>
                                     </div>
 
@@ -653,11 +654,13 @@
                                         <div class="relative group mb-4 dropdownBlock">
                                             <label class="block uppercase text-gray-600 text-xs font-semibold mb-2"
                                                 for="">
-                                                Country
+                                                Country<span class="text-red-500 text-lg">*</span>
                                             </label>
                                             <input type="hidden" name="country_id" data-dropdown-input>
                                             <input type="button" value="Select Country" data-dropdown-button
                                                 class="countryDropdownBtn text-left border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
+                                            <span id="error_country_id"
+                                                class="error-text text-red-500 text-xs"></span>
                                             <div data-dropdown-menu
                                                 class="hidden w-full absolute right-0 mt-2 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 p-1 space-y-1 z-50">
                                                 <!-- Search input -->
@@ -676,11 +679,12 @@
                                         <div class="relative group mb-4 dropdownBlock">
                                             <label class="block uppercase text-gray-600 text-xs font-semibold mb-2"
                                                 for="">
-                                                State
+                                                State<span class="text-red-500 text-lg">*</span>
                                             </label>
                                             <input type="hidden" name="state_id" data-dropdown-input>
                                             <input type="button" value="Select state" data-dropdown-button
                                                 class="stateDropdownBtn text-left border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
+                                            <span id="error_state_id" class="error-text text-red-500 text-xs"></span>
                                             <div data-dropdown-menu
                                                 class="hidden w-full absolute right-0 mt-2 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 p-1 space-y-1 z-50">
                                                 <!-- Search input -->
@@ -732,7 +736,7 @@
                                     <div class="w-full px-4 client-fields">
                                         <div class="relative w-full mb-3 client-fields">
                                             <label class="block uppercase text-gray-600 text-xs font-semibold mb-2">
-                                                Registration Type
+                                                Registration Type<span class="text-red-500 text-lg">*</span>
                                             </label>
                                             <select name="registration_type"
                                                 class="registration-type border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
@@ -742,23 +746,26 @@
                                                 <option value="unregistered">Unregistered</option>
                                                 <option value="composition">Composition</option>
                                             </select>
+                                            <span id="error_registration_type"
+                                                class="error-text text-red-500 text-xs"></span>
                                         </div>
                                     </div>
 
-                                    <div class="w-full lg:w-6/12 px-4 gst-field">
-                                        <div class="relative w-full mb-3 client-fields">
+                                    <div class="w-full lg:w-6/12 px-4 gst-field client-fields">
+                                        <div class="relative w-full mb-3">
                                             <label class="block uppercase text-gray-600 text-xs font-semibold mb-2">
-                                                GST No.
+                                                GST No.<span class="text-red-500 text-lg">*</span>
                                             </label>
                                             <input type="text" name="gst_no"
                                                 class="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
+                                            <span id="error_gst_no" class="error-text text-red-500 text-xs"></span>
                                         </div>
                                     </div>
 
                                     <div class="w-full lg:w-6/12 px-4 state-code-field client-fields">
                                         <div class="relative w-full mb-3">
                                             <label class="block uppercase text-gray-600 text-xs font-semibold mb-2">
-                                                State Code
+                                                State Code<span class="text-red-500 text-lg">*</span>
                                             </label>
                                             <input type="text" name="state_code"
                                                 class="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
@@ -769,10 +776,11 @@
                                     <div class="w-full lg:w-6/12 px-4 pan-field">
                                         <div class="relative w-full mb-3">
                                             <label class="block uppercase text-gray-600 text-xs font-semibold mb-2">
-                                                PAN Card
+                                                PAN Card<span class="text-red-500 text-lg">*</span>
                                             </label>
                                             <input type="text" name="pan_card"
                                                 class="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
+                                            <span id="error_pan_card" class="error-text text-red-500 text-xs"></span>
                                         </div>
                                     </div>
 
@@ -788,10 +796,11 @@
                                         <div class="relative w-full mb-3">
                                             <label class="block uppercase text-gray-600 text-xs font-semibold mb-2"
                                                 for="">
-                                                Bank Name
+                                                Bank Name<span class="text-red-500 text-lg">*</span>
                                             </label>
                                             <input type="text" name="bank_name"
                                                 class="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
+                                            <span id="error_bank_name" class="error-text text-red-500 text-xs"></span>
                                         </div>
                                     </div>
 
@@ -799,10 +808,12 @@
                                         <div class="relative w-full mb-3">
                                             <label class="block uppercase text-gray-600 text-xs font-semibold mb-2"
                                                 for="">
-                                                Account Number
+                                                Account Number<span class="text-red-500 text-lg">*</span>
                                             </label>
                                             <input type="text" name="account_number"
                                                 class="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
+                                            <span id="error_account_number"
+                                                class="error-text text-red-500 text-xs"></span>
                                         </div>
                                     </div>
 
@@ -810,10 +821,11 @@
                                         <div class="relative w-full mb-3">
                                             <label class="block uppercase text-gray-600 text-xs font-semibold mb-2"
                                                 for="">
-                                                IFSC
+                                                IFSC<span class="text-red-500 text-lg">*</span>
                                             </label>
                                             <input type="text" name="ifsc"
                                                 class="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
+                                            <span id="error_ifsc" class="error-text text-red-500 text-xs"></span>
                                         </div>
                                     </div>
 
@@ -821,10 +833,12 @@
                                         <div class="relative w-full mb-3">
                                             <label class="block uppercase text-gray-600 text-xs font-semibold mb-2"
                                                 for="">
-                                                Benificiary Name
+                                                Beneficiary Name<span class="text-red-500 text-lg">*</span>
                                             </label>
                                             <input type="text" name="beneficiary"
                                                 class="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
+                                            <span id="error_beneficiary"
+                                                class="error-text text-red-500 text-xs"></span>
                                         </div>
                                     </div>
 
@@ -840,10 +854,12 @@
                                         <div class="relative w-full mb-3 client-fields">
                                             <label class="block uppercase text-gray-600 text-xs font-semibold mb-2"
                                                 for="">
-                                                First Name
+                                                First Name<span class="text-red-500 text-lg">*</span>
                                             </label>
                                             <input type="text" name="first_name"
                                                 class="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
+                                            <span id="error_first_name"
+                                                class="error-text text-red-500 text-xs"></span>
                                         </div>
                                     </div>
 
@@ -851,31 +867,33 @@
                                         <div class="relative w-full mb-3 client-fields">
                                             <label class="block uppercase text-gray-600 text-xs font-semibold mb-2"
                                                 for="">
-                                                Last Name
+                                                Last Name<span class="text-red-500 text-lg">*</span>
                                             </label>
                                             <input type="text" name="last_name"
                                                 class="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
+                                            <span id="error_last_name" class="error-text text-red-500 text-xs"></span>
                                         </div>
                                     </div>
-                                    
+
                                 </div>
                             </div>
 
                         </div>
-                        <!-- Dialog Footer -->
-                        <div
-                            class="flex flex-col-reverse justify-between gap-2 border-t border-neutral-300 bg-neutral-50/60 p-4 dark:border-neutral-700 dark:bg-neutral-950/20 sm:flex-row sm:items-center md:justify-end">
-                            <button type="button" onclick="hideDiv('addClientModal')"
-                                class="cursor-pointer whitespace-nowrap rounded-md px-4 py-2 text-center text-sm font-medium tracking-wide text-neutral-600 transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:opacity-100 active:outline-offset-0 dark:text-neutral-300 dark:focus-visible:outline-white">Close</button>
-                            <button type="submit"
-                                class="cursor-pointer whitespace-nowrap rounded-md bg-green-900 text-white px-4 py-2 text-center text-sm font-medium tracking-wide text-neutral-100 transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:opacity-100 active:outline-offset-0 dark:bg-white dark:text-black dark:focus-visible:outline-white">Save</button>
-                        </div>
+                    </div>
+
+                    <!-- Dialog Footer -->
+                    <div
+                        class="flex flex-col-reverse justify-between gap-2 border-t border-neutral-300 bg-neutral-50/60 p-4 dark:border-neutral-700 dark:bg-neutral-950/20 sm:flex-row sm:items-center md:justify-end">
+                        <button type="button" onclick="hideDiv('ClientModal')"
+                            class="cursor-pointer whitespace-nowrap rounded-md px-4 py-2 text-center text-sm font-medium tracking-wide text-neutral-600 transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:opacity-100 active:outline-offset-0 dark:text-neutral-300 dark:focus-visible:outline-white">Close</button>
+                        <button type="submit"
+                            class="submitButton cursor-pointer whitespace-nowrap rounded-md bg-green-900 text-white px-4 py-2 text-center text-sm font-medium tracking-wide text-neutral-100 transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:opacity-100 active:outline-offset-0 dark:bg-white dark:text-black dark:focus-visible:outline-white">Save</button>
                     </div>
                 </div>
             </form>
         </div>
-    </div>
 
+    </div>
 
     </div>
 
@@ -889,6 +907,9 @@
             $(document).ready(function() {
                 $(document).ready(function() {
                     $('select[name="registration_type"]').on('change', function() {
+                        $('input[name="gst_no"]').val('');
+                        $('input[name="state_code"]').val('');
+                        $('input[name="pan_card"]').val('');
                         const selectedValue = $(this).val();
 
                         if (selectedValue === 'unregistered') {
@@ -912,22 +933,19 @@
                 });
 
 
-                // Trigger change event on page load to handle default state
+
                 $('select[name="registration_type"]').trigger('change');
+
                 $('input[name="gst_no"]').on('input', function() {
                     const gstNo = $(this).val().trim();
 
-                    // Validate the GST number format (minimum 12 characters)
                     if (gstNo.length >= 12) {
-                        // Extract state code (first 2 characters) and PAN card (next 10 characters)
                         const stateCode = gstNo.substring(0, 2);
                         const panCard = gstNo.substring(2, 12);
 
-                        // Set the extracted values to their respective fields
                         $('input[name="state_code"]').val(stateCode);
                         $('input[name="pan_card"]').val(panCard);
                     } else {
-                        // Clear the fields if the GST number is invalid or incomplete
                         $('input[name="state_code"]').val('');
                         $('input[name="pan_card"]').val('');
                     }
@@ -1146,7 +1164,7 @@
                 });
 
 
-                $('#addExam').submit(function(event) {
+                $('#ExamForm').submit(function(event) {
                     event.preventDefault();
 
                     $.ajax({
@@ -1156,7 +1174,7 @@
                         success: function(response) {
                             if (response.success === true) {
                                 alert(response.msg);
-                                $('#addExamModal').addClass('hidden');
+                                $('#ExamModal').addClass('hidden');
                                 location.reload();
                             } else {
                                 alert(response.msg);
@@ -1196,41 +1214,28 @@
 
                 $('#addClient').submit(function(event) {
                     event.preventDefault();
-
+                    const submitButton = $(this).find(".submitButton");
+                    toggleSubmitButton(submitButton, true);
+                    $('.error-text').text('');
                     $.ajax({
                         url: $(this).attr('action'),
                         type: 'POST',
                         data: $(this).serialize(),
-                        success: function(response) {
-                            if (response.success === true) {
-                                alert(response.msg);
-                                $('#addClientModal').addClass('hidden');
-                                location.reload();
-                            } else {
-                                alert(response.msg);
-                            }
+                        success: function(data) {
+                            toggleSubmitButton(submitButton, false);
+                            alert(data.msg);
+                            $('#ClientModal').addClass('hidden');
+                            location.reload();
                         },
-                        error: function(xhr, status, error) {
-                            //     console.error('Error:', error);
-                            // alert('An error occurred while submitting the form.');
-                            if (xhr.status === 422) {
-                                let errors = xhr.responseJSON.errors;
-
-                                // Clear previous errors
-                                $(".error-text").remove();
-
-                                // Display errors next to each field
-                                $.each(errors, function(key, value) {
-                                    let input = $(`[name="${key}"]`);
-                                    let errorBox = input.nextAll(".error-box:first");
-                                    if (errorBox.length) {
-                                        errorBox.html(
-                                            `<span class="error-text text-red-500 text-sm">${value[0]}</span>`
-                                        );
-                                    }
+                        error: function(error) {
+                            toggleSubmitButton(submitButton, false);
+                            if (error.responseJSON && error.responseJSON.errors) {
+                                console.log(error.responseJSON.errors);
+                                $.each(error.responseJSON.errors, function(key, value) {
+                                    $(`#error_${key}`).text(value[0]);
                                 });
                             } else {
-                                console.error("Error:", xhr.statusText);
+                                alert('An error occurred while creating the candidate.');
                             }
                         }
                     });
