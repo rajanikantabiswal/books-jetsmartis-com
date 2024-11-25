@@ -80,7 +80,6 @@
         $('.edit_vendor_btn').on('click', function() {
             const vendorId = $(this).data('id');
             const vendorName = $(this).data('name');
-            console.log(vendorId);
             $('#edit_vendor_id').val(vendorId);
             $('#edit_vendor_name').val(vendorName);
             $('#editVendor').attr('action', `{{ url('vendors') }}/${vendorId}`);

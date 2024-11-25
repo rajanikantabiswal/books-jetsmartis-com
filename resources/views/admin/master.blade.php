@@ -110,8 +110,8 @@
                     <div class="rounded-t mb-0 px-4 border-0">
                         <div class="mt-4 flex flex-wrap gap-2 items-center justify-end">
                             <button
-                                class="ExamFormBtn bg-green-900 text-white active:bg-green-500 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                                type="button" onclick="showDiv('ExamModal')">Add Exam</button>
+                                class="AddExamFormBtn bg-green-900 text-white active:bg-green-500 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                                type="button" onclick="showDiv('AddExamModal')">Add Exam</button>
                         </div>
                     </div>
                     <!-- Exam table will be loaded here -->
@@ -242,11 +242,11 @@
     </div>
 
     <!--Add Exam Modal-->
-    <div id="ExamModal"
+    <div id="AddExamModal"
         class="absolute top-0 left-0 w-full h-[100vh] bg-[#30373cb5] p-4 z-100 flex justify-center items-center hidden">
         <div>
             <!-- Modal Dialog -->
-            <form id="ExamForm" action="{{ route('exams.store') }}" method="POST">
+            <form id="AddExamForm" action="{{ route('exams.store') }}" method="POST">
                 @csrf
                 <div
                     class="flex z-50  flex-col gap-4 overflow-hidden rounded-md border border-neutral-300 bg-white text-neutral-600 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-300 max-h-[70vh] max-w-xl w-[70vw]">
@@ -255,7 +255,7 @@
                         class="flex items-center justify-between border-b border-neutral-300 bg-neutral-50/60 p-4 dark:border-neutral-700 dark:bg-neutral-950/20">
                         <h3 class="font-semibold tracking-wide text-neutral-900 dark:text-white">
                             Create New Exam</h3>
-                        <button type="button" onclick="hideDiv('ExamModal')">
+                        <button type="button" onclick="hideDiv('AddExamModal')">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"
                                 stroke="currentColor" fill="none" stroke-width="1.4" class="w-5 h-5">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -318,10 +318,98 @@
                     <!-- Dialog Footer -->
                     <div
                         class="flex flex-col-reverse justify-between gap-2 border-t border-neutral-300 bg-neutral-50/60 p-4 dark:border-neutral-700 dark:bg-neutral-950/20 sm:flex-row sm:items-center md:justify-end">
-                        <button type="button" onclick="hideDiv('ExamModal')"
+                        <button type="button" onclick="hideDiv('AddExamModal')"
                             class="cursor-pointer whitespace-nowrap rounded-md px-4 py-2 text-center text-sm font-medium tracking-wide text-neutral-600 transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:opacity-100 active:outline-offset-0 dark:text-neutral-300 dark:focus-visible:outline-white">Close</button>
                         <button type="submit"
                             class="cursor-pointer whitespace-nowrap rounded-md bg-green-900 text-white px-4 py-2 text-center text-sm font-medium tracking-wide text-neutral-100 transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:opacity-100 active:outline-offset-0 dark:bg-white dark:text-black dark:focus-visible:outline-white">Save</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!--Edit Exam Modal-->
+    <div id="EditExamModal"
+        class="absolute top-0 left-0 w-full h-[100vh] bg-[#30373cb5] p-4 z-100 flex justify-center items-center hidden">
+        <div>
+            <!-- Modal Dialog -->
+            <form id="EditExamForm" method="POST">
+                @csrf
+                @method('PUT')
+                <input type="hidden" name="exam_id" id="edit_exam_id" data-dropdown-input required>
+                <div
+                    class="flex z-50  flex-col gap-4 overflow-hidden rounded-md border border-neutral-300 bg-white text-neutral-600 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-300 max-h-[70vh] max-w-xl w-[70vw]">
+                    <!-- Dialog Header -->
+                    <div
+                        class="flex items-center justify-between border-b border-neutral-300 bg-neutral-50/60 p-4 dark:border-neutral-700 dark:bg-neutral-950/20">
+                        <h3 class="font-semibold tracking-wide text-neutral-900 dark:text-white">
+                            Edit exam</h3>
+                        <button type="button" onclick="hideDiv('EditExamModal')">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"
+                                stroke="currentColor" fill="none" stroke-width="1.4" class="w-5 h-5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                    <!-- Dialog Body -->
+                    <div class="px-4 overflow-y-auto ">
+                        <div class="text-start  py-6 pt-0">
+
+                            <div class="flex flex-wrap">
+
+                                <div class="w-full px-4">
+
+                                    <div class="relative group w-full mb-4 dropdownBlock">
+                                        <label class="block uppercase text-gray-600 text-xs font-semibold mb-2"
+                                            for="vendor_name">
+                                            Vendor
+                                        </label>
+                                        <input id="edit_exam_vendor_id" type="hidden" name="vendor_id" data-dropdown-input required>
+                                        <input id="edit_exam_vendor_name" type="button" value="Select exam" data-dropdown-button
+                                            class="vendorDropdownBtn text-left cursor-pointer px-3 py-4 placeholder-blueGray-300 text-gray-500 bg-white text-sm border border-gray-200 rounded focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
+                                        <div data-dropdown-menu
+                                            class="hidden w-full absolute right-0 mt-2 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 p-1 space-y-1 z-50">
+                                            <!-- Search input -->
+                                            <input data-search-input
+                                                class="block w-full px-4 py-2 text-gray-800 border rounded-md border-gray-300 focus:outline-none"
+                                                type="text" placeholder="Search items" autocomplete="off">
+                                            <!-- Dropdown content goes here -->
+                                            <ul class="dropdown-items-list">
+
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="relative group w-full mb-4">
+                                        <label class="block uppercase text-gray-600 text-xs font-semibold mb-2"
+                                            for="exam_name">
+                                            Exam
+                                        </label>
+                                        <input id="edit_exam_name" type="text" name="exam_name" placeholder="Type exam name.."
+                                            class="text-left px-3 py-4 placeholder-blueGray-300 text-gray-500 bg-white text-sm border border-gray-200 rounded focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                                            required>
+                                    </div>
+
+                                    <div class="relative group w-full mb-4">
+                                        <label class="block uppercase text-gray-600 text-xs font-semibold mb-2"
+                                            for="exam_code">
+                                            Exam Code (If available)
+                                        </label>
+                                        <input id="edit_exam_code" type="text" name="exam_code" placeholder="Type exam code.."
+                                            class="text-left px-3 py-4 placeholder-blueGray-300 text-gray-500 bg-white text-sm border border-gray-200 rounded focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <!-- Dialog Footer -->
+                    <div
+                        class="flex flex-col-reverse justify-between gap-2 border-t border-neutral-300 bg-neutral-50/60 p-4 dark:border-neutral-700 dark:bg-neutral-950/20 sm:flex-row sm:items-center md:justify-end">
+                        <button type="button" onclick="hideDiv('EditExamModal')"
+                            class="cursor-pointer whitespace-nowrap rounded-md px-4 py-2 text-center text-sm font-medium tracking-wide text-neutral-600 transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:opacity-100 active:outline-offset-0 dark:text-neutral-300 dark:focus-visible:outline-white">Close</button>
+                        <button type="submit"
+                            class="cursor-pointer whitespace-nowrap rounded-md bg-green-900 text-white px-4 py-2 text-center text-sm font-medium tracking-wide text-neutral-100 transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:opacity-100 active:outline-offset-0 dark:bg-white dark:text-black dark:focus-visible:outline-white">Update</button>
                     </div>
                 </div>
             </form>
@@ -905,35 +993,27 @@
 
         <script>
             $(document).ready(function() {
-                $(document).ready(function() {
-                    $('select[name="registration_type"]').on('change', function() {
-                        $('input[name="gst_no"]').val('');
-                        $('input[name="state_code"]').val('');
-                        $('input[name="pan_card"]').val('');
-                        const selectedValue = $(this).val();
 
-                        if (selectedValue === 'unregistered') {
-                            // Hide GST No. and State Code fields
-                            $('.gst-field, .state-code-field').addClass('hidden');
-                            // $('input[name="gst_no"], input[name="state_code"]').removeAttr('required');
+                $('select[name="registration_type"]').on('change', function() {
+                    $('input[name="gst_no"]').val('');
+                    $('input[name="state_code"]').val('');
+                    $('input[name="pan_card"]').val('');
+                    const selectedValue = $(this).val();
 
-                            // Show PAN Card field
-                            $('.pan-field').removeClass('hidden');
-                            // $('input[name="pan_card"]').attr('required', true);
-                        } else {
-                            // Show all fields
-                            $('.gst-field, .state-code-field, .pan-field').removeClass('hidden');
-                            // $('input[name="gst_no"], input[name="state_code"], input[name="pan_card"]')
-                            //     .attr('required', true);
-                        }
-                    });
-
-                    // Trigger change event on page load to handle default state
-                    $('select[name="registration_type"]').trigger('change');
+                    if (selectedValue === 'unregistered') {
+                     
+                        $('.gst-field, .state-code-field').addClass('hidden');
+                       
+                        $('.pan-field').removeClass('hidden');
+                      
+                    } else {
+                       
+                        $('.gst-field, .state-code-field, .pan-field').removeClass('hidden');
+                      ;
+                    }
                 });
 
-
-
+                // Trigger change event on page load to handle default state
                 $('select[name="registration_type"]').trigger('change');
 
                 $('input[name="gst_no"]').on('input', function() {
@@ -1164,7 +1244,7 @@
                 });
 
 
-                $('#ExamForm').submit(function(event) {
+                $('#AddExamForm').submit(function(event) {
                     event.preventDefault();
 
                     $.ajax({
@@ -1174,7 +1254,7 @@
                         success: function(response) {
                             if (response.success === true) {
                                 alert(response.msg);
-                                $('#ExamModal').addClass('hidden');
+                                $('#AddExamModal').addClass('hidden');
                                 location.reload();
                             } else {
                                 alert(response.msg);

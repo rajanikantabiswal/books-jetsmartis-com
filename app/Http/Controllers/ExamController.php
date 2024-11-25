@@ -71,7 +71,10 @@ class ExamController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $exam = Exam::findOrFail($id);
+        $exam->update($request->all());
+        session()->put('activeTab', 'exams');
+        return response()->json(['success' => true, 'msg' => 'Exam updated successfully']);
     }
 
     /**
@@ -79,13 +82,22 @@ class ExamController extends Controller
      */
     public function destroy(string $id)
     {
-        try {
+         // Find the company by ID and delete
+         $exam = Exam::findOrFail($id);
 
-            Exam::where('id', $id)->delete();
-
-            return response()->json(['success' => true, 'msg' => 'Exam deleted successfully!']);
-        } catch (\Exception $e) {
-            return response()->json(['success' => false, 'msg' => $e->getMessage()]);
+        if ($exam->candidates()->exists()) {
+            return response()->json([
+                'success' => false,
+                'msg' => 'This exam is linked to one or more candidates and cannot be deleted.'
+            ]);
+        } else {
+            $exam->delete();
+            session()->put('activeTab', 'exams');
+           
+            return response()->json([
+                'success' => true,
+                'msg' => 'Exam deleted successfully'
+            ]);
         }
     }
 

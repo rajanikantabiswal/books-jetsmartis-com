@@ -33,11 +33,13 @@
                         </td>
 
                         <td class="px-6 py-4">
-                            {{$exam->vendor->vendor_name}}
+                            {{ $exam->vendor->vendor_name }}
                         </td>
                         <td class="flex items-center px-6 py-4">
-                            <span class="mr-4 cursor-pointer edit_vendor_btn" data-id="{{ $exam->id }}"
-                                data-name="{{ $exam->exam_name }}">
+                            <span class="mr-4 cursor-pointer edit_exam_btn" data-id="{{ $exam->id }}"
+                                data-name="{{ $exam->exam_name }}" data-exam-code="{{ $exam->exam_code }}"
+                                data-vendor-id="{{ $exam->vendor_id }}"
+                                data-vendor-name="{{ $exam->vendor->vendor_name }}">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
                                     height="24" color="#417505" fill="none">
                                     <path
@@ -50,7 +52,7 @@
                                 </svg>
                             </span>
 
-                            <span class="delete_vendor_btn cursor-pointer" data-id="{{ $exam->id }}">
+                            <span class="delete_exam_btn cursor-pointer" data-id="{{ $exam->id }}">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
                                     height="24" color="#d0021b" fill="none">
                                     <path
@@ -73,3 +75,70 @@
         </table>
     </div>
 @endif
+
+<script>
+    $('.edit_exam_btn').on('click', function() {
+        const examId = $(this).data('id');
+        const examName = $(this).data('name');
+        const examCode = $(this).data('exam-code');
+        const vendorId = $(this).data('vendor-id');
+        const vendorName = $(this).data('vendor-name');
+        $('#edit_exam_id').val(examId);
+        $('#edit_exam_name').val(examName);
+        $('#edit_exam_code').val(examCode);
+        $('#edit_exam_vendor_id').val(vendorId);
+        $('#edit_exam_vendor_name').val(vendorName);
+        $('#EditExamForm').attr('action', `{{ url('exams') }}/${examId}`);
+        $('#EditExamModal').removeClass('hidden');
+    });
+
+    $('#EditExamForm').submit(function(event) {
+        event.preventDefault();
+        $.ajax({
+            url: $(this).attr('action'),
+            type: 'POST',
+            data: $(this).serialize(),
+            success: function(response) {
+                if (response.success === true) {
+                    alert(response.msg);
+                    $('#EditExamModal').addClass('hidden');
+                    location.reload();
+                } else {
+                    alert(response.msg);
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error('Error:', error);
+                alert('An error occurred while submitting the form.');
+            }
+        });
+    });
+
+    $('.delete_exam_btn').on('click', function() {
+        const examId = $(this).data('id');
+
+        if (confirm('Are you sure you want to delete this exam?')) {
+            $.ajax({
+                url: `{{ route('exams.destroy', ':id') }}`.replace(':id', examId),
+                type: 'POST',
+                data: {
+                    _method: 'DELETE',
+                    _token: '{{ csrf_token() }}'
+                },
+                success: function(response) {
+                    if (response.success) {
+                        alert(response.msg);
+                        location.reload();
+                    } else {
+                        alert(response.msg);
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error:', error);
+                    alert('An error occurred while deleting the vendor.');
+                }
+            });
+        }
+
+    });
+</script>
