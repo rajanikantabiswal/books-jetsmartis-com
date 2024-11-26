@@ -1297,6 +1297,8 @@
                     const submitButton = $(this).find(".submitButton");
                     toggleSubmitButton(submitButton, true);
                     $('.error-text').text('');
+                    
+
                     $.ajax({
                         url: $(this).attr('action'),
                         type: 'POST',

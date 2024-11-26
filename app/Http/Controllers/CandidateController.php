@@ -280,57 +280,39 @@ class CandidateController extends Controller
 
 
     public function getCandidatesAPI(Request $request)
-{
-    $year = $request->input('year');
-    $period = $request->input('period', 'all_time'); // Default to 'all_time' if not provided
-    $fromDate = $request->input('from_date');
-    $toDate = $request->input('to_date');
+    {
+        $year = $request->input('year');
+        $period = $request->input('period', 'all_time'); // Default to 'all_time' if not provided
+        // $fromDate = $request->input('from_date');
+        // $toDate = $request->input('to_date');
 
-    $candidates = Candidate::query();
+        $candidates = Candidate::query();
 
-    // Priority 1: If both `from_date` and `to_date` are set, apply the date range filter
-    if ($fromDate && $toDate) {
-        $candidates->whereBetween('conducted_date', [$fromDate, $toDate]);
-    }
-    // Priority 2: If only `from_date` is set
-    elseif ($fromDate) {
-        $candidates->where('conducted_date', '>=', $fromDate);
-    }
-    // Priority 3: If only `to_date` is set
-    elseif ($toDate) {
-        $candidates->where('conducted_date', '<=', $toDate);
-    }
-    // Priority 4: Apply `period` filter if set and not `all_time`
-    elseif ($period && $period !== 'all_time') {
-        if ($period === 'last_week') {
-            $startOfLastWeek = now()->subWeek()->startOfWeek();
-            $endOfLastWeek = now()->subWeek()->endOfWeek();
-            $candidates->whereBetween('conducted_date', [$startOfLastWeek, $endOfLastWeek]);
-        } elseif ($period === 'last_month') {
-            $startOfLastMonth = now()->subMonthNoOverflow()->startOfMonth();
-            $endOfLastMonth = now()->subMonthNoOverflow()->endOfMonth();
-            $candidates->whereBetween('conducted_date', [$startOfLastMonth, $endOfLastMonth]);
-        } elseif ($period === 'last_year') {
-            $startOfLastYear = now()->subYear()->startOfYear();
-            $endOfLastYear = now()->subYear()->endOfYear();
-            $candidates->whereBetween('conducted_date', [$startOfLastYear, $endOfLastYear]);
+
+        if ($period && $period !== 'all_time') {
+            if ($period === 'last_week') {
+                $startOfLastWeek = now()->subWeek()->startOfWeek();
+                $endOfLastWeek = now()->subWeek()->endOfWeek();
+                $candidates->whereBetween('conducted_date', [$startOfLastWeek, $endOfLastWeek]);
+            } elseif ($period === 'last_month') {
+                $startOfLastMonth = now()->subMonthNoOverflow()->startOfMonth();
+                $endOfLastMonth = now()->subMonthNoOverflow()->endOfMonth();
+                $candidates->whereBetween('conducted_date', [$startOfLastMonth, $endOfLastMonth]);
+            } elseif ($period === 'last_year') {
+                $startOfLastYear = now()->subYear()->startOfYear();
+                $endOfLastYear = now()->subYear()->endOfYear();
+                $candidates->whereBetween('conducted_date', [$startOfLastYear, $endOfLastYear]);
+            }
         }
+        // Priority 5: Apply `year` filter if set
+        elseif ($year) {
+            $candidates->whereYear('conducted_date', $year);
+        }
+
+        $candidates->with(['company', 'client', 'exam', 'vendor', 'conducted_user']);
+
+        $results = $candidates->get();
+
+        return response()->json($results);
     }
-    // Priority 5: Apply `year` filter if set
-    elseif ($year) {
-        $candidates->whereYear('conducted_date', $year);
-    }
-
-    // Default to all_time: No filters applied
-    // This block is redundant since no conditions imply all records
-
-    // Load related data
-    $candidates->with(['company', 'client', 'exam', 'vendor', 'conducted_user']);
-
-    // Get the results
-    $results = $candidates->get();
-
-    return response()->json($results);
-}
-
 }

@@ -12,15 +12,6 @@ class DashboardController extends Controller
 {
     public function showDashboard()
     {
-        if(Gate::allows('isAdmin')){
-            //$candidates= Candidate::get();
-            return view('dashboard');
-        }else{
-            $startOfLastWeek = now()->subWeek()->startOfWeek();
-            $endOfLastWeek = now()->subWeek()->endOfWeek();
-            //$candidates= Candidate::whereBetween('conducted_date', [$startOfLastWeek, $endOfLastWeek]);
-            return view('dashboard');
-        }
-       
+       return view('dashboard');
     }
 }

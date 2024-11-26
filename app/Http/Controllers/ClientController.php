@@ -77,7 +77,7 @@ class ClientController extends Controller
                 $client = Client::create([
                     'is_individual' => $request->is_individual,
                     'client_name' =>  $request->individual_first_name . ' ' . $request->individual_last_name,
-                    'phone' => $request->country_code .  $request->phone,
+                    'phone' => $request->country_code . $request->phone,
                     'email' =>$request->email ?? '',
                     'whatsapp' => $request->whatsapp ?? '',
                     'address' => $request->address ?? '',
@@ -94,7 +94,7 @@ class ClientController extends Controller
                 $client = Client::create([
                     'is_individual' => $request->is_individual,
                     'client_name' => $request->client_name,
-                    'phone' => $request->country_code .  $request->phone,
+                    'phone' => $request->country_code . $request->phone,
                     'email' => $request->email ?? '',
                     'whatsapp' => $request->whatsapp ?? '',
                     'address' => $request->address ?? '',
@@ -103,7 +103,7 @@ class ClientController extends Controller
                     'city_id' => $request->city_id,
                     'zip_code' => $request->zip_code,
                     'registration_type' => $request->registration_type,
-                    'gst_no' => $request->gst_no,
+                    'gst_no' => $request->gst_no ?? '',
                     'state_code' => $request->state_code,
                     'pan_card' => $request->pan_card,
                     'first_name' => $request->first_name,
