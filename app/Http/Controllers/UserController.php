@@ -105,12 +105,19 @@ class UserController extends Controller
 
 
         $user = User::findOrFail($id);
-        $user->delete();
-
-        return response()->json([
-            'success' => true,
-            'msg' => 'User deleted successfully'
-        ]);
+        if ($user->candidates()->exists()) {
+            return response()->json([
+                'success' => false,
+                'msg' => 'This user is linked to one or more candidates and cannot be deleted.'
+            ]);
+        } else {
+            $user->delete();
+            
+            return response()->json([
+                'success' => true,
+                'msg' => 'User deleted successfully'
+            ]);
+        }
     }
 
     public function getUserList()

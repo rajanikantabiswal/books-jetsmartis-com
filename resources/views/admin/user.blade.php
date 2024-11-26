@@ -410,12 +410,12 @@
                                     alert(response.msg);
                                     location.reload();
                                 } else {
-                                    alert('Failed to delete the user.');
+                                    alert(response.msg);
                                 }
                             },
                             error: function(xhr, status, error) {
                                 console.error('Error:', error);
-                                alert('An error occurred while deleting the company.');
+                                alert('An error occurred while deleting the user.');
                             }
                         });
                     }
