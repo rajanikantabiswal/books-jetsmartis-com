@@ -1348,12 +1348,10 @@
 
                 $('.examDropdownBtn').on('click', function() {
                     let $vendorId =$('#vendor_id').val();
-                    console.log($vendorId);
                     let url = $vendorId ? `{{ route('api.getExams', ':vendorId') }}`.replace(':vendorId',
                             $vendorId) :
                         `{{ route('api.getExams') }}`;
 
-                    console.log(url);
                     $.ajax({
                         url: url,
                         type: 'GET',
@@ -1383,12 +1381,10 @@
 
                 $('#edit_exam_id_btn').on('click', function() {
                     let $vendorId =$('#edit_vendor_id').val();
-                    console.log($vendorId);
                     let url = $vendorId ? `{{ route('api.getExams', ':vendorId') }}`.replace(':vendorId',
                             $vendorId) :
                         `{{ route('api.getExams') }}`;
 
-                    console.log(url);
                     $.ajax({
                         url: url,
                         type: 'GET',
@@ -1420,17 +1416,14 @@
 
                     let $vendorId = $('#filterVendorId').val();
 
-                    console.log($vendorId);
                     let url = $vendorId ? `{{ route('api.getExams', ':vendorId') }}`.replace(':vendorId',
                             $vendorId) :
                         `{{ route('api.getExams') }}`;
 
-                    console.log(url);
                     $.ajax({
                         url: url,
                         type: 'GET',
                         success: function(response) {
-                            console.log(response);
                             const $dropdownItemList = $('.dropdown-items-list');
                             $dropdownItemList.empty();
                             response.forEach(function(exam) {

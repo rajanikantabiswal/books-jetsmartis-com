@@ -1107,13 +1107,11 @@
 
                 $('.stateDropdownBtn').on('click', function() {
                     let $countryId = $('input[name="country_id"]').val();
-                    console.log($countryId);
                     let url = $countryId ? `{{ route('api.getStateDetails', ':countryId') }}`.replace(
                             ':countryId',
                             $countryId) :
                         `{{ route('api.getStateDetails') }}`;
 
-                    console.log(url);
                     $.ajax({
                         url: url,
                         type: 'GET',
@@ -1140,12 +1138,10 @@
 
                 $('.cityDropdownBtn').on('click', function() {
                     let $stateId = $('input[name="state_id"]').val();
-                    console.log($stateId);
                     let url = $stateId ? `{{ route('api.getCityDetails', ':stateId') }}`.replace(':stateId',
                             $stateId) :
                         `{{ route('api.getCityDetails') }}`;
 
-                    console.log(url);
                     $.ajax({
                         url: url,
                         type: 'GET',
@@ -1357,7 +1353,6 @@
                         error: function(error) {
                             toggleSubmitButton(submitButton, false);
                             if (error.responseJSON && error.responseJSON.errors) {
-                                console.log(error.responseJSON.errors);
                                 $.each(error.responseJSON.errors, function(key, value) {
                                     $(`#error_${key}`).text(value[0]);
                                 });
@@ -1373,9 +1368,6 @@
                     const $dropdownBlock = $(this).closest('.dropdownBlock');
                     const id = $(this).data('id');
                     const name = $(this).text().trim();
-
-                    console.log(id);
-                    console.log(name);
 
                     $dropdownBlock.find('[data-dropdown-input]').val(id);
                     $dropdownBlock.find('[data-dropdown-button]').val(name);
