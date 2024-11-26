@@ -349,7 +349,6 @@
                         type: "GET",
                         success: function(data) {
                             if (data.success == true) {
-                                console.log(data.data);
                                 var user = data.data;
                                 $("#edit_name").val(user['name']);
                                 $("#edit_email").val(user['email']);
