@@ -38,17 +38,22 @@ class UserController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . User::class],
             'password' => ['required', Rules\Password::defaults()],
-            'role' => ['required']
+            'roles' => ['required']
         ]);
+        try {
+            $user = User::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => Hash::make($request->password),
+            ]);
+            
+            $roles = $request->input('roles');
+            $user->assignRole($roles);
+            return response()->json(['success' => true, 'msg' => 'User created']);
+        } catch (\Exception $e) {
+            return response()->json(['success' => false, 'msg' => $e->getMessage()]);
+        }
 
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-        ]);
-        $user->assignRole($request->role);
-
-        return redirect()->back();
     }
 
     /**
@@ -64,7 +69,12 @@ class UserController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $user = User::with('roles')->where('id', $id)->first();
+
+        return response()->json([
+            'success' => true,
+            'data' => $user,
+        ]);
     }
 
     /**
@@ -72,7 +82,19 @@ class UserController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $user = User::findOrFail($id);
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required'],
+            'roles' => ['required']
+        ]);
+
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->save();
+        $user->syncRoles($request->roles);
+
+        return response()->json(['success' => true, 'msg' => 'User updated']);
     }
 
     /**
