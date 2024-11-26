@@ -324,7 +324,7 @@
                         data: $(this).serialize(),
                         success: function(response) {
                             if (response.success === true) {
-                                alert(response.msg);
+                                toastr.success(response.msg);
                                 $('#AddUserModal').addClass('hidden');
                                 location.reload();
                             } else {
@@ -406,7 +406,7 @@
                             },
                             success: function(response) {
                                 if (response.success) {
-                                    alert(response.msg);
+                                    toastr.success(response.msg);
                                     location.reload();
                                 } else {
                                     alert(response.msg);

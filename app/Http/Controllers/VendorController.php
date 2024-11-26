@@ -39,6 +39,7 @@ class VendorController extends Controller
             ]);
             session()->put('activeTab', 'vendors');
             return response()->json(['success' => true, 'msg' => 'Vendor created successfully!']);
+            
         } catch (\Exception $e) {
             return response()->json(['success' => false, 'msg' => $e->getMessage()]);
         }

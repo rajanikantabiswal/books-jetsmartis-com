@@ -1357,7 +1357,7 @@
                         type: 'GET',
                         success: function(response) {
                             if (response.success === false) {
-                                alert(response.msg);
+                                toastr.success(response.msg);
                             } else {
                                 const $dropdownItemList = $('.dropdown-items-list');
                                 $dropdownItemList.empty();

@@ -1239,7 +1239,8 @@
                         data: $(this).serialize(),
                         success: function(response) {
                             if (response.success === true) {
-                                alert(response.msg);
+                                //alert(response.msg);
+                                toastr.success(response.msg);
                                 $('#addVendorModal').addClass('hidden');
                                 location.reload();
                             } else {
@@ -1287,7 +1288,7 @@
                         data: $(this).serialize(),
                         success: function(response) {
                             if (response.success === true) {
-                                alert(response.msg);
+                                toastr.success(response.msg);
                                 $('#AddExamModal').addClass('hidden');
                                 location.reload();
                             } else {
@@ -1311,7 +1312,7 @@
                         data: $(this).serialize(),
                         success: function(response) {
                             if (response.success === true) {
-                                alert(response.msg);
+                                toastr.success(response.msg);
                                 $('#addCompanyModal').addClass('hidden');
                                 location.reload();
                             } else {
@@ -1346,7 +1347,7 @@
                         data: $(this).serialize(),
                         success: function(data) {
                             toggleSubmitButton(submitButton, false);
-                            alert(data.msg);
+                            toastr.info(data.msg);
                             $('#ClientModal').addClass('hidden');
                             location.reload();
                         },

@@ -100,7 +100,7 @@
             data: $(this).serialize(),
             success: function(response) {
                 if (response.success === true) {
-                    alert(response.msg);
+                    toastr.success(response.msg);
                     $('#EditExamModal').addClass('hidden');
                     location.reload();
                 } else {
