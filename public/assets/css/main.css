@@ -1,0 +1,60 @@
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s forwards;
+}
+
+.fade-out {
+    animation: fadeOut 0.5s forwards;
+}
+
+/* Width of the scrollbar */
+::-webkit-scrollbar {
+    width: 7px;           /* For vertical scrollbar */
+    height: 7px;          /* For horizontal scrollbar */
+}
+
+/* Track of the scrollbar */
+::-webkit-scrollbar-track {
+    background: transparent;   /* Color of the scrollbar track */
+    border-radius: 10px;
+}
+
+/* Handle of the scrollbar */
+::-webkit-scrollbar-thumb {
+        /* Color of the scrollbar handle */
+    border-radius: 10px;
+    background: rgb(145, 248, 185);
+   
+}
+
+
+
+[data-type="dropdown"] {
+    max-height: 200px;  /* Set a fixed height */
+    overflow-y: auto;   /* Enable vertical scrolling */
+}
+
+
+
+
+
+
