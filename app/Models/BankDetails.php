@@ -13,4 +13,9 @@ class BankDetails extends Model
         'ifsc',
         'beneficiary',
     ];
+
+    public function client()
+    {
+        return $this->belongsTo(Client::class);
+    }
 }

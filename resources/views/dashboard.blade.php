@@ -63,7 +63,7 @@
             <div class="mx-6 flex items-center justify-end gap-2">
 
                 <form id="filter-form" class="flex items-center gap-4">
-                    <div class="flex items-center gap-2">
+                    {{-- <div class="flex items-center gap-2">
                         <label for="from_date"
                             class="mb-2 text-sm font-medium text-gray-900 dark:text-white">From</label>
                         <input name="from_date" type="date" id="from_date"
@@ -73,7 +73,7 @@
                         <label for="to_date" class="mb-2 text-sm font-medium text-gray-900 dark:text-white">To</label>
                         <input name="to_date" type="date" id="to_date"
                             class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5" />
-                    </div>
+                    </div> --}}
                     <select name="period" id="period"
                         class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5">
                         <option value="all_time" selected>All Time</option>

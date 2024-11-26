@@ -34,7 +34,7 @@
             <div class="mt-4 flex flex-wrap gap-2 items-center justify-end">
                 <button
                     class="bg-green-900 text-white active:bg-green-500 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                    type="button" onclick="showDiv('addUserModal')">Add New</button>
+                    type="button" onclick="showDiv('AddUserModal')">Add New</button>
             </div>
         </div>
 
@@ -129,20 +129,20 @@
         </div>
     </div>
 
-    <div id="addUserModal"
+    <div id="AddUserModal"
         class="absolute top-0 left-0 w-full h-[100vh] bg-[#30373cb5] p-4 z-100 flex justify-center items-center hidden">
         <div>
             <!-- Modal Dialog -->
-            <form action="{{ route('users.store') }}" method="POST">
+            <form id="AddUserForm" action="{{ route('users.store') }}" method="POST">
                 @csrf
                 <div
-                    class="flex z-50  flex-col gap-4 overflow-hidden rounded-md border border-neutral-300 bg-white text-neutral-600 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-300 max-h-[70vh] max-w-xl">
+                    class="flex z-50 flex-col gap-4 overflow-hidden rounded-md border border-neutral-300 bg-white text-neutral-600 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-300 max-h-[70vh] max-w-xl">
                     <!-- Dialog Header -->
                     <div
                         class="flex items-center justify-between border-b border-neutral-300 bg-neutral-50/60 p-4 dark:border-neutral-700 dark:bg-neutral-950/20">
                         <h3 class="font-semibold tracking-wide text-neutral-900 dark:text-white">
                             Create User</h3>
-                        <button type="button" onclick="hideDiv('addUserModal')">
+                        <button type="button" onclick="hideDiv('AddUserModal')">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"
                                 stroke="currentColor" fill="none" stroke-width="1.4" class="w-5 h-5">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -195,14 +195,15 @@
                                             for="role">
                                             Role
                                         </label>
-                                        <select name="role" id="role"
-                                            class="uppercase border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring ease-linear w-full transition-all duration-150"
-                                            required>
+                                        <div class="space-y-2">
                                             @foreach ($roles as $role)
-                                                <option class="uppercase" value="{{ $role->name }}" selected>
-                                                    {{ $role->name }}</option>
+                                                <label class="inline-flex items-center">
+                                                    <input type="checkbox" name="roles[]" value="{{ $role->name }}"
+                                                        class="form-checkbox text-indigo-600">
+                                                    <span class="ml-2">{{ $role->name }}</span>
+                                                </label>
                                             @endforeach
-                                        </select>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -211,7 +212,7 @@
                     <!-- Dialog Footer -->
                     <div
                         class="flex flex-col-reverse justify-between gap-2 border-t border-neutral-300 bg-neutral-50/60 p-4 dark:border-neutral-700 dark:bg-neutral-950/20 sm:flex-row sm:items-center md:justify-end">
-                        <button type="button" onclick="hideDiv('addUserModal')"
+                        <button type="button" onclick="hideDiv('AddUserModal')"
                             class="cursor-pointer whitespace-nowrap rounded-md px-4 py-2 text-center text-sm font-medium tracking-wide text-neutral-600 transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:opacity-100 active:outline-offset-0 dark:text-neutral-300 dark:focus-visible:outline-white">Close</button>
                         <button type="submit"
                             class="cursor-pointer whitespace-nowrap rounded-md bg-green-900 text-white px-4 py-2 text-center text-sm font-medium tracking-wide text-neutral-100 transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:opacity-100 active:outline-offset-0 dark:bg-white dark:text-black dark:focus-visible:outline-white">Save</button>
@@ -221,12 +222,14 @@
         </div>
     </div>
 
+
     <div id="editUserModal"
         class="absolute top-0 left-0 w-full h-[100vh] bg-[#30373cb5] p-4 z-100 flex justify-center items-center hidden">
         <div>
             <!-- Modal Dialog -->
-            <form method="POST" id="editUser">
+            <form method="POST" id="EditUserForm">
                 @csrf
+                @method('PUT')
                 <div
                     class="flex z-50  flex-col gap-4 overflow-hidden rounded-md border border-neutral-300 bg-white text-neutral-600 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-300 max-h-[70vh] max-w-xl">
                     <!-- Dialog Header -->
@@ -276,14 +279,17 @@
                                             for="edit_role">
                                             Role
                                         </label>
-                                        <select name="role" id="edit_role"
-                                            class="uppercase border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring ease-linear w-full transition-all duration-150"
-                                            required>
+                                        <div id="edit_roles" class="space-y-2">
                                             @foreach ($roles as $role)
-                                                <option class="uppercase" value="{{ $role->name }}" selected>
-                                                    {{ $role->name }}</option>
+                                                <label class="inline-flex items-center">
+                                                    <input type="checkbox" name="roles[]"
+                                                        value="{{ $role->name }}"
+                                                        class="form-checkbox text-indigo-600"
+                                                        id="role_{{ $role->name }}">
+                                                    <span class="ml-2">{{ $role->name }}</span>
+                                                </label>
                                             @endforeach
-                                        </select>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -307,41 +313,86 @@
 
     <x-slot name="script">
         <script>
-            // document.querySelectorAll('.delete_user_btn').forEach(button => {
-            //     button.addEventListener('click', function() {
-            //         const candidateId = this.getAttribute('data-id');
-
-            //         if (!confirm("Please confirm to delete?")) {
-            //             return;
-            //         }
-            //         const url = `{{ route('users.destroy', ':id') }}`.replace(':id', candidateId);
-
-            //         fetch(url, {
-            //                 method: 'DELETE',
-            //                 headers: {
-            //                     'Content-Type': 'application/json',
-            //                     'X-CSRF-TOKEN': "{{ csrf_token() }}"
-            //                 }
-            //             })
-            //             .then(response => response.json())
-            //             .then(data => {
-            //                 if (data.success === true) {
-            //                     location.reload();
-            //                 } else {
-            //                     alert(data.msg);
-            //                 }
-            //             })
-            //             .catch(error => {
-            //                 console.error('Error:', error);
-            //                 alert('An unexpected error occurred while deleting the candidate.');
-            //             });
-            //     });
-            // });
-
             $(document).ready(function() {
+
+                $('#AddUserForm').submit(function(event) {
+                    event.preventDefault();
+
+                    $.ajax({
+                        url: $(this).attr('action'),
+                        type: 'POST',
+                        data: $(this).serialize(),
+                        success: function(response) {
+                            if (response.success === true) {
+                                alert(response.msg);
+                                $('#AddUserModal').addClass('hidden');
+                                location.reload();
+                            } else {
+                                alert(response.msg);
+                            }
+
+                        },
+                        error: function(xhr, status, error) {
+                            console.error('Error:', error);
+                            alert('An error occurred while submitting the form.');
+                        }
+                    });
+                });
+
                 $('.edit_user_btn').on('click', function() {
-                    //$('#editUser').attr('action', `{{ url('company') }}/${companyId}`);
+                    const userId = $(this).data('id');
+                    $('#EditUserForm').attr('action', `{{ url('users') }}/${userId}`);
+                    var url = '{{ route('users.edit', ':userId') }}';
+                    url = url.replace(':userId', userId);
+                    $.ajax({
+                        url: url,
+                        type: "GET",
+                        success: function(data) {
+                            if (data.success == true) {
+                                console.log(data.data);
+                                var user = data.data;
+                                $("#edit_name").val(user['name']);
+                                $("#edit_email").val(user['email']);
+                                var roleNames = user['roles'].map(function(role) {
+                                    return role.name;
+                                });
+                                @foreach ($roles as $role)
+                                    if (roleNames.includes('{{ $role->name }}')) {
+                                        $('#role_{{ $role->name }}').prop('checked',
+                                            true);
+                                    } else {
+                                        $('#role_{{ $role->name }}').prop('checked',
+                                            false);
+                                    }
+                                @endforeach
+                            } else {
+                                alert(data.msg);
+                            }
+                        }
+                    })
                     $('#editUserModal').removeClass('hidden');
+                });
+
+                $('#EditUserForm').submit(function(event) {
+                    event.preventDefault();
+                    $.ajax({
+                        url: $(this).attr('action'),
+                        type: 'POST',
+                        data: $(this).serialize(),
+                        success: function(response) {
+                            if (response.success === true) {
+                                alert(response.msg);
+                                $('#EditUserModal').addClass('hidden');
+                                location.reload();
+                            } else {
+                                alert(response.msg);
+                            }
+                        },
+                        error: function(xhr, status, error) {
+                            console.error('Error:', error);
+                            alert('An error occurred while submitting the form.');
+                        }
+                    });
                 });
 
                 $('.delete_user_btn').on('click', function() {
@@ -370,6 +421,7 @@
                     }
 
                 });
+
             });
         </script>
     </x-slot>

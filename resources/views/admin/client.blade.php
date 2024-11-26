@@ -34,7 +34,7 @@
             <div class="mt-4 flex flex-wrap gap-2 items-center justify-end">
                 <button
                     class="bg-green-900 text-white active:bg-green-500 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                    type="button" onclick="showDiv('addClient')">Add New</button>
+                    type="button" onclick="showDiv('ClientForm')">Add New</button>
             </div>
         </div>
 
@@ -118,7 +118,7 @@
 
 
     </div>
-    <div id="addClient"
+    <div id="ClientForm"
         class="absolute top-0 left-0 w-full h-[100vh] bg-[#30373cb5] p-4 z-100 flex justify-center items-center hidden">
         <div>
             <!-- Modal Dialog -->
@@ -131,7 +131,7 @@
                         class="flex items-center justify-between border-b border-neutral-300 bg-neutral-50/60 p-4 dark:border-neutral-700 dark:bg-neutral-950/20">
                         <h3 class="font-semibold tracking-wide text-neutral-900 dark:text-white">
                             Create New client</h3>
-                        <button type="button" onclick="hideDiv('addClient')">
+                        <button type="button" onclick="hideDiv('ClientForm')">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"
                                 stroke="currentColor" fill="none" stroke-width="1.4" class="w-5 h-5">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -162,7 +162,7 @@
                         <!-- Dialog Footer -->
                         <div
                             class="flex flex-col-reverse justify-between gap-2 border-t border-neutral-300 bg-neutral-50/60 p-4 dark:border-neutral-700 dark:bg-neutral-950/20 sm:flex-row sm:items-center md:justify-end">
-                            <button type="button" onclick="hideDiv('addClient')"
+                            <button type="button" onclick="hideDiv('ClientForm')"
                                 class="cursor-pointer whitespace-nowrap rounded-md px-4 py-2 text-center text-sm font-medium tracking-wide text-neutral-600 transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:opacity-100 active:outline-offset-0 dark:text-neutral-300 dark:focus-visible:outline-white">Close</button>
                             <button type="submit"
                                 class="cursor-pointer whitespace-nowrap rounded-md bg-green-900 text-white px-4 py-2 text-center text-sm font-medium tracking-wide text-neutral-100 transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:opacity-100 active:outline-offset-0 dark:bg-white dark:text-black dark:focus-visible:outline-white">Save</button>

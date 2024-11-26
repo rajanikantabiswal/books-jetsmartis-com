@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Client extends Model
 {
@@ -26,4 +27,27 @@ class Client extends Model
         'first_name',
         'last_name'
     ];
+    public function candidates()
+    {
+        return $this->hasMany(Candidate::class);
+    }
+
+    public function country(): BelongsTo
+    {
+        return $this->belongsTo(Country::class);
+    }
+
+    public function state(): BelongsTo
+    {
+        return $this->belongsTo(State::class);
+    }
+    public function city(): BelongsTo
+    {
+        return $this->belongsTo(City::class);
+    }
+
+    public function bankDetails()
+    {
+        return $this->hasOne(BankDetails::class);
+    }
 }

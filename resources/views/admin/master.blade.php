@@ -363,8 +363,10 @@
                                             for="vendor_name">
                                             Vendor
                                         </label>
-                                        <input id="edit_exam_vendor_id" type="hidden" name="vendor_id" data-dropdown-input required>
-                                        <input id="edit_exam_vendor_name" type="button" value="Select exam" data-dropdown-button
+                                        <input id="edit_exam_vendor_id" type="hidden" name="vendor_id"
+                                            data-dropdown-input required>
+                                        <input id="edit_exam_vendor_name" type="button" value="Select exam"
+                                            data-dropdown-button
                                             class="vendorDropdownBtn text-left cursor-pointer px-3 py-4 placeholder-blueGray-300 text-gray-500 bg-white text-sm border border-gray-200 rounded focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
                                         <div data-dropdown-menu
                                             class="hidden w-full absolute right-0 mt-2 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 p-1 space-y-1 z-50">
@@ -384,7 +386,8 @@
                                             for="exam_name">
                                             Exam
                                         </label>
-                                        <input id="edit_exam_name" type="text" name="exam_name" placeholder="Type exam name.."
+                                        <input id="edit_exam_name" type="text" name="exam_name"
+                                            placeholder="Type exam name.."
                                             class="text-left px-3 py-4 placeholder-blueGray-300 text-gray-500 bg-white text-sm border border-gray-200 rounded focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                                             required>
                                     </div>
@@ -394,7 +397,8 @@
                                             for="exam_code">
                                             Exam Code (If available)
                                         </label>
-                                        <input id="edit_exam_code" type="text" name="exam_code" placeholder="Type exam code.."
+                                        <input id="edit_exam_code" type="text" name="exam_code"
+                                            placeholder="Type exam code.."
                                             class="text-left px-3 py-4 placeholder-blueGray-300 text-gray-500 bg-white text-sm border border-gray-200 rounded focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
                                     </div>
                                 </div>
@@ -552,11 +556,11 @@
     <!--Add Client Modal-->
     <div id="ClientModal"
         class="absolute top-0 left-0 w-full h-[100vh] bg-[#30373cb5] p-4 z-100 flex justify-center items-center hidden">
-
         <div>
             <!-- Modal Dialog -->
-            <form id="addClient" action="{{ route('clients.store') }}" method="POST">
+            <form id="ClientForm" method="POST">
                 @csrf
+                <input type="hidden" id="client_id" value="">
                 <div
                     class="flex z-50  flex-col gap-4 overflow-hidden rounded-md border border-neutral-300 bg-white text-neutral-600 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-300 max-h-[70vh] max-w-xl w-[70vw]">
                     <!-- Dialog Header -->
@@ -653,9 +657,11 @@
                                                     <div data-dropdown-toggle="dropdown-phone"
                                                         class="country-code-button flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-900">
                                                         <input type="hidden" value="+91"
-                                                            class="country-code-input-field" name="country_code">
+                                                            class="country-code-input-field" name="country_code"
+                                                            id="country_code">
                                                         <input type="button" value="+91"
-                                                            class="country-code-input cursor-pointer">
+                                                            class="country-code-input cursor-pointer"
+                                                            id="country_code_btn">
                                                         <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true"
                                                             xmlns="http://www.w3.org/2000/svg" fill="none"
                                                             viewBox="0 0 10 6">
@@ -666,7 +672,7 @@
                                                     </div>
                                                     <!-- Phone Input Field -->
                                                     <div class="relative w-full">
-                                                        <input name="phone" type="text"
+                                                        <input id="phone" name="phone" type="text"
                                                             class="phone-input border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                                                             pattern="[0-9]{10}" placeholder="123-456-7890" />
                                                     </div>
@@ -696,7 +702,7 @@
                                                 for="">
                                                 Email
                                             </label>
-                                            <input type="email" name="email"
+                                            <input id="email" type="email" name="email"
                                                 class="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
 
                                         </div>
@@ -718,7 +724,7 @@
                                                             d="M18 13.446a3.02 3.02 0 0 0-.946-1.985l-1.4-1.4a3.054 3.054 0 0 0-4.218 0l-.7.7a.983.983 0 0 1-1.39 0l-2.1-2.1a.983.983 0 0 1 0-1.389l.7-.7a2.98 2.98 0 0 0 0-4.217l-1.4-1.4a2.824 2.824 0 0 0-4.218 0c-3.619 3.619-3 8.229 1.752 12.979C6.785 16.639 9.45 18 11.912 18a7.175 7.175 0 0 0 5.139-2.325A2.9 2.9 0 0 0 18 13.446Z" />
                                                     </svg>
                                                 </div>
-                                                <input name="whatsapp" type="text"
+                                                <input id="whatsapp" name="whatsapp" type="text"
                                                     aria-describedby="helper-text-explanation"
                                                     class="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150 ps-10 p-2.5"
                                                     pattern="[0-9]{10}" placeholder="1234567890" />
@@ -732,7 +738,7 @@
                                                 for="">
                                                 Address
                                             </label>
-                                            <textarea rows="3" name="address"
+                                            <textarea id="address" rows="3" name="address"
                                                 class="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                                                 placeholder="Your address here..."></textarea>
                                         </div>
@@ -744,8 +750,10 @@
                                                 for="">
                                                 Country<span class="text-red-500 text-lg">*</span>
                                             </label>
-                                            <input type="hidden" name="country_id" data-dropdown-input>
-                                            <input type="button" value="Select Country" data-dropdown-button
+                                            <input id="country_id" type="hidden" name="country_id"
+                                                data-dropdown-input>
+                                            <input id="country_id_btn" type="button" value="Select Country"
+                                                data-dropdown-button
                                                 class="countryDropdownBtn text-left border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
                                             <span id="error_country_id"
                                                 class="error-text text-red-500 text-xs"></span>
@@ -769,8 +777,9 @@
                                                 for="">
                                                 State<span class="text-red-500 text-lg">*</span>
                                             </label>
-                                            <input type="hidden" name="state_id" data-dropdown-input>
-                                            <input type="button" value="Select state" data-dropdown-button
+                                            <input id="state_id" type="hidden" name="state_id" data-dropdown-input>
+                                            <input id="state_id_btn" type="button" value="Select state"
+                                                data-dropdown-button
                                                 class="stateDropdownBtn text-left border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
                                             <span id="error_state_id" class="error-text text-red-500 text-xs"></span>
                                             <div data-dropdown-menu
@@ -793,8 +802,9 @@
                                                 for="">
                                                 City
                                             </label>
-                                            <input type="hidden" name="city_id" data-dropdown-input>
-                                            <input type="button" value="Select city" data-dropdown-button
+                                            <input id="city_id" type="hidden" name="city_id" data-dropdown-input>
+                                            <input id="city_id_btn" type="button" value="Select city"
+                                                data-dropdown-button
                                                 class="cityDropdownBtn text-left border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
                                             <div data-dropdown-menu
                                                 class="hidden w-full absolute right-0 mt-2 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 p-1 space-y-1 z-50">
@@ -816,7 +826,7 @@
                                                 for="">
                                                 ZIP Code
                                             </label>
-                                            <input type="text" name="zip_code"
+                                            <input id="zip_code" type="text" name="zip_code"
                                                 class="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
                                         </div>
                                     </div>
@@ -826,7 +836,7 @@
                                             <label class="block uppercase text-gray-600 text-xs font-semibold mb-2">
                                                 Registration Type<span class="text-red-500 text-lg">*</span>
                                             </label>
-                                            <select name="registration_type"
+                                            <select id="registration_type" name="registration_type"
                                                 class="registration-type border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
                                                 <option value="" disabled selected>Select registration type
                                                 </option>
@@ -844,7 +854,7 @@
                                             <label class="block uppercase text-gray-600 text-xs font-semibold mb-2">
                                                 GST No.<span class="text-red-500 text-lg">*</span>
                                             </label>
-                                            <input type="text" name="gst_no"
+                                            <input id="gst_no" type="text" name="gst_no"
                                                 class="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
                                             <span id="error_gst_no" class="error-text text-red-500 text-xs"></span>
                                         </div>
@@ -855,7 +865,7 @@
                                             <label class="block uppercase text-gray-600 text-xs font-semibold mb-2">
                                                 State Code<span class="text-red-500 text-lg">*</span>
                                             </label>
-                                            <input type="text" name="state_code"
+                                            <input id="state_code" type="text" name="state_code"
                                                 class="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                                                 disabled>
                                         </div>
@@ -866,7 +876,7 @@
                                             <label class="block uppercase text-gray-600 text-xs font-semibold mb-2">
                                                 PAN Card<span class="text-red-500 text-lg">*</span>
                                             </label>
-                                            <input type="text" name="pan_card"
+                                            <input id="pan_card" type="text" name="pan_card"
                                                 class="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
                                             <span id="error_pan_card" class="error-text text-red-500 text-xs"></span>
                                         </div>
@@ -886,7 +896,7 @@
                                                 for="">
                                                 Bank Name<span class="text-red-500 text-lg">*</span>
                                             </label>
-                                            <input type="text" name="bank_name"
+                                            <input id="bank_name" type="text" name="bank_name"
                                                 class="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
                                             <span id="error_bank_name" class="error-text text-red-500 text-xs"></span>
                                         </div>
@@ -898,7 +908,7 @@
                                                 for="">
                                                 Account Number<span class="text-red-500 text-lg">*</span>
                                             </label>
-                                            <input type="text" name="account_number"
+                                            <input id="account_number" type="text" name="account_number"
                                                 class="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
                                             <span id="error_account_number"
                                                 class="error-text text-red-500 text-xs"></span>
@@ -911,7 +921,7 @@
                                                 for="">
                                                 IFSC<span class="text-red-500 text-lg">*</span>
                                             </label>
-                                            <input type="text" name="ifsc"
+                                            <input id="ifsc" type="text" name="ifsc"
                                                 class="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
                                             <span id="error_ifsc" class="error-text text-red-500 text-xs"></span>
                                         </div>
@@ -923,7 +933,7 @@
                                                 for="">
                                                 Beneficiary Name<span class="text-red-500 text-lg">*</span>
                                             </label>
-                                            <input type="text" name="beneficiary"
+                                            <input id="beneficiary" type="text" name="beneficiary"
                                                 class="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
                                             <span id="error_beneficiary"
                                                 class="error-text text-red-500 text-xs"></span>
@@ -944,7 +954,7 @@
                                                 for="">
                                                 First Name<span class="text-red-500 text-lg">*</span>
                                             </label>
-                                            <input type="text" name="first_name"
+                                            <input id="first_name" type="text" name="first_name"
                                                 class="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
                                             <span id="error_first_name"
                                                 class="error-text text-red-500 text-xs"></span>
@@ -957,7 +967,7 @@
                                                 for="">
                                                 Last Name<span class="text-red-500 text-lg">*</span>
                                             </label>
-                                            <input type="text" name="last_name"
+                                            <input id="last_name" type="text" name="last_name"
                                                 class="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
                                             <span id="error_last_name" class="error-text text-red-500 text-xs"></span>
                                         </div>
@@ -980,7 +990,6 @@
                 </div>
             </form>
         </div>
-
     </div>
 
     </div>
@@ -994,6 +1003,40 @@
         <script>
             $(document).ready(function() {
 
+                $('#addClientBtn').on('click', function() {
+                    $("#individual-radio").prop("checked", false);
+                    $("#company-radio").prop("checked", true);
+                    $("#client_name").val("");
+                    $("#individual_first_name").val("");
+                    $("#individual_last_name").val("");
+                    $("#country_code").val("+91");
+                    $("#country_code_btn").val("+91");
+                    $("#phone").val("");
+                    $("#email").val("");
+                    $("#whatsapp").val("");
+                    $("#address").val("");
+                    $("#country_id").val("");
+                    $("#country_id_btn").val("");
+                    $("#state_id").val("");
+                    $("#state_id_btn").val("");
+                    $("#city_id").val("");
+                    $("#city_id_btn").val("");
+                    $("#zip_code").val("");
+                    $("#registration_type")[0].selectedIndex = 0;
+                    $("#gst_no").val("");
+                    $("#state_code").val("");
+                    $("#pan_card").val("");
+                    $("#bank_name").val("");
+                    $("#account_number").val("");
+                    $("#ifsc").val("");
+                    $("#beneficiary").val("");
+                    $("#first_name").val("");
+                    $("#last_name").val("");
+
+                    toggleFields();
+
+                });
+
                 $('select[name="registration_type"]').on('change', function() {
                     $('input[name="gst_no"]').val('');
                     $('input[name="state_code"]').val('');
@@ -1001,15 +1044,14 @@
                     const selectedValue = $(this).val();
 
                     if (selectedValue === 'unregistered') {
-                     
+
                         $('.gst-field, .state-code-field').addClass('hidden');
-                       
+
                         $('.pan-field').removeClass('hidden');
-                      
+
                     } else {
-                       
-                        $('.gst-field, .state-code-field, .pan-field').removeClass('hidden');
-                      ;
+
+                        $('.gst-field, .state-code-field, .pan-field').removeClass('hidden');;
                     }
                 });
 
@@ -1192,10 +1234,6 @@
                     loadTabContent('clients');
                 });
 
-
-                //Vendor operations start
-
-                //Add Vendor
                 $('#addVendor').submit(function(event) {
                     event.preventDefault();
 
@@ -1292,14 +1330,23 @@
                     });
                 });
 
-                $('#addClient').submit(function(event) {
+                $('#ClientForm').submit(function(event) {
                     event.preventDefault();
                     const submitButton = $(this).find(".submitButton");
                     toggleSubmitButton(submitButton, true);
                     $('.error-text').text('');
+                    const clientId = $('#client_id').val();
+                    let formAction = clientId ? '{{ route('clients.update', ':clientId') }}' :
+                        '{{ route('clients.store') }}';
+                    if (clientId) {
+                        formAction = formAction.replace(':clientId', clientId);
+                    }
+                    $(this).attr('action', formAction);
+                    const method = clientId ? 'PUT' : 'POST';
+
                     $.ajax({
-                        url: $(this).attr('action'),
-                        type: 'POST',
+                        url: formAction,
+                        type: method,
                         data: $(this).serialize(),
                         success: function(data) {
                             toggleSubmitButton(submitButton, false);
@@ -1315,14 +1362,13 @@
                                     $(`#error_${key}`).text(value[0]);
                                 });
                             } else {
-                                alert('An error occurred while creating the candidate.');
+                                alert('An error occurred while creating the client.');
                             }
                         }
                     });
 
                 });
 
-                // Handle dropdown item selection
                 $(document).on('click', '.dropdown-item', function() {
                     const $dropdownBlock = $(this).closest('.dropdownBlock');
                     const id = $(this).data('id');
@@ -1336,19 +1382,16 @@
                     $dropdownBlock.find('[data-dropdown-menu]').addClass('hidden');
                 });
 
-
-
             });
         </script>
 
         <script>
-            // Get radio buttons and input fields
             const companyRadio = document.getElementById('company-radio');
             const individualRadio = document.getElementById('individual-radio');
             const clientFields = document.querySelectorAll('.client-fields');
             const individualFields = document.querySelectorAll('.individual-fields');
+            const registrationType = document.getElementById("registration_type");
 
-            // Set up event listeners for radio buttons
             companyRadio.addEventListener('change', function() {
                 toggleFields();
             });
@@ -1357,39 +1400,30 @@
                 toggleFields();
             });
 
-            // Function to toggle visibility and required fields
             function toggleFields() {
                 if (individualRadio.checked) {
-                    // Show individual fields, hide company fields
                     clientFields.forEach(field => {
                         field.classList.add('hidden');
-
-
-                        //field.querySelector('input').setAttribute('required', false);
+                        registrationType.value = "unregistered";
+                        registrationType.dispatchEvent(new Event("change"));
                     });
                     individualFields.forEach(field => {
                         field.classList.remove('hidden');
-
-                        //field.querySelector('input').setAttribute('required', true);
                     });
+
                 } else {
-                    // Show company field, hide individual fields
                     clientFields.forEach(field => {
                         field.classList.remove('hidden');
-                        const input = field.querySelector('input');
 
-                        //field.querySelector('input').setAttribute('required', true);
                     });
+
                     individualFields.forEach(field => {
                         field.classList.add('hidden');
-                        const input = field.querySelector('input');
 
-                        //field.querySelector('input').setAttribute('required', false);
                     });
                 }
             }
 
-            // Initialize based on the selected radio button
             toggleFields();
         </script>
     </x-slot>

@@ -34,7 +34,7 @@
                         </td>
 
                         <td class="px-6 py-4 whitespace-nowrap font-medium">
-                            {{ $client->first_name }} {{$client->last_name}}
+                            {{ $client->first_name }} {{ $client->last_name }}
                         </td>
 
                         <td class="px-6 py-4 whitespace-nowrap font-medium">
@@ -42,7 +42,10 @@
                         </td>
 
                         <td class="px-6 py-4">
-                            {{$client->phone}}
+                            @if ($client->phone)
+                            {{ $client->country_code }}{{ $client->phone }}
+                            @endif
+                            
                         </td>
 
                         <td class="px-6 py-4">
@@ -56,8 +59,8 @@
                             </label>
                         </td>
                         <td class="flex items-center px-6 py-4">
-                            <span class="mr-4 cursor-pointer edit_client_btn" data-id="{{ $client->id }}"
-                                data-name="{{ $client->client_name }}" >
+                            <span onclick="showDiv('ClientModal')" class="mr-4 cursor-pointer edit_client_btn"
+                                data-id="{{ $client->id }}" data-name="{{ $client->client_name }}">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
                                     height="24" color="#417505" fill="none">
                                     <path
@@ -95,8 +98,8 @@
 @endif
 
 <script>
-$(function(){
-    $('.ClientIsActiveToggle').change(function() {
+    $(function() {
+        $('.ClientIsActiveToggle').change(function() {
             var clientId = $(this).attr('data-id');
             var isActive = $(this).is(':checked') ? 1 : 0;
 
@@ -118,5 +121,102 @@ $(function(){
                 }
             });
         });
-});
+
+        $('.edit_client_btn').on('click', function() {
+            var clientId = $(this).attr('data-id');
+            $("#client_id").val(clientId);
+
+            var url = '{{ route('clients.edit', ':clientId') }}';
+            url = url.replace(':clientId', clientId);
+
+            $.ajax({
+                url: url,
+                type: "GET",
+                success: function(data) {
+                    if (data.success == true) {
+                        var client = data.data;
+                        if (client.is_individual == 1) {
+                            $("#individual-radio").prop("checked", true);
+                            $("#company-radio").prop("checked", false);
+                        } else {
+                            $("#company-radio").prop("checked", true);
+                            $("#individual-radio").prop("checked", false);
+                        }
+
+                        $("#client_name").val(client.client_name);
+                        $("#individual_first_name").val(client.first_name);
+                        $("#individual_last_name").val(client.last_name);
+                        $("#country_code").val(client.country_code);
+                        $("#country_code_btn").val(client.country_code);
+                        $("#phone").val(client.phone);
+                        $("#email").val(client.email);
+                        $("#whatsapp").val(client.whatsapp);
+                        $("#address").val(client.address);
+                        $("#country_id").val(client.country_id);
+                        $("#country_id_btn").val(client.country.country_name);
+                        $("#state_id").val(client.state_id);
+                        $("#state_id_btn").val(client.state.state_name);
+
+                        $("#city_id").val(client.city_id ? client.city_id : "");
+                        $("#city_id_btn").val(client.city_id ? client.city.city_name : "");
+                        $("#zip_code").val(client.zip_code);
+                        $("#registration_type").val(client.registration_type).change();
+
+                        $("#gst_no").val(client.gst_no);
+                        $("#state_code").val(client.state_code);
+
+
+                        $("#pan_card").val(client.pan_card);
+                        if (client.bank_details === null) {
+                            $("#bank_name").val("");
+                            $("#account_number").val("");
+                            $("#ifsc").val("");
+                            $("#beneficiary").val("");
+                        } else {
+                            $("#bank_name").val(client.bank_details.bank_name);
+                            $("#account_number").val(client.bank_details.account_number);
+                            $("#ifsc").val(client.bank_details.ifsc);
+                            $("#beneficiary").val(client.bank_details.beneficiary);
+                        }
+
+                        $("#first_name").val(client.first_name);
+                        $("#last_name").val(client.last_name);
+
+                        toggleFields();
+
+                    } else {
+                        alert(data.msg);
+                    }
+                }
+            })
+        });
+
+        $('.delete_client_btn').on('click', function() {
+            const clientId = $(this).data('id');
+
+            if (confirm('Are you sure you want to delete this client?')) {
+                $.ajax({
+                    url: `{{ route('clients.destroy', ':id') }}`.replace(':id', clientId),
+                    type: 'POST',
+                    data: {
+                        _method: 'DELETE',
+                        _token: '{{ csrf_token() }}'
+                    },
+                    success: function(response) {
+                        if (response.success) {
+                            alert(response.msg);
+                            location.reload();
+                        } else {
+                            alert(response.msg);
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('Error:', error);
+                        alert('An error occurred while deleting the client.');
+                    }
+                });
+            }
+
+        });
+    });
 </script>
