@@ -1242,7 +1242,7 @@
                                 //alert(response.msg);
                                 toastr.success(response.msg);
                                 $('#addVendorModal').addClass('hidden');
-                                location.reload();
+                                $('#vendors-styled-tab').trigger('click');
                             } else {
                                 alert(response.msg);
                             }
@@ -1314,7 +1314,7 @@
                             if (response.success === true) {
                                 toastr.success(response.msg);
                                 $('#addCompanyModal').addClass('hidden');
-                                location.reload();
+                                $('#companies-styled-tab').trigger('click');
                             } else {
                                 alert(response.msg);
                             }
@@ -1349,7 +1349,7 @@
                             toggleSubmitButton(submitButton, false);
                             toastr.info(data.msg);
                             $('#ClientModal').addClass('hidden');
-                            location.reload();
+                            $('#clients-styled-tab').trigger('click');
                         },
                         error: function(error) {
                             toggleSubmitButton(submitButton, false);

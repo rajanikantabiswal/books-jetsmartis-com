@@ -113,10 +113,10 @@
                 },
                 success: function(data) {
                     if (data.success == true) {
-                        alert(data.msg);
+                        toastr.info(data.msg);
                         // location.reload();
                     } else {
-                        alert(data.msg);
+                        toastr.info(data.msg);
                     }
                 }
             });
@@ -185,7 +185,7 @@
                         toggleFields();
 
                     } else {
-                        alert(data.msg);
+                        toastr.info(data.msg);
                     }
                 }
             })
@@ -205,7 +205,7 @@
                     success: function(response) {
                         if (response.success) {
                             alert(response.msg);
-                            location.reload();
+                            $('#clients-styled-tab').trigger('click');
                         } else {
                             alert(response.msg);
                         }

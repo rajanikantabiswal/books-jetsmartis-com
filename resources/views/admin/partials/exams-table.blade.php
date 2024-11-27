@@ -102,7 +102,7 @@
                 if (response.success === true) {
                     toastr.success(response.msg);
                     $('#EditExamModal').addClass('hidden');
-                    location.reload();
+                    $('#exams-styled-tab').trigger('click');
                 } else {
                     alert(response.msg);
                 }

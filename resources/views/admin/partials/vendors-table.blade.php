@@ -96,7 +96,7 @@
                     if (response.success === true) {
                         toastr.success(response.msg);
                         $('#editVendorModal').addClass('hidden');
-                        location.reload();
+                        $('#vendors-styled-tab').trigger('click');
                     } else {
                         alert(response.msg);
                     }
@@ -150,10 +150,10 @@
                 },
                 success: function(data) {
                     if (data.success == true) {
-                        alert(data.msg);
+                        toastr.info(data.msg);
                         // location.reload();
                     } else {
-                        alert(data.msg);
+                        toastr.info(data.msg);
                     }
                 }
             });

@@ -365,7 +365,7 @@
                                     }
                                 @endforeach
                             } else {
-                                alert(data.msg);
+                                toastr.info(data.msg);
                             }
                         }
                     })

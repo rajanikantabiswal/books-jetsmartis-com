@@ -1569,7 +1569,7 @@
                         data: formData,
                         success: function(data) {
                             toggleSubmitButton(submitButton, false);
-                            alert(data.msg);
+                            toastr.info(data.msg);
                             $('#AddCandidateModal').addClass('hidden');
                             location.reload();
                         },
@@ -1624,7 +1624,7 @@
                                 $("#edit_exam_status").val(candidate[0].status).change();
                                 $("#edit_remark").val(candidate[0].remark);
                             } else {
-                                alert(data.msg);
+                                toastr.info(data.msg);
                             }
                         }
                     })
@@ -1642,7 +1642,7 @@
                         data: formData,
                         success: function(data) {
                             toggleSubmitButton(submitButton, false);
-                            alert(data.msg);
+                            toastr.info(data.msg);
                             $('#EditCandidateModal').addClass('hidden');
                             location.reload();
                         },

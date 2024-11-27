@@ -1,7 +1,7 @@
 @if ($companies->isEmpty())
     <div class="text-center font-semibold text-lg">No Companies Found</div>
 @else
-    <div class="relative overflow-x-auto mt-3">
+    <div class="relative overflow-x-auto mt-3" id="companies-inner-table">
         <table class="table-auto w-full text-sm text-left rtl:text-right text-gray-500 dark:text-indigo-400">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-indigo-400">
                 <tr>
@@ -104,7 +104,7 @@
                     if (response.success === true) {
                         toastr.success(response.msg);
                         $('#editCompanyModal').addClass('hidden');
-                        location.reload();
+                        $('#companies-styled-tab').trigger('click');
                     } else {
                         alert(response.msg);
                     }
@@ -129,7 +129,7 @@
                     success: function(response) {
                         if (response.success) {
                             toastr.success(response.msg);
-                            location.reload();
+                            $('#companies-styled-tab').trigger('click');
                         } else {
                             alert(response.msg);
                         }
@@ -157,10 +157,10 @@
                 },
                 success: function(data) {
                     if (data.success == true) {
-                        alert(data.msg);
+                        toastr.info(data.msg);
                         // location.reload();
                     } else {
-                        alert(data.msg);
+                        toastr.info(data.msg);
                     }
                 }
             });
