@@ -457,7 +457,7 @@
                                                 <div class="relative w-full">
                                                     <input name="phone" type="text"
                                                         class="phone-input border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                                                        pattern="[0-9]{10}" placeholder="123-456-7890" />
+                                                         placeholder="123-456-7890" />
                                                 </div>
                                             </div>
 
