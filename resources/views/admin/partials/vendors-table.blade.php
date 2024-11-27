@@ -103,7 +103,7 @@
                 },
                 error: function(xhr, status, error) {
                     console.error('Error:', error);
-                    alert('An error occurred while submitting the form.');
+                    toastr.error('An error occurred while updating vendor');
                 }
             });
         });
@@ -129,7 +129,7 @@
                     },
                     error: function(xhr, status, error) {
                         console.error('Error:', error);
-                        alert('An error occurred while deleting the vendor.');
+                        toastr.error('An error occurred while deleting the vendor.');
                     }
                 });
             }

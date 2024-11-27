@@ -1341,7 +1341,7 @@
                         },
                         error: function(xhr, status, error) {
                             console.error('Error:', error);
-                            alert('An error occurred while submitting the form.');
+                            toastr.error('An error occurred while fetching data');
                         }
                     });
                 });
@@ -1374,7 +1374,7 @@
                         },
                         error: function(xhr, status, error) {
                             console.error('Error:', error);
-                            alert('An error occurred while submitting the form.');
+                            toastr.error('An error occurred while fetching data.');
                         }
                     });
                 });
@@ -1407,7 +1407,7 @@
                         },
                         error: function(xhr, status, error) {
                             console.error('Error:', error);
-                            alert('An error occurred while submitting the form.');
+                            toastr.error('An error occurred while fetching data.');
                         }
                     });
                 });
@@ -1437,7 +1437,7 @@
                         },
                         error: function(xhr, status, error) {
                             console.error('Error:', error);
-                            alert('An error occurred while submitting the form.');
+                            toastr.error('An error occurred while fetching data.');
                         }
                     });
                 });
@@ -1459,7 +1459,7 @@
                         },
                         error: function(xhr, status, error) {
                             console.error('Error:', error);
-                            alert('An error occurred while submitting the form.');
+                            toastr.error('An error occurred while fetching data.');
                         }
                     });
                 });
@@ -1486,7 +1486,7 @@
                         },
                         error: function(xhr, status, error) {
                             console.error('Error:', error);
-                            alert('An error occurred while submitting the form.');
+                            toastr.error('An error occurred while fetching data.');
                         }
                     });
                 });
@@ -1510,7 +1510,7 @@
                         },
                         error: function(xhr, status, error) {
                             console.error('Error:', error);
-                            alert('An error occurred while submitting the form.');
+                            toastr.error('An error occurred while fetching data.');
                         }
                     });
                 });
@@ -1533,7 +1533,7 @@
                         },
                         error: function(xhr, status, error) {
                             console.error('Error:', error);
-                            alert('An error occurred while submitting the form.');
+                            toastr.error('An error occurred while fetching data.');
                         }
                     });
                 });
@@ -1580,7 +1580,7 @@
                                     $(`#error_${key}`).text(value[0]);
                                 });
                             } else {
-                                alert('An error occurred while creating the candidate.');
+                                toastr.error('An error occurred while creating the candidate.');
                             }
                         }
                     });
@@ -1653,7 +1653,7 @@
                                     $(`#error_edit_${key}`).text(value[0]);
                                 });
                             } else {
-                                alert('An error occurred while updating the candidate.');
+                                toastr.error('An error occurred while updating the candidate.');
                             }
                         }
                     });

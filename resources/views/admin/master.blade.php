@@ -1105,7 +1105,7 @@
                         },
                         error: function(xhr, status, error) {
                             console.error('Error:', error);
-                            alert('An error occurred while submitting the form.');
+                            toastr.error('An error occurred while fetching the data.');
                         }
                     });
                 });
@@ -1136,7 +1136,7 @@
                         },
                         error: function(xhr, status, error) {
                             console.error('Error:', error);
-                            alert('An error occurred while submitting the form.');
+                            toastr.error('An error occurred while fetching data');
                         }
                     });
                 });
@@ -1166,7 +1166,7 @@
                         },
                         error: function(xhr, status, error) {
                             console.error('Error:', error);
-                            alert('An error occurred while submitting the form.');
+                            toastr.error('An error occurred while fetching data.');
                         }
                     });
                 });
@@ -1199,7 +1199,7 @@
                         },
                         error: function(xhr, status, error) {
                             console.error('Error:', error);
-                            alert('An error occurred while loading the content.');
+                            toastr.error('An error occurred while fetching ' + tab + ' data.');
                         }
                     });
                 }
@@ -1254,7 +1254,7 @@
                         },
                         error: function(xhr, status, error) {
                             console.error('Error:', error);
-                            alert('An error occurred while submitting the form.');
+                            toastr.error('An error occurred while adding vendor');
                         }
                     });
                 });
@@ -1277,7 +1277,7 @@
                         },
                         error: function(xhr, status, error) {
                             console.error('Error:', error);
-                            alert('An error occurred while submitting the form.');
+                           toastr.error('An error occurred while fetching data.');
                         }
                     });
                 });
@@ -1302,7 +1302,7 @@
                         },
                         error: function(xhr, status, error) {
                             console.error('Error:', error);
-                            alert('An error occurred while submitting the form.');
+                            toastr.error('An error occurred while creating exam.');
                         }
                     });
                 });
@@ -1326,7 +1326,7 @@
                         },
                         error: function(xhr, status, error) {
                             console.error('Error:', error);
-                            alert('An error occurred while submitting the form.');
+                            toastr.error('An error occurred while creating company.');
                         }
                     });
                 });
@@ -1362,7 +1362,7 @@
                                     $(`#error_${key}`).text(value[0]);
                                 });
                             } else {
-                                alert('An error occurred while creating the client.');
+                                toastr.error('An error occurred while creating the client.');
                             }
                         }
                     });
