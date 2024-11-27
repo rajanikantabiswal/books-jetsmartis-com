@@ -111,7 +111,7 @@
                 },
                 error: function(xhr, status, error) {
                     console.error('Error:', error);
-                    alert('An error occurred while submitting the form.');
+                    toastr.error('An error occurred while updating company.');
                 }
             });
         });
@@ -136,7 +136,7 @@
                     },
                     error: function(xhr, status, error) {
                         console.error('Error:', error);
-                        alert('An error occurred while deleting the company.');
+                        toastr.error('An error occurred while deleting the company.');
                     }
                 });
             }

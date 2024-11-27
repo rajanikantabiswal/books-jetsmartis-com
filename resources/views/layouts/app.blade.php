@@ -196,7 +196,7 @@
                         },
                         error: function(xhr, status, error) {
                             console.error('Error:', error);
-                            alert('An error occurred while fetching country details.');
+                            toastr.error('An error occurred while fetching country details.');
                         }
                     });
                 }

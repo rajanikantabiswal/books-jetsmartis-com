@@ -224,7 +224,7 @@
                     },
                     error: function(xhr, status, error) {
                         console.error('Error:', error);
-                        alert('An error occurred while deleting the client.');
+                        toastr.error('An error occurred while deleting the client.');
                     }
                 });
             }

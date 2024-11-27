@@ -334,7 +334,7 @@
                         },
                         error: function(xhr, status, error) {
                             console.error('Error:', error);
-                            alert('An error occurred while submitting the form.');
+                            toastr.error('An error occurred while creating user.');
                         }
                     });
                 });
@@ -389,7 +389,7 @@
                         },
                         error: function(xhr, status, error) {
                             console.error('Error:', error);
-                            alert('An error occurred while submitting the form.');
+                            toastr.error('An error occurred while updating user details');
                         }
                     });
                 });
@@ -414,7 +414,7 @@
                             },
                             error: function(xhr, status, error) {
                                 console.error('Error:', error);
-                                alert('An error occurred while deleting the user.');
+                                toastr.error('An error occurred while deleting the user.');
                             }
                         });
                     }
