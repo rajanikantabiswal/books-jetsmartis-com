@@ -64,7 +64,7 @@
                 <div class="hidden" id="styled-companies" role="tabpanel" aria-labelledby="companies-tab">
                     <div class="rounded-t mb-0 px-4 border-0">
                         <div class="mt-4 flex flex-wrap gap-2 items-center justify-end">
-                            <button
+                            <button id="AddCompanyBtn"
                                 class="addCompanyBtn bg-green-900 text-white active:bg-green-500 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                                 type="button" onclick="showDiv('addCompanyModal')">Add Company</button>
                         </div>
@@ -1035,6 +1035,11 @@
 
                     toggleFields();
 
+                });
+
+                $('#AddCompanyBtn').on('click', function() {
+                    $("#company_name").val("");
+                    $("#display_name").val("");
                 });
 
                 $('select[name="registration_type"]').on('change', function() {
