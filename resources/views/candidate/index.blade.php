@@ -270,7 +270,7 @@
                 @else
                     <div class="relative overflow-x-auto ">
                         <table id="filter-table"
-                            class="table-auto w-full text-sm text-left rtl:text-right text-gray-500 dark:text-indigo-400">
+                            class="pagination-table table-auto w-full text-sm text-left rtl:text-right text-gray-500 dark:text-indigo-400">
                             <thead
                                 class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-indigo-400">
                                 <tr>
@@ -1390,7 +1390,7 @@
                         type: 'GET',
                         success: function(response) {
                             if (response.success === false) {
-                                alert(response.msg);
+                                toastr.success(response.msg);
                             } else {
                                 const $dropdownItemList = $('.dropdown-items-list');
                                 $dropdownItemList.empty();
@@ -1674,9 +1674,10 @@
                         },
                         success: function(response) {
                             if (response.success === true) {
+                                toastr.success(response.msg);
                                 location.reload();
                             } else {
-                                alert(response.msg);
+                                toastr.error(response.msg);
                             }
                         }
                     });

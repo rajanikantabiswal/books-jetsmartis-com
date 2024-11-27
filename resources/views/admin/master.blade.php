@@ -1244,12 +1244,11 @@
                         data: $(this).serialize(),
                         success: function(response) {
                             if (response.success === true) {
-                                //alert(response.msg);
                                 toastr.success(response.msg);
                                 $('#addVendorModal').addClass('hidden');
                                 $('#vendors-styled-tab').trigger('click');
                             } else {
-                                alert(response.msg);
+                                toastr.error(response.msg);
                             }
 
                         },
@@ -1297,7 +1296,7 @@
                                 $('#AddExamModal').addClass('hidden');
                                 location.reload();
                             } else {
-                                alert(response.msg);
+                                toastr.error(response.msg);
                             }
 
                         },
@@ -1321,7 +1320,7 @@
                                 $('#addCompanyModal').addClass('hidden');
                                 $('#companies-styled-tab').trigger('click');
                             } else {
-                                alert(response.msg);
+                                toastr.error(response.msg);
                             }
 
                         },

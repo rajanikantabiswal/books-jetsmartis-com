@@ -2,7 +2,7 @@
     <div class="text-center font-semibold text-lg">No Clients Found</div>
 @else
     <div class="relative overflow-x-auto mt-3">
-        <table class="table-auto w-full text-sm text-left rtl:text-right text-gray-500 dark:text-indigo-400">
+        <table id="client-table" class="table-auto w-full text-sm text-left rtl:text-right text-gray-500 dark:text-indigo-400">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-indigo-400">
                 <tr>
                     <th scope="col" class="px-6 py-3">
@@ -98,6 +98,18 @@
 @endif
 
 <script>
+     if (document.getElementById("client-table") && typeof simpleDatatables.DataTable !== 'undefined') {
+                const dataTable = new simpleDatatables.DataTable("#client-table", {
+                    perPage: 10,
+                    perPageSelect: false,
+                    searchable: false,
+                    sortable: true,
+                    responsive: true,
+                    scrollX: true,
+
+                });
+            }
+
     $(function() {
         $('.ClientIsActiveToggle').change(function() {
             var clientId = $(this).attr('data-id');
@@ -204,10 +216,10 @@
                     },
                     success: function(response) {
                         if (response.success) {
-                            alert(response.msg);
+                            toastr.success(response.msg);
                             $('#clients-styled-tab').trigger('click');
                         } else {
-                            alert(response.msg);
+                            toastr.error(response.msg);
                         }
                     },
                     error: function(xhr, status, error) {

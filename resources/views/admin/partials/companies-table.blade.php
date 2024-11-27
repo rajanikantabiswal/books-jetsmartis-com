@@ -106,7 +106,7 @@
                         $('#editCompanyModal').addClass('hidden');
                         $('#companies-styled-tab').trigger('click');
                     } else {
-                        alert(response.msg);
+                        toastr.error(response.msg);
                     }
                 },
                 error: function(xhr, status, error) {
@@ -131,7 +131,7 @@
                             toastr.success(response.msg);
                             $('#companies-styled-tab').trigger('click');
                         } else {
-                            alert(response.msg);
+                            toastr.error(response.msg);
                         }
                     },
                     error: function(xhr, status, error) {
