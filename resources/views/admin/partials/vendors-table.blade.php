@@ -94,11 +94,11 @@
                 data: $(this).serialize(),
                 success: function(response) {
                     if (response.success === true) {
-                        alert(response.msg);
+                        toastr.success(response.msg);
                         $('#editVendorModal').addClass('hidden');
-                        location.reload();
+                        $('#vendors-styled-tab').trigger('click');
                     } else {
-                        alert(response.msg);
+                        toastr.error(response.msg);
                     }
                 },
                 error: function(xhr, status, error) {
@@ -121,10 +121,10 @@
                     },
                     success: function(response) {
                         if (response.success) {
-                            alert(response.msg);
+                            toastr.success(response.msg);
                             location.reload();
                         } else {
-                            alert(response.msg);
+                            toastr.error(response.msg);
                         }
                     },
                     error: function(xhr, status, error) {
@@ -150,10 +150,10 @@
                 },
                 success: function(data) {
                     if (data.success == true) {
-                        alert(data.msg);
+                        toastr.info(data.msg);
                         // location.reload();
                     } else {
-                        alert(data.msg);
+                        toastr.info(data.msg);
                     }
                 }
             });

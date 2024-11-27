@@ -324,11 +324,11 @@
                         data: $(this).serialize(),
                         success: function(response) {
                             if (response.success === true) {
-                                alert(response.msg);
+                                toastr.success(response.msg);
                                 $('#AddUserModal').addClass('hidden');
                                 location.reload();
                             } else {
-                                alert(response.msg);
+                                toastr.error(response.msg);
                             }
 
                         },
@@ -365,7 +365,7 @@
                                     }
                                 @endforeach
                             } else {
-                                alert(data.msg);
+                                toastr.info(data.msg);
                             }
                         }
                     })
@@ -380,11 +380,11 @@
                         data: $(this).serialize(),
                         success: function(response) {
                             if (response.success === true) {
-                                alert(response.msg);
+                                toastr.success(response.msg);
                                 $('#EditUserModal').addClass('hidden');
                                 location.reload();
                             } else {
-                                alert(response.msg);
+                                toastr.error(response.msg);
                             }
                         },
                         error: function(xhr, status, error) {
@@ -406,10 +406,10 @@
                             },
                             success: function(response) {
                                 if (response.success) {
-                                    alert(response.msg);
+                                    toastr.success(response.msg);
                                     location.reload();
                                 } else {
-                                    alert(response.msg);
+                                    toastr.error(response.msg);
                                 }
                             },
                             error: function(xhr, status, error) {

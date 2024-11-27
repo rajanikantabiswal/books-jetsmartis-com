@@ -196,7 +196,7 @@
                             if (data.success === true) {
                                 location.reload();
                             } else {
-                                alert(data.msg);
+                                toastr.info(data.msg);
                             }
                         })
                         .catch(error => {

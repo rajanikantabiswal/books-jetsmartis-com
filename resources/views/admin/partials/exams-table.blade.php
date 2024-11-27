@@ -2,7 +2,7 @@
     <div class="text-center font-semibold text-lg">No Exams Found</div>
 @else
     <div class="relative overflow-x-auto mt-3">
-        <table class="table-auto w-full text-sm text-left rtl:text-right text-gray-500 dark:text-indigo-400">
+        <table id="exam-table" class=" table-auto w-full text-sm text-left rtl:text-right text-gray-500 dark:text-indigo-400">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-indigo-400">
                 <tr>
                     <th scope="col" class="px-6 py-3">
@@ -77,6 +77,18 @@
 @endif
 
 <script>
+     if (document.getElementById("exam-table") && typeof simpleDatatables.DataTable !== 'undefined') {
+                const dataTable = new simpleDatatables.DataTable("#exam-table", {
+                    perPage: 10,
+                    perPageSelect: false,
+                    searchable: false,
+                    sortable: true,
+                    responsive: true,
+                    scrollX: true,
+
+                });
+            }
+
     $('.edit_exam_btn').on('click', function() {
         const examId = $(this).data('id');
         const examName = $(this).data('name');
@@ -100,11 +112,11 @@
             data: $(this).serialize(),
             success: function(response) {
                 if (response.success === true) {
-                    alert(response.msg);
+                    toastr.success(response.msg);
                     $('#EditExamModal').addClass('hidden');
-                    location.reload();
+                    $('#exams-styled-tab').trigger('click');
                 } else {
-                    alert(response.msg);
+                    toastr.error(response.msg);
                 }
             },
             error: function(xhr, status, error) {
@@ -127,10 +139,10 @@
                 },
                 success: function(response) {
                     if (response.success) {
-                        alert(response.msg);
+                        toastr.success(response.msg);
                         location.reload();
                     } else {
-                        alert(response.msg);
+                        toastr.error(response.msg);
                     }
                 },
                 error: function(xhr, status, error) {
