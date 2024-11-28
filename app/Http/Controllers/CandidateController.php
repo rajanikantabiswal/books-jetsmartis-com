@@ -19,11 +19,11 @@ class CandidateController extends Controller
     public function index(Request $request)
     {
 
-        $totalCandidate = Candidate::count();
-        $passedCandidate = Candidate::where('status', 'passed')->count();
-        $failedCandidate = Candidate::where('status', 'failed')->count();
-        $onHoldCandidate = Candidate::where('status', 'on-hold')->count();
-        $rescheduledCandidate = Candidate::where('status', 'rescheduled')->count();
+        // $totalCandidate = Candidate::count();
+        // $passedCandidate = Candidate::where('status', 'passed')->count();
+        // $failedCandidate = Candidate::where('status', 'failed')->count();
+        // $onHoldCandidate = Candidate::where('status', 'on-hold')->count();
+        // $rescheduledCandidate = Candidate::where('status', 'rescheduled')->count();
 
         $query = Candidate::query()->with(['company', 'exam', 'vendor', 'conducted_user']);
 
@@ -117,6 +117,18 @@ class CandidateController extends Controller
 
 
         $candidates = $query->latest()->paginate(10);
+
+        if ($request->ajax()) {
+            $candidateTable = view('candidate.partials.candidate-table', compact('candidates'))->render();
+            return response()->json([
+                'candidateTable' => $candidateTable,
+                'totalCandidate' => $totalCandidate,
+                'passedCandidate' => $passedCandidate,
+                'failedCandidate' => $failedCandidate,
+                'onHoldCandidate' => $onHoldCandidate,
+                'rescheduledCandidate' => $rescheduledCandidate,
+            ]);
+        }
 
         return view('candidate.index', compact(['candidates', 'totalCandidate', 'passedCandidate', 'failedCandidate', 'onHoldCandidate', 'rescheduledCandidate']));
     }
