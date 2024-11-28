@@ -1205,17 +1205,6 @@
 
     </div>
 
-    <div id="page-loader" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-green-100 bg-opacity-50">
-        <div class="flex flex-col items-center space-y-4">
-            <!-- Spinner -->
-            <div class="w-16 h-16 border-4 border-green-500 border-t-transparent rounded-full animate-spin"></div>
-            <!-- Loading Text -->
-            <p class="text-green-500 text-lg font-medium">Loading, please wait...</p>
-        </div>
-    </div>
-
-
-
     <x-slot name="script">
         <script>
             // if (document.getElementById("filter-table") && typeof simpleDatatables.DataTable !== 'undefined') {
@@ -1229,16 +1218,7 @@
 
             //     });
             // }
-            // Show the loader
-            function showLoader() {
-                document.getElementById('page-loader').classList.remove('hidden');
-            }
-
-            // Hide the loader
-            function hideLoader() {
-                document.getElementById('page-loader').classList.add('hidden');
-            }
-
+            
             document.addEventListener("DOMContentLoaded", function() {
                 const dateInput = document.getElementById('conducted_date');
                 const today = new Date().toISOString().split('T')[0];

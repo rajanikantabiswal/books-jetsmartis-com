@@ -1251,6 +1251,8 @@
                         success: function(response) {
                             if (response.success === true) {
                                 toastr.success(response.msg);
+                                toastr.clear();
+
                                 $('#addVendorModal').addClass('hidden');
                                 $('#vendors-styled-tab').trigger('click');
                             } else {

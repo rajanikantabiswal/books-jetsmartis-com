@@ -94,9 +94,12 @@
                 data: $(this).serialize(),
                 success: function(response) {
                     if (response.success === true) {
+                        toastr.clear();
                         toastr.success(response.msg);
+                        
                         $('#editVendorModal').addClass('hidden');
                         $('#vendors-styled-tab').trigger('click');
+                        
                     } else {
                         toastr.error(response.msg);
                     }
