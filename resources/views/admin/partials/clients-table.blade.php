@@ -134,12 +134,14 @@
             });
         });
 
-        $('.edit_client_btn').on('click', function() {
+        $(document).on('click', '.edit_client_btn', function() {
+            $("#clientHeader").text('Edit Client');
             var clientId = $(this).attr('data-id');
             $("#client_id").val(clientId);
 
             var url = '{{ route('clients.edit', ':clientId') }}';
             url = url.replace(':clientId', clientId);
+            console.log(url);
 
             $.ajax({
                 url: url,
@@ -147,6 +149,7 @@
                 success: function(data) {
                     if (data.success == true) {
                         var client = data.data;
+                        console.log(client);
                         if (client.is_individual == 1) {
                             $("#individual-radio").prop("checked", true);
                             $("#company-radio").prop("checked", false);
@@ -176,8 +179,6 @@
 
                         $("#gst_no").val(client.gst_no);
                         $("#state_code").val(client.state_code);
-
-
                         $("#pan_card").val(client.pan_card);
                         if (client.bank_details === null) {
                             $("#bank_name").val("");
@@ -202,8 +203,8 @@
                 }
             })
         });
-
-        $('.delete_client_btn').on('click', function() {
+        
+        $(document).on('click', '.delete_client_btn', function() {
             const clientId = $(this).data('id');
 
             if (confirm('Are you sure you want to delete this client?')) {

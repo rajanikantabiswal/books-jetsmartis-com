@@ -566,7 +566,7 @@
                     <!-- Dialog Header -->
                     <div
                         class="flex items-center justify-between border-b border-neutral-300 bg-neutral-50/60 p-4 dark:border-neutral-700 dark:bg-neutral-950/20">
-                        <h3 class="font-semibold tracking-wide text-neutral-900 dark:text-white">
+                        <h3 id="clientHeader" class="font-semibold tracking-wide text-neutral-900 dark:text-white">
                             Create New client</h3>
                         <button type="button" onclick="hideDiv('ClientModal')">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"
