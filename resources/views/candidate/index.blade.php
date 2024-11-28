@@ -1574,7 +1574,7 @@
                             toggleSubmitButton(submitButton, false);
                             toastr.info(data.msg);
                             $('#EditCandidateModal').addClass('hidden');
-                            location.reload();
+                            fetchTableData("{{ route('candidates.index') }}");
                         },
                         error: function(error) {
                             toggleSubmitButton(submitButton, false);
@@ -1605,7 +1605,7 @@
                         success: function(response) {
                             if (response.success === true) {
                                 toastr.success(response.msg);
-                                location.reload();
+                                fetchTableData("{{ route('candidates.index') }}");
                             } else {
                                 toastr.error(response.msg);
                             }
