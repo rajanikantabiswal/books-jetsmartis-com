@@ -262,7 +262,7 @@
                 </div>
             </div>
             <!--Candidate table-->
-            <div class="px-4 pb-3">
+            <div class="px-4 pb-3 mt-4">
                 @if ($candidates->isEmpty())
                     <div class="text-center py-3">
                         <span class="font-semibold">No record found</span>
@@ -318,10 +318,10 @@
                                         <td class="px-6 py-4 whitespace-nowrap font-medium">
                                             {{ $candidate->conducted_date }}
                                         </td>
-                                        <th scope="row"
+                                        <td scope="row"
                                             class="px-6 py-4  text-gray-900 whitespace-nowrap dark:text-white">
                                             {{ $candidate->first_name }} {{ $candidate->last_name }}
-                                        </th>
+                                        </td>
                                         <td class="px-6 py-4 whitespace-nowrap">
                                             {{ $candidate->email_id }}
                                         </td>
@@ -366,6 +366,7 @@
                             </tbody>
                         </table>
                     </div>
+                    {{ $candidates->links() }}
                 @endif
 
 
@@ -1543,17 +1544,17 @@
 
 
         <script>
-            if (document.getElementById("filter-table") && typeof simpleDatatables.DataTable !== 'undefined') {
-                const dataTable = new simpleDatatables.DataTable("#filter-table", {
-                    perPage: 10,
-                    perPageSelect: false,
-                    searchable: false,
-                    sortable: true,
-                    responsive: true,
-                    scrollX: true,
+            // if (document.getElementById("filter-table") && typeof simpleDatatables.DataTable !== 'undefined') {
+            //     const dataTable = new simpleDatatables.DataTable("#filter-table", {
+            //         perPage: 10,
+            //         perPageSelect: false,
+            //         searchable: false,
+            //         sortable: true,
+            //         responsive: true,
+            //         scrollX: true,
 
-                });
-            }
+            //     });
+            // }
 
             $(document).ready(function() {
                 $("#AddCandidateForm").submit(function(e) {

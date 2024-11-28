@@ -116,7 +116,7 @@ class CandidateController extends Controller
         }
 
 
-        $candidates = $query->latest()->get();
+        $candidates = $query->latest()->paginate(10);
 
         return view('candidate.index', compact(['candidates', 'totalCandidate', 'passedCandidate', 'failedCandidate', 'onHoldCandidate', 'rescheduledCandidate']));
     }
