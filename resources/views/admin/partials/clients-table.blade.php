@@ -134,7 +134,7 @@
             });
         });
 
-        $(document).on('click', '.edit_client_btn', function() {
+        $('.edit_client_btn').on('click', function() {
             $("#clientHeader").text('Edit Client');
             var clientId = $(this).attr('data-id');
             $("#client_id").val(clientId);
@@ -204,7 +204,7 @@
             })
         });
         
-        $(document).on('click', '.delete_client_btn', function() {
+        $('.delete_client_btn').on('click', function() {
             const clientId = $(this).data('id');
 
             if (confirm('Are you sure you want to delete this client?')) {
