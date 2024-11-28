@@ -56,7 +56,7 @@ class ClientController extends Controller
                     'regex:/^[0-9A-Z]{15}$/', // Valid GST format
                 ],
                 'state_code' => 'nullable|string|size:2',
-                'pan_card' => 'required',
+                'pan_card' => 'required|string',
                 'bank_name' => 'required|string|max:255',
                 'account_number' => 'required',
                 'ifsc' => 'required',
