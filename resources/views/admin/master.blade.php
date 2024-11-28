@@ -78,7 +78,7 @@
                 <div class="hidden" id="styled-clients" role="tabpanel" aria-labelledby="clients-tab">
                     <div class="rounded-t mb-0 px-4 border-0">
                         <div class="mt-4 flex flex-wrap gap-2 items-center justify-end">
-                            <button
+                            <button id="addClientBtn"
                                 class="addClientBtn bg-green-900 text-white active:bg-green-500 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                                 type="button" onclick="showDiv('ClientModal')">Add Client</button>
                             {{-- <a href="{{ route('clients.create') }}"
@@ -672,9 +672,9 @@
                                                     </div>
                                                     <!-- Phone Input Field -->
                                                     <div class="relative w-full">
-                                                        <input id="phone" name="phone" type="text"
+                                                        <input id="phone" name="phone" type="text" value=""
                                                             class="phone-input border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                                                            pattern="[0-9]{10}" placeholder="123-456-7890" />
+                                                             placeholder="123-456-7890" />
                                                     </div>
                                                 </div>
 
@@ -997,13 +997,11 @@
 
 
     <x-slot name="script">
-
-
-
         <script>
             $(document).ready(function() {
 
                 $('#addClientBtn').on('click', function() {
+                    $("#clientHeader").text('Create new client');
                     $("#individual-radio").prop("checked", false);
                     $("#company-radio").prop("checked", true);
                     $("#client_name").val("");
