@@ -1208,7 +1208,7 @@
     <div id="page-loader" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-green-100 bg-opacity-50">
         <div class="flex flex-col items-center space-y-4">
             <!-- Spinner -->
-            <div class="w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+            <div class="w-16 h-16 border-4 border-green-500 border-t-transparent rounded-full animate-spin"></div>
             <!-- Loading Text -->
             <p class="text-green-500 text-lg font-medium">Loading, please wait...</p>
         </div>
