@@ -672,9 +672,10 @@
                                                     </div>
                                                     <!-- Phone Input Field -->
                                                     <div class="relative w-full">
-                                                        <input id="phone" name="phone" type="text" value=""
+                                                        <input id="phone" name="phone" type="text"
+                                                            value=""
                                                             class="phone-input border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                                                             placeholder="123-456-7890" />
+                                                            placeholder="123-456-7890" />
                                                     </div>
                                                 </div>
 
@@ -867,7 +868,7 @@
                                             </label>
                                             <input id="state_code" type="text" name="state_code"
                                                 class="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                                                disabled>
+                                                >
                                         </div>
                                     </div>
 
@@ -1000,7 +1001,10 @@
         <script>
             $(document).ready(function() {
 
+                let isRegistrationTypeTrigger = true;
+
                 $('#addClientBtn').on('click', function() {
+                    isRegistrationTypeTrigger = true;
                     $("#clientHeader").text('Create new client');
                     $("#individual-radio").prop("checked", false);
                     $("#company-radio").prop("checked", true);
@@ -1040,10 +1044,14 @@
                     $("#display_name").val("");
                 });
 
+
                 $('select[name="registration_type"]').on('change', function() {
-                    $('input[name="gst_no"]').val('');
-                    $('input[name="state_code"]').val('');
-                    $('input[name="pan_card"]').val('');
+                    // if (isRegistrationTypeTrigger === true) {
+                    //     $('input[name="gst_no"]').val('');
+                    //     $('input[name="state_code"]').val('');
+                    //     $('input[name="pan_card"]').val('');
+                    // }
+
                     const selectedValue = $(this).val();
 
                     if (selectedValue === 'unregistered') {
@@ -1054,12 +1062,12 @@
 
                     } else {
 
-                        $('.gst-field, .state-code-field, .pan-field').removeClass('hidden');;
+                        $('.gst-field, .state-code-field, .pan-field').removeClass('hidden');
                     }
                 });
 
                 // Trigger change event on page load to handle default state
-                $('select[name="registration_type"]').trigger('change');
+                //$('select[name="registration_type"]').trigger('change');
 
                 $('input[name="gst_no"]').on('input', function() {
                     const gstNo = $(this).val().trim();
@@ -1275,7 +1283,7 @@
                         },
                         error: function(xhr, status, error) {
                             console.error('Error:', error);
-                           toastr.error('An error occurred while fetching data.');
+                            toastr.error('An error occurred while fetching data.');
                         }
                     });
                 });

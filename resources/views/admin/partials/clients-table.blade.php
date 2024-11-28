@@ -148,8 +148,8 @@
                 type: "GET",
                 success: function(data) {
                     if (data.success == true) {
+                        //isRegistrationTypeTrigger = false;
                         var client = data.data;
-                        console.log(client);
                         if (client.is_individual == 1) {
                             $("#individual-radio").prop("checked", true);
                             $("#company-radio").prop("checked", false);
@@ -175,8 +175,9 @@
                         $("#city_id").val(client.city_id ? client.city_id : "");
                         $("#city_id_btn").val(client.city_id ? client.city.city_name : "");
                         $("#zip_code").val(client.zip_code);
-                        $("#registration_type").val(client.registration_type).change();
 
+                        
+                        $("#registration_type").val(client.registration_type).change();
                         $("#gst_no").val(client.gst_no);
                         $("#state_code").val(client.state_code);
                         $("#pan_card").val(client.pan_card);
@@ -194,6 +195,7 @@
 
                         $("#first_name").val(client.first_name);
                         $("#last_name").val(client.last_name);
+                        //isRegistrationTypeTrigger = true;
 
                         toggleFields();
 
