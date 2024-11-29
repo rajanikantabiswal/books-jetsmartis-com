@@ -116,8 +116,25 @@ function toggleSubmitButton(button, isSubmitting) {
     }
 }
 
+toastr.options = {
+    "closeButton": true,
+    "progressBar": true,
+    "timeOut": "2000",
+    "extendedTimeOut": "1000",
+    "positionClass": "toast-top-right",
+    "preventDuplicates": true
+};
 
 
+// Show the loader
+function showLoader() {
+    document.getElementById('page-loader').classList.remove('hidden');
+  }
+
+  // Hide the loader
+  function hideLoader() {
+    document.getElementById('page-loader').classList.add('hidden');
+  }
 
 
 
