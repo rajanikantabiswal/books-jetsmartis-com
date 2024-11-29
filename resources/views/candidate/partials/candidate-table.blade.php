@@ -6,9 +6,9 @@
     @else
         <div class="relative overflow-x-auto ">
             <table id="filter-table"
-                class="pagination-table table-auto w-full text-sm text-left rtl:text-right text-gray-500 dark:text-indigo-400">
+                class="pagination-table table-auto w-full text-sm text-left rtl:text-right text-gray-500 ">
                 <thead
-                    class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-indigo-400">
+                    class="text-xs text-gray-700 uppercase bg-gray-50">
                     <tr>
                         <th scope="col" class="px-6 py-3">
                             Conducted Date
@@ -50,12 +50,12 @@
                 <tbody>
                     @foreach ($candidates as $candidate)
                         <tr
-                            class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                            class="bg-white border-b  hover:bg-gray-50 ">
                             <td class="px-6 py-4 whitespace-nowrap font-medium">
                                 {{ $candidate->conducted_date }}
                             </td>
                             <td scope="row"
-                                class="px-6 py-4  text-gray-900 whitespace-nowrap dark:text-white">
+                                class="px-6 py-4  text-gray-900 whitespace-nowrap ">
                                 {{ $candidate->first_name }} {{ $candidate->last_name }}
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap">
@@ -90,10 +90,10 @@
 
                             <td class="flex items-center px-6 py-4">
                                 <span data-id="{{ $candidate->id }}"
-                                    class="edit-button font-medium text-blue-600 dark:text-blue-500 cursor-pointer hover:underline"
+                                    class="edit-button font-medium text-blue-600 cursor-pointer hover:underline"
                                     onclick="showDiv('EditCandidateModal')">Edit</span>
                                 <span data-id="{{ $candidate->id }}"
-                                    class="delete-button font-medium text-red-600 dark:text-red-500 cursor-pointer hover:underline ms-3">Remove</span>
+                                    class="delete-button font-medium text-red-600 cursor-pointer hover:underline ms-3">Remove</span>
                             </td>
 
                         </tr>

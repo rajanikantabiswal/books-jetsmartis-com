@@ -57,7 +57,7 @@
                 <div
                     class = "flex items-center flex-row w-full bg-gradient-to-r from-green-900 to-green-500 rounded-md p-3 @if (request()->has('status') && request()->status == 'passed') ring-offset-2 ring-4 ring-green-300 @endif">
                     <div
-                        class = "flex text-green-900 dark:text-white items-center bg-white dark:bg-[#0F172A] p-2 rounded-md flex-none w-8 h-8 md:w-12 md:h-12 ">
+                        class = "flex text-green-900 items-center bg-white  p-2 rounded-md flex-none w-8 h-8 md:w-12 md:h-12 ">
 
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
                             stroke="currentColor" class = "object-scale-down transition duration-500 ">
@@ -88,9 +88,9 @@
 
             <div class = "status-div w-full md:w-1/2 lg:w-1/5 p-2 cursor-pointer" data-status="failed">
                 <div
-                    class = "flex items-center flex-row w-full bg-gradient-to-r dark:from-cyan-500 dark:to-blue-500  from-green-900 to-green-500 rounded-md p-3 @if (request()->has('status') && request()->status == 'failed') ring-offset-2 ring-4 ring-green-300 @endif">
+                    class = "flex items-center flex-row w-full bg-gradient-to-r  from-green-900 to-green-500 rounded-md p-3 @if (request()->has('status') && request()->status == 'failed') ring-offset-2 ring-4 ring-green-300 @endif">
                     <div
-                        class = "flex text-green-900 dark:text-white items-center bg-white dark:bg-[#0F172A] p-2 rounded-md flex-none w-8 h-8 md:w-12 md:h-12 ">
+                        class = "flex text-green-900  items-center bg-white  p-2 rounded-md flex-none w-8 h-8 md:w-12 md:h-12 ">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
                             stroke="currentColor" class = "object-scale-down transition duration-500 ">
                             <path d="M14.9994 15L9 9M9.00064 15L15 9" stroke="currentColor" stroke-width="1.5"
@@ -121,9 +121,9 @@
 
             <div class = "status-div w-full md:w-1/2 lg:w-1/5 p-2 cursor-pointer" data-status="on-hold">
                 <div
-                    class = "flex items-center flex-row w-full bg-gradient-to-r dark:from-cyan-500 dark:to-blue-500  from-green-900 to-green-500 rounded-md p-3 @if (request()->has('status') && request()->status == 'on-hold') ring-offset-2 ring-4 ring-green-300 @endif">
+                    class = "flex items-center flex-row w-full bg-gradient-to-r  from-green-900 to-green-500 rounded-md p-3 @if (request()->has('status') && request()->status == 'on-hold') ring-offset-2 ring-4 ring-green-300 @endif">
                     <div
-                        class = "flex text-green-900 dark:text-white items-center bg-white dark:bg-[#0F172A] p-2 rounded-md flex-none w-8 h-8 md:w-12 md:h-12 ">
+                        class = "flex text-green-900  items-center bg-white  p-2 rounded-md flex-none w-8 h-8 md:w-12 md:h-12 ">
 
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
                             stroke="currentColor" class = "object-scale-down transition duration-500">
@@ -158,9 +158,9 @@
 
             <div class = "status-div w-full md:w-1/2 lg:w-1/5 p-2 cursor-pointer" data-status="rescheduled">
                 <div
-                    class = "flex items-center flex-row w-full bg-gradient-to-r dark:from-cyan-500 dark:to-blue-500  from-green-900 to-green-500 rounded-md p-3 @if (request()->has('status') && request()->status == 'rescheduled') ring-offset-2 ring-4 ring-green-300 @endif">
+                    class = "flex items-center flex-row w-full bg-gradient-to-r from-green-900 to-green-500 rounded-md p-3 @if (request()->has('status') && request()->status == 'rescheduled') ring-offset-2 ring-4 ring-green-300 @endif">
                     <div
-                        class = "flex text-green-900 dark:text-white items-center bg-white dark:bg-[#0F172A] p-2 rounded-md flex-none w-8 h-8 md:w-12 md:h-12 ">
+                        class = "flex text-green-900  items-center bg-white  p-2 rounded-md flex-none w-8 h-8 md:w-12 md:h-12 ">
 
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
                             stroke="currentColor" class = "object-scale-down transition duration-500">
@@ -251,7 +251,7 @@
                             </svg>
                         </button>
                         <div id="tooltip-right" role="tooltip"
-                            class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white bg-green-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                            class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white bg-green-900 rounded-lg shadow-sm opacity-0 tooltip ">
                             More filters
                             <div class="tooltip-arrow" data-popper-arrow></div>
                         </div>
@@ -278,13 +278,13 @@
             <form id="AddCandidateForm">
                 @csrf
                 <div
-                    class="flex z-50  flex-col gap-4 overflow-hidden rounded-md border border-neutral-300 bg-white text-neutral-600 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-300 max-h-[70vh] max-w-3xl">
+                    class="flex z-50  flex-col gap-4 overflow-hidden rounded-md border border-neutral-300 bg-white text-neutral-600  max-h-[70vh] max-w-3xl">
 
                     <!-- Dialog Header -->
                     <div
-                        class="flex items-center justify-between border-b border-neutral-300 bg-neutral-50/60 p-4 dark:border-neutral-700 dark:bg-neutral-950/20">
+                        class="flex items-center justify-between border-b border-neutral-300 bg-neutral-50/60 p-4  ">
                         <h3 id="defaultModalTitle"
-                            class="font-semibold tracking-wide text-neutral-900 dark:text-white">
+                            class="font-semibold tracking-wide text-neutral-900 ">
                             New Entry</h3>
 
                         <button type="button" onclick="hideDiv('AddCandidateModal')">
@@ -361,14 +361,14 @@
 
                                             <!-- Dropdown Menu -->
                                             <div
-                                                class="country-dropdown hidden absolute top-full left-0 mt-2 bg-white divide-y divide-gray-100 rounded-lg shadow w-full dark:bg-gray-700 max-h-48 overflow-y-auto z-10">
+                                                class="country-dropdown hidden absolute top-full left-0 mt-2 bg-white divide-y divide-gray-100 rounded-lg shadow w-full  max-h-48 overflow-y-auto z-10">
                                                 <!-- Search Input -->
                                                 <div class="p-2">
                                                     <input type="text" placeholder="Search Country..."
-                                                        class="country-search w-full px-2 py-1 text-sm text-gray-900 border border-gray-300 rounded dark:bg-gray-600 dark:text-white" />
+                                                        class="country-search w-full px-2 py-1 text-sm text-gray-900 border border-gray-300 rounded " />
                                                 </div>
                                                 <!-- Country List -->
-                                                <ul class="country-list py-2 text-sm text-gray-700 dark:text-gray-200">
+                                                <ul class="country-list py-2 text-sm text-gray-700 ">
                                                 </ul>
                                             </div>
                                         </div>
@@ -430,7 +430,7 @@
                                         <div class="relative w-full">
                                             <div
                                                 class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                                                <svg class="w-4 h-4 text-gray-500 dark:text-gray-400"
+                                                <svg class="w-4 h-4 text-gray-500 "
                                                     aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                                     fill="none" viewBox="0 0 20 20">
                                                     <path d="M14 14L16.5 16.5" stroke="currentColor"
@@ -447,7 +447,7 @@
 
                                             </div>
                                             <input type="text" id="examSearch"
-                                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 "
                                                 placeholder="Search exam code..." />
                                         </div>
 
@@ -617,11 +617,11 @@
 
                     <!-- Dialog Footer -->
                     <div
-                        class="flex flex-col-reverse justify-between gap-2 border-t border-neutral-300 bg-neutral-50/60 p-4 dark:border-neutral-700 dark:bg-neutral-950/20 sm:flex-row sm:items-center md:justify-end">
+                        class="flex flex-col-reverse justify-between gap-2 border-t border-neutral-300 bg-neutral-50/60 p-4 sm:flex-row sm:items-center md:justify-end">
                         <button type="button" onclick="hideDiv('AddCandidateModal')"
-                            class="cursor-pointer whitespace-nowrap rounded-md px-4 py-2 text-center text-sm font-medium tracking-wide text-neutral-600 transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:opacity-100 active:outline-offset-0 dark:text-neutral-300 dark:focus-visible:outline-white">Close</button>
+                            class="cursor-pointer whitespace-nowrap rounded-md px-4 py-2 text-center text-sm font-medium tracking-wide text-neutral-600 transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:opacity-100 active:outline-offset-0 ">Close</button>
                         <button type="submit"
-                            class="submitButton cursor-pointer whitespace-nowrap rounded-md bg-green-900 text-white px-4 py-2 text-center text-sm font-medium tracking-wide text-neutral-100 transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:opacity-100 active:outline-offset-0 dark:bg-white dark:text-black dark:focus-visible:outline-white">Save</button>
+                            class="submitButton cursor-pointer whitespace-nowrap rounded-md bg-green-900 text-white px-4 py-2 text-center text-sm font-medium tracking-wide text-neutral-100 transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:opacity-100 active:outline-offset-0 ">Save</button>
 
                     </div>
                 </div>
@@ -637,13 +637,13 @@
                 @csrf
                 <input type="hidden" id="edit_candidate_id" name="candidate_id">
                 <div
-                    class="flex z-50  flex-col gap-4 overflow-hidden rounded-md border border-neutral-300 bg-white text-neutral-600 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-300 max-h-[70vh] max-w-3xl">
+                    class="flex z-50  flex-col gap-4 overflow-hidden rounded-md border border-neutral-300 bg-white text-neutral-600  max-h-[70vh] max-w-3xl">
 
                     <!-- Dialog Header -->
                     <div
-                        class="flex items-center justify-between border-b border-neutral-300 bg-neutral-50/60 p-4 dark:border-neutral-700 dark:bg-neutral-950/20">
+                        class="flex items-center justify-between border-b border-neutral-300 bg-neutral-50/60 p-4 ">
                         <h3 id="defaultModalTitle"
-                            class="font-semibold tracking-wide text-neutral-900 dark:text-white">Edit Entry</h3>
+                            class="font-semibold tracking-wide text-neutral-900 ">Edit Entry</h3>
 
                         <button type="button" onclick="hideDiv('EditCandidateModal')">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"
@@ -724,14 +724,14 @@
 
                                             <!-- Dropdown Menu -->
                                             <div
-                                                class="country-dropdown hidden absolute top-full left-0 mt-2 bg-white divide-y divide-gray-100 rounded-lg shadow w-full dark:bg-gray-700 max-h-48 overflow-y-auto z-10">
+                                                class="country-dropdown hidden absolute top-full left-0 mt-2 bg-white divide-y divide-gray-100 rounded-lg shadow w-full max-h-48 overflow-y-auto z-10">
                                                 <!-- Search Input -->
                                                 <div class="p-2">
                                                     <input type="text" placeholder="Search Country..."
-                                                        class="country-search w-full px-2 py-1 text-sm text-gray-900 border border-gray-300 rounded dark:bg-gray-600 dark:text-white" />
+                                                        class="country-search w-full px-2 py-1 text-sm text-gray-900 border border-gray-300 rounded " />
                                                 </div>
                                                 <!-- Country List -->
-                                                <ul class="country-list py-2 text-sm text-gray-700 dark:text-gray-200">
+                                                <ul class="country-list py-2 text-sm text-gray-700 ">
                                                 </ul>
                                             </div>
                                         </div>
@@ -797,7 +797,7 @@
                                         <div class="relative w-full">
                                             <div
                                                 class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                                                <svg class="w-4 h-4 text-gray-500 dark:text-gray-400"
+                                                <svg class="w-4 h-4 text-gray-500 "
                                                     aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                                     fill="none" viewBox="0 0 20 20">
                                                     <path d="M14 14L16.5 16.5" stroke="currentColor"
@@ -814,7 +814,7 @@
 
                                             </div>
                                             <input type="text" id="examSearch"
-                                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 "
                                                 placeholder="Search exam code..." />
                                         </div>
 
@@ -994,11 +994,11 @@
 
                     <!-- Dialog Footer -->
                     <div
-                        class="flex flex-col-reverse justify-between gap-2 border-t border-neutral-300 bg-neutral-50/60 p-4 dark:border-neutral-700 dark:bg-neutral-950/20 sm:flex-row sm:items-center md:justify-end">
+                        class="flex flex-col-reverse justify-between gap-2 border-t border-neutral-300 bg-neutral-50/60 p-4  sm:flex-row sm:items-center md:justify-end">
                         <button type="button" onclick="hideDiv('EditCandidateModal')"
-                            class="cursor-pointer whitespace-nowrap rounded-md px-4 py-2 text-center text-sm font-medium tracking-wide text-neutral-600 transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:opacity-100 active:outline-offset-0 dark:text-neutral-300 dark:focus-visible:outline-white">Close</button>
+                            class="cursor-pointer whitespace-nowrap rounded-md px-4 py-2 text-center text-sm font-medium tracking-wide text-neutral-600 transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:opacity-100 active:outline-offset-0 ">Close</button>
                         <button type="submit"
-                            class="submitButton cursor-pointer whitespace-nowrap rounded-md bg-green-900 text-white px-4 py-2 text-center text-sm font-medium tracking-wide text-neutral-100 transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:opacity-100 active:outline-offset-0 dark:bg-white dark:text-black dark:focus-visible:outline-white">Save</button>
+                            class="submitButton cursor-pointer whitespace-nowrap rounded-md bg-green-900 text-white px-4 py-2 text-center text-sm font-medium tracking-wide text-neutral-100 transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:opacity-100 active:outline-offset-0 ">Save</button>
                     </div>
                 </div>
             </form>
@@ -1015,7 +1015,7 @@
                 class=" z-50 p-5 overflow-auto rounded-md border border-neutral-300 bg-white text-neutral-600 max-h-[70vh] relative">
                 <!-- Dialog Header -->
                 <div class="flex items-center justify-between border-b border-neutral-300 mb-4 pb-4">
-                    <h3 id="defaultModalTitle" class="font-semibold tracking-wide text-neutral-900 dark:text-white">
+                    <h3 id="defaultModalTitle" class="font-semibold tracking-wide text-neutral-900 ">
                         Filters</h3>
                     <button type="button" onclick="hideDiv('filterModal')">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"
@@ -1193,9 +1193,9 @@
                 <div
                     class="mt-6 flex flex-col-reverse justify-between gap-2 border-t border-neutral-300 pt-4 sm:flex-row sm:items-center md:justify-end">
                     <button type="button" onclick="hideDiv('filterModal')"
-                        class="cursor-pointer whitespace-nowrap rounded-md px-4 py-2 text-center text-sm font-medium tracking-wide text-neutral-600 transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:opacity-100 active:outline-offset-0 dark:text-neutral-300 dark:focus-visible:outline-white">Close</button>
+                        class="cursor-pointer whitespace-nowrap rounded-md px-4 py-2 text-center text-sm font-medium tracking-wide text-neutral-600 transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:opacity-100 active:outline-offset-0 ">Close</button>
                     <button type="submit"
-                        class="cursor-pointer whitespace-nowrap rounded-md bg-green-900 text-white px-4 py-2 text-center text-sm font-medium tracking-wide text-neutral-100 transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:opacity-100 active:outline-offset-0 dark:bg-white dark:text-black dark:focus-visible:outline-white">Apply
+                        class="cursor-pointer whitespace-nowrap rounded-md bg-green-900 text-white px-4 py-2 text-center text-sm font-medium tracking-wide text-neutral-100 transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:opacity-100 active:outline-offset-0 ">Apply
                         Filter</button>
                 </div>
 
