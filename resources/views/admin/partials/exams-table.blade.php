@@ -112,16 +112,16 @@
             data: $(this).serialize(),
             success: function(response) {
                 if (response.success === true) {
-                    toastr.success(response.msg);
+                    toastr.clear(); toastr.success(response.msg);
                     $('#EditExamModal').addClass('hidden');
                     $('#exams-styled-tab').trigger('click');
                 } else {
-                    toastr.error(response.msg);
+                    toastr.clear(); toastr.error(response.msg);
                 }
             },
             error: function(xhr, status, error) {
                 console.error('Error:', error);
-                toastr.error('An error occurred while updating exam.');
+                toastr.clear(); toastr.error('An error occurred while updating exam.');
             }
         });
     });
@@ -139,15 +139,15 @@
                 },
                 success: function(response) {
                     if (response.success) {
-                        toastr.success(response.msg);
+                        toastr.clear(); toastr.success(response.msg);
                         location.reload();
                     } else {
-                        toastr.error(response.msg);
+                        toastr.clear(); toastr.error(response.msg);
                     }
                 },
                 error: function(xhr, status, error) {
                     console.error('Error:', error);
-                    toastr.error('An error occurred while deleting exam');
+                    toastr.clear(); toastr.error('An error occurred while deleting exam');
                 }
             });
         }

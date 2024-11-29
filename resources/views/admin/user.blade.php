@@ -1,7 +1,7 @@
 <x-app-layout>
 
     <div class ="overflow-y-auto overflow-x-hidden pt-6">
-        <nav class = "flex px-5 py-3 text-gray-700  rounded-lg bg-gray-50 dark:bg-[#1E293B] " aria-label="Breadcrumb">
+        <nav class = "flex px-5 py-3 text-gray-700  rounded-lg bg-gray-50" aria-label="Breadcrumb">
             <ol class = "inline-flex items-center space-x-1 md:space-x-3">
                 <li class = "inline-flex items-center">
                     <a href="{{ route('dashboard') }}"
@@ -324,17 +324,17 @@
                         data: $(this).serialize(),
                         success: function(response) {
                             if (response.success === true) {
-                                toastr.success(response.msg);
+                                toastr.clear(); toastr.success(response.msg);
                                 $('#AddUserModal').addClass('hidden');
                                 location.reload();
                             } else {
-                                toastr.error(response.msg);
+                                toastr.clear(); toastr.error(response.msg);
                             }
 
                         },
                         error: function(xhr, status, error) {
                             console.error('Error:', error);
-                            toastr.error('An error occurred while creating user.');
+                            toastr.clear(); toastr.error('An error occurred while creating user.');
                         }
                     });
                 });
@@ -365,7 +365,7 @@
                                     }
                                 @endforeach
                             } else {
-                                toastr.info(data.msg);
+                                toastr.clear(); toastr.info(data.msg);
                             }
                         }
                     })
@@ -380,16 +380,16 @@
                         data: $(this).serialize(),
                         success: function(response) {
                             if (response.success === true) {
-                                toastr.success(response.msg);
+                                toastr.clear(); toastr.success(response.msg);
                                 $('#EditUserModal').addClass('hidden');
                                 location.reload();
                             } else {
-                                toastr.error(response.msg);
+                                toastr.clear(); toastr.error(response.msg);
                             }
                         },
                         error: function(xhr, status, error) {
                             console.error('Error:', error);
-                            toastr.error('An error occurred while updating user details');
+                            toastr.clear(); toastr.error('An error occurred while updating user details');
                         }
                     });
                 });
@@ -406,15 +406,15 @@
                             },
                             success: function(response) {
                                 if (response.success) {
-                                    toastr.success(response.msg);
+                                    toastr.clear(); toastr.success(response.msg);
                                     location.reload();
                                 } else {
-                                    toastr.error(response.msg);
+                                    toastr.clear(); toastr.error(response.msg);
                                 }
                             },
                             error: function(xhr, status, error) {
                                 console.error('Error:', error);
-                                toastr.error('An error occurred while deleting the user.');
+                                toastr.clear(); toastr.error('An error occurred while deleting the user.');
                             }
                         });
                     }

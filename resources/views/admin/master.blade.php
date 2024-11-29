@@ -1,10 +1,10 @@
 <x-app-layout>
     <div class ="overflow-y-auto overflow-x-hidden pt-6">
-        <nav class = "flex px-5 py-3 text-gray-700  rounded-lg bg-gray-50 dark:bg-[#1E293B] " aria-label="Breadcrumb">
+        <nav class = "flex px-5 py-3 text-gray-700  rounded-lg bg-gray-50" aria-label="Breadcrumb">
             <ol class = "inline-flex items-center space-x-1 md:space-x-3">
                 <li class = "inline-flex items-center">
                     <a href="{{ route('dashboard') }}"
-                        class = "inline-flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-indigo-400 dark:hover:text-white">
+                        class = "inline-flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 ">
                         <svg class = "w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -23,7 +23,7 @@
                                 clipRule="evenodd"></path>
                         </svg>
                         <a href="{{ route('admin.master') }}"
-                            class = "ml-1 text-sm font-medium text-gray-700 hover:text-gray-900 md:ml-2 dark:text-indigo-400 dark:hover:text-white">Control
+                            class = "ml-1 text-sm font-medium text-gray-700 hover:text-gray-900 md:ml-2">Control
                             Panel</a>
                     </div>
                 </li>
@@ -31,11 +31,11 @@
         </nav>
 
         <div>
-            <div class="mb-4 border-b border-gray-200 dark:border-gray-700">
+            <div class="mb-4 border-b border-gray-200">
                 <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="default-styled-tab"
                     data-tabs-toggle="#default-styled-tab-content"
-                    data-tabs-active-classes="text-green-600 hover:text-green-600 dark:text-green-500 dark:hover:text-green-500 border-green-600 dark:border-green-500"
-                    data-tabs-inactive-classes="dark:border-transparent text-gray-500 hover:text-gray-600 dark:text-gray-400 border-gray-100 hover:border-gray-300 dark:border-gray-700 dark:hover:text-gray-300"
+                    data-tabs-active-classes="text-green-600 hover:text-green-600 "
+                    data-tabs-inactive-classes=""
                     role="tablist">
                     <li class="me-2" role="presentation">
                         <button class="inline-block p-4 border-b-2 rounded-t-lg " id="companies-styled-tab"
@@ -133,11 +133,11 @@
             <form id="addVendor" action="{{ route('vendors.store') }}" method="POST">
                 @csrf
                 <div
-                    class="flex z-50  flex-col gap-4 overflow-hidden rounded-md border border-neutral-300 bg-white text-neutral-600 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-300 max-h-[70vh] max-w-xl w-[70vw]">
+                    class="flex z-50  flex-col gap-4 overflow-hidden rounded-md border border-neutral-300 bg-white text-neutral-600  max-h-[70vh] max-w-xl w-[70vw]">
                     <!-- Dialog Header -->
                     <div
-                        class="flex items-center justify-between border-b border-neutral-300 bg-neutral-50/60 p-4 dark:border-neutral-700 dark:bg-neutral-950/20">
-                        <h3 class="font-semibold tracking-wide text-neutral-900 dark:text-white">
+                        class="flex items-center justify-between border-b border-neutral-300 bg-neutral-50/60 p-4 ">
+                        <h3 class="font-semibold tracking-wide text-neutral-900 ">
                             Create New Vendor</h3>
                         <button type="button" onclick="hideDiv('addVendorModal')">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"
@@ -169,11 +169,11 @@
                         </div>
                         <!-- Dialog Footer -->
                         <div
-                            class="flex flex-col-reverse justify-between gap-2 border-t border-neutral-300 bg-neutral-50/60 p-4 dark:border-neutral-700 dark:bg-neutral-950/20 sm:flex-row sm:items-center md:justify-end">
+                            class="flex flex-col-reverse justify-between gap-2 border-t border-neutral-300 bg-neutral-50/60 p-4  sm:flex-row sm:items-center md:justify-end">
                             <button type="button" onclick="hideDiv('addVendorModal')"
-                                class="cursor-pointer whitespace-nowrap rounded-md px-4 py-2 text-center text-sm font-medium tracking-wide text-neutral-600 transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:opacity-100 active:outline-offset-0 dark:text-neutral-300 dark:focus-visible:outline-white">Close</button>
+                                class="cursor-pointer whitespace-nowrap rounded-md px-4 py-2 text-center text-sm font-medium tracking-wide text-neutral-600 transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:opacity-100 active:outline-offset-0 ">Close</button>
                             <button type="submit"
-                                class="cursor-pointer whitespace-nowrap rounded-md bg-green-900 text-white px-4 py-2 text-center text-sm font-medium tracking-wide text-neutral-100 transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:opacity-100 active:outline-offset-0 dark:bg-white dark:text-black dark:focus-visible:outline-white">Save</button>
+                                class="cursor-pointer whitespace-nowrap rounded-md bg-green-900 text-white px-4 py-2 text-center text-sm font-medium tracking-wide text-neutral-100 transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:opacity-100 active:outline-offset-0 ">Save</button>
                         </div>
                     </div>
                 </div>
@@ -190,11 +190,11 @@
                 @csrf
                 @method('PUT')
                 <div
-                    class="flex z-50  flex-col gap-4 overflow-hidden rounded-md border border-neutral-300 bg-white text-neutral-600 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-300 max-h-[70vh] max-w-xl w-[70vw]">
+                    class="flex z-50  flex-col gap-4 overflow-hidden rounded-md border border-neutral-300 bg-white text-neutral-600  max-h-[70vh] max-w-xl w-[70vw]">
                     <!-- Dialog Header -->
                     <div
-                        class="flex items-center justify-between border-b border-neutral-300 bg-neutral-50/60 p-4 dark:border-neutral-700 dark:bg-neutral-950/20">
-                        <h3 class="font-semibold tracking-wide text-neutral-900 dark:text-white">
+                        class="flex items-center justify-between border-b border-neutral-300 bg-neutral-50/60 p-4 ">
+                        <h3 class="font-semibold tracking-wide text-neutral-900 ">
                             Edit Vendor</h3>
                         <button type="button" onclick="hideDiv('editVendorModal')">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"
@@ -229,11 +229,11 @@
                         </div>
                         <!-- Dialog Footer -->
                         <div
-                            class="flex flex-col-reverse justify-between gap-2 border-t border-neutral-300 bg-neutral-50/60 p-4 dark:border-neutral-700 dark:bg-neutral-950/20 sm:flex-row sm:items-center md:justify-end">
+                            class="flex flex-col-reverse justify-between gap-2 border-t border-neutral-300 bg-neutral-50/60 p-4  sm:flex-row sm:items-center md:justify-end">
                             <button type="button" onclick="hideDiv('editVendorModal')"
-                                class="cursor-pointer whitespace-nowrap rounded-md px-4 py-2 text-center text-sm font-medium tracking-wide text-neutral-600 transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:opacity-100 active:outline-offset-0 dark:text-neutral-300 dark:focus-visible:outline-white">Close</button>
+                                class="cursor-pointer whitespace-nowrap rounded-md px-4 py-2 text-center text-sm font-medium tracking-wide text-neutral-600 transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:opacity-100 active:outline-offset-0 ">Close</button>
                             <button type="submit"
-                                class="cursor-pointer whitespace-nowrap rounded-md bg-green-900 text-white px-4 py-2 text-center text-sm font-medium tracking-wide text-neutral-100 transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:opacity-100 active:outline-offset-0 dark:bg-white dark:text-black dark:focus-visible:outline-white">Save</button>
+                                class="cursor-pointer whitespace-nowrap rounded-md bg-green-900 text-white px-4 py-2 text-center text-sm font-medium tracking-wide text-neutral-100 transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:opacity-100 active:outline-offset-0 ">Save</button>
                         </div>
                     </div>
                 </div>
@@ -249,11 +249,11 @@
             <form id="AddExamForm" action="{{ route('exams.store') }}" method="POST">
                 @csrf
                 <div
-                    class="flex z-50  flex-col gap-4 overflow-hidden rounded-md border border-neutral-300 bg-white text-neutral-600 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-300 max-h-[70vh] max-w-xl w-[70vw]">
+                    class="flex z-50  flex-col gap-4 overflow-hidden rounded-md border border-neutral-300 bg-white text-neutral-600  max-h-[70vh] max-w-xl w-[70vw]">
                     <!-- Dialog Header -->
                     <div
-                        class="flex items-center justify-between border-b border-neutral-300 bg-neutral-50/60 p-4 dark:border-neutral-700 dark:bg-neutral-950/20">
-                        <h3 class="font-semibold tracking-wide text-neutral-900 dark:text-white">
+                        class="flex items-center justify-between border-b border-neutral-300 bg-neutral-50/60 p-4 ">
+                        <h3 class="font-semibold tracking-wide text-neutral-900 ">
                             Create New Exam</h3>
                         <button type="button" onclick="hideDiv('AddExamModal')">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"
@@ -317,11 +317,11 @@
                     </div>
                     <!-- Dialog Footer -->
                     <div
-                        class="flex flex-col-reverse justify-between gap-2 border-t border-neutral-300 bg-neutral-50/60 p-4 dark:border-neutral-700 dark:bg-neutral-950/20 sm:flex-row sm:items-center md:justify-end">
+                        class="flex flex-col-reverse justify-between gap-2 border-t border-neutral-300 bg-neutral-50/60 p-4  sm:flex-row sm:items-center md:justify-end">
                         <button type="button" onclick="hideDiv('AddExamModal')"
-                            class="cursor-pointer whitespace-nowrap rounded-md px-4 py-2 text-center text-sm font-medium tracking-wide text-neutral-600 transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:opacity-100 active:outline-offset-0 dark:text-neutral-300 dark:focus-visible:outline-white">Close</button>
+                            class="cursor-pointer whitespace-nowrap rounded-md px-4 py-2 text-center text-sm font-medium tracking-wide text-neutral-600 transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:opacity-100 active:outline-offset-0 ">Close</button>
                         <button type="submit"
-                            class="cursor-pointer whitespace-nowrap rounded-md bg-green-900 text-white px-4 py-2 text-center text-sm font-medium tracking-wide text-neutral-100 transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:opacity-100 active:outline-offset-0 dark:bg-white dark:text-black dark:focus-visible:outline-white">Save</button>
+                            class="cursor-pointer whitespace-nowrap rounded-md bg-green-900 text-white px-4 py-2 text-center text-sm font-medium tracking-wide text-neutral-100 transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:opacity-100 active:outline-offset-0 ">Save</button>
                     </div>
                 </div>
             </form>
@@ -337,11 +337,11 @@
                 @method('PUT')
                 <input type="hidden" name="exam_id" id="edit_exam_id" data-dropdown-input required>
                 <div
-                    class="flex z-50  flex-col gap-4 overflow-hidden rounded-md border border-neutral-300 bg-white text-neutral-600 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-300 max-h-[70vh] max-w-xl w-[70vw]">
+                    class="flex z-50  flex-col gap-4 overflow-hidden rounded-md border border-neutral-300 bg-white text-neutral-600 0 max-h-[70vh] max-w-xl w-[70vw]">
                     <!-- Dialog Header -->
                     <div
-                        class="flex items-center justify-between border-b border-neutral-300 bg-neutral-50/60 p-4 dark:border-neutral-700 dark:bg-neutral-950/20">
-                        <h3 class="font-semibold tracking-wide text-neutral-900 dark:text-white">
+                        class="flex items-center justify-between border-b border-neutral-300 bg-neutral-50/60 p-4 ">
+                        <h3 class="font-semibold tracking-wide text-neutral-900 ">
                             Edit exam</h3>
                         <button type="button" onclick="hideDiv('EditExamModal')">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"
@@ -409,11 +409,11 @@
                     </div>
                     <!-- Dialog Footer -->
                     <div
-                        class="flex flex-col-reverse justify-between gap-2 border-t border-neutral-300 bg-neutral-50/60 p-4 dark:border-neutral-700 dark:bg-neutral-950/20 sm:flex-row sm:items-center md:justify-end">
+                        class="flex flex-col-reverse justify-between gap-2 border-t border-neutral-300 bg-neutral-50/60 p-4  sm:flex-row sm:items-center md:justify-end">
                         <button type="button" onclick="hideDiv('EditExamModal')"
-                            class="cursor-pointer whitespace-nowrap rounded-md px-4 py-2 text-center text-sm font-medium tracking-wide text-neutral-600 transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:opacity-100 active:outline-offset-0 dark:text-neutral-300 dark:focus-visible:outline-white">Close</button>
+                            class="cursor-pointer whitespace-nowrap rounded-md px-4 py-2 text-center text-sm font-medium tracking-wide text-neutral-600 transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:opacity-100 active:outline-offset-0 ">Close</button>
                         <button type="submit"
-                            class="cursor-pointer whitespace-nowrap rounded-md bg-green-900 text-white px-4 py-2 text-center text-sm font-medium tracking-wide text-neutral-100 transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:opacity-100 active:outline-offset-0 dark:bg-white dark:text-black dark:focus-visible:outline-white">Update</button>
+                            class="cursor-pointer whitespace-nowrap rounded-md bg-green-900 text-white px-4 py-2 text-center text-sm font-medium tracking-wide text-neutral-100 transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:opacity-100 active:outline-offset-0">Update</button>
                     </div>
                 </div>
             </form>
@@ -430,11 +430,11 @@
                 @csrf
 
                 <div
-                    class="flex z-50  flex-col gap-4 overflow-hidden rounded-md border border-neutral-300 bg-white text-neutral-600 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-300 max-h-[70vh] max-w-xl w-[70vw]">
+                    class="flex z-50  flex-col gap-4 overflow-hidden rounded-md border border-neutral-300 bg-white text-neutral-600  max-h-[70vh] max-w-xl w-[70vw]">
                     <!-- Dialog Header -->
                     <div
-                        class="flex items-center justify-between border-b border-neutral-300 bg-neutral-50/60 p-4 dark:border-neutral-700 dark:bg-neutral-950/20">
-                        <h3 class="font-semibold tracking-wide text-neutral-900 dark:text-white">
+                        class="flex items-center justify-between border-b border-neutral-300 bg-neutral-50/60 p-4 ">
+                        <h3 class="font-semibold tracking-wide text-neutral-900">
                             Create New company</h3>
                         <button type="button" onclick="hideDiv('addCompanyModal')">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"
@@ -1111,7 +1111,7 @@
                         },
                         error: function(xhr, status, error) {
                             console.error('Error:', error);
-                            toastr.error('An error occurred while fetching the data.');
+                            toastr.clear(); toastr.error('An error occurred while fetching the data.');
                         }
                     });
                 });
@@ -1142,7 +1142,7 @@
                         },
                         error: function(xhr, status, error) {
                             console.error('Error:', error);
-                            toastr.error('An error occurred while fetching data');
+                            toastr.clear(); toastr.error('An error occurred while fetching data');
                         }
                     });
                 });
@@ -1172,7 +1172,7 @@
                         },
                         error: function(xhr, status, error) {
                             console.error('Error:', error);
-                            toastr.error('An error occurred while fetching data.');
+                            toastr.clear(); toastr.error('An error occurred while fetching data.');
                         }
                     });
                 });
@@ -1205,7 +1205,7 @@
                         },
                         error: function(xhr, status, error) {
                             console.error('Error:', error);
-                            toastr.error('An error occurred while fetching ' + tab + ' data.');
+                            toastr.clear(); toastr.error('An error occurred while fetching ' + tab + ' data.');
                         }
                     });
                 }
@@ -1250,19 +1250,18 @@
                         data: $(this).serialize(),
                         success: function(response) {
                             if (response.success === true) {
-                                toastr.success(response.msg);
-                                toastr.clear();
+                                toastr.clear(); toastr.success(response.msg);
 
                                 $('#addVendorModal').addClass('hidden');
                                 $('#vendors-styled-tab').trigger('click');
                             } else {
-                                toastr.error(response.msg);
+                                toastr.clear(); toastr.error(response.msg);
                             }
 
                         },
                         error: function(xhr, status, error) {
                             console.error('Error:', error);
-                            toastr.error('An error occurred while adding vendor');
+                            toastr.clear(); toastr.error('An error occurred while adding vendor');
                         }
                     });
                 });
@@ -1285,7 +1284,7 @@
                         },
                         error: function(xhr, status, error) {
                             console.error('Error:', error);
-                            toastr.error('An error occurred while fetching data.');
+                            toastr.clear(); toastr.error('An error occurred while fetching data.');
                         }
                     });
                 });
@@ -1300,17 +1299,17 @@
                         data: $(this).serialize(),
                         success: function(response) {
                             if (response.success === true) {
-                                toastr.success(response.msg);
+                                toastr.clear(); toastr.success(response.msg);
                                 $('#AddExamModal').addClass('hidden');
                                 location.reload();
                             } else {
-                                toastr.error(response.msg);
+                                toastr.clear(); toastr.error(response.msg);
                             }
 
                         },
                         error: function(xhr, status, error) {
                             console.error('Error:', error);
-                            toastr.error('An error occurred while creating exam.');
+                            toastr.clear(); toastr.error('An error occurred while creating exam.');
                         }
                     });
                 });
@@ -1324,17 +1323,17 @@
                         data: $(this).serialize(),
                         success: function(response) {
                             if (response.success === true) {
-                                toastr.success(response.msg);
+                                toastr.clear(); toastr.success(response.msg);
                                 $('#addCompanyModal').addClass('hidden');
                                 $('#companies-styled-tab').trigger('click');
                             } else {
-                                toastr.error(response.msg);
+                                toastr.clear(); toastr.error(response.msg);
                             }
 
                         },
                         error: function(xhr, status, error) {
                             console.error('Error:', error);
-                            toastr.error('An error occurred while creating company.');
+                            toastr.clear(); toastr.error('An error occurred while creating company.');
                         }
                     });
                 });
@@ -1359,7 +1358,7 @@
                         data: $(this).serialize(),
                         success: function(data) {
                             toggleSubmitButton(submitButton, false);
-                            toastr.info(data.msg);
+                            toastr.clear(); toastr.info(data.msg);
                             $('#ClientModal').addClass('hidden');
                             $('#clients-styled-tab').trigger('click');
                         },
@@ -1370,7 +1369,7 @@
                                     $(`#error_${key}`).text(value[0]);
                                 });
                             } else {
-                                toastr.error('An error occurred while creating the client.');
+                                toastr.clear(); toastr.error('An error occurred while creating the client.');
                             }
                         }
                     });

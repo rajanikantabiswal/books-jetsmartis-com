@@ -102,16 +102,16 @@
                 data: $(this).serialize(),
                 success: function(response) {
                     if (response.success === true) {
-                        toastr.success(response.msg);
+                        toastr.clear(); toastr.success(response.msg);
                         $('#editCompanyModal').addClass('hidden');
                         $('#companies-styled-tab').trigger('click');
                     } else {
-                        toastr.error(response.msg);
+                        toastr.clear(); toastr.error(response.msg);
                     }
                 },
                 error: function(xhr, status, error) {
                     console.error('Error:', error);
-                    toastr.error('An error occurred while updating company.');
+                    toastr.clear(); toastr.error('An error occurred while updating company.');
                 }
             });
         });
@@ -128,15 +128,15 @@
                     },
                     success: function(response) {
                         if (response.success) {
-                            toastr.success(response.msg);
+                            toastr.clear(); toastr.success(response.msg);
                             $('#companies-styled-tab').trigger('click');
                         } else {
-                            toastr.error(response.msg);
+                            toastr.clear(); toastr.error(response.msg);
                         }
                     },
                     error: function(xhr, status, error) {
                         console.error('Error:', error);
-                        toastr.error('An error occurred while deleting the company.');
+                        toastr.clear(); toastr.error('An error occurred while deleting the company.');
                     }
                 });
             }
@@ -157,10 +157,10 @@
                 },
                 success: function(data) {
                     if (data.success == true) {
-                        toastr.info(data.msg);
+                        toastr.clear(); toastr.info(data.msg);
                         // location.reload();
                     } else {
-                        toastr.info(data.msg);
+                        toastr.clear(); toastr.info(data.msg);
                     }
                 }
             });

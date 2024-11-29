@@ -94,19 +94,18 @@
                 data: $(this).serialize(),
                 success: function(response) {
                     if (response.success === true) {
-                        toastr.clear();
-                        toastr.success(response.msg);
+                        toastr.clear(); toastr.success(response.msg);
                         
                         $('#editVendorModal').addClass('hidden');
                         $('#vendors-styled-tab').trigger('click');
                         
                     } else {
-                        toastr.error(response.msg);
+                        toastr.clear(); toastr.error(response.msg);
                     }
                 },
                 error: function(xhr, status, error) {
                     console.error('Error:', error);
-                    toastr.error('An error occurred while updating vendor');
+                    toastr.clear(); toastr.error('An error occurred while updating vendor');
                 }
             });
         });
@@ -124,15 +123,15 @@
                     },
                     success: function(response) {
                         if (response.success) {
-                            toastr.success(response.msg);
+                            toastr.clear(); toastr.success(response.msg);
                             location.reload();
                         } else {
-                            toastr.error(response.msg);
+                            toastr.clear(); toastr.error(response.msg);
                         }
                     },
                     error: function(xhr, status, error) {
                         console.error('Error:', error);
-                        toastr.error('An error occurred while deleting the vendor.');
+                        toastr.clear(); toastr.error('An error occurred while deleting the vendor.');
                     }
                 });
             }
@@ -153,10 +152,10 @@
                 },
                 success: function(data) {
                     if (data.success == true) {
-                        toastr.info(data.msg);
+                        toastr.clear(); toastr.info(data.msg);
                         // location.reload();
                     } else {
-                        toastr.info(data.msg);
+                        toastr.clear(); toastr.info(data.msg);
                     }
                 }
             });

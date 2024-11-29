@@ -1,11 +1,11 @@
 <x-app-layout>
 
     <div class ="overflow-y-auto overflow-x-hidden pt-6">
-        <nav class = "flex px-5 py-3 text-gray-700  rounded-lg bg-gray-50 dark:bg-[#1E293B] " aria-label="Breadcrumb">
+        <nav class = "flex px-5 py-3 text-gray-700  rounded-lg bg-gray-50 " aria-label="Breadcrumb">
             <ol class = "inline-flex items-center space-x-1 md:space-x-3">
                 <li class = "inline-flex items-center">
                     <a href="/"
-                        class = "inline-flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-indigo-400 dark:hover:text-white">
+                        class = "inline-flex items-center text-sm font-medium text-gray-700 hover:text-gray-900">
                         <svg class = "w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -24,7 +24,7 @@
                                 clipRule="evenodd"></path>
                         </svg>
                         <a href="{{ route('dashboard') }}"
-                            class = "ml-1 text-sm font-medium text-gray-700 hover:text-gray-900 md:ml-2 dark:text-indigo-400 dark:hover:text-white">Dashboard</a>
+                            class = "ml-1 text-sm font-medium text-gray-700 hover:text-gray-900 md:ml-2">Dashboard</a>
                     </div>
                 </li>
             </ol>
@@ -63,17 +63,7 @@
             <div class="mx-6 flex items-center justify-end gap-2">
 
                 <form id="filter-form" class="flex items-center gap-4">
-                    {{-- <div class="flex items-center gap-2">
-                        <label for="from_date"
-                            class="mb-2 text-sm font-medium text-gray-900 dark:text-white">From</label>
-                        <input name="from_date" type="date" id="from_date"
-                            class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5" />
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <label for="to_date" class="mb-2 text-sm font-medium text-gray-900 dark:text-white">To</label>
-                        <input name="to_date" type="date" id="to_date"
-                            class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5" />
-                    </div> --}}
+                   
                     <select name="period" id="period"
                         class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5">
                         <option value="all_time" selected>All Time</option>

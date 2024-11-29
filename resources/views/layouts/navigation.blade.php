@@ -4,7 +4,7 @@
 
     <!-- open sidebar button -->
     <div
-        class = "max-toolbar translate-x-24 scale-x-0 w-full -right-6 transition transform ease-in duration-300 flex items-center justify-between border-4 border-white dark:border-[#0F172A] bg-green-950  absolute top-2 rounded-full h-12">
+        class = "max-toolbar translate-x-24 scale-x-0 w-full -right-6 transition transform ease-in duration-300 flex items-center justify-between border-4 border-white bg-green-950  absolute top-2 rounded-full h-12">
 
         <div
             class = "w-full flex items-center space-x-3 group bg-gradient-to-r from-green-700 via-green-500 to-green-500 pl-4 px-2 py-1 ml-1 rounded-full text-white">
@@ -14,7 +14,7 @@
         </div>
     </div>
     <div onclick="openNav()"
-        class = "-right-6 transition transform ease-in-out duration-500 flex border-4 border-white dark:border-[#0F172A] bg-green-950 dark:hover:bg-blue-500 hover:bg-green-500 absolute top-2 p-3 rounded-full text-white hover:rotate-45">
+        class = "-right-6 transition transform ease-in-out duration-500 flex border-4 border-white bg-green-950 hover:bg-green-500 absolute top-2 p-3 rounded-full text-white hover:rotate-45">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor"
             class="w-4 h-4">
             <path strokeLinecap="round" strokeLinejoin="round"
@@ -26,7 +26,7 @@
         <div>
            
                 <a href="{{ route('dashboard') }}"
-                    class =  "hover:ml-4 w-full text-white hover:text-green-500 dark:hover:text-blue-500 bg-green-950 p-2 pl-8 rounded-full transform ease-in-out duration-300 flex flex-row items-center space-x-3">
+                    class =  "hover:ml-4 w-full text-white hover:text-green-500 bg-green-950 p-2 pl-8 rounded-full transform ease-in-out duration-300 flex flex-row items-center space-x-3">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-4 h-4">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z" />
@@ -38,7 +38,7 @@
                 </a>
            
             <a href="{{ route('candidates.index') }}"
-                class =  "hover:ml-4 w-full text-white hover:text-green-500 dark:hover:text-blue-500 bg-green-950 p-2 pl-8 rounded-full transform ease-in-out duration-300 flex flex-row items-center space-x-3">
+                class =  "hover:ml-4 w-full text-white hover:text-green-500 bg-green-950 p-2 pl-8 rounded-full transform ease-in-out duration-300 flex flex-row items-center space-x-3">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
                     stroke="currentColor" class="w-4 h-4">
                     <path d="M14 8.99988H18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
@@ -58,7 +58,7 @@
             </a>
             @can('isAdmin')
                 <a href="{{ route('users.index') }}"
-                    class =  "hover:ml-4 w-full text-white hover:text-green-500 dark:hover:text-blue-500 bg-green-950 p-2 pl-8 rounded-full transform ease-in-out duration-300 flex flex-row items-center space-x-3">
+                    class =  "hover:ml-4 w-full text-white hover:text-green-500 bg-green-950 p-2 pl-8 rounded-full transform ease-in-out duration-300 flex flex-row items-center space-x-3">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-4 h-4">
                         <path
@@ -77,7 +77,7 @@
                 </a>
 
                 <a href="{{ route('admin.master') }}"
-                    class =  "hover:ml-4 w-full text-white hover:text-green-500 dark:hover:text-blue-500 bg-green-950 p-2 pl-8 rounded-full transform ease-in-out duration-300 flex flex-row items-center space-x-3">
+                    class =  "hover:ml-4 w-full text-white hover:text-green-500 bg-green-950 p-2 pl-8 rounded-full transform ease-in-out duration-300 flex flex-row items-center space-x-3">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-4 h-4">
                         <path d="M20 10C19.9641 7.52043 19.7801 6.11466 18.8365 5.17157C17.6643 4 15.7776 4 12.0043 4C8.23106 4 6.34442 4 5.17221 5.17157C4 6.34315 4 8.22876 4 12C4 15.7712 4 17.6569 5.17221 18.8284C6.23545 19.8911 7.88646 19.9899 11 19.9991" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -98,27 +98,7 @@
             @endcan
 
 
-            {{-- <form method="POST" action="{{ route('logout') }}">
-                @csrf
-                <a href="{{ route('logout') }}"
-                    onclick="event.preventDefault();
-                                                this.closest('form').submit();"
-                    class =  "hover:ml-4 w-full text-white hover:text-green-500 dark:hover:text-blue-500 bg-green-950 p-2 pl-8 rounded-full transform ease-in-out duration-300 flex flex-row items-center space-x-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                        stroke="currentColor" class="w-4 h-4">
-                        <path
-                            d="M14 3.09502C13.543 3.03241 13.0755 3 12.6 3C7.29807 3 3 7.02944 3 12C3 16.9706 7.29807 21 12.6 21C13.0755 21 13.543 20.9676 14 20.905"
-                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
-                        <path
-                            d="M21 12L11 12M21 12C21 11.2998 19.0057 9.99153 18.5 9.5M21 12C21 12.7002 19.0057 14.0085 18.5 14.5"
-                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                    <div>
-                        Logout
-                    </div>
-                </a>
-
-            </form> --}}
+      
 
 
         </div>
@@ -133,7 +113,7 @@
         <div>
            
                 <a href="{{ route('dashboard') }}"
-                    class= "hover:ml-4 justify-end pr-5 text-white hover:text-green-500 dark:hover:text-blue-500 w-full bg-green-950 p-3 rounded-full transform ease-in-out duration-300 flex">
+                    class= "hover:ml-4 justify-end pr-5 text-white hover:text-green-500  w-full bg-green-950 p-3 rounded-full transform ease-in-out duration-300 flex">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-4 h-4">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z" />
@@ -142,7 +122,7 @@
                 </a>
             
             <a href="{{ route('candidates.index') }}"
-                class= "hover:ml-4 justify-end pr-5 text-white hover:text-green-500 dark:hover:text-blue-500 w-full bg-green-950 p-3 rounded-full transform ease-in-out duration-300 flex">
+                class= "hover:ml-4 justify-end pr-5 text-white hover:text-green-500  w-full bg-green-950 p-3 rounded-full transform ease-in-out duration-300 flex">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
                     stroke="currentColor" class="w-4 h-4">
                     <path d="M14 8.99988H18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
@@ -159,7 +139,7 @@
             </a>
             @can('isAdmin')
                 <a href="{{ route('users.index') }}"
-                    class= "hover:ml-4 justify-end pr-5 text-white hover:text-green-500 dark:hover:text-blue-500 w-full bg-green-950 p-3 rounded-full transform ease-in-out duration-300 flex">
+                    class= "hover:ml-4 justify-end pr-5 text-white hover:text-green-500  w-full bg-green-950 p-3 rounded-full transform ease-in-out duration-300 flex">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-4 h-4">
                         <path
@@ -176,7 +156,7 @@
                 </a>
 
                 <a href="{{ route('admin.master') }}"
-                    class= "hover:ml-4 justify-end pr-5 text-white hover:text-green-500 dark:hover:text-blue-500 w-full bg-green-950 p-3 rounded-full transform ease-in-out duration-300 flex">
+                    class= "hover:ml-4 justify-end pr-5 text-white hover:text-green-500  w-full bg-green-950 p-3 rounded-full transform ease-in-out duration-300 flex">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-4 h-4">
                         <path d="M20 10C19.9641 7.52043 19.7801 6.11466 18.8365 5.17157C17.6643 4 15.7776 4 12.0043 4C8.23106 4 6.34442 4 5.17221 5.17157C4 6.34315 4 8.22876 4 12C4 15.7712 4 17.6569 5.17221 18.8284C6.23545 19.8911 7.88646 19.9899 11 19.9991" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -197,28 +177,11 @@
             @endcan
 
 
-            {{-- <form method="POST" action="{{ route('logout') }}">
-                @csrf
-                <a href="{{ route('logout') }}"
-                    onclick="event.preventDefault();
-                                        this.closest('form').submit();"
-                    class= "hover:ml-4 justify-end pr-5 text-white hover:text-green-500 dark:hover:text-blue-500 w-full bg-green-950 p-3 rounded-full transform ease-in-out duration-300 flex">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                        stroke="currentColor" class="w-4 h-4">
-                        <path
-                            d="M14 3.09502C13.543 3.03241 13.0755 3 12.6 3C7.29807 3 3 7.02944 3 12C3 16.9706 7.29807 21 12.6 21C13.0755 21 13.543 20.9676 14 20.905"
-                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
-                        <path
-                            d="M21 12L11 12M21 12C21 11.2998 19.0057 9.99153 18.5 9.5M21 12C21 12.7002 19.0057 14.0085 18.5 14.5"
-                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                </a>
-            </form> --}}
 
         </div>
         <div class="pb-[70px]">
             <a href="{{ route('candidates.index') }}"
-                class= "justify-end pr-1 text-white hover:text-green-500 dark:hover:text-blue-500 w-full bg-green-950 p-3 rounded-full transform ease-in-out duration-300 flex">
+                class= "justify-end pr-1 text-white hover:text-green-500  w-full bg-green-950 p-3 rounded-full transform ease-in-out duration-300 flex">
                 <img src="{{ asset('assets/img/favicon.png') }}" alt="" class="w-10 h-10">
             </a>
 

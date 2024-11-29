@@ -125,10 +125,10 @@
                 },
                 success: function(data) {
                     if (data.success == true) {
-                        toastr.info(data.msg);
+                        toastr.clear(); toastr.info(data.msg);
                         // location.reload();
                     } else {
-                        toastr.info(data.msg);
+                        toastr.clear(); toastr.info(data.msg);
                     }
                 }
             });
@@ -200,7 +200,7 @@
                         toggleFields();
 
                     } else {
-                        toastr.info(data.msg);
+                        toastr.clear(); toastr.info(data.msg);
                     }
                 }
             })
@@ -219,15 +219,15 @@
                     },
                     success: function(response) {
                         if (response.success) {
-                            toastr.success(response.msg);
+                            toastr.clear(); toastr.success(response.msg);
                             $('#clients-styled-tab').trigger('click');
                         } else {
-                            toastr.error(response.msg);
+                            toastr.clear(); toastr.error(response.msg);
                         }
                     },
                     error: function(xhr, status, error) {
                         console.error('Error:', error);
-                        toastr.error('An error occurred while deleting the client.');
+                        toastr.clear(); toastr.error('An error occurred while deleting the client.');
                     }
                 });
             }

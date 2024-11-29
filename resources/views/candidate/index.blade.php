@@ -9,7 +9,7 @@
                 <div
                     class = "flex items-center flex-row w-full bg-gradient-to-r   from-green-900 to-green-500 rounded-md p-3">
                     <div
-                        class = "flex text-green-900 dark:text-white items-center bg-white dark:bg-[#0F172A] p-2 rounded-md flex-none w-8 h-8 md:w-12 md:h-12 ">
+                        class = "flex text-green-900 items-center bg-white p-2 rounded-md flex-none w-8 h-8 md:w-12 md:h-12 ">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
                             stroke="currentColor" class = "object-scale-down transition duration-500">
                             <path
@@ -1265,7 +1265,7 @@
                         },
                         error: function(xhr, status, error) {
                             console.error('Error:', error);
-                            toastr.error('An error occurred while fetching data');
+                            toastr.clear(); toastr.error('An error occurred while fetching data');
                         }
                     });
                 });
@@ -1281,7 +1281,7 @@
                         type: 'GET',
                         success: function(response) {
                             if (response.success === false) {
-                                toastr.success(response.msg);
+                                toastr.clear(); toastr.success(response.msg);
                             } else {
                                 const $dropdownItemList = $('.dropdown-items-list');
                                 $dropdownItemList.empty();
@@ -1298,7 +1298,7 @@
                         },
                         error: function(xhr, status, error) {
                             console.error('Error:', error);
-                            toastr.error('An error occurred while fetching data.');
+                            toastr.clear(); toastr.error('An error occurred while fetching data.');
                         }
                     });
                 });
@@ -1314,7 +1314,7 @@
                         type: 'GET',
                         success: function(response) {
                             if (response.success === false) {
-                                toastr.success(response.msg);
+                                toastr.clear(); toastr.success(response.msg);
                             } else {
                                 const $dropdownItemList = $('.dropdown-items-list');
                                 $dropdownItemList.empty();
@@ -1331,7 +1331,7 @@
                         },
                         error: function(xhr, status, error) {
                             console.error('Error:', error);
-                            toastr.error('An error occurred while fetching data.');
+                            toastr.clear(); toastr.error('An error occurred while fetching data.');
                         }
                     });
                 });
@@ -1361,7 +1361,7 @@
                         },
                         error: function(xhr, status, error) {
                             console.error('Error:', error);
-                            toastr.error('An error occurred while fetching data.');
+                            toastr.clear(); toastr.error('An error occurred while fetching data.');
                         }
                     });
                 });
@@ -1383,7 +1383,7 @@
                         },
                         error: function(xhr, status, error) {
                             console.error('Error:', error);
-                            toastr.error('An error occurred while fetching data.');
+                            toastr.clear(); toastr.error('An error occurred while fetching data.');
                         }
                     });
                 });
@@ -1410,7 +1410,7 @@
                         },
                         error: function(xhr, status, error) {
                             console.error('Error:', error);
-                            toastr.error('An error occurred while fetching data.');
+                            toastr.clear(); toastr.error('An error occurred while fetching data.');
                         }
                     });
                 });
@@ -1434,7 +1434,7 @@
                         },
                         error: function(xhr, status, error) {
                             console.error('Error:', error);
-                            toastr.error('An error occurred while fetching data.');
+                            toastr.clear(); toastr.error('An error occurred while fetching data.');
                         }
                     });
                 });
@@ -1457,7 +1457,7 @@
                         },
                         error: function(xhr, status, error) {
                             console.error('Error:', error);
-                            toastr.error('An error occurred while fetching data.');
+                            toastr.clear(); toastr.error('An error occurred while fetching data.');
                         }
                     });
                 });
@@ -1478,7 +1478,7 @@
                         data: formData,
                         success: function(data) {
                             toggleSubmitButton(submitButton, false);
-                            toastr.info(data.msg);
+                            toastr.clear(); toastr.info(data.msg);
                             $('#AddCandidateModal').addClass('hidden');
                             fetchTableData("{{ route('candidates.index') }}");
                             //location.reload();
@@ -1490,7 +1490,7 @@
                                     $(`#error_${key}`).text(value[0]);
                                 });
                             } else {
-                                toastr.error('An error occurred while creating the candidate.');
+                                toastr.clear(); toastr.error('An error occurred while creating the candidate.');
                             }
                         }
                     });
@@ -1534,7 +1534,7 @@
                                 $("#edit_exam_status").val(candidate[0].status).change();
                                 $("#edit_remark").val(candidate[0].remark);
                             } else {
-                                toastr.info(data.msg);
+                                toastr.clear(); toastr.info(data.msg);
                             }
                         }
                     })
@@ -1552,7 +1552,7 @@
                         data: formData,
                         success: function(data) {
                             toggleSubmitButton(submitButton, false);
-                            toastr.info(data.msg);
+                            toastr.clear(); toastr.info(data.msg);
                             $('#EditCandidateModal').addClass('hidden');
                             fetchTableData("{{ route('candidates.index') }}");
                         },
@@ -1563,7 +1563,7 @@
                                     $(`#error_edit_${key}`).text(value[0]);
                                 });
                             } else {
-                                toastr.error('An error occurred while updating the candidate.');
+                                toastr.clear(); toastr.error('An error occurred while updating the candidate.');
                             }
                         }
                     });
@@ -1584,10 +1584,10 @@
                         },
                         success: function(response) {
                             if (response.success === true) {
-                                toastr.success(response.msg);
+                                toastr.clear(); toastr.success(response.msg);
                                 fetchTableData("{{ route('candidates.index') }}");
                             } else {
-                                toastr.error(response.msg);
+                                toastr.clear(); toastr.error(response.msg);
                             }
                         }
                     });

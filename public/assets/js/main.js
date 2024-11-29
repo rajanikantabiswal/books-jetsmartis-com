@@ -116,6 +116,12 @@ function toggleSubmitButton(button, isSubmitting) {
     }
 }
 
+toastr.options = {
+    "closeButton": true,
+    "progressBar": true,
+    "positionClass": "toast-top-right",
+    "preventDuplicates": true
+};
 
 
 
