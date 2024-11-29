@@ -257,7 +257,7 @@
                         </div>
                     </div>
 
-                    <button
+                    <button id="AddCandidateBtn"
                         class="bg-green-900 text-white active:bg-green-500 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                         type="button" onclick="showDiv('AddCandidateModal')">Add New</button>
 
@@ -339,9 +339,9 @@
                                             <div class="flex items-center">
                                                 <div data-dropdown-toggle="dropdown-phone"
                                                     class="country-code-button flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-900">
-                                                    <input type="hidden" value="+91"
+                                                    <input id="country_code" type="hidden" value="+91"
                                                         class="country-code-input-field" name="country_code">
-                                                    <input type="button" value="+91"
+                                                    <input id="country_code_btn" type="button" value="+91"
                                                         class="country-code-input cursor-pointer">
                                                     <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true"
                                                         xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -353,7 +353,7 @@
                                                 </div>
                                                 <!-- Phone Input Field -->
                                                 <div class="relative w-full">
-                                                    <input name="phone" type="text"
+                                                    <input id="phone" name="phone" type="text"
                                                         class="phone-input border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                                                         placeholder="123-456-7890" />
                                                 </div>
@@ -395,8 +395,9 @@
                                             for="company_name">
                                             Company Name<span class="text-red-500 text-lg">*</span>
                                         </label>
-                                        <input type="hidden" name="company_id" data-dropdown-input>
-                                        <input type="button" value="Select Company" data-dropdown-button
+                                        <input id="company_id" type="hidden" name="company_id" data-dropdown-input>
+                                        <input id="company_id_btn" type="button" value="Select Company"
+                                            data-dropdown-button
                                             class="companyDropdownBtn border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150 text-left">
                                         <span id="error_company_id" class="error-text text-red-500 text-xs"></span>
                                         <div data-dropdown-menu
@@ -465,8 +466,8 @@
                                             Vendor<span class="text-red-500 text-lg">*</span>
                                         </label>
                                         <input type="hidden" id="vendor_id" name="vendor_id" data-dropdown-input>
-                                        <input type="button" value="Select Vendor" name="vendor_name"
-                                            data-dropdown-button
+                                        <input id="vendor_id_btn" type="button" value="Select Vendor"
+                                            name="vendor_name" data-dropdown-button
                                             class="vendorDropdownBtn border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150 text-left">
                                         <span id="error_vendor_id" class="error-text text-red-500 text-xs"></span>
                                         <div data-dropdown-menu
@@ -489,7 +490,7 @@
                                             Exam Name<span class="text-red-500 text-lg">*</span>
                                         </label>
                                         <input type="hidden" name="exam_id" data-dropdown-input>
-                                        <input type="button" value="Select Exam" name="exam_name"
+                                        <input id="exam_id_btn" type="button" value="Select Exam" name="exam_name"
                                             data-dropdown-button
                                             class="examDropdownBtn border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150 text-left">
                                         <span id="error_exam_id" class="error-text text-red-500 text-xs"></span>
@@ -553,7 +554,8 @@
                                         </label>
 
                                         <input type="hidden" name="conducted_by" data-dropdown-input>
-                                        <input type="button" value="Select User" data-dropdown-button
+                                        <input id="conducted_by_id" type="button" value="Select User"
+                                            data-dropdown-button
                                             class="conductedByDropdownBtn border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150 text-left">
                                         <span id="error_conducted_by" class="error-text text-red-500 text-xs"></span>
 
@@ -577,8 +579,9 @@
                                             for="client_name">
                                             Client<span class="text-red-500 text-lg">*</span>
                                         </label>
-                                        <input type="hidden" name="client_id" data-dropdown-input>
-                                        <input type="button" value="Select Client" data-dropdown-button
+                                        <input id="client_id" type="hidden" name="client_id" data-dropdown-input>
+                                        <input id="client_id_btn" type="button" value="Select Client"
+                                            data-dropdown-button
                                             class="clientDropdownBtn border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150 text-left">
                                         <span id="error_client_id" class="error-text text-red-500 text-xs"></span>
                                         <div data-dropdown-menu
@@ -604,7 +607,7 @@
                                     <div class="relative w-full my-3">
                                         <label
                                             class="block uppercase text-gray-600 text-xs font-semibold mb-2">Remark</label>
-                                        <textarea name="remark" placeholder="(Optional)"
+                                        <textarea id="remark" name="remark" placeholder="(Optional)"
                                             class="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow   focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                                             rows="4">
                                         </textarea>
@@ -1218,12 +1221,8 @@
 
             //     });
             // }
+
             
-            document.addEventListener("DOMContentLoaded", function() {
-                const dateInput = document.getElementById('conducted_date');
-                const today = new Date().toISOString().split('T')[0];
-                dateInput.value = today;
-            });
 
             document.querySelectorAll('.status-div').forEach(div => {
                 div.addEventListener('click', () => {
@@ -1240,6 +1239,31 @@
                     searchField.focus();
                     searchField[0].setSelectionRange(searchField.val().length, searchField.val().length);
                 }
+
+                $('#AddCandidateBtn').on('click', function() {
+
+                    $("#first_name").val("");
+                    $("#last_name").val("");
+                    $("#country_code").val("+91");
+                    $("#country_code_btn").val("+91");
+                    $("#phone").val("");
+                    $("#email_id").val("");
+                    $("#company_id").val("");
+                    $("#company_id_btn").val("");
+                    $("#vendor_id").val("");
+                    $("#vendor_id_btn").val("");
+                    $("#exam_id").val("");
+                    $("#exam_id_btn").val("");
+                    $("#conducted_date").val("");
+                    $("#exam_status")[0].selectedIndex = 0;
+                    $("#conducted_by").val("");
+                    $("#conducted_by_id").val("");
+                    $("#client_id").val("");
+                    $("#client_id_btn").val("");
+                    $("#remark").val("");
+                    setDateToday();
+
+                });
 
                 $('[data-dropdown-button]').on('click', function() {
                     const $dropdownItemList = $('.dropdown-items-list');
@@ -1498,7 +1522,7 @@
 
                 });
 
-                $(document).on('click', '.edit-button',function() {
+                $(document).on('click', '.edit-button', function() {
                     var candidateId = $(this).attr('data-id');
                     $("#edit_candidate_id").val(candidateId);
 
@@ -1569,7 +1593,7 @@
                     });
                 });
 
-                $(document).on('click', '.delete-button',function() {
+                $(document).on('click', '.delete-button', function() {
                     var candidateId = $(this).attr('data-id');
 
                     if (!confirm("Please confirm to delete?")) {
