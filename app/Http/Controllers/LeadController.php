@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Enquiry;
+use App\Models\Lead;
 use Illuminate\Http\Request;
 
-class EnquiryController extends Controller
+class LeadController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('enquiry.index');
+        return view('lead.index');
     }
 
     /**
@@ -34,7 +34,7 @@ class EnquiryController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Enquiry $enquiry)
+    public function show(Lead $lead)
     {
         //
     }
@@ -42,7 +42,7 @@ class EnquiryController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Enquiry $enquiry)
+    public function edit(Lead $lead)
     {
         //
     }
@@ -50,7 +50,7 @@ class EnquiryController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Enquiry $enquiry)
+    public function update(Request $request, Lead $lead)
     {
         //
     }
@@ -58,7 +58,7 @@ class EnquiryController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Enquiry $enquiry)
+    public function destroy(Lead $lead)
     {
         //
     }
