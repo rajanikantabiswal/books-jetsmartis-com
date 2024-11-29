@@ -867,8 +867,7 @@
                                                 State Code<span class="text-red-500 text-lg">*</span>
                                             </label>
                                             <input id="state_code" type="text" name="state_code"
-                                                class="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                                                >
+                                                class="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
                                         </div>
                                     </div>
 
@@ -1178,6 +1177,7 @@
                 });
 
                 function loadTabContent(tab) {
+                    showLoader();
                     let url;
                     switch (tab) {
                         case 'vendors':
@@ -1202,10 +1202,14 @@
                         type: 'GET',
                         success: function(response) {
                             $('#' + tab + '-table').html(response);
+
+                            hideLoader();
                         },
                         error: function(xhr, status, error) {
                             console.error('Error:', error);
                             toastr.error('An error occurred while fetching ' + tab + ' data.');
+
+                            hideLoader();
                         }
                     });
                 }
@@ -1216,28 +1220,24 @@
                 $('#vendors-styled-tab').on('click', function() {
 
                     $(this).attr('aria-selected', 'true');
-
                     loadTabContent('vendors');
                 });
 
                 $('#exams-styled-tab').on('click', function() {
 
                     $(this).attr('aria-selected', 'true');
-
                     loadTabContent('exams');
                 });
 
                 $('#companies-styled-tab').on('click', function() {
 
                     $(this).attr('aria-selected', 'true');
-
                     loadTabContent('companies');
                 });
 
                 $('#clients-styled-tab').on('click', function() {
 
                     $(this).attr('aria-selected', 'true');
-
                     loadTabContent('clients');
                 });
 

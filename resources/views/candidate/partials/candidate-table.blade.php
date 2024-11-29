@@ -102,7 +102,7 @@
                 </tbody>
             </table>
         </div>
-        <div class="pagination">
+        <div class="pagination mt-2">
             {!! $candidates->appends(request()->query())->links() !!}
         </div>
         
