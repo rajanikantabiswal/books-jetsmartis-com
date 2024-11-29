@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Enquiry extends Model
+class Lead extends Model
 {
     //
 }

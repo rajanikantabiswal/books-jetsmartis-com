@@ -10,7 +10,7 @@ use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CandidateController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\EnquiryController;
+use App\Http\Controllers\LeadController;
 
 Route::get('/', [DashboardController::class, 'showDashboard'])->middleware(['auth', 'verified']);
 
@@ -33,7 +33,7 @@ Route::resource('vendors', VendorController::class)->middleware(['auth', 'verifi
 Route::resource('exams', ExamController::class)->middleware(['auth', 'verified']);
 Route::resource('company', CompanyController::class)->middleware(['auth', 'verified']);
 Route::resource('clients', ClientController::class)->middleware(['auth', 'verified']);
-Route::resource('enquiries', EnquiryController::class)->middleware(['auth', 'verified']);
+Route::resource('leads', LeadController::class)->middleware(['auth', 'verified']);
 
 
 Route::get('/control-panel', function () {
