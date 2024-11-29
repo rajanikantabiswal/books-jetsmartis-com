@@ -106,7 +106,7 @@
                 </a>
             @endcan
 
-            <a href="{{ route('candidates.index') }}"
+            <a href="{{ route('enquiries.index') }}"
                 class =  "hover:ml-4 w-full text-white hover:text-green-500 dark:hover:text-blue-500 bg-green-950 p-2 pl-8 rounded-full transform ease-in-out duration-300 flex flex-row items-center space-x-3">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
                     stroke="currentColor" class="w-4 h-4">
@@ -116,7 +116,7 @@
                 </svg>
 
                 <div>
-                    Enquiry
+                    Enquiries
                 </div>
             </a>
 
@@ -204,7 +204,7 @@
                 </a>
             @endcan
 
-            <a href="{{ route('candidates.index') }}"
+            <a href="{{ route('enquiries.index') }}"
                 class= "hover:ml-4 justify-end pr-5 text-white hover:text-green-500 dark:hover:text-blue-500 w-full bg-green-950 p-3 rounded-full transform ease-in-out duration-300 flex">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
                     stroke="currentColor" class="w-4 h-4">

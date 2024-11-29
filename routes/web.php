@@ -10,6 +10,7 @@ use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CandidateController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\EnquiryController;
 
 Route::get('/', [DashboardController::class, 'showDashboard'])->middleware(['auth', 'verified']);
 
@@ -32,13 +33,14 @@ Route::resource('vendors', VendorController::class)->middleware(['auth', 'verifi
 Route::resource('exams', ExamController::class)->middleware(['auth', 'verified']);
 Route::resource('company', CompanyController::class)->middleware(['auth', 'verified']);
 Route::resource('clients', ClientController::class)->middleware(['auth', 'verified']);
-
-
+Route::resource('enquiries', EnquiryController::class)->middleware(['auth', 'verified']);
 
 
 Route::get('/control-panel', function () {
     return view('admin.master');
 })->middleware(['auth', 'verified'])->name('admin.master');
+
+
 
 Route::post('/company/is-active-toggle', [CompanyController::class, 'toggleIsActive'])->name('company.isActiveToggle');
 Route::post('/vendor/is-active-toggle', [VendorController::class, 'toggleIsActive'])->name('vendor.isActiveToggle');
