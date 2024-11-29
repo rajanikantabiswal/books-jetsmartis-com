@@ -302,7 +302,15 @@ class CandidateController extends Controller
 
 
         if ($period && $period !== 'all_time') {
-            if ($period === 'last_week') {
+            if ($period === 'today') {
+                $startOfToday = now()->startOfDay();
+                $endOfToday = now()->endOfDay();
+                $candidates->whereBetween('conducted_date', [$startOfToday, $endOfToday]);
+            } elseif ($period === 'yesterday') {
+                $startOfYesterday = now()->subDay()->startOfDay();
+                $endOfYesterday = now()->subDay()->endOfDay();
+                $candidates->whereBetween('conducted_date', [$startOfYesterday, $endOfYesterday]);
+            } elseif ($period === 'last_week') {
                 $startOfLastWeek = now()->subWeek()->startOfWeek();
                 $endOfLastWeek = now()->subWeek()->endOfWeek();
                 $candidates->whereBetween('conducted_date', [$startOfLastWeek, $endOfLastWeek]);
@@ -310,7 +318,8 @@ class CandidateController extends Controller
                 $startOfLastMonth = now()->subMonthNoOverflow()->startOfMonth();
                 $endOfLastMonth = now()->subMonthNoOverflow()->endOfMonth();
                 $candidates->whereBetween('conducted_date', [$startOfLastMonth, $endOfLastMonth]);
-            } elseif ($period === 'last_year') {
+            }
+             elseif ($period === 'last_year') {
                 $startOfLastYear = now()->subYear()->startOfYear();
                 $endOfLastYear = now()->subYear()->endOfYear();
                 $candidates->whereBetween('conducted_date', [$startOfLastYear, $endOfLastYear]);
