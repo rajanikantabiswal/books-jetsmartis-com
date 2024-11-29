@@ -77,6 +77,8 @@
                     <select name="period" id="period"
                         class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5">
                         <option value="all_time" selected>All Time</option>
+                        <option value="today">Today</option>
+                        <option value="yesterday">Yesterday</option>
                         <option value="last_week">Last Week</option>
                         <option value="last_month">Last Month</option>
                         <option value="last_year">Last Year</option>
