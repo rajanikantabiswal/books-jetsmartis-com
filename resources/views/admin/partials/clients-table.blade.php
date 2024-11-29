@@ -135,17 +135,20 @@
         });
 
         $('.edit_client_btn').on('click', function() {
+            $("#clientHeader").text('Edit Client');
             var clientId = $(this).attr('data-id');
             $("#client_id").val(clientId);
 
             var url = '{{ route('clients.edit', ':clientId') }}';
             url = url.replace(':clientId', clientId);
+            console.log(url);
 
             $.ajax({
                 url: url,
                 type: "GET",
                 success: function(data) {
                     if (data.success == true) {
+                        //isRegistrationTypeTrigger = false;
                         var client = data.data;
                         if (client.is_individual == 1) {
                             $("#individual-radio").prop("checked", true);
@@ -172,12 +175,11 @@
                         $("#city_id").val(client.city_id ? client.city_id : "");
                         $("#city_id_btn").val(client.city_id ? client.city.city_name : "");
                         $("#zip_code").val(client.zip_code);
-                        $("#registration_type").val(client.registration_type).change();
 
+                        
+                        $("#registration_type").val(client.registration_type).change();
                         $("#gst_no").val(client.gst_no);
                         $("#state_code").val(client.state_code);
-
-
                         $("#pan_card").val(client.pan_card);
                         if (client.bank_details === null) {
                             $("#bank_name").val("");
@@ -193,6 +195,7 @@
 
                         $("#first_name").val(client.first_name);
                         $("#last_name").val(client.last_name);
+                        //isRegistrationTypeTrigger = true;
 
                         toggleFields();
 
@@ -202,7 +205,7 @@
                 }
             })
         });
-
+        
         $('.delete_client_btn').on('click', function() {
             const clientId = $(this).data('id');
 

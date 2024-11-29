@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Vendor;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 
 class VendorController extends Controller
 {
@@ -115,7 +116,9 @@ class VendorController extends Controller
     }
 
     public function getActiveVendors(){
-        $vendors = Vendor::where('is_active', true)->get();  // Fetch all vendors
+        $vendors = Cache::remember('active_vendors', 60, function () {
+            return Vendor::where('is_active', true)->get();
+        });
         return response()->json($vendors);
     }
 }

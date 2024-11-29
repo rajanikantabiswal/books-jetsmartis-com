@@ -1,6 +1,8 @@
 <x-app-layout>
     <div class ="overflow-y-auto overflow-x-hidden">
         <!--Candidate exam status filter-->
+
+
         <div class = "flex flex-wrap my-5 mt-10 -mx-2">
 
             <a href="{{ route('candidates.index') }}" class = "w-full lg:w-1/5 p-2">
@@ -37,7 +39,7 @@
                         <div class = "text-xs whitespace-nowrap">
                             Total Candidates
                         </div>
-                        <div class = "">
+                        <div id="totalCandidate" class = "">
                             {{ $totalCandidate }}
                         </div>
                     </div>
@@ -70,7 +72,7 @@
                         <div class = "text-xs whitespace-nowrap">
                             Passed
                         </div>
-                        <div class = "">
+                        <div id="passedCandidate" class = "">
                             {{ $passedCandidate }}
                         </div>
                     </div>
@@ -103,7 +105,7 @@
                         <div class = "text-xs whitespace-nowrap">
                             Failed
                         </div>
-                        <div class = "">
+                        <div id="failedCandidate" class = "">
                             {{ $failedCandidate }}
                         </div>
                     </div>
@@ -140,7 +142,7 @@
                         <div class = "text-xs whitespace-nowrap">
                             On-Hold
                         </div>
-                        <div class = "">
+                        <div id="onHoldCandidate" class = "">
                             {{ $onHoldCandidate }}
                         </div>
                     </div>
@@ -173,7 +175,7 @@
                         <div class = "text-xs whitespace-nowrap">
                             Re-Scheduled
                         </div>
-                        <div class = "">
+                        <div id="rescheduledCandidate" class = "">
                             {{ $rescheduledCandidate }}
                         </div>
                     </div>
@@ -262,113 +264,8 @@
                 </div>
             </div>
             <!--Candidate table-->
-            <div class="px-4 pb-3">
-                @if ($candidates->isEmpty())
-                    <div class="text-center py-3">
-                        <span class="font-semibold">No record found</span>
-                    </div>
-                @else
-                    <div class="relative overflow-x-auto ">
-                        <table id="filter-table"
-                            class="pagination-table table-auto w-full text-sm text-left rtl:text-right text-gray-500 dark:text-indigo-400">
-                            <thead
-                                class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-indigo-400">
-                                <tr>
-                                    <th scope="col" class="px-6 py-3">
-                                        Conducted Date
-                                    </th>
-                                    <th scope="col" class="px-6 py-3">
-                                        Candidate Name
-                                    </th>
-                                    <th scope="col" class="px-6 py-3">
-                                        Email
-                                    </th>
-                                    <th scope="col" class="px-6 py-3">
-                                        Phone No.
-                                    </th>
-                                    <th scope="col" class="px-6 py-3">
-                                        Company
-                                    </th>
-
-                                    <th scope="col" class="px-6 py-3">
-                                        Exam Name
-                                    </th>
-                                    <th scope="col" class="px-6 py-3">
-                                        Vendor
-                                    </th>
-                                    <th scope="col" class="px-6 py-3">
-                                        Exam Status
-                                    </th>
-                                    <th scope="col" class="px-6 py-3">
-                                        Conducted by
-                                    </th>
-                                    <th scope="col" class="px-6 py-3">
-                                        Client
-                                    </th>
-                                    <th scope="col" class="px-6 py-3">
-                                        Action
-                                    </th>
-
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($candidates as $candidate)
-                                    <tr
-                                        class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                        <td class="px-6 py-4 whitespace-nowrap font-medium">
-                                            {{ $candidate->conducted_date }}
-                                        </td>
-                                        <th scope="row"
-                                            class="px-6 py-4  text-gray-900 whitespace-nowrap dark:text-white">
-                                            {{ $candidate->first_name }} {{ $candidate->last_name }}
-                                        </th>
-                                        <td class="px-6 py-4 whitespace-nowrap">
-                                            {{ $candidate->email_id }}
-                                        </td>
-                                        <td class="px-6 py-4 whitespace-nowrap">
-                                            @if (!is_null($candidate->phone))
-                                                {{ $candidate->country_code }} {{ $candidate->phone }}
-                                            @endif
-
-                                        </td>
-                                        <td class="px-6 py-4 whitespace-nowrap">
-                                            {{ $candidate->company->company_name }}
-
-                                        </td>
-
-                                        <td class="px-6 py-4 whitespace-nowrap">
-                                            {{ $candidate->exam->exam_name }}
-                                        </td>
-                                        <td class="px-6 py-4 whitespace-nowrap">
-                                            {{ $candidate->vendor->vendor_name }}
-                                        </td>
-                                        <td class="px-6 py-4 whitespace-nowrap capitalize">
-                                            {{ $candidate->status }}
-                                        </td>
-                                        <td class="px-6 py-4 whitespace-nowrap">
-                                            {{ $candidate->conducted_user->name }}
-                                        </td>
-                                        <td class="px-6 py-4 whitespace-nowrap">
-                                            {{ $candidate->client->client_name }}
-                                        </td>
-
-                                        <td class="flex items-center px-6 py-4">
-                                            <span data-id="{{ $candidate->id }}"
-                                                class="edit-button font-medium text-blue-600 dark:text-blue-500 cursor-pointer hover:underline"
-                                                onclick="showDiv('EditCandidateModal')">Edit</span>
-                                            <span data-id="{{ $candidate->id }}"
-                                                class="delete_btn font-medium text-red-600 dark:text-red-500 cursor-pointer hover:underline ms-3">Remove</span>
-                                        </td>
-
-                                    </tr>
-                                @endforeach
-
-                            </tbody>
-                        </table>
-                    </div>
-                @endif
-
-
+            <div id="candidate-table">
+                @include('candidate.partials.candidate-table', compact('candidates'))
             </div>
         </div>
 
@@ -387,7 +284,8 @@
                     <div
                         class="flex items-center justify-between border-b border-neutral-300 bg-neutral-50/60 p-4 dark:border-neutral-700 dark:bg-neutral-950/20">
                         <h3 id="defaultModalTitle"
-                            class="font-semibold tracking-wide text-neutral-900 dark:text-white">New Entry</h3>
+                            class="font-semibold tracking-wide text-neutral-900 dark:text-white">
+                            New Entry</h3>
 
                         <button type="button" onclick="hideDiv('AddCandidateModal')">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"
@@ -457,7 +355,7 @@
                                                 <div class="relative w-full">
                                                     <input name="phone" type="text"
                                                         class="phone-input border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                                                        pattern="[0-9]{10}" placeholder="123-456-7890" />
+                                                        placeholder="123-456-7890" />
                                                 </div>
                                             </div>
 
@@ -953,7 +851,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="w-full lg:w-6/12 px-4">
                                     <div class="relative group mb-4 dropdownBlock">
                                         <label class="block uppercase text-gray-600 text-xs font-semibold mb-2"
@@ -1309,14 +1207,40 @@
 
     <x-slot name="script">
         <script>
+            // if (document.getElementById("filter-table") && typeof simpleDatatables.DataTable !== 'undefined') {
+            //     const dataTable = new simpleDatatables.DataTable("#filter-table", {
+            //         perPage: 10,
+            //         perPageSelect: false,
+            //         searchable: false,
+            //         sortable: true,
+            //         responsive: true,
+            //         scrollX: true,
+
+            //     });
+            // }
+            
             document.addEventListener("DOMContentLoaded", function() {
                 const dateInput = document.getElementById('conducted_date');
                 const today = new Date().toISOString().split('T')[0];
                 dateInput.value = today;
             });
 
+            document.querySelectorAll('.status-div').forEach(div => {
+                div.addEventListener('click', () => {
+                    const status = div.getAttribute('data-status');
+                    document.getElementById('status_filter').value = status;
+                    document.querySelector('#filter_form').submit();
+                });
+            });
+
 
             $(document).ready(function() {
+                const searchField = $('#search');
+                if (searchField.val()) {
+                    searchField.focus();
+                    searchField[0].setSelectionRange(searchField.val().length, searchField.val().length);
+                }
+
                 $('[data-dropdown-button]').on('click', function() {
                     const $dropdownItemList = $('.dropdown-items-list');
                     $dropdownItemList.empty();
@@ -1347,7 +1271,7 @@
                 });
 
                 $('.examDropdownBtn').on('click', function() {
-                    let $vendorId =$('#vendor_id').val();
+                    let $vendorId = $('#vendor_id').val();
                     let url = $vendorId ? `{{ route('api.getExams', ':vendorId') }}`.replace(':vendorId',
                             $vendorId) :
                         `{{ route('api.getExams') }}`;
@@ -1380,7 +1304,7 @@
                 });
 
                 $('#edit_exam_id_btn').on('click', function() {
-                    let $vendorId =$('#edit_vendor_id').val();
+                    let $vendorId = $('#edit_vendor_id').val();
                     let url = $vendorId ? `{{ route('api.getExams', ':vendorId') }}`.replace(':vendorId',
                             $vendorId) :
                         `{{ route('api.getExams') }}`;
@@ -1538,24 +1462,9 @@
                     });
                 });
 
-            });
-        </script>
 
 
-        <script>
-            if (document.getElementById("filter-table") && typeof simpleDatatables.DataTable !== 'undefined') {
-                const dataTable = new simpleDatatables.DataTable("#filter-table", {
-                    perPage: 10,
-                    perPageSelect: false,
-                    searchable: false,
-                    sortable: true,
-                    responsive: true,
-                    scrollX: true,
 
-                });
-            }
-
-            $(document).ready(function() {
                 $("#AddCandidateForm").submit(function(e) {
                     e.preventDefault();
                     const submitButton = $(this).find(".submitButton");
@@ -1571,7 +1480,8 @@
                             toggleSubmitButton(submitButton, false);
                             toastr.info(data.msg);
                             $('#AddCandidateModal').addClass('hidden');
-                            location.reload();
+                            fetchTableData("{{ route('candidates.index') }}");
+                            //location.reload();
                         },
                         error: function(error) {
                             toggleSubmitButton(submitButton, false);
@@ -1588,8 +1498,7 @@
 
                 });
 
-
-                $(".edit-button").click(function() {
+                $(document).on('click', '.edit-button',function() {
                     var candidateId = $(this).attr('data-id');
                     $("#edit_candidate_id").val(candidateId);
 
@@ -1618,7 +1527,8 @@
                                 $("#edit_exam_id_btn").val(candidate[0].exam['exam_name']);
                                 $("#edit_conducted_date").val(candidate[0].conducted_date);
                                 $("#edit_conducted_by").val(candidate[0].conducted_by);
-                                $("#edit_conducted_by_btn").val(candidate[0].conducted_user['name']);
+                                $("#edit_conducted_by_btn").val(candidate[0].conducted_user[
+                                    'name']);
                                 $("#edit_client_id").val(candidate[0].client_id);
                                 $("#edit_client_id_btn").val(candidate[0].client['client_name']);
                                 $("#edit_exam_status").val(candidate[0].status).change();
@@ -1644,7 +1554,7 @@
                             toggleSubmitButton(submitButton, false);
                             toastr.info(data.msg);
                             $('#EditCandidateModal').addClass('hidden');
-                            location.reload();
+                            fetchTableData("{{ route('candidates.index') }}");
                         },
                         error: function(error) {
                             toggleSubmitButton(submitButton, false);
@@ -1659,7 +1569,7 @@
                     });
                 });
 
-                $(".delete_btn").click(function() {
+                $(document).on('click', '.delete-button',function() {
                     var candidateId = $(this).attr('data-id');
 
                     if (!confirm("Please confirm to delete?")) {
@@ -1675,7 +1585,7 @@
                         success: function(response) {
                             if (response.success === true) {
                                 toastr.success(response.msg);
-                                location.reload();
+                                fetchTableData("{{ route('candidates.index') }}");
                             } else {
                                 toastr.error(response.msg);
                             }
@@ -1683,26 +1593,6 @@
                     });
                 });
 
-            });
-
-
-            document.querySelectorAll('.status-div').forEach(div => {
-                div.addEventListener('click', () => {
-                    const status = div.getAttribute('data-status');
-                    document.getElementById('status_filter').value = status;
-                    document.querySelector('#filter_form').submit();
-                });
-            });
-        </script>
-
-        <script>
-            $(document).ready(function() {
-                const searchField = $('#search');
-                if (searchField.val()) {
-                    searchField.focus();
-                    // Move the cursor to the end of the input
-                    searchField[0].setSelectionRange(searchField.val().length, searchField.val().length);
-                }
 
                 $('#examSearch').on('input', function() {
                     let searchTerm = $(this).val().trim();
@@ -1748,9 +1638,6 @@
                     fetchExamData(examCode);
                 });
 
-
-
-
                 function fetchExamData(examCode) {
                     $.ajax({
                         url: "{{ route('api.getExamByCode') }}", // Your endpoint to fetch exam details by exam code
@@ -1766,11 +1653,35 @@
                         }
                     });
                 }
+
+                $(document).on('click', '.pagination a', function(e) {
+                    e.preventDefault();
+                    const url = $(this).attr('href');
+                    fetchTableData(url);
+                });
+
+                function fetchTableData(url) {
+                    showLoader();
+                    $.ajax({
+                        url: url,
+                        type: 'GET',
+                        success: function(response) {
+                            $('#candidate-table').html(response.candidateTable);
+                            $('#totalCandidate').text(response.totalCandidate);
+                            $('#passedCandidate').text(response.passedCandidate);
+                            $('#failedCandidate').text(response.failedCandidate);
+                            $('#onHoldCandidate').text(response.onHoldCandidate);
+                            $('#rescheduledCandidate').text(response.rescheduledCandidate);
+                            hideLoader();
+                        },
+                        error: function() {
+                            alert('Something went wrong!');
+                        }
+                    });
+                }
+
             });
         </script>
-
-
-
 
 
     </x-slot>

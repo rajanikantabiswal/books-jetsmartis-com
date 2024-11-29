@@ -49,15 +49,14 @@ class ClientController extends Controller
                 'zip_code' => 'nullable|string|max:10',
                 'registration_type' => request('is_individual') == 1 ? 'nullable' : 'required',
                 'gst_no' => [
-                    'nullable', // Allow null by default
-                    'required_if:is_individual,0', // Required if is_individual is 0 (Company)
+                    'nullable',
                     'required_unless:registration_type,unregistered', // Required unless registration_type is unregistered
                     'string',
                     'max:15',
                     'regex:/^[0-9A-Z]{15}$/', // Valid GST format
                 ],
                 'state_code' => 'nullable|string|size:2',
-                'pan_card' => 'required|string|regex:/^[A-Z]{5}[0-9]{4}[A-Z]{1}$/',
+                'pan_card' => 'required|string',
                 'bank_name' => 'required|string|max:255',
                 'account_number' => 'required',
                 'ifsc' => 'required',
@@ -87,7 +86,7 @@ class ClientController extends Controller
                 $client = Client::create([
                     'is_individual' => $request->is_individual,
                     'client_name' =>  $request->individual_first_name . ' ' . $request->individual_last_name,
-                    'phone' => $request->phone,
+                    'phone' => $request->phone ?? '',
                     'country_code' => $request->country_code,
                     'email' => $request->email ?? '',
                     'whatsapp' => $request->whatsapp ?? '',
@@ -105,7 +104,7 @@ class ClientController extends Controller
                 $client = Client::create([
                     'is_individual' => $request->is_individual,
                     'client_name' => $request->client_name,
-                    'phone' => $request->phone,
+                    'phone' => $request->phone ?? '',
                     'country_code' => $request->country_code,
                     'email' => $request->email ?? '',
                     'whatsapp' => $request->whatsapp ?? '',
@@ -185,14 +184,13 @@ class ClientController extends Controller
                 'registration_type' => request('is_individual') == 1 ? 'nullable' : 'required',
                 'gst_no' => [
                     'nullable',
-                    'required_if:is_individual,0',
                     'required_unless:registration_type,unregistered',
                     'string',
                     'max:15',
                     'regex:/^[0-9A-Z]{15}$/', // Valid GST format
                 ],
                 'state_code' => 'nullable|string|size:2',
-                'pan_card' => 'required|string|regex:/^[A-Z]{5}[0-9]{4}[A-Z]{1}$/',
+                'pan_card' => 'required',
                 'bank_name' => 'required|string|max:255',
                 'account_number' => 'required',
                 'ifsc' => 'required',
@@ -219,7 +217,7 @@ class ClientController extends Controller
             if ($is_individual) {
                 $client->is_individual = $request->is_individual;
                 $client->client_name = $request->individual_first_name . ' ' . $request->individual_last_name;
-                $client->phone = $request->phone;
+                $client->phone = $request->phone ?? '';
                 $client->country_code = $request->country_code;
                 $client->email = $request->email ?? '';
                 $client->whatsapp = $request->whatsapp ?? '';
@@ -236,7 +234,7 @@ class ClientController extends Controller
             } else {
                 $client->is_individual = $request->is_individual;
                 $client->client_name = $request->client_name;
-                $client->phone = $request->phone;
+                $client->phone = $request->phone ?? '';
                 $client->country_code = $request->country_code;
                 $client->email = $request->email ?? '';
                 $client->whatsapp = $request->whatsapp ?? '';

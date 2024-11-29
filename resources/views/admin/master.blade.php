@@ -78,7 +78,7 @@
                 <div class="hidden" id="styled-clients" role="tabpanel" aria-labelledby="clients-tab">
                     <div class="rounded-t mb-0 px-4 border-0">
                         <div class="mt-4 flex flex-wrap gap-2 items-center justify-end">
-                            <button
+                            <button id="addClientBtn"
                                 class="addClientBtn bg-green-900 text-white active:bg-green-500 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                                 type="button" onclick="showDiv('ClientModal')">Add Client</button>
                             {{-- <a href="{{ route('clients.create') }}"
@@ -566,7 +566,7 @@
                     <!-- Dialog Header -->
                     <div
                         class="flex items-center justify-between border-b border-neutral-300 bg-neutral-50/60 p-4 dark:border-neutral-700 dark:bg-neutral-950/20">
-                        <h3 class="font-semibold tracking-wide text-neutral-900 dark:text-white">
+                        <h3 id="clientHeader" class="font-semibold tracking-wide text-neutral-900 dark:text-white">
                             Create New client</h3>
                         <button type="button" onclick="hideDiv('ClientModal')">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"
@@ -673,8 +673,9 @@
                                                     <!-- Phone Input Field -->
                                                     <div class="relative w-full">
                                                         <input id="phone" name="phone" type="text"
+                                                            value=""
                                                             class="phone-input border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                                                            pattern="[0-9]{10}" placeholder="123-456-7890" />
+                                                            placeholder="123-456-7890" />
                                                     </div>
                                                 </div>
 
@@ -866,8 +867,7 @@
                                                 State Code<span class="text-red-500 text-lg">*</span>
                                             </label>
                                             <input id="state_code" type="text" name="state_code"
-                                                class="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                                                disabled>
+                                                class="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-500 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
                                         </div>
                                     </div>
 
@@ -997,13 +997,14 @@
 
 
     <x-slot name="script">
-
-
-
         <script>
             $(document).ready(function() {
 
+                let isRegistrationTypeTrigger = true;
+
                 $('#addClientBtn').on('click', function() {
+                    isRegistrationTypeTrigger = true;
+                    $("#clientHeader").text('Create new client');
                     $("#individual-radio").prop("checked", false);
                     $("#company-radio").prop("checked", true);
                     $("#client_name").val("");
@@ -1042,10 +1043,14 @@
                     $("#display_name").val("");
                 });
 
+
                 $('select[name="registration_type"]').on('change', function() {
-                    $('input[name="gst_no"]').val('');
-                    $('input[name="state_code"]').val('');
-                    $('input[name="pan_card"]').val('');
+                    // if (isRegistrationTypeTrigger === true) {
+                    //     $('input[name="gst_no"]').val('');
+                    //     $('input[name="state_code"]').val('');
+                    //     $('input[name="pan_card"]').val('');
+                    // }
+
                     const selectedValue = $(this).val();
 
                     if (selectedValue === 'unregistered') {
@@ -1056,12 +1061,12 @@
 
                     } else {
 
-                        $('.gst-field, .state-code-field, .pan-field').removeClass('hidden');;
+                        $('.gst-field, .state-code-field, .pan-field').removeClass('hidden');
                     }
                 });
 
                 // Trigger change event on page load to handle default state
-                $('select[name="registration_type"]').trigger('change');
+                //$('select[name="registration_type"]').trigger('change');
 
                 $('input[name="gst_no"]').on('input', function() {
                     const gstNo = $(this).val().trim();
@@ -1172,6 +1177,7 @@
                 });
 
                 function loadTabContent(tab) {
+                    showLoader();
                     let url;
                     switch (tab) {
                         case 'vendors':
@@ -1196,10 +1202,14 @@
                         type: 'GET',
                         success: function(response) {
                             $('#' + tab + '-table').html(response);
+
+                            hideLoader();
                         },
                         error: function(xhr, status, error) {
                             console.error('Error:', error);
                             toastr.error('An error occurred while fetching ' + tab + ' data.');
+
+                            hideLoader();
                         }
                     });
                 }
@@ -1210,28 +1220,24 @@
                 $('#vendors-styled-tab').on('click', function() {
 
                     $(this).attr('aria-selected', 'true');
-
                     loadTabContent('vendors');
                 });
 
                 $('#exams-styled-tab').on('click', function() {
 
                     $(this).attr('aria-selected', 'true');
-
                     loadTabContent('exams');
                 });
 
                 $('#companies-styled-tab').on('click', function() {
 
                     $(this).attr('aria-selected', 'true');
-
                     loadTabContent('companies');
                 });
 
                 $('#clients-styled-tab').on('click', function() {
 
                     $(this).attr('aria-selected', 'true');
-
                     loadTabContent('clients');
                 });
 
@@ -1245,6 +1251,8 @@
                         success: function(response) {
                             if (response.success === true) {
                                 toastr.success(response.msg);
+                                toastr.clear();
+
                                 $('#addVendorModal').addClass('hidden');
                                 $('#vendors-styled-tab').trigger('click');
                             } else {
@@ -1277,7 +1285,7 @@
                         },
                         error: function(xhr, status, error) {
                             console.error('Error:', error);
-                           toastr.error('An error occurred while fetching data.');
+                            toastr.error('An error occurred while fetching data.');
                         }
                     });
                 });
