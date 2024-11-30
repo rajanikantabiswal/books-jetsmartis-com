@@ -91,7 +91,7 @@
                     class="hidden bg-red-50 border border-red-300 text-red-900 text-sm rounded-lg p-2.5 px-4 hover:bg-red-300 hover:text-white font-semibold">Remove</a>
             </div>
 
-            <div class="grid grid-cols-2 gap-4 p-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 p-6">
                 <div class="shadow shadow-lg rounded-lg p-4 bg-white" id="status-pie-chart"></div>
                 <div class="shadow shadow-lg rounded-lg p-4 bg-white" id="vendor-bar-chart"></div>
                 <div class="shadow shadow-lg rounded-lg p-4 bg-white" id="stacked-column-chart"></div>
