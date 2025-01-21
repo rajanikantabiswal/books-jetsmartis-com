@@ -108,7 +108,7 @@
 
         <script>
             $(document).ready(function() {
-                const initialYear = 2024;
+                const initialYear = {{$currentYear}};
                 fetchAndRenderChart(initialYear);
 
 
